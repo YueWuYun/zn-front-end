@@ -1,0 +1,105 @@
+{
+  "data": {
+    "code": "pvinv_invoicebill",
+    "name": "联查发票",
+    "pageid": "pvinv_invoicebill",
+    "pvinv_invoicebill": {
+      "items": [
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "发票代码",
+          "width":"90px",
+          "maxlength": "20",
+          "attrcode": "vinvcode"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "发票号码",
+          "width":"90px",
+          "maxlength": "50",
+          "attrcode": "vinvnum"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "开票单位",
+          "maxlength": "50",
+          "attrcode": "vsalername"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "购货单位",
+          "maxlength": "50",
+          "attrcode": "vpurchname"
+        },
+        {
+          "itemtype": "number",
+          "scale": "2",
+          "visible": true,
+          "label": "不含税金额",
+          "maxlength": "50",
+          "attrcode": "ntotalmny"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "税率",
+          "maxlength": "50",
+          "attrcode": "ntaxrate"
+        },
+        {
+          "itemtype": "number",
+          "scale": "2",
+          "visible": true,
+          "label": "税额",
+          "maxlength": "50",
+          "attrcode": "ntotaltax"
+        },
+        {
+          "itemtype": "number",
+          "scale": "2",
+          "visible": true,
+          "label": "价税合计",
+          "maxlength": "50",
+          "attrcode": "ntotaltaxmny"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "发票类型",
+          "maxlength": "50",
+          "attrcode": "ctrantypeid"
+        },
+        {
+          "itemtype": "label",
+          "visible": true,
+          "label": "发票认证状态",
+          "width":"auto",
+          "maxlength": "50",
+          "attrcode": "bauthen"
+        }
+      ],
+      "moduletype": "table",
+      "pagination": false,
+      "code": "pvinv_invoicebill",
+      "name": "联查发票",
+      "oid": null
+    },
+    "gridrelation": {
+      "pvinv_invoicebill": {
+        "destBrowseAreaCode": null,
+        "destEditAreaCode": null,
+        "srcAreaCode": "pvinv_invoicebill",
+        "tabRelation": [
+          "pvinv_invoicebill"
+        ]
+      }
+    },
+    "formrelation": null
+  },
+  "error": null,
+  "success": true
+}

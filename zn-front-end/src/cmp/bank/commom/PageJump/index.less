@@ -1,0 +1,151 @@
+@t-btn-bgcolor: #ccc;
+
+.page-jump {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 20px !important;
+    height: 50px;
+    background: #f6f6f6;
+    border-top: 1px solid #ccc;
+    &.show {
+        display: block;
+    }
+    .u-pagination-list li {
+        width: 28px !important;
+    }
+    .page-size {
+        float: left;
+        .u-form-control-wrapper {
+            width: auto;
+            .u-select-selection {
+                border-radius: 4px !important;
+                .u-select-selection__rendered {
+                    margin: 0 0 0 8px;
+                    .u-select-selection-selected-value {
+                        padding: 0;
+                        height:18px; 
+                        font-size:13px;
+                        font-family:PingFangSC-Regular;
+                        color:rgba(0,0,0,0.65);
+                        line-height:18px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+        }
+    }
+    li a, .toPage-input{
+        border-radius: 4px;
+        width: 30px;
+        height: 30px;
+        padding: 0 !important;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid #E3E7ED;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+    li a {
+        position: relative;
+        left: -2px;
+        top: -2px;
+        border: 1px solid #E3E7ED !important;
+    }
+    
+    .pagination {
+        margin-top: 0;
+        margin-right: 0; 
+        float: right;
+        display: flex;
+        justify-content: center;
+        vertical-align: baseline;
+        height: 30px;
+        .u-form-control-wrapper {
+            width: auto;
+        }
+        .u-pagination {
+            margin: 0 !important;
+            .iconfont {
+                font-size: 12px;
+            }
+            li {
+                margin-left: 8px;
+                a {
+                    color: rgba(0,0,0,0.65);
+                    border: 1px solid #E3E7ED;
+                }
+                &:first-child, &:last-child {
+                    a {
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+            li:not(.active):hover a{
+                color: @t-btn-bgcolor;
+                border: 1px solid #C9C9C9;
+                line-height: 30px;
+            }
+            li.active a {
+                background: #fff;
+                color: #E14C46 !important;
+                border: 1px solid @t-btn-bgcolor;
+                line-height: 30px;
+            }
+
+            li.disabled:not(:first-child):not(:last-child) {
+                margin-left: 4px !important;
+                a {
+                    border: none;
+                    line-height: 22px;
+                    span {
+                        color: #777;
+                        position: relative;
+                    }
+                }
+            }
+            li.disabled:not(:first-child):not(:last-child) +li {
+                margin-left: 4px !important;
+            }
+
+            li.disabled:first-child a span, li.disabled:last-child a span {
+                line-height: 24px;
+            }
+        }
+        
+        .toPage {
+            position: static;
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+            margin-left: 10px;
+
+            >div {
+                display: inline-block;
+                height: 30px;
+                vertical-align: middle;
+            }
+
+            .toPage-input {        
+                margin: -2px 10px;
+                width: 48px;
+                border-radius: 4px !important;
+                &:focus {
+                    border-color: @t-btn-bgcolor;
+                }
+            }
+
+            .toPage-button {
+                min-width: 40px !important;
+                width: 40px !important;
+                height: 30px !important;
+                line-height: 26px;
+                padding: 0 !important;
+                margin: -3px 0 0 10px;
+                border-radius: 4px !important;
+                border: 1px solid #bdbdbd !important;
+                background: #fff !important;
+            }
+        }
+    }
+}

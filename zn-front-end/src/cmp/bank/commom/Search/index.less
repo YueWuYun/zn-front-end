@@ -1,0 +1,84 @@
+.bank-search {
+    padding-bottom: 2px !important;
+    &.haha + .bank-header-list.card-type, &.haha + .top-8 {
+        position: relative;
+        top: -8px;
+    }
+    &.inline {
+        padding: 0 !important;
+        margin-left: 10px;
+    }
+    .rangepickertype, .datepickertype {
+        line-height: 1 !important;
+        &.rangepickertype > span {
+            vertical-align: top !important;
+        }
+    }
+    .u-form-control-wrapper {
+        width: 100% !important;
+    }
+    .range-num .u-form-control-wrapper {
+        width: 100% !important;
+    }
+    .checkboxSpan {
+        margin-right: 10px;
+        line-height: 30px;
+    }
+    .u-checkbox {
+        top: 8px;
+        float: right;
+        margin-right: -6px;
+    }
+    .search-component-rowArea {
+        margin-top: 5px !important;
+        height: 30px !important;
+        .search-component-btnDiv {
+            height: 30px !important;
+        }
+    }
+    .checkboxstype > span {
+        display: inline-block;
+        width: 100%;
+        border: 1px solid #d9d9d9;
+        border-radius: 3px;
+        padding-left: 8px;
+        color: #292e35;
+        font-size: 13px;
+    }
+    
+    .arrow {
+        display: inline-block;
+        margin-left: 10px;
+        cursor: pointer;
+        color: rgb(0, 122, 206);
+        vertical-align: top;
+        line-height: 30px;
+    }
+    .search-second {
+        display: inline-block;
+        max-height: 0;
+        transition: max-height .3s linear;
+        opacity: 0;
+        width: 100%;
+        &.show {
+            max-height: 150px;
+            opacity: 1;
+        }
+    }
+    .height {
+        height: 43px !important;
+    }
+    .searchChild {
+        margin-bottom: 8px !important;
+        padding-right: 10px !important;
+        .mustFillIn_search {
+            position: absolute;
+            top: 50%;
+            height: 6px;
+            margin-top: -3px;
+            color:red;
+            z-index: 1;
+        }
+    }
+  
+}

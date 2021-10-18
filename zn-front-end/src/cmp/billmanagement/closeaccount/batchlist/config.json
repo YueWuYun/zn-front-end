@@ -1,0 +1,7 @@
+{
+	"report": true,
+	"dependModuleName": [
+		"uapbd/exportArea/batch_closeaccbook"],
+	"dependjs": [
+		"../../../../uapbd/exportArea/batch_closeaccbook/index.js"]
+}

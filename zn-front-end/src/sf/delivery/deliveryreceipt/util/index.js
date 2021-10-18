@@ -1,0 +1,181 @@
+/*cI4u54VYZVPxnvGrX5EL6Cuf8fNQJDonWRVA2/LRuYGwiXEjNsocrd+tA+pOCsWN*/
+//引入轻量化api
+import { ajax, cardCache ,cacheTools} from 'nc-lightapp-front';
+import { setDefData, getQueryInfo, getSearchAreaData, setSearchValue, getDefData } from '../../../../tmpub/pub/util/cache';
+import { saveMultiLangRes, loadMultiLang ,elecSignListPrint,elecSignCardPrint} from "../../../../tmpub/pub/util/index";
+//引入常量定义
+import { base_url, list_page_code, list_search_code, grid_code, 
+    billtype, print_nodekey, print_templateid, funcode,dataSource, card_page_id,
+    dataSourceLink,elecsignPrintParameter,app_code,card_from_id,pk_deliveryreceipt,vbillno} from '../cons/constant.js';
+import setButtonUsability from '../list/events/setButtonUsability.js';
+/**
+ * 跳转卡片
+ * @param {*} props 
+ * @param {*} urlParam 
+ */
+export const go2card = function (props, urlParam, getStateFunc, callback) {
+    //获取分组合计数据
+//   let groupCount = getStateFunc('groupCount');
+    // 缓存分组合计数据
+//   cardCache.setDefData('groupCount', dataSource, groupCount);
+    // 获取选中的分组页签
+//   let activeKey = getStateFunc('activeKey');
+    // 缓存选中的分组页签
+//   cardCache.setDefData('activeKey', dataSource, activeKey);
+    //获取查询区域条件(不校验必输项)
+//    let searchData = props.search.getQueryInfo(list_search_code, false);
+    //缓存查询区域条件
+//    cardCache.setDefData('searchData', dataSource, (searchData && searchData.querycondition && searchData.querycondition.conditions) || null);
+    if (!urlParam) {
+        urlParam = {};
+        urlParam['status'] = 'browse';
+    }
+    urlParam['pagecode'] = card_page_id;
+    //页面跳转
+    props.pushTo('/card', urlParam);
+    //回调
+    if (callback && (typeof callback == 'function')) {
+        callback(props);
+    }
+}
+
+/**
+ * 获取缓存数据
+ */
+export const getCahceValue = function (props, updateStateFunc, callback) {
+    let updateStateObj = {};
+    //从缓存中获取分组合计数据
+    let groupCount = cardCache.getDefData('groupCount', dataSource);
+    // let groupCount={
+    //     DJB: 1,
+    //     DTJ: 0,
+    //     DSP: 0,
+    //     DZF: 0,
+    //     ZZCG:0,
+    //     YZF: 0,
+    //     QB:  0
+    // }
+    if (groupCount) {
+        updateStateObj['groupCount'] = groupCount;
+    }
+    //从缓存中获取选中的分组页签数据
+    let activeKey = cardCache.getDefData('activeKey', dataSource);
+    if (activeKey) {
+        updateStateObj['activeKey'] = activeKey;
+        updateStateObj['defaultSelectGrup'] = activeKey;
+    }
+
+    //更新列表state
+    if (Object.keys(updateStateObj).length > 0) {
+        updateStateFunc(updateStateObj);
+    }
+    //回调
+    if (callback && (typeof callback == 'function')) {
+        callback(props);
+    }
+}
+
+/**
+ * 加载查询区域缓存
+ * @param {*} props 
+ */
+export const loadSearchCache = function (props) {
+    //从缓存中获取查询区域条件
+    let searchData = cardCache.getDefData('searchData', dataSource);
+    //更新查询区域
+    if (searchData) {
+        props.search.setSearchValue(list_search_code, searchData);
+    }
+}
+
+/**
+ * 凭证联查单据
+ * @param {*} props 
+ */
+export const VoucherLinkBill = function (props, pageCode, tableId) {
+    let checkedData = [];
+    //缓存中的key为’checkedData’,
+    checkedData = cacheTools.get('checkedData');
+    if (checkedData && checkedData.length > 0) {
+        let data = {
+            operatingLogVO: checkedData,
+            pageCode: list_page_code,
+        };
+        ajax({
+            url: '/nccloud/sf/deliveryreceipt/deliveryreceiptVoucherLinked.do',
+            data: data,
+            success: (res) => {
+                let { success, data } = res;
+                if (success) {
+                    if (data) {
+                        let rowlenght = data[grid_code].rows;
+                        if (rowlenght.length == 1) {
+                            let record = rowlenght[0];
+                            setDefData(grid_code, dataSourceLink, data[grid_code]);
+                            props.table.setAllTableData(grid_code, data[grid_code]);
+                            //1条数据跳转到卡片页面
+                            props.pushTo("/card", {
+                                status: 'browse',
+                                scence: 'linksce',// 被联查时 专属识别标志
+                                id: record.values.pk_deliveryreceipt && record.values.pk_deliveryreceipt.value
+                            });
+                        } else {
+                            //多条数据跳转到列表页面
+                            props.table.setAllTableData(grid_code, data[grid_code]);
+                        }
+                    } else {
+                        props.table.setAllTableData(grid_code, { rows: [] });
+                    }
+                }
+                setButtonUsability.call(this, props);
+            }
+        });
+    }
+};
+
+/**
+ * 电子签章打印
+ * @param {*} props 
+ * @param {*} offical 是否为正式打印 
+ * @param {*} isCard  判断卡片还是列表
+ */
+export const elecSignPrint = function (props,offical,isCard) {
+    //卡片打印
+    if(isCard){
+        elecSignCardPrint(props, {
+            url: elecsignPrintParameter.actionUrl,
+            offical,
+            appCode: app_code,
+            nodeKey: offical ? elecsignPrintParameter.printnodekey_offical : elecsignPrintParameter.printnodekey_inoffical,
+            headCode: card_from_id,
+            field_id: pk_deliveryreceipt,
+            field_billno: vbillno,
+            getOrgFunc: () => {
+                let pk_org_r = props.form.getFormItemsValue(card_from_id, 'pk_org_r').value;
+                if (pk_org_r) {
+                    return pk_org_r
+                }else
+                    return null;
+            }
+        });
+    }else{//列表打印
+        elecSignListPrint(props, {
+            url: elecsignPrintParameter.actionUrl,
+            offical,
+            appCode: app_code,
+            nodeKey: offical ? elecsignPrintParameter.printnodekey_offical : elecsignPrintParameter.printnodekey_inoffical,
+            tableCode: grid_code, 
+            field_id: pk_deliveryreceipt,
+            field_billno: vbillno,
+            getOrgFunc: (selectData) => {
+                let pk_org_r = selectData && selectData.data && selectData.data.values && selectData.data.values['pk_org_r'] && selectData.data.values['pk_org_r'].value;
+                if (pk_org_r) {
+                    return pk_org_r
+                }else
+                    return null;
+            }
+        });
+
+    }
+}
+/*cI4u54VYZVPxnvGrX5EL6Cuf8fNQJDonWRVA2/LRuYGwiXEjNsocrd+tA+pOCsWN*/

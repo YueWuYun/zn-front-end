@@ -1,0 +1,20 @@
+{
+    "billcoderule-000000": "请选择需要分配的单据条码规则",
+    "billcoderule-000001": "步骤1",
+    "billcoderule-000002": "选择单据条码规则",
+    "billcoderule-000003": "步骤2",
+    "billcoderule-000004": "选择需要分配的单据",
+    "billcoderule-000005": "待选择的单据条码规则",
+    "billcoderule-000006": "已选择的单据条码规则",
+    "billcoderule-000007": "待分配单据",
+    "billcoderule-000008": "已选择单据",
+    "billcoderule-000009": "待取消分配单据",
+    "billcoderule-000010": "分配单据",
+    "billcoderule-000011": "取消分配单据",
+    "billcoderule-000012": "请选择需要分配的单据",
+    "billcoderule-000013": "请选择需要取消分配的单据",
+    "billcoderule-000014": "是否确定要关闭?",
+    "billcoderule-000015": "是否确定要取消?",
+    "billcoderule-000016": "未加载到多语资源",
+    "billcoderule-000017": "单据条码规则分配"
+}

@@ -1,0 +1,707 @@
+/*Hm9gUKDDwtNjV7Mk8onAztupoRAb7fkAHSA8w/EPG33YwlX9OviyY1kg6Ku7Xf4n*/
+import { ajax, base, toast, print, cacheTools, cardCache, promptBox } from 'nc-lightapp-front';
+import { card_page_id, card_table_id, base_url, printParameter, card_from_id, dataSource, app_code } from '../../cons/constant.js';
+import { InnerAccoutDialog } from '../../../../../tmpub/pub/inneraccount/list/index.js';
+import { linkApp } from '../../../../../tmpub/pub/util/LinkUtil.js';
+import { AddLine, InsertLine, BatchDelLine, DelLine, Open, CopyLine, BatchCopy, cardOperator, showTBBMsg } from '../../../../pub/utils/SFButtonUtil.js';
+// ca签名
+import Sign from '../../../../../tmpub/pub/util/ca/index.js';
+//引入通用api
+import { qryDataByPK } from "../../util/index";
+let { getNextId, getCurrentLastId, deleteCacheById, getCacheById, updateCache, addCache, setDefData, getDefData } = cardCache;
+import { orgVersionView } from "../../../../../tmpub/pub/util/version/index.js";
+import { setPropCache, saveMultiLangRes, loadMultiLang } from "../../../../../tmpub/pub/util/index";
+import initTemplate from './initTemplate.js';
+let that = this;
+export default function buttonClick(props, id) {
+    const pk_allocateapply_h = props.form.getFormItemsValue(this.formId, 'pk_allocateapply_h').value;
+    const ts = props.form.getFormItemsValue(this.formId, 'ts').value;
+    const billnoe = props.form.getFormItemsValue(this.formId, 'vbillno').value;
+    const billstatus = props.form.getFormItemsValue(this.formId, 'billstatus').value;
+    //获取表体行所有数据
+    let checkAllCardDate = this.props.cardTable.getAllRows(card_table_id, false);;
+    // if (props.cardTable.getVisibleRows(card_table_id).length > 0) {
+    //     const checkeddata = props.cardTable.getCheckedRows(card_table_id); //获取当前选中行数据
+    // }
+    var id;
+    const cardData = props.createMasterChildData(card_page_id, this.formId, this.tableId);//页面所有数据
+    let urlExtParam = {};
+    switch (id) {
+        case 'Save':
+            orgVersionView(props, card_from_id);
+            //          props.validateToSave(billdata, save.bind(this, props), saveObj, '');
+            this.saveBill();
+            break
+        case 'Add':
+            props.pushTo('/card', {
+                pagecode: card_page_id,
+                status: 'add',
+                interfaceJump: 'card',
+                id: props.getUrlParam('id'),
+            })
+            initTemplate.call(this, props);
+            props.form.EmptyAllFormValue(card_from_id);
+            props.cardTable.setTableData(card_table_id, { rows: [] });
+            orgVersionView(props, card_from_id);
+            this.toggleShow();
+            break;
+        case 'Edit':
+            let editData = {
+                pks: [pk_allocateapply_h],
+                ts: ts && ts.value,
+                pageid: card_page_id,
+                status: 'edit',
+            }
+            ajax({
+                url: '/nccloud/sf/allocateapply/queryPageCard.do',
+                data: editData,
+                success: (res) => {
+                    if (res.data) {
+                        props.pushTo("/card", {
+                            status: 'edit',
+                            id: this.props.getUrlParam('id')
+                        });
+                        if (res.data.head) {
+                            this.props.form.setAllFormValue({ [this.formId]: res.data.head[this.formId] });
+                            //页签赋值
+                            let vbillno = res.data.head[this.formId].rows[0].values.vbillno;
+                            this.setState({
+                                vbillno: vbillno.value
+                            });
+                            updateCache('pk_allocateapply_h', res.data.head[this.formId].rows[0].values.pk_allocateapply_h.value, res.data, card_from_id, dataSource, res.data.head[this.formId].rows[0].values);
+                        }
+                        if (res.data.body) {
+                            this.props.cardTable.setTableData(this.tableId, res.data.body[this.tableId]);
+                        }
+                        this.toggleShow();
+                    }
+                    //设置组织不可以编辑
+                    initTemplate.call(this, props);
+                    this.props.resMetaAfterPkorgEdit();
+                    this.props.form.setFormItemsDisabled(this.formId, { 'pk_org': true });
+                }
+            });
+            break;
+        case 'Copy':
+            props.pushTo('/card', {
+                status: 'copy',
+                id: props.getUrlParam('id')
+            });
+            this.refresh();
+            break;
+        case 'Cancel':
+            //考虑复制进入编辑状态后地址栏没有主键信息，故，在复制操作的时候将主键存储在局部变量id中
+            promptBox({
+                color: "warning",
+                content: loadMultiLang(props,'36320AAA-000009'),/* 国际化处理： 是否确认取消？*/
+                beSureBtnClick: cancelConfirm.bind(this, props)
+            })
+            this.toggleShow();
+            break;
+        case 'Delete':
+            this.props.modal.show('delete');
+            break;
+        //附件管理
+        case 'Enclosure':
+            this.setState({
+                billId: pk_allocateapply_h, //单据id
+                billno: billnoe, // 单据编号
+                showUploader: !this.state.showUploader,
+                target: null
+            })
+            break;
+        case 'Commit'://提交
+            cardOperator(props, card_page_id, card_from_id, [card_table_id],
+                'pk_allocateapply_h', base_url + 'commit.do', loadMultiLang(props,'36320AAA-000010'), dataSource, commitAssign.bind(this));/* 国际化处理： 提交成功！*/
+            break;
+        case 'SaveCommit'://保存提交
+        debugger
+            save.call(this, props, () => {
+                cardOperator(props, card_page_id, card_from_id, [card_table_id], 'pk_allocateapply_h', base_url + 'commit.do', loadMultiLang(props,'36320AAA-000011'), dataSource, commitAssign.bind(this));/* 国际化处理： 保存提交成功！*/
+            });
+            break;
+        //保存新增
+        case 'SaveAdd':
+            orgVersionView(props, card_from_id);
+
+            let saveaddData = props.createMasterChildData(card_page_id, card_from_id, card_table_id);
+            let saveaddobj = {};
+            saveaddobj[card_table_id] = 'cardTable';
+            saveAdd.call(this, that, props);
+            break;
+        case 'Uncommit'://收回     
+            cardOperator(props, card_page_id, card_from_id, [card_table_id],
+                'pk_allocateapply_h', base_url + 'uncommit.do', loadMultiLang(props,'36320AAA-000012'), dataSource, doRefresh.bind(this));/* 国际化处理： 收回成功！*/
+            break;
+        //委托办理
+        case 'Entrust':
+            cardOperator(props, card_page_id, card_from_id, [card_table_id], 'pk_allocateapply_h',
+                base_url + 'submit.do', loadMultiLang(props,'36320AAA-000013'), dataSource, doRefresh.bind(this));/* 国际化处理： 委托办理成功！*/
+            break;
+        //取消委托
+        case 'CancelEntrust':
+            cardOperator(props, card_page_id, card_from_id, [card_table_id], 'pk_allocateapply_h',
+                base_url + 'unsubmit.do', loadMultiLang(props,'36320AAA-000014'), dataSource, doRefresh.bind(this));/* 国际化处理： 取消委托成功！*/
+            break;
+        //打印
+        case 'Print':
+            if (!this.props.form.getFormItemsValue(this.formId, 'pk_allocateapply_h').value) {
+                toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000015') });/* 国际化处理： 操作失败，无数据!*/
+                return;
+            }
+            print(
+                printParameter.prinType,  //支持两类: 'html'为模板打印, 'pdf'为pdf打印
+                printParameter.actionUrl,
+                {
+                    // billtype: printParameter.billtype,  //单据类型
+                    // funcode: printParameter.funcode, //功能节点编码，即模板编码
+                    // nodekey: printParameter.nodekey,     //模板节点标识
+                    // printTemplateID: printParameter.printTemplateID, //模板id
+                    appcode: app_code,
+                    oids: [this.props.form.getFormItemsValue(this.formId, 'pk_allocateapply_h').value]
+                }
+            );
+            break;
+        //输出    
+        case 'Output':
+            if (!this.props.form.getFormItemsValue(this.formId, 'pk_allocateapply_h').value) {
+                toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000015') });/* 国际化处理： 操作失败，无数据!*/
+                return;
+            }
+            this.refs.printOutput.open();
+            this.setState(
+                {
+                    outputData: {
+                        // funcode: printParameter.funcode, //功能节点编码，即模板编码
+                        // nodekey: printParameter.nodekey, //模板节点标识
+                        // printTemplateID: printParameter.printTemplateID, //模板id
+                        oids: [this.props.form.getFormItemsValue(this.formId, 'pk_allocateapply_h').value],
+                        outputType: 'output'
+                    }//打印输出使
+                },
+                () => {
+                    this.refs.printOutput.open();
+                }
+            );
+            break;
+        //联查 内部账户余额
+        case 'InsideAccount':
+            let accountbalance_busitype = this.props.form.getFormItemsValue(this.formId, 'busitype');
+            if (accountbalance_busitype && accountbalance_busitype.value && accountbalance_busitype.value != 2) {
+                toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000016') });/* 国际化处理： 非中心上收的单据不能联查内部账户余额!*/
+                return;
+            }
+            let InsideAccountCheckeddata = props.cardTable.getCheckedRows(card_table_id);
+            if (InsideAccountCheckeddata && InsideAccountCheckeddata.length != 1) {
+                toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000017') });/* 国际化处理： 请选择1条子表数据*/
+                return;
+            }
+            let pkAccount = InsideAccountCheckeddata[0].data.values.pk_accid.value;
+            this.setState({ accModalShow: true, currentpk: pkAccount })
+            break;
+        //联查 收款银行账户余额  pk_bankacc_r
+        case 'ReceiveAccount':
+            //当前选择的表体数据
+            let ReceiveAccountCheckeddata = props.cardTable.getCheckedRows(card_table_id);
+            let bankaccbalance_rarr = [];
+            let restpk_org_r, pk_bankacc_r;
+            if (this.props.form.getFormItemsValue(this.formId, 'pk_org')
+                && this.props.form.getFormItemsValue(this.formId, 'pk_org').value) {
+                restpk_org_r = this.props.form.getFormItemsValue(this.formId, 'pk_org').value;
+            }
+            if (checkAllCardDate.length > 1) {
+                if (ReceiveAccountCheckeddata.length != 1) {
+                    // toast({ color: 'warning', content: this.props.MutiInit.getIntl("36320FDA") && this.props.MutiInit.getIntl("36320FDA").get('36320FDA--000028') });/* 国际化处理： 请选择一条表体数据操作！*/
+                    toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000018') });/* 国际化处理： 请选择一条表体数据操作！*/
+                    return;
+                } else {
+                    //处理选择数据
+                    ReceiveAccountCheckeddata.forEach((val) => {
+                        if (val.data.values.pk_bankacc_r
+                            && val.data.values.pk_bankacc_r.value) {
+                            pk_bankacc_r = val.data.values.pk_bankacc_r.value;
+                        }
+                        let bankaccbalance_rdata = {
+                            // 财务组织
+                            pk_org: restpk_org_r,
+                            // 银行账户id
+                            pk_account: pk_bankacc_r,
+                        };
+                        bankaccbalance_rarr.push(bankaccbalance_rdata);
+                    });
+                }
+            } else {//当只有一行表体数据时
+                if (checkAllCardDate[0].values.pk_bankacc_r
+                    && checkAllCardDate[0].values.pk_bankacc_r.value) {
+                    pk_bankacc_r = checkAllCardDate[0].values.pk_bankacc_r.value;
+                }
+                let bankaccbalance_rdata = {
+                    // 财务组织
+                    pk_org: restpk_org_r,
+                    // 银行账户id
+                    pk_account: pk_bankacc_r,
+                };
+                bankaccbalance_rarr.push(bankaccbalance_rdata);
+            }
+            this.setState({
+                showOriginalData: bankaccbalance_rarr,
+                showOriginal: true,
+            });
+            break;
+        //联查 计划预算
+        case 'Plan':
+            let queryntbplanData = this.props.createMasterChildData(card_page_id, card_from_id, card_table_id);
+            ajax({
+                url: '/nccloud/sf/allocateapply/allocateapplylinkplan.do',
+                data: queryntbplanData,
+                success: (res) => {
+                    if (res.success) {
+                        if (res.data && res.data.hint) {
+                            toast({ color: 'warning', content: res.data.hint });
+                            return;
+                        } else {
+                            this.setState({
+                                showNtbDetail: true,
+                                ntbdata: res.data
+                            });
+                        }
+                    }
+                }
+            });
+            break;
+        //联查回单
+        case 'ReturnBill':
+            let linkquerytype;
+            let pk_allocateapplys = [];
+            //未处理完的单据 不联查
+            if (this.props.form.getFormItemsValue(this.formId, 'billstatus').value != 4) {
+                toast({ color: 'info', content: loadMultiLang(props,'36320AAA-000019') });/* 国际化处理： 请选择处理完毕的单据进行联查。*/
+                return;
+            }
+            //先看是否选择了表体行
+            let reBillCheckedData = props.cardTable.getCheckedRows(card_table_id);
+            debugger
+            if (!reBillCheckedData || reBillCheckedData.length == 0 || reBillCheckedData.length > 1) {
+                //用表头进行联查
+                linkquerytype = 'LinkQuery_Apply_H';
+                pk_allocateapplys.push(pk_allocateapply_h);
+            }else{
+                if(reBillCheckedData.length != 1){
+                    toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000018')});/* 国际化处理： 请选择一条表体数据操作！*/
+                    return;
+                }else{
+                    linkquerytype = 'LinkQuery_Apply_B';
+                    pk_allocateapplys.push(reBillCheckedData[0].data.values.pk_allocateapply_b.value);
+                }
+            }
+
+            urlExtParam = {
+                status: 'browse',
+                srcbillid: [pk_allocateapplys],
+                linkquerytype: linkquerytype,//4
+            };
+            linkApp(props, '36K8', urlExtParam);
+            break;
+
+        //联查 审批详情
+        case 'ApproveInfoInner':
+            if (pk_allocateapply_h) {
+                this.setState({
+                    showApprove: true,
+                    approveBilltype: '36K1',//单据类型
+                    approveBillId: pk_allocateapply_h//单据pk
+                });
+            }
+            break;
+        //刷新
+        case 'Refresh':
+            this.refresh();
+            break;
+
+            /**
+             * 表体肩部按钮
+             */
+            let pk_org;
+        //table新增行
+        case 'AddLine':
+            pk_org = props.form.getFormItemsValue(this.formId, 'pk_org').value;
+            //获取当前table行数
+            let rownum_addline = props.cardTable.getNumberOfRows(this.tableId);
+            if (pk_org) {
+                // props.cardTable.addRow(this.tableId);
+                //保存时需要校验一些数值 在table为null时无法赋值 故在此处复制
+                //pk_org 为后台处理数据精度时需要
+                props.cardTable.addRow(
+                    card_table_id,
+                    rownum_addline,
+                    {
+                        'pk_org': { value: pk_org },
+                        'pk_financeorg_r': { value: pk_org }
+                    },
+                    true);
+                if (props.form.getFormItemsValue(this.formId, 'busitype').value === '2') {//中心下拨 给内部账户赋值
+                    //先从缓存中取值
+                    let accidData = getDefData('accidData', dataSource);
+                    if (accidData != null) {
+                        props.cardTable.setValByKeyAndIndex('table_allocateapply_01', rownum_addline, 'pk_accid',
+                            { value: accidData.split(',')[0], display: accidData.split(',')[1] });
+                    }
+                }
+            } else {
+                toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000020') });/* 国际化处理： 请先填写财务组织！*/
+            }
+            break;
+        //table删除行
+        case 'DeleteLine':
+            // pk_org = props.form.getFormItemsValue(this.formId, 'pk_org').value;
+            // if (pk_org) {
+            //     let currRows = props.cardTable.getCheckedRows(card_table_id);
+            //     let currSelect = [];
+            //     if (currRows && currRows.length > 0) {
+            //         for (let item of currRows) {
+            //             currSelect.push(item.index);
+            //         }
+            //     }
+            //     if (currRows.length === 0) {
+            //         toast({ color: 'warning', content: '未选择数据!' });
+            //     }
+            //     props.cardTable.delRowsByIndex(card_table_id, currSelect);
+            // } else {
+            //     toast({
+            //         'color': 'warning',
+            //         'content': '请先填写财务组织！'
+            //     });
+            //     return;
+            // }
+            BatchDelLine(props, card_table_id);
+            props.button.setButtonDisabled(['DeleteLine', 'CopyLine'], true);
+            break;
+        //table 复制行  
+        case 'CopyLine':
+            pk_org = props.form.getFormItemsValue(this.formId, 'pk_org').value;
+            if (pk_org) {
+                let currRowsCopyLine = props.cardTable.getCheckedRows(card_table_id);
+                if (currRowsCopyLine && currRowsCopyLine.length > 0) {
+                    this.setState({ pasteflag: true }, () => {
+                        this.toggleShow();
+                    });
+                } else {
+                    toast({ color: 'warning', content: loadMultiLang(props,'36320AAA-000021') });/* 国际化处理： 未选择数据!*/
+                    return;
+                }
+            } else {
+                toast({
+                    'color': 'warning',
+                    'content': loadMultiLang(props,'36320AAA-000020')/* 国际化处理： 请先填写财务组织！*/
+                });
+                return;
+            }
+            // props.button.setButtonVisible(['CopyLine', 'AddLine', 'DeleteLine'], false);
+            // props.button.setButtonVisible(['PasteLine', 'CencelLine'], true);
+            break;
+        //粘贴至末行    
+        case 'CopyLastLine':
+            let selectRows = props.cardTable.getCheckedRows(this.tableId);
+            if (selectRows == null || selectRows.length == 0) {
+                toast({
+                    'color': 'warning',
+                    'content': loadMultiLang(props,'36320AAA-000008')/* 国际化处理： 未选中要复制的行。*/
+                });
+                return false;
+            }
+            // 粘贴末行位置index
+            let copyindex = props.cardTable.getNumberOfRows(this.tableId, false);
+            let selectCopyData = [];
+            let selectRowCopy = JSON.parse(JSON.stringify(selectRows));
+            for (let item of selectRowCopy) {
+                item.data.selected = false;
+                item.data.values.pk_allocateapply_b = {
+                    value: null,
+                    display: null
+                };
+                selectCopyData.push(item.data);
+            }
+            props.cardTable.insertRowsAfterIndex(card_table_id, selectCopyData, copyindex);
+            this.setState({ pasteflag: false }, () => { this.toggleShow() });
+            break;
+        //取消粘贴行    
+        case 'CancelLine':
+            this.setState({ pasteflag: false }, () => { this.toggleShow() });
+            break;
+    }
+}
+
+/**
+ * 刷新
+ * @param  props 
+ */
+const doRefresh = function (props) {
+    this.refresh();
+}
+
+/**
+ * 取消确认
+ * @param {*} props 
+ * @param {*} pk
+ */
+const cancelConfirm = function (props) {
+    if (props.getUrlParam('status') === 'edit') {
+        // 表单返回上一次的值
+        props.form.cancel(this.formId)
+        // 表格返回上一次的值
+        props.pushTo("/card", {
+            status: 'browse',
+            id: props.getUrlParam('id'),
+        });
+        this.setState({ showNCbackBtn: true });
+        this.toggleShow();
+        this.refresh();
+    }
+    //保存中的取消操作
+    else if (props.getUrlParam('status') === 'add') {
+        props.form.EmptyAllFormValue(this.formId)
+        props.cardTable.setTableData(this.tableId, { rows: [] });
+        props.pushTo("/card", {
+            id: props.getUrlParam('id'),
+            status: 'browse',
+        });
+        this.setState({ showNCbackBtn: true });
+        this.toggleShow();
+        this.refresh();
+    }
+    //复制中的取消操作
+    else if (props.getUrlParam('status') === 'copy') {
+        props.pushTo("/card", {
+            id: props.getUrlParam('id'),
+            status: 'browse',
+        });
+        // this.toggleShow();
+        this.refresh();
+    }
+}
+
+/**
+ * 保存
+ * @param {*} props  页面内置对象
+ */
+const save = async function (props, callback) {
+    let hasTbbMsg = false;
+    //缓存
+    let { addCache, updateCache } = cardCache;
+    let status = props.getUrlParam('status');
+    //校验必输项
+    let formcheck = props.form.isCheckNow(card_from_id);
+    if (!formcheck) {
+        return;
+    }
+    let tablecheck = props.cardTable.checkTableRequired(card_table_id);
+    if (!tablecheck) {
+        return;
+    }
+    //校验单据状态
+    if (status != 'add' && status != 'edit' && status !='copy') {
+        toast({
+            'color': 'warning',
+            'content': loadMultiLang(props,'36320AAA-000022')/* 国际化处理： 只有新增、修改或复制的单据才能进行此操作。*/
+        });
+        return;
+    }
+    let saveaddData = this.props.createMasterChildData(card_page_id, card_from_id, card_table_id);;
+    let url = base_url;
+    // 暂时不能用
+    // let pageCode=props.getSearchParam('p');
+    let pageCode = card_page_id;
+    const that = this;
+    //新增时保存
+    if (status == 'add' || status=='copy') {
+        //对主键制空
+        this.props.form.setFormItemsValue(card_from_id, { 'pk_allocateapply_h': { value: null, display: null } })
+        saveaddData = this.props.createMasterChildData(card_page_id, card_from_id, card_table_id);
+        //ca签名
+        console.log(saveaddData, 'sign before saveaddData');
+        let result = await Sign({ isSign: true, isKey: true, data: saveaddData, encryptVOClassName: 'nccloud.web.sf.allocate.allocateapply.vo.AllocateApplyEncryptVO4NCC' });
+        if (result.isStop) {
+            return;
+        }
+        saveaddData = result.data;
+        console.log(saveaddData, 'sign after saveaddData');
+        url = url + 'save.do';
+        ajax({
+            url: url,
+            data: saveaddData,
+            success: (res) => {
+                let { success, data } = res;
+                if (success) {
+                    let { head, body } = data;
+                    if (head) {
+                        that.props.form.setAllFormValue({ [card_from_id]: head[card_from_id] });
+                        //预算提示
+                        hasTbbMsg = showTBBMsg(head, card_from_id);
+                    }
+                    if (body) {
+                        that.props.cardTable.setTableData(card_table_id, body[card_table_id]);
+                    }
+                    let pk = head[card_from_id].rows[0].values.pk_allocateapply_h.value;
+                    let vbillno = head[card_from_id].rows[0].values.vbillno.value;
+                    that.setState({
+                        vbillno: vbillno
+                    });
+                    //现在是add状态 保存成功后要改为browse状态
+                    that.props.setUrlParam({ status: 'browse', id: pk });
+                    //保存成功放到缓存中
+                    addCache(pk, res.data, card_from_id, dataSource);
+                    // if(!hasTbbMsg) {
+                    //   toast({ color: 'success', content: '保存新增成功！' });
+                    // }
+                    if (callback) {
+                        callback(props, data);
+                    } else {
+                        props.pushTo('/card', {
+                            status: 'browse',
+                            id: pk
+                        });
+                        that.toggleShow();
+                    }
+                }
+            }
+        });
+
+    }
+    //修改时保存
+    else if (status == 'edit') {
+        console.log(saveaddData, 'sign before saveaddData');
+        let result = await Sign({ isSign: true, isKey: true, data: saveaddData, encryptVOClassName: 'nccloud.web.sf.allocate.allocateapply.vo.AllocateApplyEncryptVO4NCC' });
+        if (result.isStop) {
+            return;
+        }
+        saveaddData = result.data;
+        console.log(saveaddData, 'sign after saveaddData');
+        url = url + 'update.do';
+        ajax({
+            url: url,
+            data: saveaddData,
+            success: (res) => {
+                let { success, data } = res;
+                if (success) {
+                    let { head, body } = data;
+                    if (head) {
+                        that.props.form.setAllFormValue({ [card_from_id]: head[card_from_id] });
+                        //预算提示
+                        hasTbbMsg = showTBBMsg(head, card_from_id);
+                    }
+                    if (body) {
+                        that.props.cardTable.setTableData(card_table_id, body[card_table_id]);
+                    }
+                    let pk = head[card_from_id].rows[0].values.pk_allocateapply_h.value;
+                    let vbillno = head[card_from_id].rows[0].values.vbillno.value;
+                    that.setState({
+                        vbillno: vbillno
+                    });
+                    //现在是add状态 保存成功后要改为browse状态
+                    that.props.setUrlParam({ status: 'browse', id: pk });
+                    //保存成功放到缓存中
+                    updateCache('pk_allocateapply_h', pk, res.data, card_from_id, dataSource);
+                    // if(!hasTbbMsg) {
+                    //   toast({ color: 'success', content: '修改保存成功！' });
+                    // }
+                    if (callback) {
+                        callback(props, data);
+                    } else {
+                        props.pushTo('/card', {
+                            status: 'browse',
+                            id: pk
+                        });
+                        that.toggleShow();
+                    }
+                }
+            }
+        });
+    }
+}
+/**
+ * 保存新增
+ * @param {*} props 
+ */
+const saveAdd = async function (that, props) {
+    if (props.getUrlParam('status') === 'copy') {
+        props.form.setFormItemsValue(card_from_id, { pk_allocateapply_h: null });
+        props.form.setFormItemsValue(card_from_id, { ts: null });
+    }
+    let saveaddflag = props.form.isCheckNow(card_from_id);
+    //table必输项校验
+    let saveaddtableflag = this.props.cardTable.checkTableRequired(this.tableId);
+    if (saveaddflag && saveaddtableflag) {
+        let saveaddBeforePk = props.form.getFormItemsValue(card_from_id, 'pk_alocateapply_h');
+        let saveaddData = props.createMasterChildData(card_page_id, card_from_id, card_table_id);
+        console.log(saveaddData, 'sign before saveaddData');
+        let result = await Sign({
+            isSign: true, isKey: true, data: saveaddData,
+            encryptVOClassName: 'nccloud.web.sf.allocate.allocateapply.vo.AllocateApplyEncryptVO4NCC'
+        });
+        if (result.isStop) {
+            return;
+        }
+        saveaddData = result.data;
+        console.log(saveaddData, 'sign after saveaddData');
+        ajax({
+            url: '/nccloud/sf/allocateapply/save.do',
+            data: saveaddData,
+            success: (res) => {
+                if (res.success) {
+                    if (res.data) {
+                        toast({ color: 'success', content: loadMultiLang(props,'36320AAA-000023') });/* 国际化处理： 保存成功*/
+                        if (res.data.head) {
+                            this.props.form.setAllFormValue({ [this.formId]: res.data.head[this.formId] });
+                            //页签赋值
+                            let vbillno = res.data.head[this.formId].rows[0].values.vbillno;
+                            this.setState({
+                                vbillno: vbillno && vbillno.value
+                            });
+                            if (saveaddBeforePk && saveaddBeforePk.value) {
+                                updateCache('pk_allocateapply_h', res.data.head[this.formId].rows[0].values.pk_allocateapply_h.value, res.data, card_from_id, dataSource, res.data.head[this.formId].rows[0].values);
+                            } else {
+                                addCache(res.data.head[this.formId].rows[0].values.pk_allocateapply_h.value, res.data, card_from_id, dataSource, res.data.head[this.formId].rows[0].values);
+                            }
+                        }
+                        if (res.data.body) {
+                            this.props.cardTable.setTableData(this.tableId, res.data.body[this.tableId]);
+                        }
+                        // 清空表单form所有数据
+                        this.props.form.EmptyAllFormValue(card_from_id);
+                        this.setState({
+                            vbillno: ''
+                        });
+                        //清空table所有数据
+                        this.props.cardTable.setTableData(card_table_id, { rows: [] });
+                        //单据有主组织，新增时,将其他字段设置为不可编辑.
+                        this.props.initMetaByPkorg();
+                        //把所有table中字段不可以编辑，直到选择org之后
+                        this.props.cardTable.setStatus(card_table_id, 'browse');
+                        //设置组织可以编辑
+                        this.props.form.setFormItemsDisabled(card_from_id, { 'pk_org': false });
+                        this.toggleShow();
+                    }
+                }
+            }
+        });
+    }
+
+
+}
+
+/**
+ * 提交指派
+ * @param {*} props 
+ * @param {*} data 
+ */
+const commitAssign = function (props, data) {
+    let { workflow } = data;
+    //有指派信息，则指派，没有则重绘界面
+    if (workflow && workflow == 'approveflow' || workflow == 'workflow') {
+        this.setState({ assignData: data, assignShow: data });
+    } else {
+        doRefresh.call(this, props)
+    }
+}
+
+/*Hm9gUKDDwtNjV7Mk8onAztupoRAb7fkAHSA8w/EPG33YwlX9OviyY1kg6Ku7Xf4n*/

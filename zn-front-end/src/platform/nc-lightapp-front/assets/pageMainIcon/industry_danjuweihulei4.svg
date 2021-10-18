@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#SVGID_1_);}
+	.st1{fill:#90A6B4;}
+	.st2{fill:#555E60;}
+	.st3{fill:#EDF5F7;}
+	.st4{fill:#DC544F;}
+</style>
+<g>
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="500.1533" y1="49.5388" x2="500.1533" y2="952.4768">
+			<stop  offset="0" style="stop-color:#F9F9F9"/>
+			<stop  offset="1" style="stop-color:#EDEDED"/>
+		</linearGradient>
+		<path class="st0" d="M800.3,950H200c-82.9,0-150.1-67.2-150.1-150.1V199.6c0-82.9,67.2-150.1,150.1-150.1h600.3
+			c82.9,0,150.1,67.2,150.1,150.1v600.3C950.4,882.8,883.2,950,800.3,950z"/>
+	</g>
+	<g>
+		<rect x="225.9" y="260" class="st1" width="121" height="490"/>
+		<rect x="225.9" y="634.9" class="st2" width="121" height="115.1"/>
+		<rect x="265.8" y="319" class="st3" width="41.3" height="261.2"/>
+		<rect x="354.3" y="260" class="st1" width="121" height="490"/>
+		<rect x="354.3" y="634.9" class="st2" width="121" height="115.1"/>
+		<rect x="394.2" y="319" class="st3" width="41.3" height="261.2"/>
+		<rect x="482.7" y="260" class="st1" width="121" height="490"/>
+		<rect x="482.7" y="634.9" class="st2" width="121" height="115.1"/>
+		<rect x="522.6" y="319" class="st3" width="41.3" height="261.2"/>
+		<circle class="st3" cx="286.4" cy="696.8" r="20.7"/>
+		<circle class="st3" cx="414.8" cy="696.8" r="20.7"/>
+		<circle class="st3" cx="543.2" cy="696.8" r="20.7"/>
+		<g>
+			
+				<rect x="631.2" y="254.1" transform="matrix(0.9958 -9.148199e-02 9.148199e-02 0.9958 -42.7539 65.3712)" class="st1" width="121" height="490"/>
+			
+				<rect x="648.3" y="628.1" transform="matrix(0.9958 -9.148199e-02 9.148199e-02 0.9958 -59.7562 67.7224)" class="st2" width="121" height="115.1"/>
+			
+				<rect x="666" y="313.3" transform="matrix(0.9958 -9.148199e-02 9.148199e-02 0.9958 -37.7336 64.677)" class="st3" width="41.3" height="261.2"/>
+			<circle class="st4" cx="709.3" cy="690.1" r="20.7"/>
+		</g>
+	</g>
+</g>
+</svg>

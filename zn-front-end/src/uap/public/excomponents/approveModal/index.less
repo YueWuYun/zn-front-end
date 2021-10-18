@@ -1,0 +1,191 @@
+.modal-content-parent {
+    max-height: 560px;
+    .u-modal-body {
+        // max-height: 477px!important;
+        padding-left: 25px!important;
+        padding-bottom: 0px!important;
+        .body-content {
+            position: relative;
+            .approve-content {
+                .label {
+                    padding-top: 4px;
+                }
+            }
+            .content-inner{
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 10px;
+                .label {
+                    float: left;
+                }
+                .content {
+                    float: left;  
+                    .radio-group-hotkey-wrapper {
+                        .u-radio-group {
+                            .u-radio {
+                                margin-right: 24px;
+                            }
+                        }
+                    }                
+                    textarea{
+                        margin-left: 35px;
+                    }
+                }
+            }  
+            .select-branch {
+                .content {                    
+                    .u-radio-group {
+                        width: 255px;  
+                        height: 280px;
+                        overflow-y: auto;                                           
+                        margin-top: 4px;
+                        .u-radio {
+                            display: block;
+                            width: 230px; 
+                            //height: 20px;  
+                            min-height: 30px;                                                    
+                            margin-right: 0;
+                            margin-bottom: 15px;
+                            .u-radio-label {
+                                max-width: 255px;
+                                min-height: 30px;
+                                // overflow: hidden;
+                                // white-space: nowrap;
+                                // text-overflow: ellipsis;
+                                -webkit-line-clamp: 2;
+                                padding-left: 20px;
+                                margin-right: -5px;
+
+                                //显示两行
+                                text-overflow: -o-ellipsis-lastline;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                line-clamp: 2;
+                                -webkit-box-orient: vertical;
+                                &::before {
+                                    top: 0;
+                                }
+                                &::after {
+                                    top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+            
+            .select-tabs-transfer-right {
+                position: absolute;
+                top: 28px;
+                right: 0px;
+                width: 416px;
+                height: 278px;
+                border: 1px solid #D0D0D0;   
+            } 
+            .select-tabs-transfer-center{
+                position: relative;
+                .content{                    
+                    border: 1px solid #D0D0D0;
+                }
+            }           
+            .select-tabs-transfer {  
+                .content {       
+                    .tabs {
+                        .u-tabs {
+                            width: 416px;    
+                            overflow: hidden;
+                            .u-tabs-bar {
+                                .u-tabs-nav-container {
+                                    .u-tabs-nav-wrap {
+                                        border-bottom: 1px solid #D0D0D0;
+                                    }
+                                    .u-tabs-tab-prev {
+                                        top:-5px;
+                                        left:-3px;
+                                    }
+                                    .u-tabs-tab-next {
+                                        top:-5px;
+                                        right:-3px;
+                                    }
+                                }
+                                .u-tabs-tab {
+                                    height: 32px!important;
+                                    line-height: 32px!important;
+                                }
+                            } 
+                            .u-tabs-content {
+                                height: 244px;
+                                background-color: #F9F9F9;
+                                .u-tabs-tabpane {
+                                    height: 100%;
+                                    .transfer-content {
+                                        height: 100%;
+                                        .u-transfer-list {  
+                                            width: 165px;
+                                            height: 228px;                                          
+                                            margin: 8px; 
+                                            background-color: #fff;
+                                            .u-transfer-list-header {
+                                                height: 30px;
+                                                line-height: 15px;
+                                                background-color: #F3F3F3;
+                                                .u-checkbox-wrapper {
+                                                    position: relative;
+                                                    width: auto;
+                                                    &::after{
+                                                        content: "全部";
+                                                        position: absolute;
+                                                        top:1.5px;
+                                                        left: 25px;
+                                                        width: 26px;
+                                                    }
+                                                }
+                                                .u-transfer-list-header-selected span:first-child {
+                                                    display: none;
+                                                }
+                                            }
+                                            .u-transfer-list-body {
+                                                .u-transfer-list-content {
+                                                    .u-transfer-list-content-item {
+                                                        padding: 5px 15px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .u-transfer-operation {                                            
+                                            width: 50px;
+                                            height: 244px;
+                                            margin: 0;
+                                            padding-top: 86px;
+                                            background-color: #fff;
+                                            .u-button {
+
+                                                margin-left: 9px;
+                                                margin-right: 9px;
+                                                width: 32px;
+                                                height: 32px;
+                                            }
+                                            .u-button:disabled {
+                                                background-color: #EFEFEF;
+                                                color: #A2A2A2;
+                                            }
+                                            .u-button-sm {
+                                                min-width: 32px;
+                                                background-color: #e4e4e4;
+                                                border-color: #e4e4e4;
+                                                color: #555555;
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }                
+                        }
+                    }
+                }
+            }         
+        }        
+    }       
+}    

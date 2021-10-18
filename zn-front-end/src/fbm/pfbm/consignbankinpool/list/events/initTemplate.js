@@ -1,0 +1,203 @@
+/*pmFWCFu5nhKkBzYmrkBakVo5ITe7k6v6fooPn6uJkKpgTS1x5SWxlfyE9bmCTxYR*/
+import {
+    createPage,
+    ajax,
+    base,
+    toast,
+    excelImportconfig
+} from "nc-lightapp-front";
+import { bodyButtonClick } from "./index";
+import { CARD, LIST, button_limit } from "../../cons/constant.js";
+import { initList } from "../../../../public/container/page";
+import {
+    setDefOrg2ListSrchArea,
+    setDefOrg2AdvanceSrchArea
+} from "src/tmpub/pub/util/index";
+export default function(props) {
+    let app_code = props.getSearchParam("c");
+    let excelimportconfig = excelImportconfig(props, "fbm", "36HI", true, "", {
+        appcode: app_code,
+        pagecode: CARD.page_id
+    });
+    let pagecode = LIST.page_id;
+    let scene = this.props.getUrlParam("scene");
+    if (scene && (scene === "linksce" || scene === "fip")) {
+        pagecode = LIST.page_id_link;
+    }
+    props.createUIDom(
+        {
+            pagecode: pagecode, //页面code
+            appcode: app_code
+        },
+        data => {
+            if (data) {
+                if (data.button) {
+                    /* 按钮适配  第一步：将请求回来的按钮组数据设置到页面的 buttons 属性上 */
+                    let button = data.button;
+                    props.button.setButtons(button);
+                    props.button.setPopContent(
+                        "DeleteInner",
+                        this.props.MutiInit.getIntl("36200BC") &&
+                            this.props.MutiInit.getIntl("36200BC").get(
+                                "36200BC-000004"
+                            )
+                    ); /* 国际化处理： 确认要删除吗?*/
+                    props.button.setButtonDisabled(LIST.disabled_btn, true);
+                    props.button.setUploadConfig(
+                        "QuickImport",
+                        excelimportconfig
+                    );
+                }
+                if (data.template) {
+                    let meta = data.template;
+                    meta = modifierMeta.call(this, props, meta);
+                    //给高级查询区域赋默认业务单元(在setMeta之前使用)
+                    setDefOrg2AdvanceSrchArea(props, LIST.search_id, data);
+                    props.meta.setMeta(meta);
+                    //给列表查询区域赋默认业务单元(在setMeta之后使用)
+                    setDefOrg2ListSrchArea(props, LIST.search_id, data);
+                    templateCallback.call(this, meta);
+                }
+            }
+        }
+    );
+}
+
+function modifierMeta(props, meta) {
+    if (meta[this.searchId] && meta[this.searchId].items) {
+        meta[this.searchId].items.map(item => {
+            if (item.attrcode === "pk_org") {
+                //财务组织过滤
+                item.isMultiSelectedEnabled = true; //财务组织多选
+                item.queryCondition = () => {
+                    return {
+                        funcode: this.props.getSearchParam("c"), //appcode获取
+                        TreeRefActionExt:
+                            "nccloud.web.tmpub.filter.FinanceOrgPermissionFilter"
+                    };
+                };
+            } else if (item.attrcode === "pk_finvariety") {
+                //发债品种多选
+                item.isMultiSelectedEnabled = true;
+            }// 自定义项过滤
+			else if (item.attrcode.indexOf("def")>-1) {
+				//自定义档案按照组织或者集团过滤
+				item.queryCondition = (p) => {
+					let pk_org = this.props.search.getSearchValByField( this.searchId,'pk_org');
+					if (pk_org && pk_org.value && pk_org.value.firstvalue) {
+						return {
+							pk_org: pk_org.value.firstvalue
+						};
+					}
+				}
+			}else if (item.attrcode == 'pk_register.fbmbilltype') {
+				item.queryCondition = () => {
+					return {
+						GridRefActionExt: 'nccloud.web.fbm.fbm.sign.filter.GatherFbmbilltypeRefModelFilter'
+					};
+				};
+			}
+        });
+    }
+    meta[this.tableId].pagination = true;
+    meta[this.tableId].items = meta[this.tableId].items.map((item, key) => {
+        // item.width = 150;
+        if (item.attrcode == this.billNo) {
+            item.render = (text, record, index) => {
+                return (
+                    <a
+                        style={{ cursor: "pointer" }}
+                        onClick={() => {
+                            props.pushTo("/card", {
+                                status: "browse",
+                                id: record[this.primaryId].value,
+                                pagecode: CARD.page_id
+                            });
+                        }}
+                    >
+                        {record[this.billNo] && record[this.billNo].value}
+                    </a>
+                );
+            };
+        }
+        return item;
+    });
+
+    //添加操作列
+    meta[this.tableId].items.push({
+        itemtype: "customer",
+        attrcode: "opr",
+        label:
+            this.props.MutiInit.getIntl("36200BC") &&
+            this.props.MutiInit.getIntl("36200BC").get(
+                "36200BC-000005"
+            ) /* 国际化处理： 操作*/,
+        width: 200,
+        fixed: "right",
+        className: "table-opr",
+        visible: true,
+        render: (text, record, index) => {
+            let buttonAry = [];
+			let vbillstatus = record.vbillstatus && record.vbillstatus.value;
+			let busistatus = record.busistatus && record.busistatus.value;
+			let voucher = record.voucher && record.voucher.value;
+			let paymentstatus = record.paymentstatus && record.paymentstatus.value;
+			// 网银
+			let onlinebankflag = record.onlinebankflag && record.onlinebankflag.value;
+			// 作废
+			let disableflag = record.disableflag && record.disableflag.value;
+			if (vbillstatus == '-1') {// 待提交
+				buttonAry = ['CommitInner', 'EditInner', 'DeleteInner'];
+			} else if (vbillstatus == '3') {// 已提交
+				buttonAry = ['UnCommitInner'];
+			} else if (vbillstatus == '1') {// 已审批	
+				if (onlinebankflag) {// 网银
+					if (paymentstatus == '2') {//发送指令失败
+                        if (disableflag) {
+							buttonAry = ['CancelDisabledInner'];//取消作废、发送指令
+						} else {
+							buttonAry = ['DisabledInner', 'CommandInner'];//作废、发送指令
+						}
+					} else if (paymentstatus == '3') { //交易不明
+						buttonAry = ['CancelCommandInner'];//撤回指令
+					} else if (paymentstatus == '1') { //交易成功
+						if (busistatus === 'has_collectionsettle') {// 确认收妥后：已托收结清 
+							if (voucher == null || !voucher) { // 非制证
+								buttonAry = ['UnBeSureOrderInner', 'MakeVoucherInner'];//取消确认,制证
+							} else {
+								buttonAry = ['UnBeSureOrderInner', 'CancelVoucherInner'];//取消确认,取消制证
+							}
+						}else if(busistatus === 'has_collection'){// 已办理托收
+							buttonAry = ['BeSureOrderInner'];//确认收妥
+						}
+					} else {// 审批通过，网银，还未发送指令
+						buttonAry = ['UnCommitInner','CommandInner'];// 收回，发送指令
+					}
+				} else {// 非网银
+					if (busistatus === 'has_collection') {// 已办理托收
+						buttonAry = ['UnCommitInner', 'BeSureOrderInner'];//收回、确认收妥
+					}
+					if (busistatus === 'has_collectionsettle' && !voucher) {// 已托收结清
+						buttonAry = ['MakeVoucherInner', 'UnBeSureOrderInner'];//制证、取消确认
+					}
+					if (busistatus === 'has_collectionsettle' && voucher) {// 已制证
+						buttonAry = ['CancelVoucherInner'];//取消制证
+					}
+				}
+			}
+			return props.button.createOprationButton(buttonAry, {
+				area: "list_inner",
+				buttonLimit: button_limit,
+				onButtonClick: (props, key) => bodyButtonClick.call(this, key, record, index)
+			});
+        }
+    });
+    return meta;
+}
+
+//模板加载后的回调函数
+function templateCallback(meta) {
+    initList.call(this);
+}
+
+/*pmFWCFu5nhKkBzYmrkBakVo5ITe7k6v6fooPn6uJkKpgTS1x5SWxlfyE9bmCTxYR*/

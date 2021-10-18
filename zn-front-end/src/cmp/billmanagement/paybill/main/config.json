@@ -1,0 +1,14 @@
+{
+    "dependjs": [
+
+        "../../../../sscrp/rppub/components/image/index.js",
+        "../../../../sscivm/ivmpub/components/invoice-uploader/index.js",
+        "../../../../sscivm/ivmpub/components/invoice-link/index.js"
+    ],
+    "dependModuleName": [
+        "sscivm/ivmpub/components/invoice-uploader",
+        "sscivm/ivmpub/components/invoice-link",
+        "sscrp/rppub/components/image"
+
+    ]
+}

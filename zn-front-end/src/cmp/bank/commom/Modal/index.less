@@ -1,0 +1,45 @@
+@media (min-width: 768px) {
+    .u-modal.zijin-modal .u-modal-dialog {
+        width: 520px;
+        height: 290px;
+    }
+}
+.zijin-modal {
+    [aria-hidden= "true"] {
+        font-size: 23px;
+        font-weight: 400;
+    }
+    .u-modal-body {
+        padding: 52px 20px !important;
+        .area-box {
+            position: relative;
+        }
+        .modal-label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+            vertical-align: top;
+            margin-right: 16px;
+            .require-icon {
+                color: red;
+                font-size: 14px;
+            }
+        }
+        .textarea-wrap {
+            display: inline-block;
+            width: calc(~ '100% - 150px');
+            height: 95px;
+            .u-form-control {
+                resize: none !important;
+                height: 100%;
+            }
+        }
+        .value-length {
+            font-size: 12px;
+            color: #ccc;
+            position: absolute;
+            bottom: 5px;
+            right: 45px;
+        }
+    }
+}

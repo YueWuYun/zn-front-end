@@ -1,0 +1,16 @@
+{
+    "dictcodeorg-000000": "是否确认要删除?",
+    "dictcodeorg-000001": "是否确认要取消?",
+    "dictcodeorg-000002": "请选择组织!",
+    "dictcodeorg-000003": "业务单元",
+    "dictcodeorg-000004": "条码字典-业务单元",
+    "dictcodeorg-000005": "请选择需要删除的数据",
+    "dictcodeorg-000006": "您确定要删除所选数据吗?",
+    "dictcodeorg-000007": "确认删除?",
+    "dictcodeorg-000008": "操作",
+    "dictcodeorg-000009": "查询成功,共 {total} 条。",
+    "dictcodeorg-000011": "未查询到符合条件的数据。",
+    "dictcodeorg-000012": "重编辑 {label} 字段将清空条码对象属性,业务对象档案和表体数据,是否清空?",
+    "dictcodeorg-000013": "条码对象名称不能为空,请先设置条码对象名称的数据",
+    "dictcodeorg-000014": "条码对象或条码对象属性均不能为空!"
+}

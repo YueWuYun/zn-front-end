@@ -1,0 +1,22 @@
+/*lyAUtF6Xzl2U/q/YcnLKhWfY+ELUFheZGA7i67L/+v/NF0sRF1f+MMvw6Q3tBySb*/
+[
+    'editgroup',
+    'editBtn',
+    'deleteBtn',
+    'savegroup',
+    'saveBtn',
+    'savesubmitBtn',
+    'submitBtn',
+    'unsubmitBtn',
+    'cancelBtn',
+    'preparenetBtn',
+    'joinquery',
+    'joinquerygroup',
+    'linksettlementBtn',
+    'bankaccbalanceBtn',
+    'enclosureBtn',
+    'printBtn',
+    'printgroup',
+    'outputBtn'
+]
+/*lyAUtF6Xzl2U/q/YcnLKhWfY+ELUFheZGA7i67L/+v/NF0sRF1f+MMvw6Q3tBySb*/

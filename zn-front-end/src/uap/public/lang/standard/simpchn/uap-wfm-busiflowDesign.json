@@ -1,0 +1,36 @@
+{
+    "busiflowDesign": "业务流程定义",
+    "purchase": "采购",
+    "sale": "销售",
+    "purch-sale": "购销",
+    "receiv-pay": "应收应付",
+    "proj-cost": "项目成本",
+    "assets": "资产",
+    "hr": "人力资源",
+    "allocation": "调拨",
+    "capital": "资金",
+    "other": "其他",
+
+    "disable": "停用",
+    "enable": "启用",
+    "initialize": "暂停",
+
+    "operate": "操作",
+    "disableFirst": "删除前请先停用业务流",
+    "attention": "注意",
+    "inquiry01": "您是否确定删除此流程？",
+    "delSuccess": "删除成功",
+    "stopSuccess": "停用成功",
+    "starSuccess": "启用成功",
+    "inquiry02": "未查询出符合条件的数据！",
+    "inquiry03": "查询成功，共",
+    "inquiry04": "条",
+    "attention01": "请选择扩展名为“.ufbf”的文件",
+    "attention02": "流程导入成功",
+    "attention03": "流程导入失败",
+    "attention04": "非常抱歉，本应用暂不支持IE浏览器。",
+    "attention05": "您使用的浏览器版本过低，为了更好地体验请将浏览器升级到最新版本!"
+
+
+
+}

@@ -1,0 +1,81 @@
+.bank-bankreceipt {
+    .button-app-wrapper {
+        .button-primary {
+            margin-right: -5px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        .delete {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+        .seperate {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+        .inner-button, .inner-button:hover {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    }
+    .money-right {
+        text-align: right !important;
+    }
+    .require-title {
+        &.show::before {
+            content: '*';
+            color: red;
+            font-size: 15px;
+            position: relative;
+            z-index: 100;
+        }
+    }
+    .icon-bianji {
+        color: transparent;
+        &.show {
+            color: #333;
+        }
+    }
+    
+    .btn-treearrow {
+        padding: 0 !important;
+        min-width: 18px !important;
+        margin-left: 1px !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .scaleFromOrigin {
+        position: fixed;
+        top: 54px;
+        left: -14px;
+        right: -14px;
+        bottom: 0;
+        z-index: 100;
+        margin: 0 30px;
+        background: #fff;
+    }
+    .simpleTable-component-wrapper {
+        .u-table-fixed-right, .u-table-fixed-left {
+            .u-table-body-inner::-webkit-scrollbar-thumb:horizontal {
+                background: transparent;
+            }
+            .u-table-body-inner {
+                scrollbar-arrow-color: #fff;
+                scrollbar-face-color: #fff;
+                scrollbar-highlight-color: #fff;
+                scrollbar-shadow-color: #fff;
+                scrollbar-track-color: #fff;
+            }
+        }
+        .u-table-content .u-table-scroll .u-tble-body {
+            overflow-y: hidden !important;
+        }
+    }
+}
+.input-modal {
+    .u-form-control-wrapper {
+        width: auto !important;
+        top: 0px;
+        margin-left: 10px;
+    }
+}

@@ -1,0 +1,69 @@
+html body {
+    .inspection-selected{
+        background: #e3f2fd;
+        &:hover{
+            background: #e3f2fd!important;
+        }
+    }
+    .inspection-hyperlinks{
+        cursor: pointer;
+        color: blue;
+        &:hover{
+            text-decoration-line: underline
+        }
+    }
+    .inspection{
+        .u-modal-dialog .u-modal-content {
+            .u-modal-header{
+                border-bottom:1px solid #d9d9d9;
+                padding: 10px 20px; 
+            }
+            .u-modal-title{
+                overflow: hidden;
+                // font-size: 18px;
+                padding-left: 0;
+                span{
+                    float: right;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+            }
+            .u-modal-body{
+                padding: 20px;
+            }
+
+        }
+    }
+    .inspection-iframe{
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        border: 1px solid rgba(78, 89, 104, 0.19);
+        background: #fff;
+        z-index: 99999;
+        height: 650px;
+        width: 95%;
+        .inspection-iframe-header{
+            display: flex;
+            flex-direction: row-reverse;
+            width: 100%;
+            height: 40px;
+            border-bottom:1px solid rgba(78, 89, 104, 0.19);
+            padding: 10px 20px;
+            span{
+                font-size: 14px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+        }
+        .inspection-iframe-body{
+            padding:5px;
+        }
+    }
+   .inspection-hide{
+        display: none;
+    }
+}
+

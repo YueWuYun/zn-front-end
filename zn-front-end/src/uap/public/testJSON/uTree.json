@@ -1,0 +1,140 @@
+{
+	"data": {
+		"rows": [{
+			"children": [{
+				"children": [{
+					"pid": "RIASM",
+					"id": "1001Z010LJ1986004XGY",
+					"refcode": "PrealertTunnelTestpreset",
+					"refpk": "1001Z010LJ1986004XGY",
+					"isleaf": true,
+					"refname": "预警通道测试"
+				}],
+				"pid": "ROOT",
+				"id": "RIASM",
+				"refcode": "RIASM",
+				"refpk": "RIASM",
+				"isleaf": false,
+				"refname": "alert-RIA"
+			}, {
+				"children": [{
+					"pid": "IMAG",
+					"id": "1001Z010000000001QME",
+					"refcode": "imagetaskoverduealarmpreset",
+					"refpk": "1001Z010000000001QME",
+					"isleaf": true,
+					"refname": "影像任务超期预警"
+				}, {
+					"pid": "IMAG",
+					"id": "1001Z010000000001QMF",
+					"refcode": "imagetasknooverduealarmpreset",
+					"refpk": "1001Z010000000001QMF",
+					"isleaf": true,
+					"refname": "影像任务即将超期预警"
+				}],
+				"pid": "ROOT",
+				"id": "IMAG",
+				"refcode": "IMAG",
+				"refpk": "IMAG",
+				"isleaf": false,
+				"refname": "影像管理"
+			}, {
+				"children": [{
+					"pid": "RIART",
+					"id": "1001Z010LJ0000004XGY",
+					"refcode": "WorknoteTimeOUtWarningpreset",
+					"refpk": "1001Z010LJ0000004XGY",
+					"isleaf": true,
+					"refname": "工作项超期预警"
+				}],
+				"pid": "ROOT",
+				"id": "RIART",
+				"refcode": "RIART",
+				"refpk": "RIART",
+				"isleaf": false,
+				"refname": "RIA运行框架"
+			}, {
+				"children": [{
+					"pid": "UAPBD",
+					"id": "1001Z81000000000EXTI",
+					"refcode": "alert_uapbd_supplierext_01preset",
+					"refpk": "1001Z81000000000EXTI",
+					"isleaf": true,
+					"refname": "供应商资质有效期过期预警"
+				}],
+				"pid": "ROOT",
+				"id": "UAPBD",
+				"refcode": "UAPBD",
+				"refpk": "UAPBD",
+				"isleaf": false,
+				"refname": "基础数据"
+			}, {
+				"children": [{
+					"pid": "TB",
+					"id": "1001AA10000000003CE5",
+					"refcode": "tb_budgetpreset",
+					"refpk": "1001AA10000000003CE5",
+					"isleaf": true,
+					"refname": "预算预警"
+				}],
+				"pid": "ROOT",
+				"id": "TB",
+				"refcode": "TB",
+				"refpk": "TB",
+				"isleaf": false,
+				"refname": "TB"
+			}, {
+				"children": [{
+					"pid": "BQRTUFR",
+					"id": "0001ZE100000000UFOFR",
+					"refcode": "ufofrpreset",
+					"refpk": "0001ZE100000000UFOFR",
+					"isleaf": true,
+					"refname": "报表订阅实例管理"
+				}],
+				"pid": "ROOT",
+				"id": "BQRTUFR",
+				"refcode": "BQRTUFR",
+				"refpk": "BQRTUFR",
+				"isleaf": false,
+				"refname": "BQRTUFR"
+			}, {
+				"children": [{
+					"pid": "AERT",
+					"id": "0001AA100000000SMART",
+					"refcode": "smartpreset",
+					"refpk": "0001AA100000000SMART",
+					"isleaf": true,
+					"refname": "语义模型查询预警"
+				}],
+				"pid": "ROOT",
+				"id": "AERT",
+				"refcode": "AERT",
+				"refpk": "AERT",
+				"isleaf": false,
+				"refname": "AERT"
+			}, {
+				"children": [{
+					"pid": "UAPBS",
+					"id": "0001AA100000000UAPFS",
+					"refcode": "uapbspreset",
+					"refpk": "0001AA100000000UAPFS",
+					"isleaf": true,
+					"refname": "文件服务器状态预警"
+				}],
+				"pid": "ROOT",
+				"id": "UAPBS",
+				"refcode": "UAPBS",
+				"refpk": "UAPBS",
+				"isleaf": false,
+				"refname": "UAPBS"
+			}],
+			"id": "ROOT",
+			"refcode": "ROOT",
+			"refpk": "ROOT",
+			"isleaf": false,
+			"refname": "所有预警类型"
+		}]
+	},
+	"success": true
+}

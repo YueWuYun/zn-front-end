@@ -1,0 +1,117 @@
+[
+	{
+		"type": "buttongroup",
+		"key": null,
+		"title": null,
+		"area": "page_header",
+		"children": [
+			{
+				"key": "add",
+				"title": "新增",
+				"area": "page_header"
+			},
+			{
+				"key": "edit",
+				"title": "修改",
+				"area": "page_header"
+			},
+			{
+				"key": "delete",
+				"title": "删除",
+				"area": "page_header"
+			}
+		]
+	},
+	{
+		"type": "button_main",
+		"key": "commit",
+		"title": "提交",
+		"area": "page_header"
+	},
+	{
+		"type": "dropdown",
+		"key": "contracts1",
+		"title": "联查",
+		"area": "page_header",
+		"children": [
+			{
+				"title": null,
+				"children": [
+					{
+						"key": "contract1-1",
+						"title": "联查工作流",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-2",
+						"title": "联查内部户",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-3",
+						"title": "联查支付账户",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-4",
+						"title": "联查现金账户",
+						"area": "page_header"
+					}
+				]
+			},
+			{
+				"title": null,
+				"children": [
+					{
+						"key": "contract1-4",
+						"title": "联查来源单据",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-4",
+						"title": "联查下游单据",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-4",
+						"title": "联查预算",
+						"area": "page_header"
+					},
+					{
+						"key": "contract1-4",
+						"title": "联查审批意见",
+						"area": "page_header"
+					}
+				]
+			}
+		]
+	},
+	{
+		"type": "more",
+		"key": null,
+		"title": "更多操作",
+		"area": "page_header",
+		"children": [
+			{
+				"title": "更多",
+				"children": [
+					{
+						"key": "1",
+						"title": "网银浏览",
+						"area": "page_header"
+					},
+					{
+						"key": "2",
+						"title": "附件管理",
+						"area": "page_header"
+					},
+					{
+						"key": "2",
+						"title": "打印",
+						"area": "page_header"
+					}
+				]
+			}
+		]
+	}
+]

@@ -1,0 +1,106 @@
+.balance-adjust-list {
+    background-image: none;
+    .seperate {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+    }
+    .btn-treearrow {
+        padding: 0 !important;
+        min-width: 18px !important;
+        margin-left: 1px !important;
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+    }
+    .icon-fanhuishangyiji {
+        position: relative;
+        top: -6px;
+        cursor: pointer;
+    }
+    .detail-area {
+        background: #fff;
+    }
+    .detail-area-detail {
+        height: 30px;
+        line-height: 30px;
+        span {
+            display: inline-block;
+            padding-left: 42px;
+            color: #888;
+            font-size: 12px;
+        }
+    }
+    .detail-area-list {
+        display: flex;
+        border-bottom: 1px solid #d0d0d0;
+        .detail-area-item {
+            flex: 1;
+            border-top: 1px solid #f3f3f3;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            &:last-child {
+                border-left: 2px solid #E6E6E6;
+            }
+            li {
+                display: flex;
+                border-bottom: 1px solid #d0d0d0;
+                &.item-span-li-header {
+                    height: 35px;
+                    line-height: 35px;
+                    // background: #f3f3f3;
+                }
+                &.item-span-li-content {
+                    line-height: 40px;
+                    color: #555;
+                    .item-span {
+                        flex: 2;
+                        &:first-child {
+                            flex: 3;
+                            padding-left: 42px;
+                        }
+                    }
+                    &.last {
+                        .item-span:last-child{
+                            color: #FF6100;
+                        }
+                    }
+                }
+                .item-span {
+                    flex: 2;
+                    &.item-span-header {
+                        font-size: 13px;
+                        color: #111;
+                        &:first-child {
+                            flex: 3;
+                            padding-left: 42px;
+                            text-align: left;
+                        }
+                    }
+                    .icon-span {
+                        cursor: pointer;
+                    }
+                    &:last-child {
+                        text-align: center;
+                    }
+                }
+            }
+            .first-ul {
+                height: 75px;
+            }
+            .last-ul {
+                height: 40px;
+            }
+            .list-column-box {
+                flex: 1;
+                overflow: auto;
+            }
+        }
+    }
+}
+
+.nc-bill-list {
+    .money-right {
+        text-align: right !important;
+    }
+}

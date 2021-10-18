@@ -1,0 +1,12 @@
+{
+    "subRegisterGridRef-000000": "交单登记",
+    "subRegisterGridRef-000001": "单据编号",
+    "subRegisterGridRef-000002": "信用证号",
+    "subRegisterGridRef-000003": "收单银行",
+    "subRegisterGridRef-000004": "交单日期",
+    "subRegisterGridRef-000005": "交单金额",
+    "subRegisterGridRef-000006": "客户",
+    "subRegisterGridRef-000007": "开证银行",
+    "subRegisterGridRef-000008": "币种",
+    "subRegisterGridRef-000009": "最迟交单日"
+}

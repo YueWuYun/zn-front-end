@@ -1,0 +1,104 @@
+.bank-header-list {
+    background: #fff;
+    width: 100% !important;
+    .refer-wrapper .refer {
+        width: 100%;
+    }
+    &.border-top {
+        border-top: 1px solid #ccc;
+    }
+    &.card-type {
+        padding: 0px 84px 0px 40px;
+        .bank-header-list-label {
+            line-height: 35px !important;
+        }
+    }
+    .bank-header-item {
+        display: inline-block;
+        width: 100%;
+        &.three-column {
+            width: 33.33%;
+        }
+        &.two-column {
+            width: 50%;
+        }
+        > div {
+            display: inline-block !important;
+            width: calc(~'100% - 144px') !important;
+            vertical-align: middle;
+        }
+        .bank-header-list-value, > div.u-form-control-wrapper, .nc-input, .range-num {
+            &.range-num {
+                width: calc(~'100% - 144px') !important;
+            }
+            .nc-input, .datepicker-input-group {
+                width: 100% !important;
+            }
+        }
+        .bank-header-list-value {
+            display: inline-block;
+            overflow-x: auto;
+            color: #111;
+            width: calc(~ '100% - 144px');
+            word-wrap: break-word;
+            height: 28px;
+            line-height: 28px;
+            vertical-align: middle;
+        }
+        .bank-header-list-label {
+            display: inline-block;
+            width: 120px;
+            color: #555;
+            text-align: right;
+            padding: 0 16px 0 8px;
+            line-height: 14px;
+            vertical-align: middle;
+            &.required::before {
+                content: '*';
+                color: #f22c1d;
+                position: relative;
+                top: 2px;
+                margin-right: 2px;
+                font-size: 14px;
+            }
+        }
+        > .u-form-control-wrapper, .range-num {
+            display: inline-block;
+            position: relative;
+        }
+    }
+}
+@media screen and (max-width: 1280px) {
+	.bank-header-list.card-type {
+        width: 1200px !important;
+        margin: 0 auto;
+        .more-column {
+            width: 33.3%;
+        }
+    }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+	.bank-header-list.card-type {
+        width: 100% !important;
+        .more-column {
+            width: 33.3%;
+        }
+    }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+	.bank-header-list.card-type {
+        width: 100% !important;
+        .more-column {
+            width: 25%;
+        }
+    }
+}
+@media screen and (min-width: 1920px) {
+	.bank-header-list.card-type {
+        width: 1860px !important;
+        margin: 0 auto;
+        .more-column {
+            width: 20%;
+        }
+    }
+}

@@ -1,0 +1,134 @@
+/*WCB3AJHqGDlPS44UabI4xdS8OiMUhGc8mFuZVaTxmzFCxOGajAgjC2HQPf4QAXh7*/
+import {
+    toast,
+    deepClone,
+    promptBox
+} from "nc-lightapp-front";
+import { buttonVisible } from "./buttonVisible";
+import { copyResolve } from "../../../public/cardEvent";
+/**
+ * tab-table按钮点击
+ * @param {*} props          页面内置对象
+ * @param {*} key            注册按钮编码
+ * @param {*} text           table组件三参数第一个
+ * @param {*} record         table组件三参数第二个
+ * @param {*} index          table组件三参数第三个
+ */
+export function tabButtonClick(props, key, text, record, index) {
+    let checkedRows = [];
+    // 判断是否选中了数据===》删除行、复制行要使用
+    if (["deleteRow", "copyRow"].includes(key)) {
+        checkedRows = props.cardTable.getCheckedRows(this.tabCode);
+        if (!checkedRows.length) {
+            toast({ color: "warning", content: this.state.json["36360INCP-000017"] });/* 国际化处理：  请选中行数据!*/
+            return;
+        }
+    }
+    // 获取===》粘贴行数据
+    let selectArr = [];
+    if (["copyLastLine", "copyAtLine"].includes(key)) {
+        checkedRows = props.cardTable.getCheckedRows(this.tabCode);
+        let selectRowCopy = deepClone(checkedRows);
+        for (let item of selectRowCopy) {
+            item.data.selected = false;
+            selectArr.push(item.data);
+        }
+    }
+
+    switch (key) {
+        //行 新增
+        case "addRow":
+            props.cardTable.addRow(this.tabCode);
+            handleBodyPrecision.call(this,props,'cdtlnamt');//处理表体的精度保持和表头的字段一致
+            break;
+        //行 删除
+        case "deleteRow":
+            checkedRows = checkedRows && checkedRows.map(item => item.index);
+            promptBox({
+                color: "warning",
+                title: this.state.json["36360INCP-000005"],/* 国际化处理： 删除*/
+                content: this.state.json["36360INCP-000018"],/* 国际化处理：  确定要删行么？*/
+                beSureBtnClick: () => {
+                    this.props.cardTable.delTabRowsByIndex(
+                        props.cardTable.getCurTabKey(),
+                        checkedRows
+                    );
+                }
+            });
+            break;
+        //行 复制
+        case "copyRow":
+            this.setState({ isPaste: true }, () => {
+                buttonVisible.call(this, props);
+            });
+            break;
+        //行 取消
+        case "cancelRow":
+            this.setState({ isPaste: false }, () => {
+                buttonVisible.call(this, props);
+            });
+            break;
+        //行 粘贴至末行
+        case "copyLastLine":
+            index = props.cardTable.getNumberOfRows(this.tabCode);
+            copyResolve.call(this, props, this.tabCode, selectArr, index);
+            handleBodyPrecision.call(this,props,'cdtlnamt');//处理表体的精度保持和表头的字段一致
+            break;
+        //表体操作列中按钮点击事件
+        //粘贴至此
+        case "copyAtLine":
+            copyResolve.call(this, props, this.tabCode, selectArr, index);
+            handleBodyPrecision.call(this,props,'cdtlnamt');//处理表体的精度保持和表头的字段一致
+            break;
+        //复制
+        case "copy":
+            props.cardTable.pasteRow(this.tabCode, index);
+            break;
+        //插入
+        case "insertRow":
+            props.cardTable.addRow(this.tabCode, index + 1);
+            handleBodyPrecision.call(this,props,'cdtlnamt');//处理表体的精度保持和表头的字段一致
+            break;
+        //删除
+        case "delRow":
+            props.cardTable.delRowsByIndex(this.tabCode, index);
+            break;
+        // 展开
+        case "expand":
+            props.cardTable.toggleRowView(this.tabCode, record);
+            break;
+        // 侧拉
+        case "cela":
+            props.cardTable.openTabModel &&
+                props.cardTable.openTabModel(
+                    this.tabCode,
+                    "edit",
+                    record,
+                    index
+                );
+            break;
+        // 展开/收起
+        case "unfold":
+        case "fold":
+            props.cardTable.toggleTabRowView &&
+                props.cardTable.toggleTabRowView(this.tabCode, record);
+            break;
+        default:
+            break;
+    }
+}
+
+/**
+ * 处理表体的金额字段的显示精度
+ * @param {} props 
+ */
+export function handleBodyPrecision(props, key) {
+    let amount_precision = props.form.getFormItemsValue(this.formId, key);
+    let scale = (amount_precision && amount_precision.scale) ? (amount_precision.scale) : '2';
+    props.cardTable.setColValue(this.tabCode, key, {
+        scale: scale
+    });
+}
+
+
+/*WCB3AJHqGDlPS44UabI4xdS8OiMUhGc8mFuZVaTxmzFCxOGajAgjC2HQPf4QAXh7*/

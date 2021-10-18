@@ -1,0 +1,50 @@
+@printtemplate-c-modal-title: #9d9d9d;
+@printtemplate-c-close-btn: #9d9d9d;
+@printtemplate-c-close-btn-hover: #000;
+@printtemplate-c-radio-wrapper: #000912;
+
+.print-template-modal-wrapper {
+    .u-modal-header {
+        position: relative;
+        padding: 0;
+        //background: rgba(248, 249, 251, 1);
+        border-radius: 3px 3px 0px 0px;
+
+        .u-modal-title {
+            text-indent: 20px;
+            font-size: 18px;
+            font-family: PingFangHK-Medium;
+            font-weight: 300;
+            padding-top: 20px;
+            color: @printtemplate-c-modal-title;
+        }
+        .modal-header-close-btn {
+            position: absolute;
+            font-weight: 300;
+            font-size: 50px;
+            line-height: 0;
+            top: 20px;
+            right: 20px;
+            color: @printtemplate-c-close-btn;
+            cursor: pointer;
+            &:hover {
+                color: @printtemplate-c-close-btn-hover;
+            }
+        }
+    }
+    .u-modal-body {
+        .modal-body-wrapper {
+            margin: 0 auto;
+            max-width: 492px;
+            max-height: 200px;
+            .nc-radio-wrapper {
+                display: block;
+                margin-bottom: 10px;
+                width: 100%;
+                font-size: 13px;
+                font-family: PingFangHK-Regular;
+                color: @printtemplate-c-radio-wrapper;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 52 52" style="enable-background:new 0 0 52 52;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#009788;}
+	.st1{fill:#FFFFFF;}
+</style>
+<title>业务处理2</title>
+<desc>Created with Sketch.</desc>
+<g id="画板" transform="translate(-389.000000, -815.000000)">
+	<g id="业务处理2" transform="translate(389.000000, 815.000000)">
+		<path id="矩形" class="st0" d="M5,0h42c2.8,0,5,2.2,5,5v42c0,2.8-2.2,5-5,5H5c-2.8,0-5-2.2-5-5V5C0,2.2,2.2,0,5,0z"/>
+		<path id="形状结合" class="st1" d="M38,12c1.1,0,2,0.9,2,2l0,13.5c-1.3-0.9-2.8-1.5-4.5-1.5c-4.1,0-7.5,3.4-7.5,7.5
+			c0,2.2,0.9,4.1,2.4,5.5L14,39c-1.1,0-2-0.9-2-2V14c0-1.1,0.9-2,2-2h3v6h18v-6H38z"/>
+		<path id="合并形状" class="st1" d="M27,10c0.7,0,1.4,0.4,1.7,1l2.3,0c1.1,0,2,0.9,2,2v4H19v-4c0-1.1,0.9-2,2-2l2.3,0
+			c0.3-0.6,1-1,1.7-1H27z"/>
+		<circle id="椭圆形" class="st0" cx="23" cy="14" r="1"/>
+		<circle id="椭圆形-copy-2" class="st0" cx="29" cy="14" r="1"/>
+		<path id="矩形_1_" class="st0" d="M18,23h9c0.6,0,1,0.4,1,1v1c0,0.6-0.4,1-1,1h-9c-0.6,0-1-0.4-1-1v-1C17,23.4,17.4,23,18,23z"
+			/>
+		<path id="矩形_2_" class="st0" d="M18,31h2c0.6,0,1,0.4,1,1v1c0,0.6-0.4,1-1,1h-2c-0.6,0-1-0.4-1-1v-1C17,31.4,17.4,31,18,31z"
+			/>
+		<g id="对号" transform="translate(29.000000, 27.000000)">
+			<circle id="椭圆形_1_" class="st1" cx="6.5" cy="6.5" r="6.5"/>
+			<path id="路径" class="st0" d="M10,6.5h-1V6h0V5.6H6.7V5h1C7.9,5,8,4.9,8,4.7V2.2C8,2,7.9,1.9,7.7,1.9H5.3C5.1,1.9,5,2,5,2.2
+				v2.5C5,4.9,5.1,5,5.3,5h1v0.6H3.9v0.9H2.9c-0.2,0-0.3,0.1-0.3,0.3v2.5c0,0.2,0.1,0.3,0.3,0.3h2.4c0.2,0,0.3-0.1,0.3-0.3V6.8
+				c0-0.2-0.1-0.3-0.3-0.3h-1V6h4.5v0.6H7.6c-0.2,0-0.3,0.1-0.3,0.3v2.5c0,0.2,0.1,0.3,0.3,0.3H10c0.2,0,0.3-0.1,0.3-0.3V6.8
+				C10.3,6.6,10.2,6.5,10,6.5z"/>
+		</g>
+	</g>
+</g>
+</svg>

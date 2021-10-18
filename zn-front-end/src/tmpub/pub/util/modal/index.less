@@ -1,0 +1,58 @@
+@media (min-width: 768px) {
+    .u-modal.zijin-modal .u-modal-dialog {
+        width: 520px;
+        height: 290px;
+    }
+}
+.zijin-modal {
+    [aria-hidden= "true"] {
+        font-size: 23px;
+        font-weight: 400;
+    }
+    &.nc-modal.u-modal .u-modal-dialog .u-modal-content {
+        height: 290px;
+        width: 520px;
+    }
+    .u-modal-body {
+        padding: 20px 20px !important;
+        height: 200px;
+        .area-box {
+            position: relative;
+        }
+        .modal-label {
+            display: inline-block;
+            width: 100px;
+            text-align: left;
+            vertical-align: top;
+            margin-right: 16px;
+            color: #555;
+            padding: 2px;
+            .require-icon {
+                color: red;
+                font-size: 14px;
+            }
+        }
+        .textarea-wrap {
+            display: inline-block;
+            width: calc(~ '100% - 150px');
+            height: 95px;
+            .u-form-control {
+                resize: none !important;
+                height: 100%;
+                width:  480px;
+            }
+        }
+        .value-length {
+            font-size: 12px;
+            color: #ccc;
+            position: absolute;
+            bottom: 5px;
+            right: 20px;
+        }
+    }
+    .u-modal-footer {
+        .u-button {
+            min-width: 60px !important;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+/*lyAUtF6Xzl2U/q/YcnLKhWfY+ELUFheZGA7i67L/+v/NF0sRF1f+MMvw6Q3tBySb*/
+[
+    'addgroup',
+    'addBtn',
+    'editBtn',
+    'deleteBtn',
+    'copyBtn',
+    'savegroup',
+    'saveBtn',
+    'saveaddBtn',
+    'savesubmitBtn',
+    'submitBtn',
+    'unsubmitBtn',
+    'settleBtn',
+    'unsettleBtn',
+    'cancelBtn',
+    'makebillBtn',
+    'imgBtn',
+    'imggroup',
+    'imgreviewBtn',
+    'imgscanBtn',
+    'joinquery',
+    'joinquerygroup',
+    'cashbalanceBtn',
+    'bankaccbalanceBtn',
+    'approveopinionBtn',
+    'voucherBtn',
+    'printBtn',
+    'printgroup',
+    'outputBtn',
+    'enclosureBtn',
+    'refreshBtn'
+]
+
+/*lyAUtF6Xzl2U/q/YcnLKhWfY+ELUFheZGA7i67L/+v/NF0sRF1f+MMvw6Q3tBySb*/

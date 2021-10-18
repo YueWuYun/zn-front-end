@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "data": {
+    "areacode": "sysListTable",
+    "pageInfo": {"pageIndex": "0", "pageSize": "10", "total": "2", "totalPage": "1"},
+    "rows": [
+      {   "status": "0",
+          "isOptimized": false,
+          "values": {
+            "sysCode": {"display": 2, "value": 2},
+            "sysName": {"display": 2, "value": 2},
+            "beginTime": {"display":"20190502", "value": "20190502"},
+            "endTime": {"display":"20190502", "value": "20190502"},
+            "source": {"display":"design", "value": "design"},
+            "mainLang": {"display":"简体中文", "value": "china"},
+            "oneLang": {"display":"繁体中文", "value": "sim"},
+            "secLang": {"display":"english", "value": "English"},
+            "thirLang": {"display":"", "value": ""},
+            "forthLang": {"display":"", "value": ""},
+            "fifLang": {"display":"", "value": ""}
+          }
+      },
+       {   "status": "0",
+          "isOptimized": false,
+          "values": {
+            "sysCode": {"display": 3, "value": 3},
+            "sysName": {"display": 3, "value": 3},
+            "beginTime": {"display":"20190502", "value": "20190502"},
+            "endTime": {"display":"20190502", "value": "20190502"},
+            "source": {"display":"design", "value": "design"},
+            "mainLang": {"display":"简体中文", "value": "china"},
+            "oneLang": {"display":"繁体中文", "value": "sim"},
+            "secLang": {"display":"english", "value": "English"},
+            "thirLang": {"display":"", "value": ""},
+            "forthLang": {"display":"", "value": ""},
+            "fifLang": {"display":"", "value": ""}
+          }
+      }
+    ]
+  }
+}

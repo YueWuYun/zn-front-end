@@ -1,0 +1,17 @@
+{
+    "barappobject-000000": "请选择需要删除的数据",
+    "barappobject-000001": "您确定要删除所选数据吗？",
+    "barappobject-000002": "确定要取消吗？",
+    "barappobject-000003": "是否确认要删除?",
+    "barappobject-000004": "是否确认要取消?",
+    "barappobject-000005": "属性分类",
+    "barappobject-000006": "表体数据不能为空!",
+    "barappobject-000007": "请选择要删除的数据",
+    "barappobject-000008": "条码对象注册",
+    "barappobject-000009": "确认删除?",
+    "barappobject-000010": "操作",
+    "barappobject-000011": "未查询出符合条件的数据",
+    "barappobject-000012": "未加载到多语资源",
+    "barappobject-000013": "预置数据不允许删除",
+    "barappobject-000014": "查询成功,共 {total} 条。"
+}
