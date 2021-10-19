@@ -4,8 +4,6 @@
 		"./src/icdmc/*/*/*/index.js",
 		"./src/lcm/*/*/*/index.js",
 		"./src/fbm/*/*/*/index.js"
-		
-
 	],
 	
 	"proxy": "http://127.0.0.1:80",

@@ -2,15 +2,15 @@ import { ajax,toast,print,promptBox } from 'nc-lightapp-front';
 
 const gridid = 'head';
 const searchid = 'search';
-const pageId = '96H10101_zjcmpcd';
-const appcode = '96H10101';
+const pageId = '96H10106_iccc_jtdbje';
+const appcode = '96H10106';
 const printNodeKey = null;
 const keys = ['iseucountry'];
 const urls = {
-queryUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdQuery.do',
-pageQueryUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdQueryPageGridByPks.do',
-saveUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdSave.do',
-printUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdPrint.do'
+queryUrl:'/nccloud/zjcmp_cd/iccc_jtdbje/Iccc_jtdbjeQuery.do',
+pageQueryUrl:'/nccloud/zjcmp_cd/iccc_jtdbje/Iccc_jtdbjeQueryPageGridByPks.do',
+saveUrl:'/nccloud/zjcmp_cd/iccc_jtdbje/Iccc_jtdbjeSave.do',
+printUrl:'/nccloud/zjcmp_cd/iccc_jtdbje/Iccc_jtdbjePrint.do'
 }
 
 /**
@@ -35,7 +35,7 @@ let button = data.button;
 props.button.setButtons(button);
 props.button.setButtonDisabled({'Delete':true});
 props.button.setButtonDisabled({'Edit':true});
-props.button.setPopContent('DelLine',this.state.json['96H10101-000019']) /*国际化：确认要删除该信息吗？ 设置操作列上删除按钮的弹窗提示 */
+props.button.setPopContent('DelLine',this.state.json['96H10106-000019']) /*国际化：确认要删除该信息吗？ 设置操作列上删除按钮的弹窗提示 */
 }
 }
 callback();
@@ -98,8 +98,8 @@ break;
 case 'Cancel':
 promptBox({
 color:"warning",
-title:this.state.json['96H10101-000006'],/* 国际化处理： 确认取消*/
-content:this.state.json['96H10101-000007'],/* 国际化处理： 是否确认要取消!*/
+title:this.state.json['96H10106-000006'],/* 国际化处理： 确认取消*/
+content:this.state.json['96H10106-000007'],/* 国际化处理： 是否确认要取消!*/
 beSureBtnClick: () => {
 props.editTable.cancelEdit(gridid);
 props.editTable.setStatus(gridid,'browse');
@@ -149,7 +149,7 @@ if(res.data){
 let allD = this.props.editTable.getAllData(gridid);
 filterResult(allD,res.data[gridid].rows);
 this.props.editTable.setTableData(gridid,allD);
-toast({ color: 'success', title: this.state.json['96H10101-000008'] });/* 国际化处理： 保存成功*/
+toast({ color: 'success', title: this.state.json['96H10106-000008'] });/* 国际化处理： 保存成功*/
 }
 props.button.setButtonDisabled('Edit', true);
 props.button.setMainButton('Add', true);
@@ -182,16 +182,16 @@ rows: newData2
 }
 };
 promptBox({color:"warning",
-title: this.state.json['96H10101-000009'],/* 国际化处理： 确认删除*/
-content: this.state.json['96H10101-000010'],/* 国际化处理： 确定要删除所选数据吗？*/
+title: this.state.json['96H10106-000009'],/* 国际化处理： 确认删除*/
+content: this.state.json['96H10106-000010'],/* 国际化处理： 确定要删除所选数据吗？*/
 beSureBtnClick: deleteOpr.bind(this,data,paramData)
 });
 }
 
 }else{
 promptBox({color:"warning",
-title:this.state.json['96H10101-000011'],/* 国际化处理： 提示*/
-content:this.state.json['96H10101-000012']/* 国际化处理： 请选择数据操作!*/
+title:this.state.json['96H10106-000011'],/* 国际化处理： 提示*/
+content:this.state.json['96H10106-000012']/* 国际化处理： 请选择数据操作!*/
 });
 }
 break;
@@ -206,7 +206,7 @@ onOutput.call(this);
 break;
 case 'Refresh':
 loadGridData.call(this,false,paramData);
-toast({title:this.state.json['96H10101-000020'],color:'success'});/* 国际化处理： 无可打印数据*/
+toast({title:this.state.json['96H10106-000020'],color:'success'});/* 国际化处理： 无可打印数据*/
 default:
 break;
 }
@@ -252,7 +252,7 @@ this.props.button.setButtonsVisible({
 'PrintGrp':gridStatus ==='browse',
 'Output':gridStatus ==='browse'
 });
-this.props.button.setPopContent('DelLine',gridStatus ==='browse'?this.state.json['96H10101-000000']:'');/* 国际化处理： 确定要删除吗？*/
+this.props.button.setPopContent('DelLine',gridStatus ==='browse'?this.state.json['96H10106-000000']:'');/* 国际化处理： 确定要删除吗？*/
 }
 
 /**
@@ -280,8 +280,8 @@ loadGridData.call(this,false,paramdata,'pageQueryUrl');
 export function onClickSearchBtn(props,data){
 if(props.editTable.getStatus() && props.editTable.getStatus() == 'edit'){
 promptBox({color:"warning",
-title:this.state.json['96H10101-000011'],/* 国际化处理： 提示*/
-content:this.state.json['96H10101-000015']/* 国际化处理： 编辑态不能查询*/
+title:this.state.json['96H10106-000011'],/* 国际化处理： 提示*/
+content:this.state.json['96H10106-000015']/* 国际化处理： 编辑态不能查询*/
 });
 };
 let OID = this.props.meta.getMeta()[searchid].oid;
@@ -310,7 +310,7 @@ success:(res)=>{
 if(res.success){
 this.props.button.setButtonDisabled(['Delete'],true);
 loadGridData.call(this,false,paramData);
-toast({ color: 'success', title: this.state.json['96H10101-000002'] });/* 国际化处理： 删除成功*/
+toast({ color: 'success', title: this.state.json['96H10106-000002'] });/* 国际化处理： 删除成功*/
 }else{
 alert(res.message);
 }
@@ -324,7 +324,7 @@ alert(res.message);
 function onPrint(){
 let allData = this.props.editTable.getAllData(gridid);
 if(allData.length === 0){
-toast({content:this.state.json['96H10101-000013'],color:'warning'});/* 国际化处理： 无可打印数据*/
+toast({content:this.state.json['96H10106-000013'],color:'warning'});/* 国际化处理： 无可打印数据*/
 return;
 }
 let pks = [];
@@ -348,7 +348,7 @@ oids:pks
 function onOutput(){
 let allData = this.props.editTable.getAllData(gridid);
 if(allData.length === 0){
-toast({content:this.state.json['96H10101-000014'],color:'warning'});/* 国际化处理： 无可输出的数据*/
+toast({content:this.state.json['96H10106-000014'],color:'warning'});/* 国际化处理： 无可输出的数据*/
 return;
 }
 let pks = [];
@@ -406,14 +406,14 @@ _this.props.button.setButtonDisabled({
 }
 _this.props.editTable.setStatus('browse');
 if(isToast===true){
-toast({color: 'success', content: this.state.json['96H10101-000003']+data[gridid].allpks.length+this.state.json['96H10101-000004']});/* 国际化处理： 查询成功，共,条。*/
+toast({color: 'success', content: this.state.json['96H10106-000003']+data[gridid].allpks.length+this.state.json['96H10106-000004']});/* 国际化处理： 查询成功，共,条。*/
 }
 this.setState({hasSearched:true});
 }
 },
 error: (res) => {
 if(isToast===true){
-toast({color: 'warning', content: this.state.json['96H10101-000005']});/* 国际化处理： 未查询出符合条件的数据*/
+toast({color: 'warning', content: this.state.json['96H10106-000005']});/* 国际化处理： 未查询出符合条件的数据*/
 }
 }
 })
@@ -433,7 +433,7 @@ meta[gridid].pagination = false;
 //添加操作列
 meta[gridid].items.push({
 attrcode: 'opr',
-label: this.state.json['96H10101-000001'],/* 国际化处理： 操作*/
+label: this.state.json['96H10106-000001'],/* 国际化处理： 操作*/
 width: 200,
 fixed: 'right',
 className : 'table-opr',

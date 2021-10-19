@@ -10,17 +10,17 @@ import './index.less';
 
 const gridid = 'head';
 const searchid = 'search';
-const pageId = '96H10101_czncc';
-const appcode = '96H10101';
+const pageId = '96H10104_czncc';
+const appcode = '96H10104';
 const printNodeKey = null;
 const urls = {
-queryUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdQuery.do',
-pageQueryUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdQueryPageGridByPks.do',
-saveUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdSave.do',
-printUrl:'/nccloud/zjcmp_cd/zjcmpcd/ZjcmpcdPrint.do'
+queryUrl:'/nccloud/zjcmp_cd/fundplanVO/FundplanVOQuery.do',
+pageQueryUrl:'/nccloud/zjcmp_cd/fundplanVO/FundplanVOQueryPageGridByPks.do',
+saveUrl:'/nccloud/zjcmp_cd/fundplanVO/FundplanVOSave.do',
+printUrl:'/nccloud/zjcmp_cd/fundplanVO/FundplanVOPrint.do'
 }
 
-class ZjcmpcdTable extends Component {
+class FundplanVOTable extends Component {
 
 constructor(props){
 super(props);
@@ -38,7 +38,7 @@ actions['initTemplate'].call(this,this.props,actions['onloaddata'].bind(this));
 });
 }
 }
-this.props.MultiInit.getMultiLang({moduleId: '96H10101', domainName: 'zjcmp_cd',callback})
+this.props.MultiInit.getMultiLang({moduleId: '96H10104', domainName: 'zjcmp_cd',callback})
 }
 
 componentDidUpdate(){
@@ -70,7 +70,7 @@ return (
     <div className="header-title-search-area">
         {createBillHeadInfo(
         {
-        title: this.state.json['96H10101-000018']/* 国际化处理： 国家地区*/,
+        title: this.state.json['96H10104-000018']/* 国际化处理： 国家地区*/,
         backBtnClick:()=>{},
         initShowBackBtn: false
         }
@@ -122,13 +122,13 @@ outputType : 'output'
 }
 }
 
-ZjcmpcdTable = createPage({
+FundplanVOTable = createPage({
 billinfo:[{
 billtype: 'grid',
 pagecode: pageId,
 bodycode: gridid
 }],
 mutiLangCode: appcode
-})(ZjcmpcdTable);
+})(FundplanVOTable);
 
-ReactDOM.render(<ZjcmpcdTable />, document.querySelector('#app'));
+ReactDOM.render(<FundplanVOTable />, document.querySelector('#app'));
