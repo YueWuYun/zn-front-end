@@ -1,0 +1,16 @@
+{
+    "guacontGridRef-000000": "担保合同",
+    "guacontGridRef-000001": "合同号",
+    "guacontGridRef-000002": "单据编号",
+	"guacontGridRef-000003": "保证责任",
+    "guacontGridRef-000004": "担保方式",
+    "guacontGridRef-000005": "币种",
+	"guacontGridRef-000006": "担保总金额",
+    "guacontGridRef-000007": "担保本币总金额",
+    "guacontGridRef-000008": "已用担保总金额",
+	"guacontGridRef-000009": "已用担保本币总金额",
+    "guacontGridRef-000010": "可用担保总金额",
+    "guacontGridRef-000011": "可用担保本币总金额",
+    "guacontGridRef-000012": "担保开始日期",
+	"guacontGridRef-000013": "担保结束日期"
+}
