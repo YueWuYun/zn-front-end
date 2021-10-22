@@ -1,10 +1,6 @@
 {
 	"buildEntryPath": [
-        "./src/sf/*/*/*/index.js",
-        "./src/icdmc/*/*/*/index.js",
-        "./src/lcm/*/*/*/index.js",
-        "./src/fbm/*/*/*/index.js",
-		"./src/zjcmp_cd/*/*/*/index.js"
+        "./src/sf/*/*/*/index.js"
 	],
 	
 	"proxy": "http://127.0.0.1:80",

@@ -346,12 +346,24 @@ export function buttonClick(props, id) {
             break;
         //头部 联查贷款合同
         case "contract":
+            debugger;
             pageTo.openTo("/icdmc/icdmc/contract/main/index.html#/card", {
                 status: "browse",
                 appcode: "36360ICC",
                 pagecode: "36360ICCL_CARD",
                 scene: "linksce",
                 id: cardData.head.header.rows[0].values.contractid.value
+            });
+            break;
+        //头部 联查资金下拨单
+        case "Allocation":
+            debugger;
+            pageTo.openTo("/sf/allocation/allocate/main/index.html#/card", {
+                status: "browse",
+                appcode: "36320FA",
+                pagecode: "36320FA_C01",
+                scene: "linksce",
+                id: cardData.head.header.rows[0].values.pk_innerloanpay.value
             });
             break;
         //头部 刷新
@@ -470,6 +482,15 @@ export function buttonClick(props, id) {
         case 'toAllocation':
         debugger;
         let pk = props.form.getFormItemsValue(this.formId, this.primaryId) && props.form.getFormItemsValue(this.formId, this.primaryId).value;
+        let loanmny = this.props.form.getFormItemsValue(this.formId, 'loanmny').value;//放款金额
+        let vdef2 = this.props.form.getFormItemsValue(this.formId, 'vdef2').value;//累计回写总金额
+        if(parseFloat(vdef2)>=parseFloat(loanmny)){
+               toast({
+                color: "danger",
+                content: this.state.json["36360IP-000059"]
+        }); /* 国际化处理： 放款结束日期不能早于放款开始日期*/
+        return;
+        }
         let sourceid = pk;//来源主键
         // if(!sourceid){
         // toast({

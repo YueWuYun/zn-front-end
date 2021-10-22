@@ -348,7 +348,7 @@ function saveCommitBill(props, type) {
     saveobj[this.formId] = 'form';
     props.validateToSave(validateData, () => saveCommitOperation.call(this, props, data, type), saveobj, '');
 }
-
+//保存提交操作
 function saveCommitOperation(props, data, type) {
     let isAdd = this.props.getUrlParam('status') === 'add';
     ajax({
@@ -429,7 +429,7 @@ function saveCommitOperation(props, data, type) {
     });
 }
 
-
+//保存操作
 function saveOperation(props, data, type) {
     let isAdd = this.props.getUrlParam('status') === 'add';
     let isCopy = this.props.getUrlParam('status') === 'copy';

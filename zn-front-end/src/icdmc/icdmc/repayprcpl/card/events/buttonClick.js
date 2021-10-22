@@ -486,6 +486,7 @@ function saveBill(props, type, url, content) {
             this.formId,
             this.tabOrder
         );
+
         let status = this.props.getUrlParam("status");
         ajax({
             url: `${baseReqUrl}${url}.do`,

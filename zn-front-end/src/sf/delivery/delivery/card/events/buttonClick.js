@@ -1391,6 +1391,19 @@ async function buttonClick(props, id) {
 
       //头部生成内贷还本单
       case 'toNDHB':
+
+      //内贷还本单总下推金额不允许超过资金上收单金额，若超过则不允许再次下推
+      let totalamount = this.props.form.getFormItemsValue(this.formId, 'totalamount').value;//上收总金额
+              let vuserdef5 = this.props.form.getFormItemsValue(this.formId, 'vuserdef5').value;//累计回写总金额
+              if(parseFloat(vuserdef5)>parseFloat(totalamount)){
+                toast({
+                  color: 'warning',
+                  content:loadMultiLang(this.props, '36320FDA--0000125')
+              });
+              return;
+              }
+
+
         let sourceid = data.pk;//来源主键
         if(!sourceid){
         toast({
@@ -1421,6 +1434,21 @@ async function buttonClick(props, id) {
 
       //头部生成内贷付息单
       case 'toNDFX':
+
+      //校验内贷付息单总下推金额不允许超过资金上收单金额，若超过则不允许再次下推
+
+      let totalamount = this.props.form.getFormItemsValue(this.formId, 'totalamount').value;//上收总金额
+        let vuserdef5 = this.props.form.getFormItemsValue(this.formId, 'vuserdef5').value;//累计回写总金额
+        if(parseFloat(vuserdef5)>parseFloat(totalamount)){
+          toast({
+            color: 'warning',
+            content:loadMultiLang(this.props, '36320FDA--0000125')
+        });
+        return;
+        }
+
+
+
         let sourceids = data.pk;//来源主键
         if(!sourceids){
         toast({
