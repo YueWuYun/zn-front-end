@@ -1,5 +1,5 @@
 /*Hm9gUKDDwtNjV7Mk8onAztupoRAb7fkAHSA8w/EPG33YwlX9OviyY1kg6Ku7Xf4n*/
-import { ajax, base, toast, output, print, cardCache, promptBox } from 'nc-lightapp-front';
+import { ajax, base, toast, output, print, cardCache, promptBox,pageTo } from 'nc-lightapp-front';
 
 import {
   app_id, appcode, printnodekey,
@@ -1054,6 +1054,37 @@ async function buttonClick(props, id) {
       };
       linkApp(props, "36K3", linkapplywfExtParam);
       break;
+
+    //联查内贷还本  
+    case 'linkndpayment':
+      debugger;
+      let linkapply_pk_srcbill3 = this.props.form.getFormItemsValue(this.formId, 'vuserdef6').value;
+      console.log(linkapply_pk_srcbill3.value);
+    //  let linkapply_pk_srcbill3 ="1001A110000000038JS7";
+        pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
+            status: "browse",
+            id: linkapply_pk_srcbill3,
+            appcode: "36360IRP",
+            pagecode: "36360IRP_CARD",
+            scene: "linksce"
+        });
+        break;
+
+//内贷还本卡片联查内贷付息
+    case 'linkndinterest':
+      debugger;
+      let pk_repayintsticdmc = this.props.form.getFormItemsValue(this.formId, 'vuserdef7').value;
+      props.openTo("/icdmc/icdmc/repayintst/main/index.html#/card", {
+        status: "browse",
+        id: pk_repayintsticdmc,
+        appcode: "36360IPI",
+        pagecode: "36360IPI_CARD",
+        scene: "linksce"
+    });
+      break;
+
+
+
     // 委托付款
     case 'linkpayment':
       let linkpayment_pk_srcbill = this.props.form.getFormItemsValue(this.formId, 'pk_srcbill');

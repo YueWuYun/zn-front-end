@@ -207,6 +207,22 @@ export function buttonClick(props, id) {
                 scene: "linksce"
             });
             break;
+
+    //联查资金上收  
+    case 'linkndpayment':
+        debugger;
+        let linkapply_pk_srcbill3 = this.props.form.getFormItemsValue(this.formId, 'vdef0').value;
+        console.log(linkapply_pk_srcbill3.value);
+      //  let linkapply_pk_srcbill3 ="1001A110000000038JS7";
+          pageTo.openTo("/sf/delivery/delivery/main/index.html#/card", {
+              status: "browse",
+              id: linkapply_pk_srcbill3,
+              appcode: "36320FDA",
+              pagecode: "36320FDA_card",
+              scene: "linksce"
+          });
+          break;
+            
         //头部 联查放款单
         case "financepay":
             pageTo.openTo("/icdmc/icdmc/financepay/main/index.html#/card", {

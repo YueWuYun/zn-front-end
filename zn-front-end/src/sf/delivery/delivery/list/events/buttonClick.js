@@ -710,6 +710,29 @@ async function buttonClick(props, id, checkData) {
             let voucher_vbillno = linkvoucherData[0].data.values.vbillno.value;
             linkVoucherApp(props, voucher_pk_h, voucher_pk_group, voucher_pk_org, voucher_pk_billtype, voucher_vbillno);
             break;
+
+            //联查内贷还本  
+            case 'linkndpayment':
+                debugger;
+                if(selectedData.length != 1) {
+                    // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                           toast({
+                        color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                            && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
+                    });
+                    return;
+                }
+                let srcbillno = selectedData[0].data.values['vuserdef1'].value;
+                // console.log(srcbillno.value);   
+                pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
+                    status: "browse",
+                    id: srcbillno,
+                    appcode: "36360IRP",
+                    pagecode: "36360IRP_CARD",
+                    scene: "linksce"
+                });
+                break;
+            
         // 委托付款
         case 'linkpayment':
             let linkpaymentData = props.table.getCheckedRows(list_table_id);

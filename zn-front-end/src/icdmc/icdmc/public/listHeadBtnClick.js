@@ -515,6 +515,42 @@ export function listHeadBtnClick(props, id) {
         case "fundPlan":
             linkNtb.call(this, props, pks[0]);
             break;
+
+ //联查内贷还本  
+ case 'linkndpayment':
+    debugger;
+    if(selectDatas.length != 1) {
+        toast({ content: this.state.json['36360PUBLIC-000023'], color: "warning" });/* 国际化处理： 请选择一条数据*/
+        return;
+    }
+    let srcbillno = selectDatas[0].data.values['vdef0'].value;
+    // console.log(srcbillno.value);   
+    pageTo.openTo("/sf/delivery/delivery/main/index.html#/card", {
+        status: "browse",
+        id: srcbillno,
+        appcode: "36320FDA",
+        pagecode: "36320FDA_card",
+        scene: "linksce"
+    });
+    break;
+
+    case 'Allocation':
+        debugger;
+        if (selectDatas.length != 1) {
+            toast({ color: 'warning', content: loadMultiLang(this.props, '36320FA-000081') });/* 国际化处理： 请选择一条数据进行联查。*/
+            return;
+        }
+        let pksrcbill = selectDatas[0].data.values['vdef1'].value;
+        console.log(pksrcbill.value);
+        props.openTo("/sf/allocation/allocate/main/index.html#/card", {
+            status: "browse",
+            id: pksrcbill,
+            appcode: "36320FA",
+            pagecode: "36320FA_C01",
+            scene: "linksce"
+        });
+        break;
+
         //头部 联查借款账户余额
         case "loanAccountBalance":
             if (selectDatas.length != 1) {

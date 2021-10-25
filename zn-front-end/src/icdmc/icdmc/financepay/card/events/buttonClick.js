@@ -355,17 +355,28 @@ export function buttonClick(props, id) {
                 id: cardData.head.header.rows[0].values.contractid.value
             });
             break;
+
+
+
+
+
         //头部 联查资金下拨单
         case "Allocation":
             debugger;
+            let pk_allocate_h= this.props.form.getFormItemsValue(this.formId,'vdef3');
+            console.log(pk_allocate_h.value);
             pageTo.openTo("/sf/allocation/allocate/main/index.html#/card", {
                 status: "browse",
                 appcode: "36320FA",
                 pagecode: "36320FA_C01",
                 scene: "linksce",
-                id: cardData.head.header.rows[0].values.pk_innerloanpay.value
+                id: pk_allocate_h
             });
             break;
+
+
+
+
         //头部 刷新
         case "refresh":
             getCardData.call(
