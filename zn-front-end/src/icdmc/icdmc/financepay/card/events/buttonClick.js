@@ -355,11 +355,6 @@ export function buttonClick(props, id) {
                 id: cardData.head.header.rows[0].values.contractid.value
             });
             break;
-
-
-
-
-
         //头部 联查资金下拨单
         case "Allocation":
             debugger;
@@ -373,10 +368,6 @@ export function buttonClick(props, id) {
                 id: pk_allocate_h
             });
             break;
-
-
-
-
         //头部 刷新
         case "refresh":
             getCardData.call(
