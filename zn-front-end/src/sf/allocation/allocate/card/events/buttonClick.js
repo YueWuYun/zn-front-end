@@ -383,7 +383,20 @@ async function buttonClick(props, key, text, record, index) {
     case 'queryapprove':
       doApprove.call(this,props);
       break;
-
+    //联查内贷放款
+    case 'NDFK':
+      debugger;
+      let pk_srcbill = this.props.form.getFormItemsValue(this.formId, 'pk_srcbill').value;
+      console.log(pk_srcbill.value);
+ //     let linkapply_pk_srcbill3 ="1001A110000000038JS7";
+        pageTo.openTo("/icdmc/icdmc/financepay/main/index.html#/card", {
+            status: "browse",
+            id: pk_srcbill,
+            appcode: "36360IP",
+            pagecode: "36360IP_C01",
+            scene: "linksce"
+        });
+        break;
     //网银补录
     case 'e_bank':
       ebankBulu.call(this,props,false);
