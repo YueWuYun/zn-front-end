@@ -452,23 +452,7 @@ async function buttonClick(props, key, text, record, index) {
         case "receipt":
             doReceipt.call(this, props);
             break;
-        //联查内贷放款
-        case 'NDFK':
-        debugger;
-        if (selectedData.length != 1) {
-            toast({ color: 'warning', content: loadMultiLang(this.props, '36320FA-000081') });/* 国际化处理： 请选择一条数据进行联查。*/
-            return;
-        }
-        let pksrcbill = selectedData[0].data.values['pk_srcbill'].value;
-        console.log(pksrcbill.value);
-        props.openTo("/icdmc/icdmc/financepay/main/index.html#/card", {
-            status: "browse",
-            id: pksrcbill,
-            appcode: "36360IP",
-            pagecode: "36360IP_C01",
-            scene: "linksce"
-        });
-        break;
+
         //打印
         case 'print':
             let printData = props.table.getCheckedRows(list_table_id);

@@ -713,7 +713,7 @@ async function buttonClick(props, id, checkData) {
             break;
 
             //联查内贷还本  
-            case 'linkndpayment':
+        case 'linkndpayment':
             debugger;
             if(selectedData.length != 1) {
                 // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
@@ -734,7 +734,7 @@ async function buttonClick(props, id, checkData) {
             });
             break;
 
-            case 'toNDHB':
+        case 'toNDHB':
             if(parseFloat(vuserdef5)>parseFloat(totalamount)){
                 toast({
                     color: 'warning',
@@ -752,12 +752,63 @@ async function buttonClick(props, id, checkData) {
                         status: 'add',
                         sourceid:sourceid
                     });
+            break;
+        //资金上收单列表下推内贷付息单
+        case 'toNDFX':
+            debugger;
+            if(selectedData.length != 1) {
+                // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                       toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
+                });
+                return;
+            }
+            let vbillstatus = selectedData[0].data.values['vbillstatus'].value;//审批状态
+             //审批状态是否为审批通过
+             if(vbillstatus != 1){
+                 toast({
+                 color: 'warning',
+                 content:loadMultiLang(this.props, '36320FDA--0000127')//{/* 国际化处理： 审批未通过，不能生成下游单据，不能生成下游单据！*/}
+                 });
+             return;
+             }
 
-
-
-
-
-        //内贷还本列表联查内贷付息
+            let totalamount = selectedData[0].data.values['totalamount'].value;//上收总金额
+            let vuserdef3 = selectedData[0].data.values['vuserdef3'].value;//内贷还本单回写金额
+            let vuserdef4 = selectedData[0].data.values['vuserdef4'].value;//内贷还本单回写金额
+            if(parseFloat(vuserdef3+vuserdef4) >= totalamount){
+                toast({
+                    color: 'warning',
+                    content:loadMultiLang(this.props, '36320FDA--0000125')//{/* 国际化处理： 累计回写总金额超过上收总金额下推失败！*/}
+                  });
+                return;
+            }
+            if(vuserdef4 != null){
+                toast({
+                  color: 'warning',
+                  content:loadMultiLang(this.props, '36320FDA--0000126')//{/* 国际化处理： 下游单据不可重复生成！*/}
+                 });
+              return;
+              }
+            let sourceids = selectedData[0].data.values['pk_delivery_h'].value;//来源主键
+            if(!sourceids){
+            toast({
+                color: 'warning',
+                content:loadMultiLang(this.props, '36320FDA-000037') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+            });
+            return;
+            } 
+             props.openTo('/icdmc/icdmc/repayintst/main/index.html#/card', 
+                {
+                    srcFunCode:'36360IPI',
+                    appcode: '36360IPI',
+                    pagecode: '36360IPI_CARD',                   
+                    status: 'add',
+                     sourceids:sourceids
+                });
+            break;
+        //资金上收列表联查内贷付息
         case 'linkndinterest':
             debugger;
             if(selectedData.length != 1) {
@@ -768,14 +819,22 @@ async function buttonClick(props, id, checkData) {
                 });
                 return;
             }
-            let pk_repayintsticdmc = selectedData[0].data.values['vbillno'].value;
+            let pk_repayintsticdmc = selectedData[0].data.values['vuserdef7'].value;
+            if(pk_repayintsticdmc==null){
+                toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--0000128')/*国际化处理：没有联查到匹配的内贷付息单! */
+                });
+                return;
+            }
+            
             props.openTo("/icdmc/icdmc/repayintst/main/index.html#/card", {
               status: "browse",
               id: pk_repayintsticdmc,
               appcode: "36360IPI",
               pagecode: "36360IPI_CARD",
               scene: "linksce"
-          });
+            });
             break;
 
             
