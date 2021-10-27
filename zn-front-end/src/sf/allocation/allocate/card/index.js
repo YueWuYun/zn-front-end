@@ -131,7 +131,8 @@ class Card extends Component {
 	 * 查询页面数据
 	 */
 	qryData = () => {
-		console.log("addData:"+JSON.stringify(addData));
+		debugger;
+		// console.log("addData:"+JSON.stringify(addData));
 
 		let edit=this.props.getUrlParam('edit');
 		

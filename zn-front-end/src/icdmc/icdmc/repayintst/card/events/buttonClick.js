@@ -239,9 +239,23 @@ export function buttonClick(props, id) {
                 }
             });
             break;
+            //卡片联查资金上收
+            case "fundcolion":
+                let pk_delivery_h = this.props.form.getFormItemsValue(this.formId, 'vdef18').value;
+                props.openTo("/sf/delivery/delivery/main/index.html#/card", {
+                    status: "browse",
+                    id: pk_delivery_h,
+                    appcode: "36320FDA",
+                    pagecode: "36320FDA_card",
+                    scene: "linksce"
+                });
+                break;
         default:
             break;
+            
     }
+    
+
 }
 /**
  * 联查 收款账户

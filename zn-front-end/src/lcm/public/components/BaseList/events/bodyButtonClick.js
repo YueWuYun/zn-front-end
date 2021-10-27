@@ -40,12 +40,7 @@ export function bodyButtonClick(key, record, index) {
       break;
     // 收回
     case "UncommitInner":
-      list.listUncommit.call(this, {
-        data: { pks: [pk], pkMapTs },
-        pkMapRowIndex,
-        index
-      });
-      break;
+      
     // 制证
     case "MakeVoucherInner":
       list.listMakeVoucher.call(this, {

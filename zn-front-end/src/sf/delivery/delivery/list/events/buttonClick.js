@@ -1,5 +1,5 @@
 /*Hm9gUKDDwtNjV7Mk8onAztupoRAb7fkAHSA8w/EPG33YwlX9OviyY1kg6Ku7Xf4n*/
-import { createPage, ajax, base, toast, output, print, cardCache, promptBox } from 'nc-lightapp-front';
+import { createPage, ajax, base, toast, output, print, cardCache, promptBox,pageTo } from 'nc-lightapp-front';
 import { sourceModel_SF, SHOWMODEL_BULU, SHOWMODEL_LIULAN, SHOWMODEL_ZHIFU } from '../../../../pub/cons/constant.js';
 import { linkApp } from '../../../../../tmpub/pub/util/LinkUtil.js';
 import { linkVoucherApp } from '../../../../../tmpub/pub/util/LinkUtil';
@@ -20,6 +20,7 @@ let { deleteCacheId, getCacheById, updateCache, setDefData, getDefData } = cardC
 let { NCMessage } = base;
 
 async function buttonClick(props, id, checkData) {
+    let pk = props.form.getFormItemsValue(this.formId, this.primaryId) && props.form.getFormItemsValue(this.formId, this.primaryId).value;
     let that = this;
     let selectedData = props.table.getCheckedRows(list_table_id);
     if (checkData) {
@@ -713,25 +714,70 @@ async function buttonClick(props, id, checkData) {
 
             //联查内贷还本  
             case 'linkndpayment':
-                debugger;
-                if(selectedData.length != 1) {
-                    // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
-                           toast({
-                        color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
-                            && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
-                    });
-                    return;
-                }
-                let srcbillno = selectedData[0].data.values['vuserdef1'].value;
-                // console.log(srcbillno.value);   
-                pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
-                    status: "browse",
-                    id: srcbillno,
-                    appcode: "36360IRP",
-                    pagecode: "36360IRP_CARD",
-                    scene: "linksce"
+            debugger;
+            if(selectedData.length != 1) {
+                // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                       toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
                 });
-                break;
+                return;
+            }
+            let srcbillno = selectedData[0].data.values['vuserdef1'].value;
+            // console.log(srcbillno.value);   
+            pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
+                status: "browse",
+                id: srcbillno,
+                appcode: "36360IRP",
+                pagecode: "36360IRP_CARD",
+                scene: "linksce"
+            });
+            break;
+
+            case 'toNDHB':
+            if(parseFloat(vuserdef5)>parseFloat(totalamount)){
+                toast({
+                    color: 'warning',
+                    content:loadMultiLang(this.props, '36320FDA--0000125')
+                });
+                return;
+                }
+                let sourceid = data.pk;//来源主键
+                debugger;
+                this.props.openTo('/icdmc/icdmc/repayprcpl/main/index.html#/card', 
+                    {
+                        srcFunCode:'36360IRP',
+                        appcode: '36360IRP',
+                        pagecode: '36360IRP_CARD',                   
+                        status: 'add',
+                        sourceid:sourceid
+                    });
+
+
+
+
+
+        //内贷还本列表联查内贷付息
+        case 'linkndinterest':
+            debugger;
+            if(selectedData.length != 1) {
+                // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                       toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
+                });
+                return;
+            }
+            let pk_repayintsticdmc = selectedData[0].data.values['vbillno'].value;
+            props.openTo("/icdmc/icdmc/repayintst/main/index.html#/card", {
+              status: "browse",
+              id: pk_repayintsticdmc,
+              appcode: "36360IPI",
+              pagecode: "36360IPI_CARD",
+              scene: "linksce"
+          });
+            break;
+
             
         // 委托付款
         case 'linkpayment':

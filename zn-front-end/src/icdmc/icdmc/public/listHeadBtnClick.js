@@ -516,41 +516,94 @@ export function listHeadBtnClick(props, id) {
             linkNtb.call(this, props, pks[0]);
             break;
 
- //联查内贷还本  
- case 'linkndpayment':
-    debugger;
-    if(selectDatas.length != 1) {
-        toast({ content: this.state.json['36360PUBLIC-000023'], color: "warning" });/* 国际化处理： 请选择一条数据*/
-        return;
-    }
-    let srcbillno = selectDatas[0].data.values['vdef0'].value;
-    // console.log(srcbillno.value);   
-    pageTo.openTo("/sf/delivery/delivery/main/index.html#/card", {
-        status: "browse",
-        id: srcbillno,
-        appcode: "36320FDA",
-        pagecode: "36320FDA_card",
-        scene: "linksce"
-    });
-    break;
+            //联查内贷还本  
+            case 'linkndpayment':
+            debugger;
+            if(selectDatas.length != 1) {
+                toast({ content: this.state.json['36360PUBLIC-000023'], color: "warning" });/* 国际化处理： 请选择一条数据*/
+                return;
+            }
+            let srcbillno = selectDatas[0].data.values['vdef0'].value;
+            // console.log(srcbillno.value);   
+            pageTo.openTo("/sf/delivery/delivery/main/index.html#/card", {
+                status: "browse",
+                id: srcbillno,
+                appcode: "36320FDA",
+                pagecode: "36320FDA_card",
+                scene: "linksce"
+            });
+            break;
+            //列表联查资金上收  
+            case 'fundcolion':
+            if(selectDatas.length != 1) {
+                toast({ content: this.state.json['36360PUBLIC-000023'], color: "warning" });/* 国际化处理： 请选择一条数据*/
+                return;
+            }
+            let pk_delivery_h = selectDatas[0].data.values['vdef18'].value;
+            // console.log(srcbillno.value);   
+            pageTo.openTo("/sf/delivery/delivery/main/index.html#/card", {
+                status: "browse",
+                id: pk_delivery_h,
+                appcode: "36320FDA",
+                pagecode: "36320FDA_card",
+                scene: "linksce"
+            });
+            break;
 
-    case 'Allocation':
-        debugger;
-        if (selectDatas.length != 1) {
-            toast({ color: 'warning', content: loadMultiLang(this.props, '36320FA-000081') });/* 国际化处理： 请选择一条数据进行联查。*/
-            return;
-        }
-        let pksrcbill = selectDatas[0].data.values['vdef1'].value;
-        console.log(pksrcbill.value);
-        props.openTo("/sf/allocation/allocate/main/index.html#/card", {
-            status: "browse",
-            id: pksrcbill,
-            appcode: "36320FA",
-            pagecode: "36320FA_C01",
-            scene: "linksce"
-        });
-        break;
+            case 'Allocation':
+                        debugger;
+                        if (selectDatas.length != 1) {
+                            toast({ color: 'warning', content: loadMultiLang(this.props, '36320FA-000081') });/* 国际化处理： 请选择一条数据进行联查。*/
+                            return;
+                        }
+                        let pksrcbill = selectDatas[0].data.values['vdef1'].value;
+                        console.log(pksrcbill.value);
+                        props.openTo("/sf/allocation/allocate/main/index.html#/card", {
+                            status: "browse",
+                            id: pksrcbill,
+                            appcode: "36320FA",
+                            pagecode: "36320FA_C01",
+                            scene: "linksce"
+                        });
+                        break;
+            //列表生成资金下拨单
+        case 'toAllocation':
+            debugger;
+            let status= selectDatas[0].data.values['vbillstatus'].value;
+            if (selectDatas.length != 1) {
+                toast({ color: 'warning', content: loadMultiLang(this.props, '36320FA-000081') });/* 国际化处理： 请选择一条数据进行联查。*/
+                return;
+            }
+            if (status != 1){
+                toast({ color: 'warning', content: '当前单据状态不是审批状态，不能生成下游单据' });/* 国际化处理： 当前单据状态不是审批状态，不能生成下游单据*/
+                return;
+            }
+            let PK_INNERLOANPAY = selectDatas[0].data.values['vdef3'].value;
+            console.log(PK_INNERLOANPAY.value);
+            let loanmny = selectDatas[0].data.values['loanmny'].value;//放款金额
+            let vdef2 = selectDatas[0].data.values['vdef2'].value;//累计回写总金额
+            if(parseFloat(vdef2)>=parseFloat(loanmny)){
+                   toast({
+                    color: "danger",
+                    content: this.state.json["36360IP-000059"]
+            }); /* 国际化处理： 放款结束日期不能早于放款开始日期*/
+            return;
+            }
+            let sourceid = PK_INNERLOANPAY;//来源主键
+            props.openTo('/sf/allocation/allocate/main/index.html#/card', 
+                {
+                    srcFunCode:'36320FA',
+                    appcode: '36320FA',
+                    pagecode: '36320FA_C01',                   
+                    status: 'add',
+                    Allocationsourceid:sourceid
+                });
+            break;
 
+
+
+
+            
         //头部 联查借款账户余额
         case "loanAccountBalance":
             if (selectDatas.length != 1) {

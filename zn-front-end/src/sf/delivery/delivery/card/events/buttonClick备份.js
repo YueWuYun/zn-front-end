@@ -1,5 +1,5 @@
 /*Hm9gUKDDwtNjV7Mk8onAztupoRAb7fkAHSA8w/EPG33YwlX9OviyY1kg6Ku7Xf4n*/
-import { ajax, base, toast, output, print,pageTo, cardCache, promptBox } from 'nc-lightapp-front';
+import { ajax, base, toast, output, print, cardCache, promptBox } from 'nc-lightapp-front';
 
 import {
   app_id, appcode, printnodekey,
@@ -24,9 +24,7 @@ async function buttonClick(props, id) {
 
  // 当前单据的pk zth
  let pk = props.form.getFormItemsValue(this.formId, this.primaryId) && props.form.getFormItemsValue(this.formId, this.primaryId).value;
- let totalamount = this.props.form.getFormItemsValue(this.formId, 'totalamount').value;//上收总金额
- let vuserdef5 = this.props.form.getFormItemsValue(this.formId, 'vuserdef5').value;//累计回写总金额
- let vbillstatus = this.props.form.getFormItemsValue(this.formId, 'vbillstatus').value;//审批状态
+
 
   let pk_org = this.props.form.getFormItemsValue(this.formId, 'pk_org');
   let srcbusitype = this.props.form.getFormItemsValue(this.formId, 'srcbusitype').value;
@@ -77,6 +75,7 @@ async function buttonClick(props, id) {
     isCardOpt: true,
     pkbs: pk_delivery_b,
   }
+  debugger;
   let batchdata = {
     pks: [pk_delivery_h && pk_delivery_h.value],
     tss: [ts && ts.value],
@@ -1055,37 +1054,6 @@ async function buttonClick(props, id) {
       };
       linkApp(props, "36K3", linkapplywfExtParam);
       break;
-
-    //联查内贷还本  
-      case 'linkndpayment':
-      debugger;
-      let linkapply_pk_srcbill3 = this.props.form.getFormItemsValue(this.formId, 'vuserdef6').value;
-      console.log(linkapply_pk_srcbill3.value);
-    //  let linkapply_pk_srcbill3 ="1001A110000000038JS7";
-        pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
-            status: "browse",
-            id: linkapply_pk_srcbill3,
-            appcode: "36360IRP",
-            pagecode: "36360IRP_CARD",
-            scene: "linksce"
-        });
-        break;
-
-//内贷还本卡片联查内贷付息
-    case 'linkndinterest':
-      debugger;
-      let pk_repayintsticdmc = this.props.form.getFormItemsValue(this.formId, 'vuserdef7').value;
-      props.openTo("/icdmc/icdmc/repayintst/main/index.html#/card", {
-        status: "browse",
-        id: pk_repayintsticdmc,
-        appcode: "36360IPI",
-        pagecode: "36360IPI_CARD",
-        scene: "linksce"
-    });
-      break;
-
-
-
     // 委托付款
     case 'linkpayment':
       let linkpayment_pk_srcbill = this.props.form.getFormItemsValue(this.formId, 'pk_srcbill');
@@ -1423,103 +1391,43 @@ async function buttonClick(props, id) {
 
       //头部生成内贷还本单
       case 'toNDHB':
-        if(parseFloat(vuserdef5)>=parseFloat(totalamount)){
-          toast({
-            color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA--0000125')
-        });
-        return;
-        }
-         //不允许重复生成下游单据
-         let vuserdef4 = this.props.form.getFormItemsValue(this.formId, 'vuserdef4').value;//内带付息金额
-         if(vuserdef4 != null){
-           toast({
-             color: 'warning',
-             content:loadMultiLang(this.props, '36320FDA--0000126')//{/* 国际化处理： 下游单据不可重复生成！*/}
-            });
-         return;
-         }
-         
-         //审批状态是否为审批通过
-         if(vbillstatus != 1){
-           toast({
-             color: 'warning',
-             content:loadMultiLang(this.props, '36320FDA--0000127')//{/* 国际化处理： 当前单据状态不是审批状态，不能生成下游单据！*/}
-            });
-         return;
-         }
-        let sourceid = data.pk;//来源主键
-        if(!sourceid){
+        let sourceid2 = pk;//来源主键
+        if(!sourceid2){
         toast({
             color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA--000037') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+            content:loadMultiLang(this.props, '36340FDW-000012') //{/* 国际化处理： 未查询出符合条件的数据！*/}
         });
         return;
         }
-        debugger;
-        this.props.openTo('/icdmc/icdmc/repayprcpl/main/index.html#/card', 
+        this.props.openTo('icdmc/icdmc/repayprcpl/main/index.html#/card', 
             {
                 srcFunCode:'36360IRP',
                 appcode: '36360IRP',
                 pagecode: '36360IRP_CARD',                   
                 status: 'add',
-                sourceid:sourceid
+                sourceid:sourceid2
             });
-        // props.openTo('/obm/ebankconfirmpay/confirmpay/main/index.html#/list',
-        //     {
-        //       appcode: '36100CONFM',
-        //       pagecode: '36100CONFM_L01',
-        //       yurrefs: linkpayconfirm_bpk,
-        //       id: linkpayconfirm_bpk,
-        //       type: 'link',
-        //       status: 'browse',
-        //     });
     break;
 
       //头部生成内贷付息单
       case 'toNDFX':
         debugger;
-        //总金额不允许超过上收金额
-        if(parseFloat(vuserdef5) >= parseFloat(totalamount)){
-          toast({
-            color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA--0000125')//{/* 国际化处理： 累计回写总金额超过上收总金额下推失败！*/}
-          });
-        return;
-        }
-        //不允许重复生成下游单据
-        let vuserdef3 = this.props.form.getFormItemsValue(this.formId, 'vuserdef3').value;//内带付息金额
-        if(vuserdef3 != null){
-          toast({
-            color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA--0000126')//{/* 国际化处理： 下游单据不可重复生成！*/}
-           });
-        return;
-        }
-        
-        //审批状态是否为审批通过
-        if(vbillstatus != 1){
-          toast({
-            color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA--0000127')//{/* 国际化处理： 当前单据状态不是审批状态，不能生成下游单据！*/}
-           });
-        return;
-        }
-        let sourceids = data.pk;//来源主键
-        if(!sourceids){
+       console.log("----------------------------");
+        let sourceid3 = data.pk;//来源主键
+        if(!sourceid3){
         toast({
             color: 'warning',
-            content:loadMultiLang(this.props, '36320FDA-000037') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+            content:loadMultiLang(this.props, '36340FDW-000012') //{/* 国际化处理： 未查询出符合条件的数据！*/}
         });
         return;
         } 
-        props.openTo('/icdmc/icdmc/repayintst/main/index.html#/card', 
+        this.props.openTo('icdmc/icdmc/repayintst/main/index.html#/card', 
             {
                 srcFunCode:'36360IPI',
                 appcode: '36360IPI',
                 pagecode: '36360IPI_CARD',                   
                 status: 'add',
-                sourceids:sourceids
+                sourceid:sourceid3
             });
     break;
 

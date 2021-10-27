@@ -222,7 +222,11 @@ export function buttonClick(props, id) {
               scene: "linksce"
           });
           break;
-            
+
+
+
+
+
         //头部 联查放款单
         case "financepay":
             pageTo.openTo("/icdmc/icdmc/financepay/main/index.html#/card", {
@@ -502,7 +506,6 @@ function saveBill(props, type, url, content) {
             this.formId,
             this.tabOrder
         );
-
         let status = this.props.getUrlParam("status");
         ajax({
             url: `${baseReqUrl}${url}.do`,

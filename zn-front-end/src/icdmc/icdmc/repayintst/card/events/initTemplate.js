@@ -73,38 +73,34 @@ export default function(props) {
                     
                 // }
                 let sourceids=props.getUrlParam('sourceids');
-						if(sourceids!=null){
-							ajax({
-								//资金上收单生成内贷付息单
-								url:'/nccloud/icdmc/repayintst/DeliveryToRepayIntstAction.do', 
-								data: {
-									"pks": [sourceids],
-								 },
-								success: (res) => {
-                                    debugger;
-									if(res.data){
-										if (res.data.head) {
-											that.props.form.setAllFormValue({ [card_from_id]: res.data.head[card_from_id] });					
-											that.props.form.setFormItemsDisabled(card_from_id, { 'pk_org': true});								
-										}
-										//  if (res.data.body) {
-										//  	that.props.cardTable.setTableData(card_table_id, res.data.body[card_table_id]);
-										//  	that.props.button.setButtonVisible(['addline','deleteline','copyline'], false);
-										//  }
-									}else{
-										toast({
-											color: 'warning',
-											content: loadMultiLang(this.props, '36320FDA-000037'), //{/* 国际化处理： 未查询出符合条件的数据！*/}
-										});
-									}
+				if(sourceids!=null){
+					ajax({
+						//资金上收单生成内贷付息单
+						url:'/nccloud/icdmc/repayintst/DeliveryToRepayIntstAction.do', 
+						data: {
+							"pks": [sourceids],
+						 },
+						success: (res) => {
+							if(res.data){
+								if (res.data.head) {
+									that.props.form.setAllFormValue({ [card_from_id]: res.data.head[card_from_id] });					
+									that.props.form.setFormItemsDisabled(card_from_id, { 'pk_org': true});								
 								}
-							})  
-							//数据来源内部定期存入申请单后恢复字段可编辑
-							that.props.resMetaAfterPkorgEdit();
-							
+								//  if (res.data.body) {
+								//  	that.props.cardTable.setTableData(card_table_id, res.data.body[card_table_id]);
+								//  	that.props.button.setButtonVisible(['addline','deleteline','copyline'], false);
+								//  }
+							}else{
+								toast({
+									color: 'warning',
+									content: loadMultiLang(this.props, '36320FDA-000037'), //{/* 国际化处理： 未查询出符合条件的数据！*/}
+								});
+							}
 						}
-
-
+					})  
+					//数据来源内部定期存入申请单后恢复字段可编辑
+					that.props.resMetaAfterPkorgEdit();
+				}
             }
         }
     );

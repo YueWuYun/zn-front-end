@@ -355,11 +355,6 @@ export function buttonClick(props, id) {
                 id: cardData.head.header.rows[0].values.contractid.value
             });
             break;
-
-
-
-
-
         //头部 联查资金下拨单
         case "Allocation":
             debugger;
@@ -373,10 +368,6 @@ export function buttonClick(props, id) {
                 id: pk_allocate_h
             });
             break;
-
-
-
-
         //头部 刷新
         case "refresh":
             getCardData.call(
@@ -492,25 +483,25 @@ export function buttonClick(props, id) {
         //头部生成资金下拨单
         case 'toAllocation':
         debugger;
+        let status= this.props.form.getFormItemsValue(this.formId, 'vbillstatus').value;
         let pk = props.form.getFormItemsValue(this.formId, this.primaryId) && props.form.getFormItemsValue(this.formId, this.primaryId).value;
         let loanmny = this.props.form.getFormItemsValue(this.formId, 'loanmny').value;//放款金额
         let vdef2 = this.props.form.getFormItemsValue(this.formId, 'vdef2').value;//累计回写总金额
+        if(status != 1){
+            toast({
+                color: "danger",
+                content: this.state.json["36360IP-000060"]
+        }); /* 国际化处理： 当前单据状态不是审批状态，不能生成下游单据*/
+        return;
+        }
         if(parseFloat(vdef2)>=parseFloat(loanmny)){
                toast({
                 color: "danger",
                 content: this.state.json["36360IP-000059"]
-        }); /* 国际化处理： 放款结束日期不能早于放款开始日期*/
+        }); /* 国际化处理： 生成的资金下拨单总金额不允许超过内贷放款单金额*/
         return;
         }
         let sourceid = pk;//来源主键
-        // if(!sourceid){
-        // toast({
-        //     color: 'warning',
-        //     content:loadMultiLang(this.props, '36320FDA--000037') //{/* 国际化处理： 未查询出符合条件的数据！*/}
-        // });
-        // return;
-        // }
-        // debugger;
         props.openTo('/sf/allocation/allocate/main/index.html#/card', 
             {
                 srcFunCode:'36320FA',
