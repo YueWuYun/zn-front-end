@@ -713,7 +713,37 @@ async function buttonClick(props, id, checkData) {
             break;
 
             //联查内贷还本  
-        case 'linkndpayment':
+            case 'linkndpayment':
+                debugger;
+                if(selectedData.length != 1) {
+                    // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                           toast({
+                        color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                            && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
+                    });
+                    return;
+                }
+                let srcbillno = selectedData[0].data.values['vuserdef6'].value;
+                if(srcbillno==null){
+                    toast({
+                        color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                            && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--0000129')/*国际化处理：没有联查到匹配的内贷还本单! */
+                    });
+                    return;
+                }
+                
+                // console.log(srcbillno.value);   
+                pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
+                    status: "browse",
+                    id: srcbillno,
+                    appcode: "36360IRP",
+                    pagecode: "36360IRP_CARD",
+                    scene: "linksce"
+                });
+                break;
+				
+      //资金上收单列表下推内贷还本单
+        case 'toNDHB':
             debugger;
             if(selectedData.length != 1) {
                 // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
@@ -723,26 +753,41 @@ async function buttonClick(props, id, checkData) {
                 });
                 return;
             }
-            let srcbillno = selectedData[0].data.values['vuserdef1'].value;
-            // console.log(srcbillno.value);   
-            pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
-                status: "browse",
-                id: srcbillno,
-                appcode: "36360IRP",
-                pagecode: "36360IRP_CARD",
-                scene: "linksce"
+            let vbillstatus2 = selectedData[0].data.values['vbillstatus'].value;//审批状态
+            //审批状态是否为审批通过
+            if(vbillstatus2 != 1){
+            toast({
+            color: 'warning',
+            content:loadMultiLang(this.props, '36320FDA--0000127')//{/* 国际化处理： 审批未通过,不能生成下游单据！*/}
             });
-            break;
-
-        case 'toNDHB':
-            if(parseFloat(vuserdef5)>parseFloat(totalamount)){
-                toast({
-                    color: 'warning',
-                    content:loadMultiLang(this.props, '36320FDA--0000125')
-                });
-                return;
-                }
-                let sourceid = data.pk;//来源主键
+        return;
+        }
+        let totalamount2 = selectedData[0].data.values['totalamount'].value;//上收总金额
+        let vuserdefs3 = selectedData[0].data.values['vuserdef3'].value;//内贷还本单回写金额
+        let vuserdefs4 = selectedData[0].data.values['vuserdef4'].value;//内贷付息单回写金额
+        
+        if(parseFloat(vuserdefs3+vuserdefs4) >= totalamount2){
+            toast({
+                color: 'warning',
+                content:loadMultiLang(this.props, '36320FDA--0000125')//{/* 国际化处理： 累计回写总金额超过上收总金额下推失败！*/}
+              });
+            return;
+        }
+        if(vuserdefs3 != null){
+            toast({
+              color: 'warning',
+              content:loadMultiLang(this.props, '36320FDA--0000126')//{/* 国际化处理： 下游单据不可重复生成！*/}
+             });
+          return;
+          }
+          let sourceids2 = selectedData[0].data.values['pk_delivery_h'].value;//来源主键
+          if(!sourceids2){
+          toast({
+              color: 'warning',
+              content:loadMultiLang(this.props, '36320FDA-000037') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+          });
+          return;
+          } 
                 debugger;
                 this.props.openTo('/icdmc/icdmc/repayprcpl/main/index.html#/card', 
                     {
@@ -750,9 +795,10 @@ async function buttonClick(props, id, checkData) {
                         appcode: '36360IRP',
                         pagecode: '36360IRP_CARD',                   
                         status: 'add',
-                        sourceid:sourceid
+                        sourceid:sourceids2
                     });
             break;
+			
         //资金上收单列表下推内贷付息单
         case 'toNDFX':
             debugger;

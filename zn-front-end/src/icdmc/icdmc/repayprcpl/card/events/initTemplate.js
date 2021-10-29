@@ -82,14 +82,14 @@ export default function (props) {
                         props.initMetaByPkorg();
                     }
                     debugger;
-                    let sourceid=props.getUrlParam('sourceid');
-						if(sourceid!=null){
+                    let sourceids2=props.getUrlParam('sourceids2');
+						if(sourceids2!=null){
                             debugger;
 							ajax({
 								//资金上收单生成内贷还本单     
 								url:'/nccloud/icdmc/repayprcpl/DeliveryToRepayPrcplAction.do',  
 								data: {
-									"pks": [sourceid],
+									"pks": [sourceids2],
 								 },
 								success: (res) => {
                                     debugger;

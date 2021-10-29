@@ -1060,6 +1060,13 @@ async function buttonClick(props, id) {
       case 'linkndpayment':
       debugger;
       let linkapply_pk_srcbill3 = this.props.form.getFormItemsValue(this.formId, 'vuserdef6').value;
+      if(linkapply_pk_srcbill3==null){
+        toast({
+            color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--0000129')/*国际化处理：没有联查到匹配的内贷还本单! */
+        });
+        return;
+      }
       console.log(linkapply_pk_srcbill3.value);
     //  let linkapply_pk_srcbill3 ="1001A110000000038JS7";
         pageTo.openTo("/icdmc/icdmc/repayprcpl/main/index.html#/card", {
