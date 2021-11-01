@@ -882,7 +882,34 @@ async function buttonClick(props, id, checkData) {
               scene: "linksce"
             });
             break;
-
+        //联查内部定期存入申请单
+        case 'linkFixdepositapply':
+            let selectedData = props.table.getCheckedRows(list_table_id);
+            if(selectedData.length != 1) {
+                // toast({color:'warning',content:loadMultiLang(this.props, '36320FA-000081')})/*国际化处理：请选择一条数据进行联查! */
+                toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--000070')
+                });
+                return;
+            }
+            let pk_fixdepositapply = selectedData[0].data.values['pk_srcbill'].value;
+            if(pk_fixdepositapply==null){
+                toast({
+                    color: 'warning', content: that.props.MutiInit.getIntl("36320FDA")
+                        && that.props.MutiInit.getIntl("36320FDA").get('36320FDA--0000128')/*国际化处理：没有联查到匹配的内贷付息单! */
+                });
+                return;
+            }
+            
+            props.openTo("/ifac/ifacmemberbusdeal/fixdepositapply/main/index.html#/card/index.html#/card", {
+            status: "browse",
+            id: pk_fixdepositapply,
+            appcode: "36340FDSA",
+            pagecode: "36340FDSA_C01",
+            scene: "linksce"
+            });
+            break;
             
         // 委托付款
         case 'linkpayment':
