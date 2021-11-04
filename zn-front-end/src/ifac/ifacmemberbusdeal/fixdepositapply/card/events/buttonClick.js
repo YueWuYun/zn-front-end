@@ -251,6 +251,45 @@ export function buttonClick(props, id) {
                 }
             });
         break;
+        //头部 联查资金上收单
+        case 'LinkDelivery': 
+            let sourceid_2 = pk;//来源主键
+            if(!sourceid_2){
+            toast({
+                color: 'warning',
+                content:loadMultiLang(this.props, '36340FDSA-000027') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+            });
+            return;
+            } 
+            ajax({
+                url: `/nccloud/ifac/fixeddatewithdraw/LinkDeliveryAction.do`,
+                data: {
+                    "pk": sourceid_2,
+                 },
+                success: (res) => {
+                    if (res.success) {
+                        if(res.data!=null){
+                            this.props.openTo('/sf/delivery/delivery/main/index.html#/card', 
+                            {
+                                srcFunCode:'36320FDA',
+                                appcode: '36320FDA',
+                                pagecode: '36320FDA_card',                   
+                                status: 'browse',
+                                islinkquery: true,                  
+                                id:res.data,
+                                scene: "linksce"
+                            });
+                        }else{
+                            toast({
+                                color: 'warning',
+                                content:loadMultiLang(this.props, '36340FDSA-000027') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+                            });
+                            return;
+                        }
+                    }
+                }
+            });
+        break;
         default:
             break;
     }

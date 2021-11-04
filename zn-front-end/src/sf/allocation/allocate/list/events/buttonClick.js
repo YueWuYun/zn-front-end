@@ -549,6 +549,25 @@ async function buttonClick(props, key, text, record, index) {
         case 'return':
             listMultiOperator(props, list_page_id, list_table_id, 'pk_allocate_h', base_url + 'allocateback.do', loadMultiLang(this.props, '36320FA-000082'), this.refresh.bind(this));/* 国际化处理： 批量提交成功！*/
             break;
+        
+        //联查内部定期支取单
+        case 'linkFixedDateWithdraw':
+            let pk_fixeddatewithdraw = selectedData[0].data.values['pk_srcbill'].value;
+            console.log("selectedData[0].data"+JSON.stringify(selectedData[0].data));
+            if(selectedData.length != 1) {
+                toast({ color: 'warning', content:loadMultiLang(this.props,'36320FA-000035')})
+                return;
+            }
+            
+            props.openTo("/ifac/ifactimedepositmanage/fixeddatewithdraw/main/index.html#/card/index.html#/card", {
+                        status: "browse",
+                        id:pk_fixeddatewithdraw,
+                        appcode: "36340FDW",
+                        pagecode: "36340FDW_C01",
+                        scene: "linksce"
+                    });
+            break;
+
         default:
             break;
     }

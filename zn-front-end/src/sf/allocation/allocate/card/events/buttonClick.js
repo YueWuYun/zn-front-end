@@ -617,6 +617,25 @@ async function buttonClick(props, key, text, record, index) {
     case 'refresh':
       doRefresh.call(this,props);
       break;
+
+    //联查内部定期支取单
+    case "linkFixedDateWithdraw":
+      let pk_fixeddatewithdraw  = props.form.getFormItemsValue(card_from_id, 'pk_srcbill').value;
+      alert("pk_fixeddatewithdraw :"+JSON.stringify(pk_fixeddatewithdraw));
+      if(pk_fixeddatewithdraw ==null){
+        toast({ color: 'warning', content:loadMultiLang(this.props,'36320FA-000035')})/* 国际化处理： 该单据无来源单据*/
+        return;
+      }
+      props.openTo("/ifac/ifactimedepositmanage/fixeddatewithdraw/main/index.html#/card/index.html#/card", {
+                status: "browse",
+                id:pk_fixeddatewithdraw,
+                appcode: "36340FDW",
+                pagecode: "36340FDW_C01",
+                scene: "linksce"
+            });
+      
+      break; 
+
     default:
       break;
   }

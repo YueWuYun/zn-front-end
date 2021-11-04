@@ -256,6 +256,44 @@ export default function (props, key) {
                 }
             });
         break;
+        // 联查下拨单
+        case 'LinkAllocate':
+          let linkData2 = this.props.form.getAllFormValue(formId);
+          let pk_fixeddatewithdraw_2 = linkData2.rows[0].values['pk_fixeddatewithdraw'].value;//来源主键'
+          if(!pk_fixeddatewithdraw_2){
+            toast({
+              color: 'warning',
+              content: loadMultiLang(this.props, '36340FDW-000012') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+            });
+          } 
+          ajax({
+            url: `/nccloud/ifac/fixeddatewithdraw/LinkAllocateAction.do`,
+            data: {
+                "pk": pk_fixeddatewithdraw_2,
+                },
+            success: (res) => {
+                if (res.success) {
+                  if(res.data!=null){
+                    this.props.openTo('/sf/allocation/allocate/main/index.html#/card', 
+                        {
+                        srcFunCode:'36320FA',
+                        appcode: '36320FA',
+                        pagecode: '36320FA_C01',       
+                        status: 'browse',
+                        islinkquery: true,
+                        id:res.data,
+                        scene: "linksce"
+                        });
+                    }                  
+                  }else{
+                    toast({
+                      color: 'warning',
+                      content: loadMultiLang(this.props, '36340FDW-000012') //{/* 国际化处理： 未查询出符合条件的数据！*/}
+                    });
+                  }
+            }
+        });
+          break;
       } 
 }
 /* 联查利息清单

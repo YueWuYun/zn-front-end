@@ -1091,6 +1091,17 @@ async function buttonClick(props, id) {
     });
       break;
 
+    //联查内部定期存入申请单
+    case 'linkFixdepositapply':
+      let pk_fixdepositapply  = this.props.form.getFormItemsValue(this.formId, 'pk_srcbill').value;
+      props.openTo("/ifac/ifacmemberbusdeal/fixdepositapply/main/index.html#/card/index.html#/card", {
+        status: "browse",
+        id: pk_fixdepositapply,
+        appcode: "36340FDSA",
+        pagecode: "36340FDSA_C01",
+        scene: "linksce"
+    });
+      break;
 
 
     // 委托付款
