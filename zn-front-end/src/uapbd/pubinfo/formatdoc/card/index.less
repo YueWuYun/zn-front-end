@@ -1,0 +1,297 @@
+@select-list-container: #fff;
+#app{
+    margin:20px 50px;
+    .nc-bill-card{
+        background:#eee;
+        .nc-bill-form-area{
+            background:#fff;
+            padding-bottom: 25px;
+        }
+        .nc-bill-table-area{
+        background:#fff;
+        }
+        .u-tabs {
+            //padding-left: 89px!important;
+            .u-tabs-bar {
+                padding-top: 20px;
+                margin-bottom: 0;
+                padding-left: 89px;
+                border-top: 1px dashed #ccc;
+            }
+            .u-tabs-content {                
+                padding-left: 89px;
+            }
+        }
+        // TestExample
+            .example {  
+                background-color: @select-list-container;
+                .example-area { 
+                    height: 35px; 
+                    margin: 20px;      
+                    .egmodel-area {
+                        position: relative;
+                        float: left;
+                        .egtips { 
+                            position: absolute;
+                            top: -5px;
+                            left: 5px;
+                            margin-bottom: 5px;
+                            background-color: @select-list-container;     
+                        }
+                        .egcontetn {
+                            display: inline-block;
+                            height: 35px;
+                            line-height: 35px;
+                            font-size: 14px;
+                            background-color: @select-list-container;
+                            border: 1px solid #b6d5cf;
+                        }
+                    }
+                    .egbutton-area {
+                        margin-left: 20px;
+                        padding-top: 10px;             
+                        float: left;
+                        .egbutton {  
+                            margin: 0;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+
+            // NumberPart
+            .numberpart {
+                width: 600px;
+                height: 300px;
+                padding-left: 20px;
+                background-color: @select-list-container;
+                .nsymbol-area {
+                    position: relative;
+                    .sym-thousands-part {
+                        .u-checkbox-label::before, .u-checkbox-label:after{
+                            position: absolute;
+                            top: 3px;
+                        }
+                    }
+                    .sym-decimals-part {
+                        padding: 15px;
+                    }
+                    .u-form-control-wrapper {
+                        width: 30px;
+                        height: 20px;
+                    } 
+                }
+                .m-minus-area {
+                    padding: 5px;
+                    .formate-part {
+                        margin-top: 20px;
+                        width: 150px;
+                        height: 160px;
+                        border: 1px solid #818890;
+                        background-color: #fff;
+                        overflow-y: scroll;
+                        ul {
+                            li {
+                                height: 20px;
+                                cursor: pointer;
+                                &:hover {
+                                    background-color: #d5d5d5;
+                                }
+                            }
+                        }
+                    }
+                }
+                
+            }
+
+            //DatePart
+            .setdate-area {
+                width: 800px;
+                height: 300px;
+                padding-left: 20px;
+                background-color: @select-list-container;
+                .set-part {
+                    margin-top: 15px;
+                    .u-form-control-wrapper {
+                        float: left;
+                        width: auto;
+                        height: 20px;
+                        margin-right: 6px;
+                        border:1px solid #eee;
+                        .icon-qingkong {
+                            display:none;
+                        }
+                    }
+                    .select-date {
+                        float: left;
+                        width: 110px;
+                        height: 20px;
+                        .u-select-selection {
+                            margin: 0;
+                            padding: 0;
+                            height: 20px;
+                            .u-select-selection-rendered {
+                                line-height: 17px;
+                            }
+                            .u-select-arrow {
+                                width: 20px;
+                                height: 20px;
+                                right: 0;
+                                margin-top: -11px;
+                                padding-top: 5px;
+                                background-color: #b3bfb5;
+                            }
+                        }
+                    }
+                    .symbols {
+                        width: 100px;
+                    }     
+                }
+                .select-part {
+                    margin-top: 40px;
+                    .group-r {
+                        position: relative;
+                        float: left;
+                        margin-right: 10px;
+                        &::before {                
+                            position: absolute;
+                            top: -5px;
+                            left: 5px;
+                            font-size: 14px;
+                            background-color: @select-list-container;
+                        }
+                        .u-radio-group .u-radio.is-checked .u-radio-label:before {
+                            border-color: #b3bfb5;
+                        }
+                    }
+                    .sel-year {
+                        width: 165px;
+                        height: 145px;
+                        padding-top: 25px;
+                        padding-left: 15px;
+                        border: 1px solid #b6d5cf;
+                        &::before {
+                            content:"年"
+                        }
+                        .u-radio-group .u-radio.is-checked .u-radio-label:before {
+                            border-color: #b3bfb5;
+                        }
+                    }
+                    .sel-month {
+                        width: 185px;
+                        height: 145px;
+                        padding-top: 25px;
+                        padding-left: 15px;
+                        border: 1px solid #b6d5cf;
+                        &::before {
+                            content:"月"
+                        }
+                    }
+                    .sel-day{
+                        width: 165px;
+                        height: 145px;
+                        padding-top: 25px;
+                        padding-left: 15px;
+                        border: 1px solid #b6d5cf;
+                        &::before {
+                            content:"日"
+                        }
+                    }
+                }
+            }
+
+            //TimePart
+            .time-area {
+                width: 400px;
+                height: 200px;
+                padding-left: 20px;
+                background-color: @select-list-container;
+                .formateTime-part {
+                    margin-top: 15px;
+                    width: 230px;
+                    height: 160px;
+                    background-color: #fff;
+                    border: 1px solid #838a82;
+                    overflow-y: scroll;
+                    ul {
+                        li {
+                            height: 20px;
+                            cursor: pointer;
+                            &:hover {
+                                background-color: #d5d5d5;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //AreaPart
+            .area-area {
+                width: 1100px;
+                height: 500px;
+                background-color: @select-list-container;
+                padding-left: 20px;
+                .area-set-container {
+                    margin-top: 10px;
+                    .area-set {
+                        float: left;
+                        width: 140px;
+                        height: 20px;
+                        margin-right: 20px;
+                        .u-form-control-wrapper { 
+                            width: auto;
+                            height: 20px;
+                            .icon-qingkong {
+                                display:none;
+                            }
+                            .nc-select {
+                                height: 20px;
+                            }               
+                            .u-select-selection.u-select-selection--single{
+                                height: 20px;     
+                                padding-left: 0!important;               
+                                .u-select-selection-selected-value {
+                                    padding-left: 0!important;
+                                }
+                            }
+                        }
+                        .u-select-selection-rendered {
+                            line-height: 20px;
+                            padding-left: 0;
+                        }
+                        .select-area {
+                            float: left;
+                            width: 120px;
+                            margin: 0;
+                            .u-select-arrow {
+                                width: 20px;
+                                height: 20px;
+                                right: 0;
+                                margin-top: -10px;
+                                padding-top: 5px;
+                                background-color: #b3bfb5;
+                            }
+                        }
+                        .symbols {
+                            float: left;
+                            width: 20px;
+                            margin: 0;
+                        }
+                        .nc-input.u-form-control {
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        
+        .header-button-cardPagination{
+            float:right;
+            .cardPagination-lightapp-component{
+                .cardPagination{
+                    margin:0!important;
+                }
+            }
+        }
+    }
+    
+}

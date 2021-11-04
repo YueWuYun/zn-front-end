@@ -1,0 +1,467 @@
+//iHqVg3QIkfZ03BFx+wkLymmiD/41AVIVWbNjwKVQ5E+/VhxN98aeeo2VI4m/ANZI
+import React, { Component } from 'react';
+import { createPage, base,ajax } from 'nc-lightapp-front';
+let { NCTable,NCSelect,NCTabs, NCButton,NCCheckbox,NCCol,NCRow, NCModal, NCCollapse, NCStep,NCTree,NCFormControl } = base;
+import Group from '../../../refer/org/GroupDefaultTreeRef/index.js';
+import Utils, {BaseUtils} from '../../../public/utils/index.js';
+var EMPTY_FN = function(){};
+
+var TreeWapper = function(ds, moveKeys = []){
+    var datas = [],
+        dataMap = {},
+        root =  {
+            root: true,
+            key: 'root',
+            title: TreeWapper.lang['ACCCHART-000074'],/* 国际化处理： 集团及财务组织*/
+            code: '',
+            name: TreeWapper.lang['ACCCHART-000074']/* 国际化处理： 集团及财务组织*/
+        };
+    
+    datas = ds || [];
+    this.initData =  function(ds){
+        debugger;
+        datas = ds;
+        var loop =  (nodes) => {
+            nodes.forEach(node => {
+                node.move  = moveKeys.indexOf(node.key) != -1 ? true: false;
+                dataMap[node.key] = node;
+                loop(node.children||[]);
+            });
+        };
+        loop(datas);
+        dataMap[root.key] = {...root, children: ds};
+    }.bind(this);
+    this.initData(datas);
+
+    var buildNodeTreeNode = function(move = true){
+        var newRoot = { ...root},
+            loop = (nodes, pnode) => {
+            nodes.map( node => {
+                var  movesign =  node.move ? true: false,
+                     n  = movesign == move ?  {... node, children: []} : undefined ,
+                    childs = node.children || [];
+                if(n){
+                    pnode.children = pnode.children || [];
+                    pnode.children.push(n);
+                }
+                loop(childs, n || newRoot);
+            });
+        };
+        loop(datas, newRoot);
+        return newRoot;
+    }.bind(this);
+
+    this.renderNode = (move = false, textValue, expandedKeys) => {
+        var  root = buildNodeTreeNode(move);
+        let nodeComps, expandKeys = expandedKeys;
+
+        if(textValue){
+            const loopsearch = (nodes = []) => {
+                var parendExpand = false;
+                (nodes || [] ).forEach(child => {
+                    var expand = loopsearch( child.children || [] );
+                    child.needExpand = expand;
+                    child.needShow = expand ? true: (child.title.indexOf(textValue)  != -1? true: false);
+                   
+                   // child.needShow = expand ? true: (child.nodeData.code.indexOf(textValue) != -1 || child.title.indexOf(textValue)  != -1? true: false);
+                    parendExpand = parendExpand ? parendExpand :child.needShow;
+                    if(expand){
+                        expandKeys.push(child.key);
+                    }
+                });
+                return parendExpand;
+            }
+            var rootExpand = loopsearch([root]);
+            expandKeys.push('root');
+        }
+       
+        var  renderTreeTitle = (item, pitem) => {
+            var drawTitleString = (title) =>{
+                if(textValue && textValue.length > 0 && title && title.length > 0 && title.indexOf(textValue) != -1 ){
+                    var start = title.indexOf(textValue) , end = start + textValue.length;
+                    return <span><span>{title.substring(0, start)}</span><span className="uapbd-cashflow-treefilter-highlight" >{textValue}</span><span>{title.substring(end, title.length)}</span></span>
+                }else{
+                    return (<span>{title}</span>);
+                }
+            };
+            let children = item.children || [], isLeaf = !children.length;
+            let titleInfo = (<span className="title-middle">
+                <i className={isLeaf ? 'tree-dian' : expandKeys && expandKeys.indexOf(item.key) > -1 ? 'icon iconfont  icon-wenjianjiadakai tree-wenjian':'icon iconfont  icon-wenjianjia tree-wenjian'}></i>&nbsp;
+                {drawTitleString(item.code)}&nbsp;&nbsp;{drawTitleString(item.name || item.title)}</span>)
+            return (<div className="title-con">{titleInfo}</div>);
+        };
+
+        const loopdraw = (datas, pdata) => {
+            return  datas.filter( item => {
+                return (item.needShow == undefined && item.needExpand == undefined) || item.needShow || item.needExpand || item.key == 'root';
+            }).map((item) => {
+                var children = item.children || [];
+                let isLeaf = !children.length;
+                let switcherName = isLeaf ? 'isLeaf_hiden_point_line' : 'isLeaf_show_point_line';
+                return (<NCTree.NCTreeNode switcherClass={switcherName} title={renderTreeTitle(item)} key={item.key} isLeaf={children.length == 0}>{loopdraw(children)}</NCTree.NCTreeNode>)
+            });
+        }
+        nodeComps =  loopdraw([root]);
+        return {
+            nodeComps: nodeComps,
+            expandKeys: expandKeys
+        };
+    };
+
+
+
+    var loopChildMove = function(nodes, move = false){
+        nodes.forEach( n => {
+            n.move = move;
+            loopChildMove(n.children || [], move);
+        });
+    };
+
+    var loopParentMove = function(n, move = false){
+        var pid   = n.pid,
+            pnode =  dataMap[pid] || root;
+        if(pnode.root)
+            return;
+        pnode.move = move;
+        loopParentMove(pnode, move);
+    };
+
+    this.moveRight  = function(nodeid, incParent = false, incChild = false, incSelf = true){
+        var curNode = dataMap[nodeid],
+            move = true;
+        if(!curNode) return;
+        if(incSelf)
+            curNode.move = move;
+        if(incParent)
+            loopParentMove(curNode, move);
+        if(incChild)
+            loopChildMove(curNode.children || [], move);
+    };
+
+    this.moveLeft = function(nodeid, incParent = false, incChild = false, incSelf = true){
+        var curNode = dataMap[nodeid],
+            move = false;
+        if(!curNode) return;
+        if(incSelf)
+            curNode.move = move;
+        if(incParent)
+            loopParentMove(curNode, move);
+        if(incChild)
+            loopChildMove(curNode.children ||[], move);
+    };
+
+    this.getData = function(move = true){
+        var ids = [],
+            rootNode = dataMap['root'];
+
+        var loopChild = function(nodes){
+            nodes.forEach( n => {
+                if(n.move == move)
+                    ids.push(n);
+                loopChild(n.children || []);
+            });
+        };
+        loopChild(rootNode.children || []);
+        return ids;
+    };
+
+
+};
+
+class AssignControlOrg extends Component {
+    constructor(props) {
+        super(props);
+        this.lang = props.lang;
+        TreeWapper.lang = this.lang;
+        this.state = {
+            group:{
+                value: undefined,
+                onChange: (val) => {
+                    this.state.group.value = val;
+                    this.state.treesearchorigin.value = undefined;
+                    this.state.treesearchtarget.value = undefined;
+                    this.state.origin.selectedKeys = [];
+                    this.state.target.selectedKeys = [];
+                    this.setState(this.state, () => {
+                       this.loadTree();
+                    });
+                },
+            },
+            modal:{
+                show: false,
+                modalDropup: true,
+                size: 'xlg'
+            },
+            treeWapper: new TreeWapper(),
+            treesearchorigin:{
+                type: 'search',
+                value: undefined,
+                onChange:(value) =>{
+                    this.state.treesearchorigin.value = value;
+                    this.setState(this.state);
+                },
+                onSearch: () =>{
+                    this.state.origin.searchValue = this.state.treesearchorigin.value;
+                    this.setState(this.state);
+                }
+            },
+            origin: {
+                searchValue: undefined,
+                selectedKeys:[],
+                expandedKeys:[],
+                autoExpandParent: false,
+                onExpand:(expandedKeys)=>{
+                    this.state.origin.expandedKeys = expandedKeys;
+                    this.setState(this.state);
+                },
+                multiple: true,
+                onSelect: (selectedKeys) => {
+                    this.state.origin.selectedKeys = selectedKeys;
+                    this.setState(this.state);
+                }
+            },
+            treesearchtarget:{
+                type: 'search',
+                value: undefined,
+                onChange:(value) => {
+                    this.state.treesearchtarget.value = value;
+                    this.setState(this.state);
+                },
+                onSearch: () =>{
+                    this.state.target.searchValue = this.state.treesearchtarget.value;
+                    this.setState(this.state);
+                }
+            },
+            target: {
+                searchValue: undefined,
+                selectedKeys:[],
+                expandedKeys:[],
+                autoExpandParent: false,
+                onExpand:(expandedKeys)=>{
+                    this.state.target.expandedKeys = expandedKeys;
+                    this.setState(this.state);
+                },
+                multiple: true,
+                onSelect: (selectedKeys, { event, node, selected}) => {
+                    this.state.target.selectedKeys = selectedKeys;
+                    this.setState(this.state);
+                }
+            },
+            incChild:{
+                checked: false,
+                onChange: (v) => {
+                    this.state.incChild.checked = v;
+                    this.setState(this.state);
+                }
+            },
+            incParent:{
+                checked: false,
+                onChange: (v) => {
+                    this.state.incParent.checked = v;
+                    this.setState(this.state);
+                }
+            }
+        }
+        this.onFinish = this.props.onFinish || EMPTY_FN;
+    }
+
+    show(config, callback){
+        this.state.modal.show = true;
+        this.onFinish = callback;
+        this.state.pkrule = config.pkrule;
+        this.state.group.value = undefined;
+        this.state.initOrgData = config.initOrgData;
+        this.state.treesearchorigin.value = undefined;
+        this.state.treesearchtarget.value = undefined;
+        this.state.origin.selectedKeys = [];
+        this.state.target.selectedKeys = [];
+        this.setState(this.state, ()=>{
+            this.loadTree();
+        });
+    }
+
+    loadTree(success){
+        ajax({
+            url: '/nccloud/uapbd/acctable/RuleOrgRef.do',
+            data: {
+                pkrule: this.state.pkrule,
+                pk_group: this.state.group.value && this.state.group.value.refpk ? this.state.group.value.refpk : ''
+            },
+            success:(result)=> {
+                var curpkgroup = result.data.pkgroup,
+                    treenode = result.data.treenode,
+                    selectkeys = this.state.initOrgData[curpkgroup] || [];
+                this.state.treeWapper = new TreeWapper(treenode,selectkeys);
+                this.setState(this.state, () => {
+                    var callback  = success || EMPTY_FN;
+                    callback();
+                });
+            }
+        });
+    }
+
+    rest(){
+    }
+
+    getData(){
+        var selectDatas =  this.state.treeWapper.getData();
+        //{ pkgroup: [pkorg]}
+        var result = {};
+        selectDatas.forEach((d) => {
+            // if(d.nodeData.orgtype == 'group')
+            // return;
+            var nd = d.nodeData,
+                 pkgroup = nd.pkgroup,
+                 pk = nd.pk,
+                 pkorgs = result[pkgroup] || [];
+            pkorgs.push(pk);
+            result[pkgroup] = pkorgs;
+        });
+
+        var unSelectDatas =  this.state.treeWapper.getData(false);
+        unSelectDatas.forEach((d) => {
+            // if(d.nodeData.orgtype == 'group')
+            // return;
+            var nd = d.nodeData,
+                 pkgroup = nd.pkgroup,
+                 pk = nd.pk;
+            if(!result[pkgroup]){
+                result[pkgroup] = [];
+            }
+        });
+        return result;
+    }
+
+    onsubmit(){
+        this.onFinish();
+    }
+
+    oncancel(){
+        this.state.modal.show = false;
+        this.setState(this.state);
+    }
+
+    render() {
+        var treeWapper = this.state.treeWapper,
+        origin  = this.state.origin,
+        target  = this.state.target;
+
+        var moveToTaget = () => {
+            origin.selectedKeys.forEach(key => {
+                treeWapper.moveRight(key, this.state.incParent.checked, this.state.incChild.checked, true);
+            });
+            this.setState(this.state);
+        };
+
+        var moveToTagetAll = () => {
+            treeWapper.moveRight('root', false, true, false );
+            this.setState(this.state);
+        };
+
+
+        var moveToOrigin = () =>{
+            target.selectedKeys.forEach(key =>{
+                treeWapper.moveLeft(key, this.state.incParent.checked, this.state.incChild.checked, true);
+            });
+            this.setState(this.state);
+        };
+
+        var moveToOriginAll = () =>{
+            treeWapper.moveLeft('root', false, true, false);
+            this.setState(this.state);
+        }
+
+        var  orignRender = treeWapper.renderNode(false, origin.searchValue, origin.expandedKeys);
+        var  targetRender = treeWapper.renderNode(true, target.searchValue, target.expandedKeys);
+ 
+        var orignExpandKeys =  origin.searchValue ? orignRender.expandKeys  : origin.expandKeys;
+        var targetExpandKeys = target.searchValue ? targetRender.expandKeys : target.expandKeys;
+ 
+         var originTree = {
+             ...origin,
+             expandKeys: orignExpandKeys
+         };
+ 
+         var targetTree = {
+             ...target,
+             expandKeys: targetExpandKeys
+         };
+        return (
+            <NCModal zIndex={250} {...this.state.modal}>
+            <NCModal.Header>
+                <NCModal.Title>
+                    <div style={{display:'inline-block',verticalAlign:'top'}}>
+                        {this.lang['ACCCHART-000075']/* 国际化处理： 分配组织*/}
+                    </div>
+                    <div style={{marginTop: 5,display:'inline-block',verticalAlign:'top',marginLeft: 10}}>{Group(this.state.group)}</div>
+                </NCModal.Title>
+            </NCModal.Header>
+            <NCModal.Body>
+            <div className = 'uapbd-transfer-main'>
+                <div className="transfer_tree_container" style={{height: 400}}>
+                    <div className = 'left-area' style={{height:'400px',padding:'10px',background:'rgba(249,249,249,1)',width:'calc(50% - 25px)'}}>
+                        <div className = 'left-area-nei'>
+                            <div style={{height:30,width:'100%',background:'rgba(249,249,249,1)',margin: 0,paddingTop: 5,paddingLeft: 20}}>待选择数据</div>
+                            <div style={{marginLeft:20,marginTop:10,marginRight:20,width: 240}}>
+                                <NCFormControl {...this.state.treesearchorigin}/>
+                            </div>
+                            <div  className="syncTreeCom syncTreeComTransferLineStyle" style={{height:'calc(100% - 70px)'}}>
+                                <div className='synctree-area'   style={{marginLeft:20,width:'calc(100% - 20px)'}}>
+                                    <NCTree
+                                        showLine={true}
+                                        closeIcon={<i  class="icon iconfont icon-shushouqi tree-swich"></i>}
+                                        openIcon={<i  class="icon iconfont icon-shu_zk tree-swich"></i>}
+                                        {...originTree}>{orignRender.nodeComps}</NCTree>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className = 'button-area'>
+                        <div className="opr-botton opr-botton-trans">
+                            <NCButton onClick={moveToTaget.bind(this)}>&gt;</NCButton>
+                        </div>
+                        <div className="opr-botton opr-botton-trans">
+                            <NCButton onClick={moveToTagetAll.bind(this)}>&gt;&gt;</NCButton>
+                        </div>
+                        <div className="opr-botton opr-botton-trans">
+                            <NCButton  onClick={moveToOrigin.bind(this)}>&lt;</NCButton>
+                        </div>
+                        <div className="opr-botton opr-botton-trans">
+                            <NCButton onClick={moveToOriginAll.bind(this)}>&lt;&lt;</NCButton>
+                        </div>
+                    </div>
+                    <div className = 'right-area' style={{height:'400px',padding:'10px',background:'rgba(249,249,249,1)',width:'calc(50% - 25px)'}}>
+                        <div className = 'right-area-nei'>
+                            <div style={{height:30,width:'100%',background:'rgba(249,249,249,1)',margin: 0,paddingTop: 5,paddingLeft: 20}}>已选择数据</div>
+                            <div style={{marginLeft:20,marginTop:10,marginRight:20,width: 240}}>
+                                <NCFormControl {...this.state.treesearchtarget}/>
+                            </div>
+                            <div  className="syncTreeCom syncTreeComTransferLineStyle" style={{height:'calc(100% - 70px)'}}>
+                                <div className='synctree-area'   style={{marginLeft:20,width:'calc(100% - 20px)'}}>
+                                    <NCTree
+                                        showLine={true}
+                                        closeIcon={<i  class="icon iconfont icon-shushouqi tree-swich"></i>}
+                                        openIcon={<i  class="icon iconfont icon-shu_zk tree-swich"></i>}
+                                        {...targetTree}>{targetRender.nodeComps}</NCTree>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style={{marginTop: 10,display:'flex',justifyContent: 'center'}}>
+                    <NCCheckbox {...this.state.incParent}>{this.lang['ACCCHART-000079']/* 国际化处理： 包含上级*/}</NCCheckbox>
+                    <NCCheckbox {...this.state.incChild}>{this.lang['ACCCHART-000001']/* 国际化处理： 包含下级*/}</NCCheckbox>
+                </div>
+            </div>
+            </NCModal.Body>
+            <NCModal.Footer>
+                <span><NCButton className='button-primary' onClick={ this.onsubmit.bind(this) }>{this.lang['ACCCHART-000044']/* 国际化处理： 确定*/}</NCButton></span>
+                <span><NCButton onClick={ this.oncancel.bind(this) }>{this.lang['ACCCHART-000013']/* 国际化处理： 取消*/}</NCButton></span>
+            </NCModal.Footer>
+        </NCModal>
+        );
+    }  
+}
+export default AssignControlOrg;
+
+//iHqVg3QIkfZ03BFx+wkLymmiD/41AVIVWbNjwKVQ5E+/VhxN98aeeo2VI4m/ANZI

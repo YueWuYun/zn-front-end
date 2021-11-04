@@ -1,0 +1,4 @@
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import handlePageInfoChange from './clickEvents/handlePageInfoChange';
+export {handlePageInfoChange}
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

@@ -1,3 +1,4 @@
+//RkL3PMjryLlyizQTqDNHebsCJuofMy70D8jiphGMMVaWQacLFYi75zQQgiwmsIyF
 import {base} from 'nc-lightapp-front';
 import React, { Component } from 'react';
 
@@ -18,3 +19,4 @@ class NCFormControl  extends Component {
     }
 }
 export default NCFormControl;
+//RkL3PMjryLlyizQTqDNHebsCJuofMy70D8jiphGMMVaWQacLFYi75zQQgiwmsIyF

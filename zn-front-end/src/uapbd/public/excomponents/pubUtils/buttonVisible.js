@@ -1,3 +1,4 @@
+//2+0Qf+roUlDHXBeA/o9JMIiPw76taH0hKJDSd6sjDJNkjBs6D0W0DGiBCqpleLUq
 /**hanzhhm
  * 用于控制按钮
  * 按钮命名需要规范
@@ -24,7 +25,7 @@ let buttonVisible = function(that,data,id,type){
     if (!status) {
         status = 'browse'//默认status为browse
     }
-    if(!data ||!(data.pk_org ? data.pk_org.value : null)&& status == 'browse'){
+    if(!data && status == 'browse'){
         if(type == 'list'){
             if (listTrueBtn.indexOf(id) != -1) {
                 return true;
@@ -77,6 +78,16 @@ let buttonVisible = function(that,data,id,type){
             break;
         case 'Cancel'://取消
             if (status == 'browse') {
+                flag = false;
+            }
+            break;
+        case 'Distribution'://取消
+            if (status != 'browse') {
+                flag = false;
+            }
+            break;
+        case 'Cancle_distribution'://取消
+            if (status != 'browse') {
                 flag = false;
             }
             break;
@@ -355,3 +366,4 @@ let getInnerButtonkey = function (buttons) {
 
 export {getButtonsKey,getInnerButtonkey,initCardBodyEditControl,cardBodyControl,
     cardBodyAndInnerButtonVisible,onSelectedCardBodyEditControl,buttonVisible,onListButtonControl}
+//2+0Qf+roUlDHXBeA/o9JMIiPw76taH0hKJDSd6sjDJNkjBs6D0W0DGiBCqpleLUq

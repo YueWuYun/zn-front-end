@@ -1,3 +1,4 @@
+//jLAvUAYtP3QSvCk6DFIybn+asPGcvkU6hQ4y0SLBuH0O0tDntV2kdbJPa25g3J3I
 /**
  * 规范命名按钮的名字
  */
@@ -104,6 +105,8 @@ let headButton = {
     Tranout_drop:'Tranout_drop',//成本转出-下拉
     Tranout:'Tranout',//成本转出
     CancelTranOut:'CancelTranOut',//取消转出
+    Distribution:'Distribution',//分配成本组件结构
+    CancelDistri:'Cancle_distribution',//取消分配成本组件结构
 }
 
 //肩部按钮
@@ -153,3 +156,5 @@ let bottomButton = {
 }
 
 export { headButton, bodyButton, innerButton, modelButton, bottomButton }
+
+//jLAvUAYtP3QSvCk6DFIybn+asPGcvkU6hQ4y0SLBuH0O0tDntV2kdbJPa25g3J3I

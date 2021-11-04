@@ -1,0 +1,165 @@
+@common-color:#757f8c;
+@common-font-size:22px;
+@common-margin:20px;
+@common-cursor:pointer;
+@high-sousuo-font-size:20px;
+@high-sousuo-background:#F3F3F3;
+@high-sousuo-borderradius:3px 3px 3px 3px;
+
+.ncc-hr-shezhi::before{
+  color: @common-color;
+  font-size: @common-font-size;
+  cursor:@common-cursor;
+  margin-left:@common-margin;
+  content: "\E613";
+}
+
+.ncc-hr-sousuo::before{
+  color: @common-color;
+  font-size: @high-sousuo-font-size;
+  cursor:@common-cursor;
+  margin-left:@common-margin;
+  content: "\E611";
+  background-color:@high-sousuo-background;
+  border-radius: @high-sousuo-borderradius;
+}
+.ncc-hr-refer-searcharea{
+  text-align: right;
+  margin-right: @common-margin;
+  //财务那边高级过滤图标总是在左边，现在强行要求span框宽度为100%
+  width: 100% !important;
+  padding-right:20px;
+  .ncc-hr-sousuo::before{
+    content:''
+  }
+}
+.ncc-hr-refer-searcharea:hover{
+  cursor: pointer;
+}
+
+.ncc-hr-form-style{
+  height: 100%;
+  background-color: #fff;
+}
+.ncc-hr-refer-zIndex{
+  z-index:999999 !important;
+}
+/****树节点展开开关****/
+.u-tree-noline_close .u-tree-noline_open .u-tree-switcher{
+  margin-right: 1px;
+}
+ncc-hr-refer-searcharea
+.extable-selected-row{
+  background: #ebedf2
+}
+
+.accassitem{
+  position: absolute;
+  top: 150px;
+  bottom:0px;
+}
+
+/*****为保证表格内容不遮盖表头，加此样式******/
+.ncc-hr-table{
+  height:calc(~'100%-300px') !important;
+  padding-left:10px;
+  padding-right:10px;
+  margin: 0 auto;
+  .u-table-header{
+    margin-bottom:0px !important;
+  }
+  .nc-table:hover{
+    cursor: default !important;
+  }
+  .u-table tr:hover{
+    cursor: default !important;
+  }
+}
+
+// .refer-table .u-table .u-table-content tr.ncc-table-default:hover {
+//   background-color: #f3f3f3;
+//   cursor: default !important;
+// }
+.ncc-hr-font-size{
+  font-size:13px;
+  font-family: PingFangHK;
+}
+/*******树搜索框宽度********/
+.ncc-hr-tree-search{
+  width:200px;
+}
+.account-refer-tree{
+  .u-tree{
+    margin-top: 10px !important;
+  }
+}
+
+.ncc-hr-select{
+  .u-form-control-wrapper{
+    width:50px !important;
+    margin-right: 10px;
+  }
+}
+.isCheckbox{
+  .u-checkbox{
+    vertical-align: baseline
+  }
+}
+
+.ncc-radio-select{
+  .u-radio-group .u-radio input[type="radio"] {
+    display: none !important;
+  }
+}
+.ncc-group-first{
+  .u-radio-label{
+    padding-top: 3px;
+  }
+  .u-radio-label:before {
+    bottom: 7px !important;
+  }
+  .u-radio-label:after {
+    top: 15px !important;
+  }
+}
+.ncc-lefttree-width{
+  
+  // .refer-tree{
+  //   width:420px !important;
+  // }
+  // .refer-grid{
+  //   width:600px !important;
+  // }
+  .refer-expand-left{
+    left: 420px!important;
+  }
+
+  .refer-content-area .expand{
+    width:1020px !important;
+  }
+  .refer-tree.expand + .refer-expand-left + .refer-grid{
+    width:0px !important;
+  }
+  .refer-tree.expand + .refer-expand-left{
+    right: 0px!important;
+    left: auto!important;
+  }
+}
+.refer-pop-window .userdef-area {
+  .refer-content-area {
+    height: 330px;
+  }
+  .refer-page{
+    height: 64px;
+    box-shadow: none;
+    border-bottom: 1px solid #D0D0D0;
+  }
+  .refer-search-m12 {
+    margin: 0 12px 0 16px;
+  }
+}
+
+.account-refer-form-style{
+  padding: 12px 0;
+}
+

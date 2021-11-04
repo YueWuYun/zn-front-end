@@ -1,3 +1,4 @@
+//lAM6V7ftayBH3Odcu6EI3YqnH2sbyp3LFK9F3G5zxNK5L2OUkgUaFKXRIyBCoVm0
 export default  function(nodetype,pk_org,pk_group,pk_orgs,curGroup){
 
     let resultMessage = nodetype==='GLOBE_NODE'&&!!pk_org&&pk_org!=='GLOBLE00000000000000'?
@@ -21,3 +22,4 @@ export default  function(nodetype,pk_org,pk_group,pk_orgs,curGroup){
                     };
     return resultMessage;
 }
+//lAM6V7ftayBH3Odcu6EI3YqnH2sbyp3LFK9F3G5zxNK5L2OUkgUaFKXRIyBCoVm0

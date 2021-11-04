@@ -1,3 +1,4 @@
+//Qadq+6TfVYnVRFjA0221gzl4+k8mSLH8ogLlzrpq7BeRPgUUX9Ktb6GD4bQa1VBU
 import React, { Component } from 'react';
 import { high } from 'nc-lightapp-front';
 let { Refer:NCPopRefer} = high;
@@ -29,3 +30,5 @@ class Refer extends Component{
 }
 
 export default Refer
+
+//Qadq+6TfVYnVRFjA0221gzl4+k8mSLH8ogLlzrpq7BeRPgUUX9Ktb6GD4bQa1VBU

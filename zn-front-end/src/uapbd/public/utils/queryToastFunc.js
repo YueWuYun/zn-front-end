@@ -1,3 +1,4 @@
+//1QxbrdDNbZey0RvHZaM2jZCIikaxDN5DWka6X/luzloLqN+C/714xEXHmvfTmi3M
 import {toast} from 'nc-lightapp-front';
 
 export default function (){
@@ -23,3 +24,4 @@ export default function (){
         }
     }
 }
+//1QxbrdDNbZey0RvHZaM2jZCIikaxDN5DWka6X/luzloLqN+C/714xEXHmvfTmi3M

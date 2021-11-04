@@ -1,3 +1,4 @@
+//N23ZN2kVlwJkhsnk0bZbGyFYnI20vY4fB+DEVfDoDRI+mhjkXvwqYynslalzL2LW
 import {base} from 'nc-lightapp-front';
 import React, { Component } from 'react';
 
@@ -17,3 +18,4 @@ class NCButton  extends Component {
     }
 }
 export default NCButton;
+//N23ZN2kVlwJkhsnk0bZbGyFYnI20vY4fB+DEVfDoDRI+mhjkXvwqYynslalzL2LW

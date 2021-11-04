@@ -1,3 +1,4 @@
+//HIkssOUWaRt0y6oyEd0uSTM+wKqpUbrokImz6tT+uL4C9jdvOUt+EW97F/X61Pdk
 import { toast, ajax, cacheTools,deepClone,promptBox,getBusinessInfo } from 'nc-lightapp-front';
 /**
  * CM 消耗单 操作公共api
@@ -104,3 +105,4 @@ export const checkTableDataLen = function(props, tableId){
     }
     return false
 }
+//HIkssOUWaRt0y6oyEd0uSTM+wKqpUbrokImz6tT+uL4C9jdvOUt+EW97F/X61Pdk

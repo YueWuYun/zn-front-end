@@ -1,3 +1,4 @@
+//VT7XaALxKej2A6t6BeV5q/8e3S4MCDkx2egPpyiezfzyNhDUqS/coRw0qi6KSliw
 import {ajax,toast} from 'nc-lightapp-front';
 let urls = {
     queryCurrOrg : "/nccloud/uapbd/bankacc/querycurrorg.do",
@@ -154,3 +155,4 @@ class BillCodeUtil{
     }
 }
 export default BillCodeUtil
+//VT7XaALxKej2A6t6BeV5q/8e3S4MCDkx2egPpyiezfzyNhDUqS/coRw0qi6KSliw

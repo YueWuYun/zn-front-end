@@ -1,3 +1,59 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],t):"object"==typeof exports?exports["uapbd/refer/customer/FreeCustGridRef/index"]=t(require("nc-lightapp-front")):e["uapbd/refer/customer/FreeCustGridRef/index"]=t(e["nc-lightapp-front"])}(window,(function(e){return function(e){var t={};function r(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.m=e,r.c=t,r.d=function(e,t,o){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)r.d(o,n,function(t){return e[t]}.bind(null,n));return o},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="../../../../",r(r.s=486)}({0:function(t,r){t.exports=e},486:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},u=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"grid",refName:"refer-000542",placeholder:"refer-000542",refCode:"uapbd.refer.customer.FreeCustGridRef",queryGridUrl:"/nccloud/uapbd/ref/FreeCustGridRef.do",columnConfig:[{name:["refer-000002","refer-000003","refer-000543","refer-000033","refer-000544"],code:["refcode","refname","address","plinkman","linkphone"]}],isMultiSelectedEnabled:!1,isHasDisabledData:!1};return React.createElement(l,o({},t,e))};var i=r(0);var f=i.high.Refer,c=f.PopRefer,a=f.MultiLangWrapper,p=i.base.NCButton,l=(i.base.NCTable,i.base.NCModal,a(function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.renderPopoverBottomExtend=function(){return React.createElement("div",null,React.createElement(p,{onClick:r.onAddClick.bind(r)},r.props.multiLang["refer-000545"]))},r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),u(t,[{key:"onAddClick",value:function(){var e="";"function"==typeof this.props.queryCondition?e=this.props.queryCondition().customSupplier:"object"===n(this.props.queryCondition)&&(e=this.props.queryCondition.customSupplier),i.pageTo.openTo("/uapbd/customer/freecust/main/index.html",{appcode:"10140FCG",pagecode:"10140FCG_freecustom",pk_customsupplier:e})}}]),t}(c)))}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high, base, ajax, pageTo } from 'nc-lightapp-front';
+
+const { PopRefer, MultiLangWrapper } = high.Refer;
+const { NCButton: Button, NCTable: Table, NCModal: Modal } = base;
+
+class FreeCustRefer extends PopRefer {
+    constructor(props) {
+        super(props);
+    }
+
+    renderPopoverBottomExtend = () => {
+        return <div>
+            <Button onClick={this.onAddClick.bind(this)}>{this.props.multiLang['refer-000545']}</Button>
+        </div>;
+    };
+
+    onAddClick() {
+
+        let customSupplier = '';
+
+        if (typeof this.props.queryCondition === 'function') {
+            customSupplier = this.props.queryCondition().customSupplier;
+        } else if (typeof this.props.queryCondition === 'object') {
+            customSupplier = this.props.queryCondition.customSupplier;
+        }
+
+        pageTo.openTo('/uapbd/customer/freecust/main/index.html',
+            {
+                appcode: '10140FCG',
+                pagecode: '10140FCG_freecustom',
+                pk_customsupplier: customSupplier
+            }
+        )
+    }
+}
+
+export default function (props = {}) {
+    var conf = {
+        multiLang: {
+            domainName: 'uapbd',
+            currentLocale: 'zh-CN',
+            moduleId: 'refer_uapbd',
+        },
+        refType: 'grid',
+        refName: 'refer-000542',
+        placeholder: 'refer-000542',
+        refCode: 'uapbd.refer.customer.FreeCustGridRef',
+        queryGridUrl: '/nccloud/uapbd/ref/FreeCustGridRef.do',
+        columnConfig: [{ name: ['refer-000002', 'refer-000003', 'refer-000543', 'refer-000033', 'refer-000544'], code: ['refcode', 'refname', 'address', 'plinkman', 'linkphone'] }],
+        isMultiSelectedEnabled: false,
+        isHasDisabledData: false
+    };
+
+    return <FreeCustReferWrapper {...conf} {...props} />
+}
+const FreeCustReferWrapper = MultiLangWrapper(FreeCustRefer)
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

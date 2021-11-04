@@ -1,3 +1,115 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],t):"object"==typeof exports?exports["uapbd/refer/bankacc/BankDocDefaultGridTreeRef/index"]=t(require("nc-lightapp-front")):e["uapbd/refer/bankacc/BankDocDefaultGridTreeRef/index"]=t(e["nc-lightapp-front"])}(window,(function(e){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../../../../",n(n.s=471)}({0:function(t,n){t.exports=e},471:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"gridTree",refName:"refer-000546",refCode:"uapbd.bankacc.BankDocDefaultGridRef",placeholder:"refer-000546",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},rootNode:{refname:"refer-000546",refpk:"root"},queryGridUrl:"/nccloud/uapbd/ref/BankDocDefaultGridRef.do",queryTreeUrl:"/nccloud/uapbd/ref/BankDocDefaultTreeRef.do",columnConfig:[{name:["refer-000047","refer-000547","refer-000548","refer-000250","refer-000549","refer-000550","refer-000551","refer-000015"],code:["org_name","refcode","refname","shortname","pk_fatherbank","province","city","ttname"],checked:{ttname:!1}}],isMultiSelectedEnabled:!1};return React.createElement(p,r({},t,e))};var a=n(0);var i=a.high.Refer,f=i.PopRefer,u=i.MultiLangWrapper,c=(a.high.Refer,a.base.NCCheckbox),p=(a.base.NCCollapse,a.base.NCButton,a.base.NCTable,u(function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.getParam=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=n.props,r=t.queryCondition,a=t.pageSize,i=t.refType,f=e.keyword,u=void 0===f?"":f,c=e.pid,p=void 0===c?"":c,l=e.pageInfo,d=void 0===l?{}:l;d={pageSize:d.pageSize||a,pageIndex:d.pageIndex||("tree"===i?-1:0)};var s={pid:p,keyword:u,queryCondition:r?"function"==typeof r?r():"object"===(void 0===r?"undefined":o(r))?r:{}:{},pageInfo:d};return s.queryCondition.isShowOwnBank=n.state.isShowOwnBank?"Y":"N",s.queryCondition.isIncludeCustSup=n.state.isIncludeCustSup?"Y":"N",s},n.renderPopoverBottomExtend=function(){return React.createElement("div",{style:{marginLeft:"225px"}},React.createElement("div",{style:{float:"left"}},React.createElement(c,{checked:n.state.isShowOwnBank,onChange:n.onChangeFirst.bind(n)},n.props.multiLang["refer-000552"])),React.createElement("div",{style:{marginLeft:"15px",float:"left"}},React.createElement(c,{checked:n.state.isIncludeCustSup,onChange:n.onChangeSecond.bind(n)},n.props.multiLang["refer-000553"])))},n.onChangeFirst=function(e){n.setState({isShowOwnBank:e},(function(){var e=n.getParam({pid:n.state.selectedKeys[0],pageInfo:{pageSize:n.props.pageSize,pageIndex:0}});null!==e.pid&&void 0!==e.pid&&""!==e.pid&&n.loadTableData(e).then((function(e){n.setTableData("tableData",n.state.currentLevel,e)}))}))},n.onChangeSecond=function(e){n.setState({isIncludeCustSup:e},(function(){var e=n.getParam({pid:n.state.selectedKeys[0],pageInfo:{pageSize:n.props.pageSize,pageIndex:0}});null!==e.pid&&void 0!==e.pid&&""!==e.pid&&n.loadTableData(e).then((function(e){n.setTableData("tableData",n.state.currentLevel,e)}))}))},n.state=r({},n.state,{isShowOwnBank:!1,isIncludeCustSup:!0}),n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),t}(f)))}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high, base } from 'nc-lightapp-front';
+const { PopRefer ,MultiLangWrapper} = high.Refer;
+const { Refer } = high;
+const { NCCheckbox: Checkbox, NCCollapse: Collapse, NCButton: Button, NCTable: Table } = base;
+class BankDocGridTreeRef extends PopRefer {
+	constructor(props) {
+		super(props);
+		this.state = {
+			...this.state, // 继承state
+			isShowOwnBank: false,  //是否显示本组织银行
+			isIncludeCustSup: true,   //是否包含客商银行
+		}
+	}
+
+	// 复写原型方法
+	getParam = (param = {}) => {
+		let { queryCondition, pageSize, refType } = this.props,
+			{ keyword = '', pid = '', pageInfo = {} } = param;
+		pageInfo = {
+			pageSize: pageInfo.pageSize || pageSize,
+			pageIndex: pageInfo.pageIndex || (refType === 'tree' ? -1 : 0)
+		};
+
+		let _param = {
+			pid,
+			keyword,
+			queryCondition: queryCondition
+				? typeof queryCondition === 'function'
+					? queryCondition()
+					: typeof queryCondition === 'object' ? queryCondition : {}
+				: {},
+			pageInfo
+		};
+		_param.queryCondition.isShowOwnBank = this.state.isShowOwnBank ? 'Y' : 'N';
+		_param.queryCondition.isIncludeCustSup = this.state.isIncludeCustSup ? 'Y' : 'N'; // 在参数中加上flag字段
+		return _param;
+	};
+	renderPopoverBottomExtend = () => {
+		return <div style={{ marginLeft: "225px" }}>
+			<div style={{ float: "left" }}><Checkbox checked={this.state.isShowOwnBank} onChange={this.onChangeFirst.bind(this)}>{this.props.multiLang['refer-000552']}</Checkbox></div>
+			<div style={{ marginLeft: "15px", float: "left" }}><Checkbox checked={this.state.isIncludeCustSup} onChange={this.onChangeSecond.bind(this)}>{this.props.multiLang['refer-000553']}</Checkbox></div></div>;
+	}
+
+	onChangeFirst = (checked) => {
+		this.setState(
+			{
+				isShowOwnBank: checked
+			},
+			() => {
+				let param = this.getParam({
+					pid: this.state.selectedKeys[0],
+					pageInfo: {
+						pageSize: this.props.pageSize,
+						pageIndex: 0
+					}
+				});
+                if(param.pid!==null&&param.pid!==undefined&&param.pid!==""){
+					this.loadTableData(param).then((data)=>{
+						this.setTableData('tableData', this.state.currentLevel, data);
+					});
+				}
+				
+			}
+		);
+	}
+	onChangeSecond = (checked) => {
+		this.setState(
+			{
+				isIncludeCustSup: checked
+			},
+			() => {
+				let param = this.getParam({
+					pid: this.state.selectedKeys[0],
+					pageInfo: {
+						pageSize: this.props.pageSize,
+						pageIndex: 0
+					}
+				});
+				if(param.pid!==null&&param.pid!==undefined&&param.pid!==""){
+					this.loadTableData(param).then((data)=>{
+						this.setTableData('tableData', this.state.currentLevel, data);
+					});
+				}
+				
+			}
+		);
+
+	}
+}
+
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+		refType: 'gridTree',
+		refName: 'refer-000546',/* 国际化处理： 银行档案*/
+		refCode: 'uapbd.bankacc.BankDocDefaultGridRef',
+		placeholder: "refer-000546",/* 国际化处理： 银行银行档案*/
+		treeConfig: { name: ['refer-000002', 'refer-000003'], code: ['refcode', 'refname'] },/* 国际化处理： 编码,名称*/
+		rootNode: { refname: 'refer-000546', refpk: 'root' },/* 国际化处理： 银行*/
+		queryGridUrl: '/nccloud/uapbd/ref/BankDocDefaultGridRef.do',
+		queryTreeUrl: '/nccloud/uapbd/ref/BankDocDefaultTreeRef.do',
+		columnConfig: [{ name: ['refer-000047', 'refer-000547', 'refer-000548', 'refer-000250', 'refer-000549', 'refer-000550', 'refer-000551', 'refer-000015'], code: ['org_name', 'refcode', 'refname', 'shortname', 'pk_fatherbank', 'province', 'city', 'ttname'],checked:{'ttname':false} }],
+		/* 国际化处理： 所属组织,银行编码,银行名称,简称，上级银行，省份，城市，银行类别*/
+		isMultiSelectedEnabled: false
+	};
+
+	return <BankDocGridTreeRefWrapper {...conf} {...props} />
+}
+const BankDocGridTreeRefWrapper = MultiLangWrapper(BankDocGridTreeRef)
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

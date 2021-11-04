@@ -1,3 +1,59 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react"],t):"object"==typeof exports?exports["uapbd/refer/supplier/InnerCustSupplierGridTreeRef/index"]=t(require("nc-lightapp-front"),require("react")):e["uapbd/refer/supplier/InnerCustSupplierGridTreeRef/index"]=t(e["nc-lightapp-front"],e.React)}(window,(function(e,t){return function(e){var t={};function r(o){if(t[o])return t[o].exports;var n=t[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,r),n.l=!0,n.exports}return r.m=e,r.c=t,r.d=function(e,t,o){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(r.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var n in e)r.d(o,n,function(t){return e[t]}.bind(null,n));return o},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="../../../../",r(r.s=817)}({0:function(t,r){t.exports=e},2:function(e,r){e.exports=t},817:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},n=function(){function e(e,t){for(var r=0;r<t.length;r++){var o=t[r];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}return function(t,r,o){return r&&e(t.prototype,r),o&&e(t,o),t}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"gridTree",refName:"refer-000505",refCode:"uapbd.refer.supplier.InnerCustSupplierGridTreeRef",placeholder:"refer-000505",queryTreeUrl:"/nccloud/uapbd/ref/InnerCustSupplierDefaultTreeRef.do",queryGridUrl:"/nccloud/uapbd/ref/InnerCustSupplierDefaultGridRef.do",columnConfig:[{name:["refer-000047","refer-000501","refer-000502","refer-000503","refer-000504"],code:["pk_orgname","refcode","refname","pk_financeorg","taxpayerid"],fullTxtCode:{refcode:!0,refname:!0,taxpayerid:!1}}],isMultiSelectedEnabled:!1,isTreelazyLoad:!0,isShowUnit:!1,isShowUsual:!0,isHasDisabledData:!1,defaultCheck:"pk_custclass"};return p.default.createElement(l,o({},t,e))};var a=r(0),i=f(r(818)),u=r(2),p=f(u);function f(e){return e&&e.__esModule?e:{default:e}}a.high.Refer;var l=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.state={rootNode:{refname:"pk_custclass"==r.props.defaultCheck?"refer-000538":"refer-000539",refpk:"root"}},r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),n(t,[{key:"onRadioChange",value:function(e){var t=this.state.rootNode;t.refname="pk_custclass"==e?"refer-000538":"refer-000539",this.setState({rootNode:t})}},{key:"render",value:function(){return p.default.createElement(i.default,o({},this.props,{rootNode:this.state.rootNode,onRadioChange:this.onRadioChange.bind(this)}))}}]),t}(u.Component)},818:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var o in r)Object.prototype.hasOwnProperty.call(r,o)&&(e[o]=r[o])}return e},n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},a=r(0);var i=a.base.NCRadio,u=a.high.Refer,p=(u.PopRefer,(0,u.MultiLangWrapper)(function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.getParam=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t=r.props,o=t.queryCondition,a=t.pageSize,i=t.refType;"root"===e.pid&&(e.pid="");var u=e.keyword,p=void 0===u?"":u,f=e.pid,l=void 0===f?"":f,c=e.pageInfo,s=void 0===c?{}:c;s={pageSize:s.pageSize||a,pageIndex:s.pageIndex||("tree"===i?-1:0)};var d={pid:l,keyword:p,queryCondition:o?"function"==typeof o?o():"object"===(void 0===o?"undefined":n(o))?o:{}:{},pageInfo:s};return d.queryCondition.queryType=r.state.radioValue,d},r.handleGroupChange=function(e){r.setState({group_pk:e.refpk,expandedKeys:[]},(function(){r.getTreeData()}))},r.handleRadioChange=function(e){r.props.onRadioChange(e);var t=r.props.rootNode,o=r.state.group;o[void 0]=[t],r.setState({group:o,tableData:[{rows:[],page:{pageIndex:0,pageSize:r.props.pageSize,totalPage:1}}],treeData:[t],radioValue:e,expandedKeys:[]},(function(){r.getTreeData()}))},r.getTreeData=function(){var e=r.props,t=e.queryTreeUrl,o=e.isCacheable,n=e.rootNode,a=r.getParam({pid:"",pageInfo:{pageSize:10,pageIndex:-1},queryCondition:{queryType:r.state.radioValue}}),i=r.hasCache(t,a);r.state.tableData=[{rows:[],page:{pageIndex:0,pageSize:r.props.pageSize,totalPage:1}}],1==o&&i?r.setTreeData("treeData",n,i):r.loadTreeData(a).then((function(e){r.setTreeData("treeData",n,e)})),r.setState({tableData:r.state.tableData})},r.renderPopoverLeftHeader=function(){return React.createElement("div",{id:"radioGroup",style:{"margin-bottom":"5px"}},React.createElement(i.NCRadioGroup,{name:"role",radioValue:r.state.radioValue,selectedValue:r.state.radioValue,onChange:r.handleRadioChange.bind(r)},React.createElement(i,{value:"pk_custclass"},r.props.multiLang["refer-000540"]),React.createElement(i,{value:"pk_supplierclass"},r.props.multiLang["refer-000541"])))},r.state=o({},r.state,{radioValue:"pk_custclass"==r.props.defaultCheck?"pk_custclass":"pk_supplierclass",group_pk:"firstGroup",currentReffer:[]}),r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),t}(u.ReferWithUnit)));t.default=p}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high } from 'nc-lightapp-front';
+import InnerCustSupplierWrapper from './base.js'
+const { Refer } = high;
+import React, { Component } from 'react'
+
+class InnerCustSupplierRef extends Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			rootNode: {
+				refname: this.props.defaultCheck == 'pk_custclass' ? 'refer-000538' : 'refer-000539',//国际化处理，客户分类/供应商分类
+				refpk: 'root'
+			},
+		}
+	}
+	onRadioChange(value) {
+		let root = this.state.rootNode
+		root.refname = value == 'pk_custclass' ? 'refer-000538' : 'refer-000539',
+			this.setState({
+				rootNode: root
+			})
+
+	}
+	render() {
+		return <InnerCustSupplierWrapper {...this.props} rootNode={this.state.rootNode} onRadioChange={this.onRadioChange.bind(this)} />
+	}
+}
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+
+		refType: 'gridTree',
+		refName: 'refer-000505',/* 国际化处理： 内部客商*/
+		refCode: 'uapbd.refer.supplier.InnerCustSupplierGridTreeRef',
+		placeholder: 'refer-000505',/* 国际化处理： 内部客商*/
+		queryTreeUrl: '/nccloud/uapbd/ref/InnerCustSupplierDefaultTreeRef.do',
+		queryGridUrl: '/nccloud/uapbd/ref/InnerCustSupplierDefaultGridRef.do',
+		columnConfig: [{
+			name: ['refer-000047', 'refer-000501', 'refer-000502', 'refer-000503', 'refer-000504'],
+			code: ['pk_orgname', 'refcode', 'refname', 'pk_financeorg', 'taxpayerid'],
+			fullTxtCode: { 'refcode': true, 'refname': true, 'taxpayerid': false }
+		}],/* 国际化处理： 所属组织,客商编码,客商名称,对应业务单元,纳税人登记号*/
+		isMultiSelectedEnabled: false,
+		isTreelazyLoad: true,
+		isShowUnit: false,
+		isShowUsual: true,
+		isHasDisabledData: false,
+		defaultCheck: 'pk_custclass'
+	};
+
+	return <InnerCustSupplierRef {...conf} {...props} />
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

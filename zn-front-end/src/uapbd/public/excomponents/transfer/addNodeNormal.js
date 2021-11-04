@@ -1,3 +1,4 @@
+//dc3pXa2v+xdJk1vNUalfjN2UCyQkbMRaocaXb5o4JvXdRps7sUcA03i1j2poPtiB
 import * as tree_utils from './tree_utils';
 import { deepClone } from 'nc-lightapp-front';
 const { getNodeByKey, hasGivenKey, hasEnableInLeaf, getChildrenNodeAndDel, hasFixedLeaf, hasAllFixedLeaf, treeSort } = tree_utils;
@@ -158,3 +159,4 @@ export default function addToTree(from_tree, to_tree, checkedKeys, halfCheckedKe
 	// 返回移除节点
 	return  selectType == 'onlySelf' ? [...selfDeletedCheckedNodes] :fixed ? [...fixedDeleteCheckedNodes,...fixedShouldDelPar,...leafCheckedNodes]:arrayCheckedNodes;
 }
+//dc3pXa2v+xdJk1vNUalfjN2UCyQkbMRaocaXb5o4JvXdRps7sUcA03i1j2poPtiB

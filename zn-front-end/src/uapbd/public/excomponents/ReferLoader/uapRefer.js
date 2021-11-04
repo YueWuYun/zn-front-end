@@ -1,3 +1,4 @@
+//sEKMwVfgohb62RlpBzFcM4LIC3oSyvQbpNPWhgLceGI7TBS7WF9SlCRJ14K2qd39
 
 //@Author: lijun
 export function handleLoad(refcode, code) {
@@ -41,3 +42,5 @@ export default function createScript(src, code) {
 			script.onload = script.onload || handleLoad.bind(that, refKey);
 	}
 }
+
+//sEKMwVfgohb62RlpBzFcM4LIC3oSyvQbpNPWhgLceGI7TBS7WF9SlCRJ14K2qd39

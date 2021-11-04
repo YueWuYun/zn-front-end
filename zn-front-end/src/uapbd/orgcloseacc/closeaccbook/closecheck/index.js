@@ -1,3 +1,563 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 14:55:26"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react"),require("nc-report")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react","nc-report"],t):"object"==typeof exports?exports["uapbd/orgcloseacc/closeaccbook/closecheck/index"]=t(require("nc-lightapp-front"),require("react"),require("nc-report")):e["uapbd/orgcloseacc/closeaccbook/closecheck/index"]=t(e["nc-lightapp-front"],e.React,e["nc-report"])}(window,(function(e,t,n){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../../../../",n(n.s=161)}({1:function(t,n){t.exports=e},131:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCTable,u=i.base.NCDiv,f=i.base.NCTooltip,p=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.initColumns=function(){var e=this,t=this.state.newcols,n=this.props,r=n.columns,a=(n.title,[].concat(function(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}(r)));if(!(t&&t.length>0)){var i=a[0].dataIndex||a[0].attrcode;["index","numberindex","id"].includes(i)&&Object.assign(a[0],{fixed:"left"});var c=a.map((function(t){var n=t.render;return t.render=function(e,r,a){return s.default.createElement(f,o({},this.tooltipcfg,{overlay:e}),s.default.createElement("span",{fieldid:t.dataIndex,title:""},n?n(e,r,a):e))}.bind(e),t.title=t.title&&"span"===t.title.type?t.title:s.default.createElement("span",{fieldid:t.dataIndex},t.label||t.title),t}));return this.setState({newcols:c}),c}},n.tooltipcfg={className:"tooltip-word-color",placement:"top",delay:1},n.state={newcols:[]},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"componentWillReceiveProps",value:function(e){this.setState({newcols:[]})}},{key:"render",value:function(){var e=this.props.columns,t=e&&e.length>0&&this.initColumns(),n=this.state.newcols,r=t||n,a=o({},this.props,{columns:r});return s.default.createElement(u,{fieldid:this.props.fieldid||this.props.tableId||"basetable_comp",areaCode:u.config.TableCom},r&&r.length>0&&s.default.createElement(l,a))}}]),t}(c.Component);t.default=p},132:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCTree,u=i.base.NCDiv,f=l.NCTreeNode,p=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.getParentDomFieldId=function(e){var t=ReactDOM.findDOMNode(e);if(!t)return null;return function e(t){for(;t.parentElement;)return t.parentElement.hasAttribute("fieldid")?t.parentElement.getAttribute("fieldid"):e(t.parentElement)}(t)},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.getParentDomFieldId(this),t=e&&e.substr(0,e.indexOf("_")),n=this.props.fieldid||t||this.props.treeId||"basetree_comp",r=o({},this.props,{fieldid:n,openIcon:s.default.createElement("i",{fieldid:"opentree-switcher",class:"icon iconfont icon-shu_zk tree-swich"}),closeIcon:s.default.createElement("i",{fieldid:"closetree-switcher",class:"icon iconfont icon-shushouqi tree-swich"})});return s.default.createElement(u,{fieldid:n,areaCode:u.config.TreeCom},s.default.createElement(l,r))}}]),t}(c.Component);p.NCTreeNode=f,t.default=p},133:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCButton,u=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=o({},this.props,{fieldid:this.props.fieldid||this.props.id||this.props.key||"selfopr"});return s.default.createElement(l,e)}}]),t}(c.Component);t.default=u},134:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(2),c=(r=i)&&r.__esModule?r:{default:r};var s=n(1).high.Refer,l=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.attrcode,n=e.fieldid,r=e.refCode,a=e.refName,i=e.refType,l=e.queryTreeUrl,u=e.queryGridUrl,f=("tree"==i||"gridTree"==i?l:u).split("/"),p=null;f[f.length-1]&&f[f.length-1].split(".").length>1&&(p=f[f.length-1].split(".")[0].toLowerCase());var d=null;if(r&&r.indexOf(".")>-1){var h=r.split(".");d=h[h.length-1].toLowerCase()}var b=o({},this.props,{fieldid:t||(n||p||d||a)});return c.default.createElement(s,b)}}]),t}(i.Component);t.default=l},135:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCSelect,u=l.NCOption,f=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props.fieldid||this.props.defaultValue||"common",t=o({},this.props,{fieldid:e});return s.default.createElement(l,t)}}]),t}(c.Component);f.NCOption=u,t.default=f},136:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCIcon,u=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=o({},this.props,{fieldid:this.props.fieldid||this.props.type});return s.default.createElement(l,e)}}]),t}(c.Component);t.default=u},137:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(1),c=n(2),s=(r=c)&&r.__esModule?r:{default:r};var l=i.base.NCFormControl,u=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.fieldid,n=e.type,r=e.key,a=e.placeholder,i=o({},this.props,{fieldid:t||n||r||a||"ncformcontrol"});return s.default.createElement(l,i)}}]),t}(c.Component);t.default=u},138:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(2),c=(r=i)&&r.__esModule?r:{default:r};var s=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.ReferComp,n=function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(e,["ReferComp"]),r=t&&t();if(!r)return null;var a=r.props,i=a.attrcode,s=a.fieldid,l=a.refCode,u=a.refName,f=a.refType,p=a.queryTreeUrl,d=a.queryGridUrl,h=("tree"==f||"gridTree"==f?p:d).split("/"),b=h[h.length-1].split(".")[0].toLowerCase(),y=null;if(l&&l.indexOf(".")>-1){var m=l.split(".");y=m[m.length-1].toLowerCase()}var v=o({},n,{fieldid:i||(s||b||y||u)});return c.default.createElement(t,v)}}]),t}(i.Component);t.default=s},161:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(2),c=n(1),s=n(162),l=(r=s)&&r.__esModule?r:{default:r};var u=n(3).component.NCTree,f=(c.base.NCMessage,c.base.NCDropdown,c.base.NCMenu,c.base.NCCheckbox,c.base.NCPopconfirm,c.base.NCIcon),p=c.base.NCDiv,d=u.NCTreeNode,h=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.onExpand=function(e){n.setState({expandedKeys:e,autoExpandParent:!1})},n.config=Object.assign({treeId:"closeTree",rootName:e.config.checkconfig&&e.config.checkconfig.json["101006-000000"]?e.config.checkconfig.json["101006-000000"]:"月结检查项类别",accperiod:"",treeData:[],urls:""},e.config.checkconfig),n.root={isleaf:!1,key:"~",title:n.config.rootName,id:"~",innercode:"~",pid:"",refname:n.config.rootName,refpk:"~"},n.state={autoExpandParent:!0,checkRes:{},itemvos:{},expandedKeys:["~"],selectedKeys:["~"],comps:{},curComp:void 0,pk_checkitem:"",print:null,json:e.config.checkconfig&&e.config.checkconfig.json["101006-000000"]?e.config.checkconfig.json:{},isReport:!1,reportParam:{}},n.initButtonVisib(),n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"initButtonVisib",value:function(){this.isHasPrint()?this.props.button.setButtonsVisible(["Print","Output"],!0):this.props.button.setButtonsVisible(["Print","Output"],!1)}},{key:"isHasPrint",value:function(){var e=this.config.moduleid;return"2011"!==e&&"3607"!==e&&"2006"!==e&&"2008"!==e}},{key:"componentDidMount",value:function(){this.config.isCheck&&this.onCheckClose()}},{key:"dealTreeData",value:function(e){return e.forEach((function(e){!function e(t){t.children&&0!=t.children.length?(t.isLeaf=!1,t.children.forEach((function(t){e(t)}))):delete t.children}(e)})),e}},{key:"onButtonClick",value:function(e,t){var n=this;switch(t){case"Check":(0,c.promptBox)({color:"info",title:this.state.json["101006-000001"],content:this.state.json["101006-000002"],beSureBtnClick:function(){n.onCheckClose()}});break;case"Print":this.onPrintClose();break;case"Output":this.onOutputClose();break;case"OneKeySign":this.oneKeySign()}}},{key:"onCheckClose",value:function(){var e=this;(0,c.ajax)({url:"/nccloud/uapbd/org/DoCheckCloseAccNCCAction.do",data:this.config.data,success:function(t){var n=t.success,r=t.data;if(n&&r){r.isPass;var o=r.itemvos,a=r.checkRes,i=r.pk_checkitem;e.setState({checkRes:a,itemvos:o,expandedKeys:e.getCheckItemTypeIds(e.config.treeData),selectedKeys:[i],autoExpandParent:!0,pk_checkitem:i},(function(){e.selectTree({refpk:i})}))}}})}},{key:"onPrintClose",value:function(){this.state.print&&this.state.print()}},{key:"onprintPreVIewClose",value:function(){this.state.printPreVIew&&this.state.printPreVIew()}},{key:"onOutputClose",value:function(){this.state.output&&this.state.output()}},{key:"oneKeySign",value:function(){this.state.oneKeySign&&this.state.oneKeySign()}},{key:"getCheckItemTypeIds",value:function(e){var t=["~"];return e.forEach((function(e){!function e(n){n.nodeData&&n.nodeData.iSchecktypevo&&(t[t.length]=n.refpk),n.children&&n.children.length>0&&n.children.forEach((function(t){e(t)}))}(e)})),t}},{key:"isCheckItem",value:function(e,t){for(var n=!1,r=0;r<e.length;r++){var o=e[r];if(o.refpk===t&&o.nodeData.iScheckitemvo)return!0;if(o.children&&(n=this.isCheckItem(o.children,t)))return!0}return n}},{key:"onSelectTree",value:function(e,t){var n=this;this.setState({selectedKeys:e,pk_checkitem:e[0]},(function(){n.selectTree({refpk:e[0]})}))}},{key:"selectTree",value:function(){var e=this,t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},n=t.refpk,r=void 0===n?"":n,o=this.config.treeData;if(0!=o.length&&this.isCheckItem(o,r)){var a=this.getUrl(o,r);if(a)if(-1!=a.indexOf("report##")||-1!=a.indexOf("appid##")){var i=a.split("report##")[1],s=a.split("appid##")[1];(0,c.ajax)({url:"/nccloud/uapbd/org/QueryReportParambyFunid.do",data:{funid:i,appid:s},success:function(t){var n=t.success,r=t.data;if(n&&r){r.appCode,r.pagecode,r.pk_report;var o=r.flag;r.reportName;"1"===o?e.setState({isReport:!0,reportParam:r},(function(){e.isHasPrint()&&e.props.button.setButtonsVisible(["Print","Output"],!1)})):((0,c.toast)({content:e.state.json["101006-000048"],color:"warning"}),e.setState({isReport:!1,reportParam:{}},(function(){})))}}})}else{-1!=a.indexOf("../../../../")?a+=".js":a="../../../../"+a+".js";var l=a.substring(12,a.length-3),u=document.createElement("script");u.src=a,u.type="text/javascript",u.onload=function(){var t=window[l];t?(e.state.comps[l]=t.default,e.state.curComp=t.default,e.state.isReport=!1,e.setState(e.state,(function(){e.isHasPrint()&&e.props.button.setButtonsVisible(["Print","Output"],!0)}))):(0,c.toast)({content:"load panel class error!",color:"danger"})},u.onerror=function(){(0,c.toast)({content:e.state.json["101006-000004"],color:"danger"})},document.body.appendChild(u)}else(0,c.toast)({content:this.state.json["101006-000003"],color:"danger"})}}},{key:"getUrl",value:function(e,t){for(var n=null,r=0;r<e.length;r++){var o=e[r];if(o.refpk===t&&o.nodeData.iScheckitemvo)return o.nodeData.checkitemvo.checkclass?o.nodeData.checkitemvo.checkitem_url:o.nodeData.checkitemvo.associappid?"appid##"+o.nodeData.checkitemvo.associappid:"report##"+o.nodeData.checkitemvo.associpoint;if(o.children&&(n=this.getUrl(o.children,t)))return n}return n}},{key:"createRightPanel",value:function(){var e=this;if(this.state.isReport){var t={pk_checkitem:this.state.pk_checkitem,period:this.config.selref_pk_accperiodmonth,pk_accountingbook:this.config.data.model1.rows[0].values.pk_checkaccbook.value,pk_org:this.config.data.exdata.pk_org,moduleid:this.config.data.exdata.moduleid,selref_pk_accperiodmonth:this.config.data.exdata.selref_pk_accperiodmonth,selref_accperiodmonth_name:this.config.data.exdata.selref_accperiodmonth_name,isShowOnclose:this.config.data.exdata.isShowOnclose,key_time_offset:this.config.data.exdata.key_time_offset,data:this.config.data},n=(this.config.data.exdata.pk_org,this.config.data.model1.rows[0].values.pk_org.value),r=this.config.data.model1.rows[0].values.pk_storedoc.value,o=n;switch("STOREDOC"===t.moduleid&&(t.moduleid="4008"),"2016"===t.moduleid?o=this.config.data.model1.rows[0].values.pk_checkaccbook.value:"3824"===t.moduleid?o=this.config.data.model1.rows[0].values.pk_liabilitybook.value:"2014"===t.moduleid&&(o=this.config.data.model1.rows[0].values.pk_checkaccbook.value+this.config.data.model1.rows[0].values.pk_costregion.value),"2016"===t.moduleid?n=o:"2014"===t.moduleid&&(n=o.substring(0,20)),t.moduleid){case"2002":case"2016":t.pk_accountingbook=n;break;case"2014":t.pk_costorg=n;break;case"STOREDOC":case"4008":t.pk_inventory=n,t.pk_store=r;break;case"3830":t.pk_product=n;case"3880":t.pk_product=n}var a={appcode:this.state.reportParam.appcode,pagecode:this.state.reportParam.pagecode,LinkReport:JSON.stringify({logic:"and",conditions:[]}),reportName:this.state.reportParam.reportName,userdefObj:t};return React.createElement(l.default,a)}var i={},c=this.state.curComp,s={pk_checkitem:this.state.pk_checkitem,period:this.config.selref_pk_accperiodmonth,pk_accountingbook:this.config.data.model1.rows[0].values.pk_checkaccbook.value,data:this.config.data,linkParam:i,fthis:this,ref:function(t){e.curCompInstance=t,e.linkParam=e.linkParam?e.linkParam:i}};return c?c(s):""}},{key:"render",value:function(){var e=this,t=this.props,n=(t.asyncTree,t.syncTree,t.button),r=(t.modal,t.search,t.DragWidthCom),a=t.BillHeadInfo.createBillHeadInfo,i=n.createButtonApp,c=this.dealTreeData([Object.assign(o({},this.root),{children:this.config.treeData})]),s=React.createElement(p,{areaCode:p.config.TreeCom,fieldid:"closecheck",className:"tree-area"},React.createElement("div",{style:{height:380,overflow:"auto"}},React.createElement(u,{selectedKeys:this.state.selectedKeys,onExpand:this.onExpand.bind(this),expandedKeys:this.state.expandedKeys,autoExpandParent:this.state.autoExpandParent,onSelect:this.onSelectTree.bind(this),openIcon:React.createElement("i",{class:"icon iconfont icon-shu_zk tree-swich"}),closeIcon:React.createElement("i",{class:"icon iconfont icon-shushouqi tree-swich"})},function t(n){return n.map((function(n){var r=n.refname,o="";if(n.nodeData&&n.nodeData.iSchecktypevo)o=React.createElement(f,{type:"uf-4square-3"});else if(n.nodeData&&n.nodeData.iScheckitemvo){var a=e.state.checkRes[n.refpk];o=a?React.createElement("span",{style:{marginTop:3,marginRight:6}},React.createElement("div",{style:{display:"flex",height:15,width:15,justifyContent:"center",alignItems:"center",overflow:"hidden",borderRadius:15}},React.createElement("i",{style:{color:"#69AC4E",fontSize:24,marginTop:5},className:"uf uf-pass-3"}))):null!=a&&null!=a&&!1===a?"1"==n.nodeData.checkitemvo.checkstrategy?React.createElement("span",{style:{marginRight:6}},React.createElement("i",{style:{color:"#F35118",fontSize:17},className:"uf uf-close-c"})):React.createElement("span",{style:{marginRight:6}},React.createElement("i",{style:{color:"#F35118",fontSize:20},className:"uf uf-exc-c-2"})):""}else o=React.createElement(f,{type:"uf-folder-o"});var i=React.createElement("span",{style:{display:"flex"}},o,React.createElement("span",null,r));return n.children?React.createElement(d,{liAttr:{fieldid:(n.code||n.name||n.refname||n.refpk)+"_node"},key:n.refpk,title:i},t(n.children)):React.createElement(d,{liAttr:{fieldid:(n.code||n.name||n.refname||n.refpk)+"_node"},key:n.refpk,title:i,isLeaf:n.isLeaf})}))}(c)))),l=React.createElement("div",{className:"card-area",style:this.state.isReport?{}:{overflow:"hidden"}},this.createRightPanel());return React.createElement("div",null,React.createElement(p,{areaCode:p.config.HEADER,className:"header",style:{height:40,paddingBottom:0,marginTop:-15}},a({title:this.state.json["101006-000006"]+"："+this.config.accperiod,initShowBackBtn:!1}),React.createElement("div",{className:"btn-group"},i({area:"check-area",onButtonClick:this.onButtonClick.bind(this),modalRelation:"checkmodal"}))),React.createElement("div",{className:"tree-card",style:{height:420}},React.createElement(r,{leftDom:s,rightDom:l,defLeftWid:"20%"})))}}]),t}(i.Component);t.default=h},162:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),o=n(2),a=n(1),i=n(163);a.base.NCMessage,a.base.NCDropdown,a.base.NCMenu,a.base.NCCheckbox,a.base.NCPopconfirm,a.base.NCTree,a.base.NCIcon;var c=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={checkRes:{},itemvos:{}},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),r(t,[{key:"componentDidMount",value:function(){}},{key:"setDefaultVal",value:function(e,t){}},{key:"render",value:function(){var e={appcode:this.props.appcode,pagecode:this.props.pagecode,LinkReport:this.props.LinkReport,userdefObj:this.props.userdefObj,reportName:this.props.reportName,showSearchArea:"2"};return React.createElement("div",{className:"table"},React.createElement(i.SimpleReport,{ownReportParams:e,showAdvBtn:!0,setDefaultVal:this.setDefaultVal.bind(this)}))}}]),t}(o.Component);t.default=c},163:function(e,t){e.exports=n},2:function(e,n){e.exports=t},3:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.component=void 0;var r=f(n(131)),o=f(n(132)),a=f(n(133)),i=f(n(134)),c=f(n(135)),s=f(n(136)),l=f(n(137)),u=f(n(138));function f(e){return e&&e.__esModule?e:{default:e}}var p={NCTable:r.default,NCTree:o.default,NCButton:a.default,Refer:i.default,NCSelect:c.default,NCIcon:s.default,NCFormControl:l.default,ReferWapper:u.default};t.component=p}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+/**
+ * 关账检查
+ * @author	xuewenc
+ */
+import { Component } from 'react';
+import { createPage, base, ajax, NCCreateSearch, toast, promptBox } from 'nc-lightapp-front';
+import Report from './report.js';
+import {component} from '../../../public/platwapper/index.js';
+const { NCTree } = component;
+const { NCMessage, NCDropdown, NCMenu, NCCheckbox, NCPopconfirm, NCIcon ,NCDiv} = base;
+const NCTreeNode = NCTree.NCTreeNode;
+
+class Closecheck extends Component {
+	constructor(props) {
+		super(props);
+		this.config = Object.assign(
+			{
+				treeId: 'closeTree',
+				rootName: (props.config.checkconfig&&props.config.checkconfig.json['101006-000000'])?props.config.checkconfig.json['101006-000000']:'月结检查项类别',/* 国际化处理： 月结检查项类别*/
+				accperiod: '', //会计期间
+				treeData: [],
+				urls: ''
+			},
+			props.config.checkconfig
+		);
+
+		//自定义根节点
+		this.root = {
+			isleaf: false,
+			key: '~',
+			title: this.config.rootName,
+			id: '~',
+			innercode: '~',
+			pid: '',
+			refname: this.config.rootName,
+			refpk: '~'
+		};
+
+		this.state = {
+			autoExpandParent: true,
+			checkRes: {}, //检查结果
+			itemvos: {}, //检查项
+			expandedKeys: [ '~' ], //指定展开的节点(controlled)
+			selectedKeys: [ '~' ], //指定选中的节点keys(controlled)
+			comps: {},
+			curComp: undefined,
+			pk_checkitem: '', //月结检查项主键
+			print : null,
+			json : (props.config.checkconfig&&props.config.checkconfig.json['101006-000000']) ? props.config.checkconfig.json : {},
+			isReport : false,  //是否为自由报表
+			reportParam : {}   //功能节点id
+		};
+
+		this.initButtonVisib();
+	}
+
+	initButtonVisib(){
+		if(this.isHasPrint()){
+			this.props.button.setButtonsVisible(['Print','Output'], true);
+		}else{
+			this.props.button.setButtonsVisible(['Print','Output'], false);
+		}
+	}
+
+	//是否有打印功能，应收应付费用现金暂无
+	isHasPrint(){
+		let moduleid = this.config['moduleid'];
+		//by wangyongy
+		if(moduleid==='2011' || moduleid==='3607' || moduleid==='2006' || moduleid==='2008' || moduleid==='3815'){//2011费用管理、3607现金管理、2006应收管理、2008应付管理、3815成本中心
+			return false;
+		}else{
+			return true;
+		}
+	}
+
+	/**
+     * react 生命周期函数 组件渲染完后触发事件
+     */
+	componentDidMount() {
+		if(this.config.isCheck){
+			this.onCheckClose();
+		}
+	}
+
+	onExpand = (expandedKeys) => {
+		this.setState({
+			expandedKeys,
+			autoExpandParent: false
+		});
+	};
+
+	/**
+     * 处理树数据
+     * @param data
+     * @returns {*}
+     */
+	dealTreeData(data) {
+		let deleteDataChildrenProp = function(node) {
+			if (!node.children || node.children.length == 0) {
+				delete node.children;
+			} else {
+				node.isLeaf = false;
+				node.children.forEach((e) => {
+					deleteDataChildrenProp(e);
+				});
+			}
+		};
+		data.forEach((e) => {
+			deleteDataChildrenProp(e);
+		});
+		return data;
+	}
+
+	onButtonClick(props,id){
+		switch (id) {
+			case 'Check'://关账检查
+				promptBox({
+					color: 'info',                 // 提示类别默认"success"， "success"/"info"/"warning"/"danger",非必输
+					title: this.state.json['101006-000001'],/* 国际化处理： 询问*/
+					content: this.state.json['101006-000002'],/* 国际化处理： 关账检查需要的时间可能比较长，确认关账检查？*/
+					beSureBtnClick: ()=>{
+						this.onCheckClose();
+					}
+				});
+				break;
+			case 'Print'://关账打印
+				this.onPrintClose();
+				break;
+			case 'Output'://关账打印
+				this.onOutputClose();
+				break;
+			case 'OneKeySign'://一键签字 库存专用
+				this.oneKeySign();
+				break;
+			default:
+                break;
+		}
+	}
+
+	//关账检查
+	onCheckClose() {
+		ajax({
+			url: '/nccloud/uapbd/org/DoCheckCloseAccNCCAction.do',
+			data: this.config.data,
+			success: (res) => {
+				let { success, data } = res;
+				if (success) {
+					if (data) {
+						let { isPass, itemvos, checkRes, pk_checkitem } = data;
+						let pkitems = [];
+						this.setState(
+							{
+								checkRes: checkRes,
+								itemvos: itemvos,
+								expandedKeys: this.getCheckItemTypeIds(this.config.treeData), //指定展开的节点(controlled)
+								selectedKeys: [ pk_checkitem ], //指定选中的节点keys(controlled)
+								autoExpandParent: true,
+								pk_checkitem: pk_checkitem
+							},
+							() => {
+								this.selectTree({ refpk: pk_checkitem });
+							}
+						);
+					}
+				}
+			}
+		});
+	}
+
+	//关账打印
+	onPrintClose() {
+		//toast({content: '打印调用成功',color:'success'});
+		this.state.print && this.state.print();
+	}
+
+	//关账预览
+	onprintPreVIewClose() {
+		this.state.printPreVIew && this.state.printPreVIew();
+	}
+
+	//关账输出
+	onOutputClose() {
+		this.state.output && this.state.output();
+	}
+
+	//一键签字 库存专用
+	oneKeySign(){
+		this.state.oneKeySign && this.state.oneKeySign();
+	}
+
+	//获取检查类别主键数组
+	getCheckItemTypeIds(data) {
+		let checkItemTypeIds = ['~'];
+		let setCheckItemTypeId = function(node) {
+			if (node.nodeData && node.nodeData['iSchecktypevo']) {//检查类别
+				checkItemTypeIds[checkItemTypeIds.length] = node.refpk;
+			}
+			if (node.children && node.children.length>0) {
+				node.children.forEach((e) => {
+					setCheckItemTypeId(e);
+				});
+			}
+		};
+		data.forEach((e) => {
+			setCheckItemTypeId(e);
+		});
+		return checkItemTypeIds;
+	}
+
+	//判断是否为检查类别
+	isCheckItem(treeData, itempk) {
+		let flag = false;
+		for (let i = 0; i < treeData.length; i++) {
+			let item = treeData[i];
+			if (item['refpk'] === itempk && item.nodeData['iScheckitemvo']) {
+				return true;
+			}
+			if (item.children) {
+				flag = this.isCheckItem(item.children, itempk);
+				if (flag) {
+					return true;
+				}
+			}
+		}
+		return flag;
+	}
+
+	onSelectTree(key, e) {
+		this.setState(
+			{
+				selectedKeys: key,
+				pk_checkitem: key[0]
+			},
+			() => {
+				this.selectTree({ refpk: key[0] });
+			}
+		);
+	}
+
+	/**
+     * 点击树节点
+     * @param refpk
+     */
+	selectTree({ refpk = '' } = {}) {
+		//若不是检查项则不加载右侧检查界面
+		let treeData = this.config.treeData;
+		if (treeData.length == 0 || !this.isCheckItem(treeData, refpk)) {
+			return;
+		}
+		let url = this.getUrl(treeData, refpk); //获得选中节点
+		if (!url) {
+			toast({ content: this.state.json['101006-000003'], color: 'danger' });/* 国际化处理： 未查询到此检查项对应的url，请检查是否填写！*/
+			//url = '../../../../uapbd/orgcloseacc/closeaccbook/closecheck/nourlprompt';
+			return;
+		}
+
+		if(url.indexOf('report##')!=-1 || url.indexOf('appid##')!=-1){//处理自由报表节点的检查项
+			const funid =url.split('report##')[1];
+			const appid =url.split('appid##')[1];
+			ajax({
+				url: '/nccloud/uapbd/org/QueryReportParambyFunid.do',
+				data: {funid :funid,appid:appid},
+				success: (res) => {
+					let { success, data } = res;
+					if (success) {
+						if (data) {
+							let { appCode, pagecode, pk_report, flag, reportName } = data;
+							if(flag==='1'){
+								this.setState({
+									isReport : true,
+									reportParam : data
+								},()=>{
+									if(this.isHasPrint()){
+										this.props.button.setButtonsVisible(['Print','Output'], false);
+									}
+								});
+							}else{
+								toast({ content: this.state.json['101006-000048'], color: 'warning' });/* 国际化处理： 需将此报表发布为web应用后，才可查看与检查！*/
+								this.setState({
+									isReport : false,
+									reportParam : {}
+								},()=>{
+
+								});
+							}
+						}
+					}
+				}
+			});
+		}else{//处理非报表功能节点的检查项
+			if (url.indexOf('../../../../') != -1) {
+				url = url + '.js';
+			} else {
+				url = '../../../../' + url + '.js'; //'../../../../gl/public/components/reckoningReport/index'+'.js';
+			}
+			let moduleName = url.substring(12, url.length - 3);
+			let script = document.createElement('script');
+			script.src = url;
+			script.type = 'text/javascript';
+			script.onload = () => {
+				debugger;
+				let moduleClass = window[moduleName];
+				if (!moduleClass) {
+					toast({ content: 'load panel class error!', color: 'danger' });
+					return;
+				}
+				this.state.comps[moduleName] = moduleClass.default;
+				this.state.curComp = moduleClass.default;
+				this.state.isReport = false;
+				this.setState(this.state,()=>{
+					if(this.isHasPrint()){
+						this.props.button.setButtonsVisible(['Print','Output'], true);
+					}
+				});
+			};
+			script.onerror = () => {
+				toast({ content: this.state.json['101006-000004'], color: 'danger' });/* 国际化处理： 检查界面js组件引入失败！*/
+			};
+			document.body.appendChild(script);
+		}
+		return;
+	}
+
+	//获取检查项url || 报表节点的功能主键associpoint
+	getUrl(treeData, itempk) {
+		let url = null;
+		for (let i = 0; i < treeData.length; i++) {
+			let item = treeData[i];
+			if (item['refpk'] === itempk && item.nodeData['iScheckitemvo']) {
+				//若checkclass为空则为自由报表
+				if(item.nodeData['checkitemvo']['checkclass']){
+					return item.nodeData['checkitemvo']['checkitem_url'];
+				}else if(item.nodeData['checkitemvo']['associappid']){
+					return 'appid'+'##'+item.nodeData['checkitemvo']['associappid']
+				}else{
+					return 'report'+'##'+item.nodeData['checkitemvo']['associpoint'];
+				}
+			}
+			if (item.children) {
+				url = this.getUrl(item.children, itempk);
+				if (url) {
+					return url;
+				}
+			}
+		}
+		return url;
+	}
+
+	//右侧区域dom
+	createRightPanel() {
+		if(this.state.isReport){
+
+			let userdefObj = {
+				pk_checkitem: this.state.pk_checkitem,
+				period: this.config.selref_pk_accperiodmonth,
+				pk_accountingbook: this.config.data.model1.rows[0].values.pk_checkaccbook.value,
+				pk_org: this.config.data.exdata['pk_org'],
+				moduleid: this.config.data.exdata['moduleid'], 
+				selref_pk_accperiodmonth: this.config.data.exdata['selref_pk_accperiodmonth'],
+				selref_accperiodmonth_name: this.config.data.exdata['selref_accperiodmonth_name'],
+				isShowOnclose: this.config.data.exdata['isShowOnclose'],
+				key_time_offset: this.config.data.exdata['key_time_offset'],
+				data: this.config.data
+			};
+
+			let pk_financialOrg = this.config.data.exdata['pk_org'];
+			let pk_org = this.config.data.model1.rows[0].values['pk_org'].value;
+			let pk_storedoc = this.config.data.model1.rows[0].values['pk_storedoc'].value;
+			let closeAccOrgPks = pk_org;
+			if(userdefObj['moduleid']==='STOREDOC'){
+				userdefObj['moduleid']='4008';
+			}
+			if(userdefObj['moduleid']==='2016'){
+				closeAccOrgPks = this.config.data.model1.rows[0].values['pk_checkaccbook'].value;
+			}else if(userdefObj['moduleid']==='3824'){
+				closeAccOrgPks = this.config.data.model1.rows[0].values['pk_liabilitybook'].value;
+			}else if(userdefObj['moduleid']==='2014'){
+				closeAccOrgPks = this.config.data.model1.rows[0].values['pk_checkaccbook'].value+
+				this.config.data.model1.rows[0].values['pk_costregion'].value;
+			}
+
+			if(userdefObj['moduleid']==='2016'){
+				pk_org = closeAccOrgPks;
+			}else if(userdefObj['moduleid']==='2014'){
+				pk_org = closeAccOrgPks.substring(0,20);
+			}
+
+			switch (userdefObj['moduleid']) {
+				case "2002": 
+				case "2016": 
+					userdefObj['pk_accountingbook'] = pk_org;
+					break;
+				case "2014": 
+					userdefObj['pk_costorg'] = pk_org;
+					break;
+				case "STOREDOC": 
+				case "4008":
+					userdefObj['pk_inventory'] = pk_org;
+					userdefObj['pk_store'] = pk_storedoc;
+					break;
+				case "3830": 
+					userdefObj['pk_product'] = pk_org;
+				case "3880": 
+					userdefObj['pk_product'] = pk_org;
+			}
+
+			let config = {
+				appcode: this.state.reportParam['appcode'],
+				pagecode: this.state.reportParam['pagecode'],
+				LinkReport: JSON.stringify({"logic":"and","conditions":[]}),
+				reportName: this.state.reportParam['reportName'],
+				userdefObj: userdefObj
+			};
+			return <Report {...config}/>;
+		}else{
+			var linkParam = {};
+	
+			let panel = this.state.curComp;
+			let paramData = {
+				pk_checkitem: this.state.pk_checkitem,
+				period: this.config.selref_pk_accperiodmonth,
+				pk_accountingbook: this.config.data.model1.rows[0].values.pk_checkaccbook.value,
+				data: this.config.data,
+				linkParam: linkParam,
+				fthis : this,
+				ref: (item) => {
+					this.curCompInstance = item;
+					this.linkParam = this.linkParam ? this.linkParam : linkParam;
+				}
+			};
+			return !panel ? '' : panel(paramData);
+		}
+	}
+
+	/**
+     * 渲染
+     * @returns {*}
+     */
+	render() {
+		/**
+         *  经过createPage方法后，初始对象都放到了props中
+         *  例如 asyncTree,syncTree,form,table……
+         *  我们用的话直接从props里取就可以了
+         * */
+		const { asyncTree, syncTree, button, modal, search, DragWidthCom ,BillHeadInfo} = this.props;
+        const {createBillHeadInfo} = BillHeadInfo;
+		//DragWidthCom 平台出的左右布局的组件  专用于树卡和树表
+		//const {createSyncTree} = syncTree;//创建同步树 需要引入这个
+		let { createButtonApp } = button;
+
+		let treedat = this.dealTreeData([ Object.assign({ ...this.root }, { children: this.config.treeData }) ]);
+		const loop = (data) => 
+			data.map((item) => {
+				const name = item.refname;
+				let icon = '';
+				if (item.nodeData && item.nodeData['iSchecktypevo']) {
+					//检查类别
+					icon = <NCIcon type="uf-4square-3" />;
+				} else if (item.nodeData && item.nodeData['iScheckitemvo']) {
+					//检查项
+					let flag = this.state.checkRes[item.refpk];
+					icon = flag ? (
+						//<NCIcon type="uf-pass" /> √
+						<span style={{marginTop: 3,marginRight: 6}}>
+							<div style={{display: 'flex',height: 15,width: 15,justifyContent: 'center',alignItems: 'center',overflow: 'hidden',borderRadius: 15}}>
+								<i style={{color: '#69AC4E',fontSize: 24,marginTop: 5}} className="uf uf-pass-3"/>
+							</div>
+						</span>
+					) : flag != undefined && flag != null && flag === false ? (
+						item.nodeData['checkitemvo']['checkstrategy']=='1' ?
+						 //<NCIcon type="uf-close-c" /> x
+						 <span style={{marginRight: 6}}><i style={{color: '#F35118',fontSize: 17}} className="uf uf-close-c"/></span>
+						 :
+						 //<NCIcon type="uf-exc-c-2" /> !
+						 <span style={{marginRight: 6}}><i style={{color: '#F35118',fontSize: 20}} className="uf uf-exc-c-2"/></span>
+					) : (
+						''
+					);
+				} else {
+					//模块
+					icon = <NCIcon type="uf-folder-o" />
+				}
+				const title = (
+					<span style={{display: 'flex'}}>
+						{icon}
+						<span>{name}</span>
+					</span>
+				);
+				if (item.children) {
+					return (
+						<NCTreeNode liAttr={{fieldid:(item.code||item.name||item.refname||item.refpk)+"_node"}} key={item.refpk} title={title}>
+							{loop(item.children)}
+						</NCTreeNode>
+					);
+				}
+				return <NCTreeNode liAttr={{fieldid:(item.code||item.name||item.refname||item.refpk)+"_node"}} key={item.refpk} title={title} isLeaf={item.isLeaf} />;
+			});
+
+		let leftDom = (
+			<NCDiv areaCode={NCDiv.config.TreeCom} fieldid = 'closecheck' className="tree-area">
+				{/* {createSyncTree({
+						treeId: this.config.treeId,
+						needSearch: false,
+						needEdit: false,
+						onSelectEve: this.onSelectTree.bind(this),
+						showModal:false
+					})} */}
+				<div style={{height: 380,overflow: 'auto'}}>
+					<NCTree
+						selectedKeys={this.state.selectedKeys} //指定选中的节点keys(controlled)
+						onExpand={this.onExpand.bind(this)}
+						expandedKeys={this.state.expandedKeys}
+						autoExpandParent={this.state.autoExpandParent}
+						onSelect={this.onSelectTree.bind(this)}
+						openIcon= {<i class="icon iconfont icon-shu_zk tree-swich"></i>}/* 国际化处理： 树开关*/
+						closeIcon= {<i class="icon iconfont icon-shushouqi tree-swich"></i>}/* 国际化处理： 树开关*/
+					>
+						{loop(treedat)}
+					</NCTree>
+				</div>
+			</NCDiv>
+		);
+		let rightDom = <div className="card-area" style={this.state.isReport?{}:{overflow:'hidden'}}>{this.createRightPanel()}</div>;
+		return (
+			<div>
+				{/* 头部 header*/}
+				<NCDiv areaCode={NCDiv.config.HEADER} className="header" style={{height:40,paddingBottom:0,marginTop:-15}}>
+                    {
+                        createBillHeadInfo(
+                            {
+                                title :this.state.json['101006-000006']+"："+this.config.accperiod /* 国际化处理： 会计期间*/,             //标题
+                                initShowBackBtn:false
+                            }
+                        )}
+					{/* 按钮组 btn-group*/}
+					<div className="btn-group">
+                        {createButtonApp({
+                            area: "check-area",
+							onButtonClick: this.onButtonClick.bind(this),
+							modalRelation: "checkmodal"
+                        })}
+                    </div>
+				</NCDiv>
+				{/* 树卡区域 */}
+				<div className="tree-card" style={{height: 420}}>
+					<DragWidthCom
+						leftDom={leftDom} //左侧区域dom
+						rightDom={rightDom} //右侧区域dom
+						defLeftWid="20%" // 默认左侧区域宽度，px/百分百
+					/>
+				</div>
+			</div>
+		);
+	}
+}
+
+/**
+ * 创建页面
+ */
+export default Closecheck;
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

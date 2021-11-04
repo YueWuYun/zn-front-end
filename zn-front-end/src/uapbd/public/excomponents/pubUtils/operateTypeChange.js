@@ -1,3 +1,4 @@
+//0n+peaU+hO7rQSKuDuf8IWTwBznjCtToPIoX2sxycRyL4QR07VgNXdA6L5l1KULN
 
 /**
  * lishhk
@@ -16,3 +17,4 @@ let operateTypeChange =  (that,attrcodes,searchId,record,index) =>{
 }
 
 export { operateTypeChange };
+//0n+peaU+hO7rQSKuDuf8IWTwBznjCtToPIoX2sxycRyL4QR07VgNXdA6L5l1KULN

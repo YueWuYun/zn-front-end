@@ -1,3 +1,31 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],r):"object"==typeof exports?exports["uapbd/refer/orgv/DeptVersionAllDataTreeRef/index"]=r(require("nc-lightapp-front")):e["uapbd/refer/orgv/DeptVersionAllDataTreeRef/index"]=r(e["nc-lightapp-front"])}(window,(function(e){return function(e){var r={};function t(o){if(r[o])return r[o].exports;var n=r[o]={i:o,l:!1,exports:{}};return e[o].call(n.exports,n,n.exports,t),n.l=!0,n.exports}return t.m=e,t.c=r,t.d=function(e,r,o){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:o})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(t.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var n in e)t.d(o,n,function(r){return e[r]}.bind(null,n));return o},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="../../../../",t(t.s=706)}({0:function(r,t){r.exports=e},3:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var o=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(n,o({},a,e))};var n=t(0).high.Refer,a=r.conf={multiLang:{domainName:"uap",currentLocale:"zh-CN",moduleId:"uapRefer"},queryTreeUrl:"/nccloud/riart/ref/groupRefTreeAction.do",refType:"tree",placeholder:"1880000025-000061",refName:"1880000025-000061",rootNode:{refname:"1880000025-000061",refpk:"root"}}},7:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var o=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(f,o({},u,e))};var n=t(0),a=t(3),f=n.high.Refer;a.conf.fieldid="group";var u=r.conf={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000201",refCode:"uapbd.refer.org.BusinessUnitTreeRef",rootNode:{refname:"refer-000201",refpk:"root"},placeholder:"refer-000201",queryTreeUrl:"/nccloud/uapbd/org/BusinessUnitTreeRef.do",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},isMultiSelectedEnabled:!1,unitProps:a.conf,isShowUnit:!1}},706:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var o=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var o in t)Object.prototype.hasOwnProperty.call(t,o)&&(e[o]=t[o])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000318",rootNode:{refname:"refer-000318",refpk:"root"},placeholder:"refer-000318",refCode:"uapbd.orgv.DeptVersionAllDataTreeRef",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},queryTreeUrl:"/nccloud/uapbd/org/DeptVersionAllDataTreeRef.do",isMultiSelectedEnabled:!1,unitProps:a.conf,isShowUnit:!1,isHasDisabledData:!1,unitValueIsNeeded:!0};return React.createElement(f,o({},r,e))};var n=t(0),a=t(7),f=n.high.Refer}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high } from 'nc-lightapp-front';
+import { conf as unitConf } from "../../org/BusinessUnitTreeRef/index";
+const { Refer } = high;
+
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+
+		refType: 'tree',
+		refName: 'refer-000318',/* 国际化处理： 部门版本（所有）*/
+		rootNode: { refname: 'refer-000318', refpk: 'root' },/* 国际化处理： 部门版本（所有）*/
+		placeholder: 'refer-000318',/* 国际化处理： 部门版本（所有）*/
+		refCode: 'uapbd.orgv.DeptVersionAllDataTreeRef',
+		treeConfig: { name: ['refer-000002', 'refer-000003'], code: ['refcode', 'refname'] },/* 国际化处理： 编码,名称*/
+		queryTreeUrl: '/nccloud/uapbd/org/DeptVersionAllDataTreeRef.do',
+		isMultiSelectedEnabled: false,
+		unitProps: unitConf,
+		isShowUnit: false,
+		isHasDisabledData: false,
+		unitValueIsNeeded: true
+	};
+
+	return <Refer {...conf} {...props} />
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

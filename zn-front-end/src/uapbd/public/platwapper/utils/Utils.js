@@ -1,3 +1,4 @@
+//A90wzqh25GIGePbs8vLv1eBXDSIwv8TSn1BrdJVQavSjwGnY8FtNIZGKNJrexMYd
 var Utils = {
     /**
      * 判断对象是否是一个函数对象
@@ -30,3 +31,5 @@ var Utils = {
 };
 export default Utils;
 
+
+//A90wzqh25GIGePbs8vLv1eBXDSIwv8TSn1BrdJVQavSjwGnY8FtNIZGKNJrexMYd

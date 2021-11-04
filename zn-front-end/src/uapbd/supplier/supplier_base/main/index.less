@@ -1,0 +1,109 @@
+//liuzphc add
+
+//列表操作列按钮间分隔符样式 配合平台的split-line一起使用
+.ncc_hr_table_opr_split{
+  color:#d9d9d9;
+  display:inline-block;
+  height:13px;
+  overflow:hidden;
+}
+
+ncc_hr_table_opr_split_margin{
+  margin-left: 6px;
+}
+
+
+.ncc-hr-multi-child-container{
+  width:100%;
+  height:100%;
+  background-color:#FFFFFF;
+}
+.ncc-hr-multi-child-header{
+  width: 100%;
+  height:60px;
+  
+  background-color:#FFFFFF;
+  z-index: 1;
+}
+.queryHasAssignOrg-ncc-hr-multi-child-body{
+  position: absolute;
+  top: 100px;
+  bottom: 5px;
+  left: 0px;
+  right: 20px;
+  overflow:auto;
+  background-color:#FFFFFF;
+  z-index: 0;
+  width: 100%;
+}
+.ncc-hr-multi-child-body{
+  position: relative;
+  top: 68px;
+  bottom: 5px;
+  left: 0px;
+  right: 20px;
+  overflow:auto;
+  background-color:#FFFFFF;
+  z-index: 0;
+}
+/**树卡中 左树  滚动条的样式**/
+.ncc-hr-multi-child-body::-webkit-scrollbar{/*整个滚动条区域的宽度*/
+  width:8px;
+  height:8px;//保证纵向滚动条和横向滚动条一致
+}
+.ncc-hr-multi-child-body::-webkit-scrollbar-button{/*滚动条上下两边的按钮*/
+  display:none;
+}
+.ncc-hr-multi-child-body::-webkit-scrollbar-thumb{/*真滚动条样式*/
+  //-webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+  background:rgba(0,0,0,0.54);
+  border-radius: 100px ;
+}
+.ncc-hr-multi-child-body::-webkit-scrollbar-track {/*滚动条滚动的轨道*/
+  display: none;
+}
+
+.businessunit-zindex{
+  z-index: 301;
+}
+.ncc-hr-font{
+  font-size: 13px;
+  font-family:PingFangHK-Medium;
+}
+
+/************************/
+.sup-freeze-div{
+
+  margin:20px 20px 20px 20px;
+}
+
+.delete-style{
+  width: 100%;
+  color: #111111;
+  font-weight: normal !important;
+  padding-left: 38px;
+  line-height: 21px;
+  font-size: 18px;
+  margin-top: 16px;
+  display: flex;
+  .icon-zhuyi1::before{
+    content: "\E68A";
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  .warning {
+    color:#ffbf00;
+    font-size: 25px;
+    margin-right: 20px;
+  }
+}
+.delete-style + .u-modal-body {
+  padding: 8px 47px 0 85px;
+  width: 100%;
+  font-size: 13px;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  line-height: 21px;
+  color: #555555;
+}

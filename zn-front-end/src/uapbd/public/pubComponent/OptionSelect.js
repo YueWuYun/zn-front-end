@@ -1,3 +1,4 @@
+//jFiN88Y+FZN1wAm/QDwCLn5HoCRwRM6ONG4T0n+FwysQx0tRxPMRMTn/Er/4uw0H
 import React, { Component } from 'react';
 import {base,ajax } from 'nc-lightapp-front';
 let {NCCol,NCRow,NCRadio} = base;
@@ -38,3 +39,5 @@ class OptionSelect extends Component {
     }
 }
 export default OptionSelect;
+
+//jFiN88Y+FZN1wAm/QDwCLn5HoCRwRM6ONG4T0n+FwysQx0tRxPMRMTn/Er/4uw0H

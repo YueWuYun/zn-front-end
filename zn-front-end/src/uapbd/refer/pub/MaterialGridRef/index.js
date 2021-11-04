@@ -1,3 +1,204 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],r):"object"==typeof exports?exports["uapbd/refer/pub/MaterialGridRef/index"]=r(require("nc-lightapp-front")):e["uapbd/refer/pub/MaterialGridRef/index"]=r(e["nc-lightapp-front"])}(window,(function(e){return function(e){var r={};function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}return t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(r){return e[r]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="../../../../",t(t.s=761)}({0:function(r,t){r.exports=e},3:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(o,n({},a,e))};var o=t(0).high.Refer,a=r.conf={multiLang:{domainName:"uap",currentLocale:"zh-CN",moduleId:"uapRefer"},queryTreeUrl:"/nccloud/riart/ref/groupRefTreeAction.do",refType:"tree",placeholder:"1880000025-000061",refName:"1880000025-000061",rootNode:{refname:"1880000025-000061",refpk:"root"}}},7:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(i,n({},l,e))};var o=t(0),a=t(3),i=o.high.Refer;a.conf.fieldid="group";var l=r.conf={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000201",refCode:"uapbd.refer.org.BusinessUnitTreeRef",rootNode:{refname:"refer-000201",refpk:"root"},placeholder:"refer-000201",queryTreeUrl:"/nccloud/uapbd/org/BusinessUnitTreeRef.do",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},isMultiSelectedEnabled:!1,unitProps:a.conf,isShowUnit:!1}},761:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e},o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"gridTree",refName:"refer-002005",placeholder:"refer-002005",refCode:"uapbd.ref.MaterialClassTreeGridRef",queryTreeUrl:"/nccloud/uapbd/ref/MaterialClassTreeRef.do",queryGridUrl:"/nccloud/uapbd/ref/MaterialGridRef.do",rootNode:{refname:"refer-002006",refpk:"root"},columnConfig:[{name:["refer-002007","refer-002008","refer-002009","refer-002010","refer-002011","refer-002012","refer-002013","refer-002014","refer-002015"],code:["org_name","refcode","refname","materialspec","materialtype","materialshortname","materialmnecode","graphid","measdoc_name"],fullTxtCode:{refcode:!0,refname:!0,materialspec:!1,materialtype:!1,materialshortname:!1,materialmnecode:!1,graphid:!1},checked:{graphid:!1,measdoc_name:!1},search:{materialmnecode:!0}}],treeConfig:{name:["refer-002003","refer-002004"],code:["refcode","refname"]},isShowDisabledData:!1,unitProps:i.conf,isShowUnit:!1,isShowAssginDataChk:!1,isShowUsual:!0};return React.createElement(b,n({},r,e))};var a=t(0),i=t(7);i.conf.fieldid="busiUnit";var l=a.high.Refer,c=l.ReferWithUnit,f=l.MultiLangWrapper,u=a.base.NCCheckbox,s=a.base.NCCollapse,p=a.base.NCButton,d=a.base.NCTable,m=a.base.NCDiv,y=a.base.NCTooltip,g=a.base.NCHotKeys,b=f(function(e){function r(e){!function(e,r){if(!(e instanceof r))throw new TypeError("Cannot call a class as a function")}(this,r);var t=function(e,r){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!r||"object"!=typeof r&&"function"!=typeof r?e:r}(this,(r.__proto__||Object.getPrototypeOf(r)).call(this,e));return t.onChange=function(e){t.setState({isShowAssignData:e},(function(){var e=t.getParam({pid:t.state.selectedKeys[0],pageInfo:{pageSize:t.props.pageSize,pageIndex:0}});null!=e.pid&&null!=e.pid&&""!==e.pid&&t.loadAndSetTableData(e)}))},t.getParam=function(){var e=t.props.queryCondition;return{queryCondition:e?"function"==typeof e?e(t.props):"object"===(void 0===e?"undefined":o(e))?e:{}:{}}},t.renderPopoverBottom=function(){var e=t.state,r=e.selectedShow,n=(e.tableData,t.props),o=n.isMultiSelectedEnabled,a=n.isShowAssginDataChk,i=[{title:React.createElement("div",{fieldid:"oprCol"},t.props.multiLang["refer-002000"]),key:"operate",width:50,render:function(e,r,n){return React.createElement("div",{fieldid:"oprCol"},React.createElement("span",{className:"refer-del",onClick:t.onSelectedRowClick.bind(null,r,n)},t.props.multiLang["refer-002016"]))}}];return i.unshift.apply(i,function(e){if(Array.isArray(e)){for(var r=0,t=Array(e.length);r<e.length;r++)t[r]=e[r];return t}return Array.from(e)}(t.getCommonColumns())),[a&&React.createElement(u,{checked:t.state.isShowAssignData,onChange:t.onChange},t.props.multiLang["refer-002017"]),o&&React.createElement("div",{className:"refer-selected",key:"1"},React.createElement(p,{fieldid:"chosed",onClick:function(){t.setState({selectedShow:!r})}},t.props.multiLang["refer-002018"],"：",React.createElement("span",null,t.getSelections().length)),React.createElement(s,{in:r,className:"refer-collapse"},React.createElement("div",null,React.createElement("div",{className:"refer-collapse-header"},React.createElement("div",{className:"refer-title",key:"1"},t.props.multiLang["refer-002019"]),React.createElement("div",{className:"refer-close",key:"3"},React.createElement(p,{fieldid:"clear",style:{backgroundColor:"#E14C46",color:"#fff"},onClick:function(){t.setState({selectedValues:new Map})}},t.props.multiLang["refer-002020"]),React.createElement("span",{onClick:function(){t.setState({selectedShow:!1})}},t.props.multiLang["refer-002021"]))),React.createElement(m,{fieldid:"chosed",areaCode:m.config.TableCom},React.createElement(d,{rowKey:"refpk",scroll:{x:!0,y:"417px"},columns:i,data:t.getSelections(),emptyText:function(){return t.props.multiLang["refer-002001"]}}))))),React.createElement("div",{className:"refer-bottom-extend",key:"2"}),React.createElement("div",{className:"buttons",key:"3"},React.createElement(y,{placement:"top",inverse:!0,overlay:t.props.multiLang["refer-002022"]+"  ("+g.USUAL_KEYS.NC_MODAL_CONFIRM+")",trigger:["hover","focus"]},React.createElement(p,{fieldid:"sure",className:"button-primary",onClick:function(){o?t.multiSelect():t.singleSelect(t.getSelections()[0]),t.handlePopoverBlur()}},t.props.multiLang["refer-002022"],"(",React.createElement("span",{className:"text-decoration-underline"},"Y"),")")),React.createElement(y,{placement:"top",inverse:!0,overlay:t.props.multiLang["refer-002023"]+"  ("+g.USUAL_KEYS.NC_MODAL_CALCEL+")",trigger:["hover","focus"]},React.createElement(p,{onClick:t.cancel,colors:"info",fieldid:"cancel"},t.props.multiLang["refer-002023"],"(",React.createElement("span",{className:"text-decoration-underline"},"N"),")")))]},t.state=n({},t.state,{unit:{},isShowAssignData:!1}),t}return function(e,r){if("function"!=typeof r&&null!==r)throw new TypeError("Super expression must either be null or a function, not "+typeof r);e.prototype=Object.create(r&&r.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),r&&(Object.setPrototypeOf?Object.setPrototypeOf(e,r):e.__proto__=r)}(r,e),r}(c))}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high, base } from 'nc-lightapp-front';
+
+import { conf as unitConf } from '../../org/BusinessUnitTreeRef/index';
+unitConf["fieldid"] = "busiUnit"
+
+const { ReferWithUnit, MultiLangWrapper } = high.Refer;
+const { NCCheckbox: Checkbox, NCCollapse: Collapse, NCButton: Button, NCTable: Table, NCDiv, NCTooltip, NCHotKeys  } = base;
+
+class MaterialGridRef extends ReferWithUnit {
+	constructor(props) {
+		super(props);
+		this.state = {
+			...this.state, // 继承state
+			unit: {},
+			isShowAssignData: false // 自定义扩展state
+		};
+	}
+
+	onChange = (e) => {
+		this.setState({ isShowAssignData: e }, () => {
+			let param = this.getParam({
+				pid: this.state.selectedKeys[0],
+				pageInfo: {
+					pageSize: this.props.pageSize,
+					pageIndex: 0
+				}
+			});
+			if (param.pid != null && param.pid != undefined && param.pid !== "") {
+				this.loadAndSetTableData(param);
+			}
+		});
+	}
+
+	// 复写原型方法
+	getParam = () => {
+		let { queryCondition } = this.props;
+		let _param = {
+			queryCondition: queryCondition
+				? typeof queryCondition === 'function'
+					? queryCondition(this.props)
+					: typeof queryCondition === 'object' ? queryCondition : {}
+				: {}
+		};
+		//_param.queryCondition.isShowAssignData = this.state.isShowAssignData?'Y':'N'; // 在参数中加上flag字段
+		return _param;
+	};
+
+	renderPopoverBottom = () => {
+		let { selectedShow, tableData } = this.state;
+		const { isMultiSelectedEnabled, isShowAssginDataChk } = this.props;
+		let selectColumns = [
+			{
+				title: <div fieldid="oprCol">{this.props.multiLang['refer-002000']}</div>,/* 国际化处理： 操作*/
+				key: 'operate',
+				width: 50,
+				render: (text, row, index) => {
+					return (
+						<div fieldid="oprCol">
+							<span className="refer-del" onClick={this.onSelectedRowClick.bind(null, row, index)}>
+								{this.props.multiLang['refer-002016']}{/* 国际化处理： 移除*/}
+							</span>
+						</div>
+					);
+				}
+			}
+		];
+		selectColumns.unshift(...this.getCommonColumns());
+		return [
+			isShowAssginDataChk && (<Checkbox
+				checked={this.state.isShowAssignData}
+				onChange={this.onChange}>
+				{this.props.multiLang['refer-002017']}{/* 国际化处理： 显示已分配*/}
+			</Checkbox>),
+			isMultiSelectedEnabled && (
+				<div className="refer-selected" key="1">
+					<Button
+						fieldid="chosed"
+						onClick={() => {
+							this.setState({
+								selectedShow: !selectedShow
+							});
+						}}
+					>
+						{this.props.multiLang['refer-002018']}：<span>{this.getSelections().length}</span>{/* 国际化处理： 已选*/}
+					</Button>
+					<Collapse in={selectedShow} className="refer-collapse">
+						<div>
+							<div className="refer-collapse-header">
+								<div className="refer-title" key="1">
+									{this.props.multiLang['refer-002019']}{/* 国际化处理： 查看已选*/}
+								</div>
+								<div className="refer-close" key="3">
+									<Button
+										fieldid="clear"
+										style={{
+											backgroundColor: '#E14C46',
+											color: '#fff'
+										}}
+										onClick={() => {
+											this.setState({
+												selectedValues: new Map()
+											});
+										}}
+									>
+										{this.props.multiLang['refer-002020']/* 国际化处理： 清空*/}
+									</Button>
+									<span
+										onClick={() => {
+											this.setState({
+												selectedShow: false
+											});
+										}}
+									>
+										{this.props.multiLang['refer-002021']/* 国际化处理： 收起*/}
+									</span>
+								</div>
+							</div>
+							<NCDiv fieldid="chosed" areaCode={NCDiv.config.TableCom}>
+								<Table
+									rowKey="refpk"
+									scroll={{ x: true, y: '417px' }}
+									columns={selectColumns}
+									data={this.getSelections()}
+									emptyText={() => this.props.multiLang['refer-002001']}/* 国际化处理： 没有数据*/
+								/>
+							</NCDiv>
+						</div>
+					</Collapse>
+				</div>
+			),
+			<div className="refer-bottom-extend" key="2" />,
+			<div className="buttons" key="3">
+			<NCTooltip
+						placement="top"
+						inverse
+						overlay={`${this.props.multiLang['refer-002022']}  (${
+							NCHotKeys.USUAL_KEYS.NC_MODAL_CONFIRM
+							})`}
+						trigger={["hover", "focus"]}
+					>
+						<Button fieldid="sure" className="button-primary"
+							onClick={() => {
+								isMultiSelectedEnabled ? this.multiSelect() : this.singleSelect(this.getSelections()[0]);
+								this.handlePopoverBlur();
+							}}>
+							{this.props.multiLang['refer-002022']}(<span className="text-decoration-underline">Y</span>)
+						</Button>
+				</NCTooltip>
+				<NCTooltip
+						placement="top"
+						inverse
+						overlay={`${this.props.multiLang['refer-002023']}  (${
+							NCHotKeys.USUAL_KEYS.NC_MODAL_CALCEL
+							})`}
+						trigger={["hover", "focus"]}
+					>
+						<Button onClick={this.cancel} colors="info" fieldid="cancel">
+							{this.props.multiLang['refer-002023']}(<span className="text-decoration-underline">N</span>)
+						</Button>
+				</NCTooltip>
+			</div>
+		];
+	};
+}
+
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+		refType: 'gridTree',
+		refName: 'refer-002005',/* 国际化处理： 物料*/
+		placeholder: 'refer-002005',/* 国际化处理： 物料*/
+		refCode: 'uapbd.ref.MaterialClassTreeGridRef',
+		queryTreeUrl: '/nccloud/uapbd/ref/MaterialClassTreeRef.do',
+		queryGridUrl: '/nccloud/uapbd/ref/MaterialGridRef.do',
+		rootNode: { refname: 'refer-002006', refpk: 'root' },/* 国际化处理： 物料基本分类*/
+		columnConfig: [{
+			name: ['refer-002007', 'refer-002008', 'refer-002009', 'refer-002010', 'refer-002011', 'refer-002012', 'refer-002013', 'refer-002014', 'refer-002015'],/* 国际化处理： 所属组织,物料编码,物料名称,规格,型号,物料简称,助记码,图号,主计量单位*/
+			code: ['org_name', 'refcode', 'refname', 'materialspec', 'materialtype', 'materialshortname', 'materialmnecode', 'graphid', 'measdoc_name'],
+			fullTxtCode: { 'refcode': true, 'refname': true, 'materialspec': false, 'materialtype': false, 'materialshortname': false, 'materialmnecode': false, 'graphid': false },
+			checked: {
+				graphid: false,
+				measdoc_name: false
+			},
+			search: { 'materialmnecode': true }
+		}],
+		treeConfig: { name: ['refer-002003', 'refer-002004'], code: ['refcode', 'refname'] },/* 国际化处理： 编码,名称*/
+		isShowDisabledData: false,
+		unitProps: unitConf,
+		isShowUnit: false,
+		isShowAssginDataChk: false,
+		isShowUsual: true,
+	};
+
+	return <MaterialGridRefWrapper {...conf} {...props} />
+}
+
+const MaterialGridRefWrapper = MultiLangWrapper(MaterialGridRef);
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

@@ -1,3 +1,4 @@
+//2IEfXreGvkp/TElU+0sdeZcI65JhvX6zS7c0+ID0pwTeZs3Ek3eKyVS4sFbza9Eh
 //数据记录模型
 import Utils, {BaseUtils} from '../utils'
 var Record = function(data0, status0 = 'common', id){
@@ -84,3 +85,4 @@ Record.converToVOData = (records) => {
 
 
 export default Record;
+//2IEfXreGvkp/TElU+0sdeZcI65JhvX6zS7c0+ID0pwTeZs3Ek3eKyVS4sFbza9Eh

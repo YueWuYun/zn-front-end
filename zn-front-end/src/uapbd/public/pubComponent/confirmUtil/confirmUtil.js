@@ -1,3 +1,4 @@
+//a1x55H6oDOs6Z2ST7lL2VSojMdmLCbnEuoWI4OSl4BSEbYXRprWD+mIOXsfQipG0
 import {promptBox } from 'nc-lightapp-front';
 export  default function ({
                               'title':title,
@@ -13,8 +14,8 @@ export  default function ({
         content: content,             // 提示内容,非必输
         noFooter: false,                // 是否显示底部按钮(确定、取消),默认显示(false),非必输
         noCancelBtn: false,             // 是否显示取消按钮,，默认显示(false),非必输
-        beSureBtnName: leftBtnName  || this.state.json['beSureBtnName-001'] ,          // 确定按钮名称, 默认为"确定",非必输
-        cancelBtnName: rightBtnName || this.state.json['cancelBtnName-001'], // 取消按钮名称, 默认为"取消",非必输
+        beSureBtnName: leftBtnName === null ?   this.state.json['beSureBtnName-001'] :leftBtnName,          // 确定按钮名称, 默认为"确定",非必输
+        cancelBtnName: rightBtnName === null ?  this.state.json['cancelBtnName-001'] : rightBtnName , // 取消按钮名称, 默认为"取消",非必输
         hasCloseBtn:false,
         beSureBtnClick: functionSure,   // 确定按钮点击调用函数,非必输
         cancelBtnClick: functionCancel,  // 取消按钮点击调用函数,非必输
@@ -23,3 +24,4 @@ export  default function ({
 
     })
 }
+//a1x55H6oDOs6Z2ST7lL2VSojMdmLCbnEuoWI4OSl4BSEbYXRprWD+mIOXsfQipG0

@@ -1,0 +1,170 @@
+.uapbd-workcalendar-treefilter-highlight {
+    color:#f50;
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease;
+    font-weight: bold;
+}
+.uapbd-workcalendar-bdselected-highlight {
+    color:blue;
+    -webkit-transition:all .3s ease;
+    transition:all .3s ease;
+    font-weight: bold;
+}
+
+.calendar-date-selected {
+    .workcalendar-date-workdate,.workcalendar-date-holidate,.workcalendar-date-freedate {
+        background-color: #1778FF;
+        color: white;
+    }
+}
+.workcalendar-date-workdate:hover{
+    background-color: #E0F5FE;
+}
+.workcalendar-date-holidate:hover{
+    background-color: #E0F5FE;
+}
+.workcalendar-date-freedate:hover {
+    background-color: #E0F5FE;
+}
+.calendar-date-selected {
+    .workcalendar-date-workdate:hover{
+        background-color: #1778FF;
+        color: white;
+    }
+    .workcalendar-date-holidate:hover{
+        background-color: #1778FF;
+        color: white;
+    }
+    .workcalendar-date-freedate:hover {
+        background-color: #1778FF;
+        color: white;
+    }
+}
+.select-year-data{
+    background: #e4e4e4;
+}
+.workcalendar-date-workdate,.workcalendar-date-holidate,.workcalendar-date-freedate {
+    font-size: 13px;
+    color: #555;
+    border-radius: 3px;
+}
+.workcalendar-date-workdate{
+    background: #fff;
+}
+.workcalendar-date-freedate{
+    background: #c7e7c7;
+}
+.workcalendar-date-holidate{
+    background: #ffc900;
+}
+.uapbd-workcalendar-treenode111 {
+    height: 50px;
+}
+.uapbd-workcalendar-treenode-title111 {
+    height: 50px;
+}
+
+.title-con .icon-bianji:before {
+    display: none;
+}
+.title-con:hover .icon-bianji:before {
+    display: inline-block;
+}
+.title-con .icon-zengjia:before {
+    display: none;
+}
+.title-con:hover .icon-zengjia:before {
+    display: inline-block;
+}
+.title-con .icon-shanchu:before {
+    display: none;
+}
+.title-con:hover .icon-shanchu:before {
+    display: inline-block;
+}
+.row-tree-parent{
+    background: rgba(249,249,249,1);
+    padding: 10px;
+    .u-form-control-wrapper{
+        width: 50%; 
+        margin: 8px 10px;
+    }
+}
+.syncTreeComMR20 {
+    li {
+        margin-right: 20px;
+    }
+}
+
+.NC_syncTreeSearch_self_width {
+    .u-form-control-wrapper {
+        width: 240px;
+    }
+}
+.workcalendar-date-workdate ,.workcalendar-date-freedate ,.workcalendar-date-holidate {
+    cursor: pointer;
+}
+
+.work-calendar-main-container{
+    margin-left: 15px;
+    box-sizing: border-box;
+    width: calc(~'100% - 30px');
+    overflow: hidden;
+    display: inline-block;
+	display: -webkit-flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &-cell {
+        float:left;
+        margin-bottom: 5px;
+        width:33%;
+    }
+}
+#but-fixed-container {
+    .u-form-control-wrapper{
+        width: 200px;
+    }
+}
+#calendar-use-texteare {
+    // .u-modal-header{
+    //     button::before{
+    //         display: none;
+    //     }
+    //     background-color: white;
+    // }
+    .set-holiday {
+        margin-top: 10px;
+        .u-form-control-wrapper {
+            height: 120px;
+            textarea {
+                height: 116px;
+                resize: none;
+            }
+        }
+    }
+    .time-end-start {
+        margin-top: 5px;
+        margin-bottom: 150px;
+        &>div{
+            display: inline-block;
+            &>span:nth-child(2) {
+                display: inline-block;
+                border: 1px solid rgb(165, 173, 186);
+                /* background-color: white; */
+                border-radius: 3px;
+                input.u-time-picker-input{
+                    border: transparent;
+                }
+            }
+        }
+        &>div:first-child{
+            margin-right: 50px;
+        }
+        // input.u-time-picker-input{
+        //     border: none;
+        // }
+    }
+    // .u-modal-footer{
+    //     border-top: none;
+    // }
+}

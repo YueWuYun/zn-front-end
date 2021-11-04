@@ -1,3 +1,4 @@
+//sHbQu6bEksRCifyiVdPHKEW4CGcfPwu3uOfNyt0YLYP9niibZw+DQBZW84/ykx6p
 import { ajax } from "nc-lightapp-front";
 
 /**
@@ -27,3 +28,4 @@ export default function periodScheme(props, pk_org) {
     } 
     return pk_accperiodscheme;
 }
+//sHbQu6bEksRCifyiVdPHKEW4CGcfPwu3uOfNyt0YLYP9niibZw+DQBZW84/ykx6p

@@ -1,3 +1,28 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 14:50:39"} */
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],r):"object"==typeof exports?exports["uapbd/mmbase/refer/WktwGridRef/index"]=r(require("nc-lightapp-front")):e["uapbd/mmbase/refer/WktwGridRef/index"]=r(e["nc-lightapp-front"])}(window,(function(e){return function(e){var r={};function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}return t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(r){return e[r]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="../../../../",t(t.s=14)}({0:function(r,t){r.exports=e},1:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(u,n({},a,e))};var o=t(0),f=t(2),u=o.high.Refer;f.conf.fieldid="group";var a=r.conf={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000201",refCode:"uapbd.refer.org.BusinessUnitTreeRef",rootNode:{refname:"refer-000201",refpk:"root"},placeholder:"refer-000201",queryTreeUrl:"/nccloud/uapbd/org/BusinessUnitTreeRef.do",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},isMultiSelectedEnabled:!1,unitProps:f.conf,isShowUnit:!1}},14:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"10140MMREFER"},refType:"grid",refName:"twrefer-000000",placeholder:"twrefer-000000",refCode:"uapbd.wktw.WktwGridRef",queryGridUrl:"/nccloud/mmbd/wktw/twref.do",isMultiSelectedEnabled:!1,columnConfig:[{name:["twrefer-000001","twrefer-000002","twrefer-000003"],code:["refcode","refname","vcraftnote"]}],isShowUnit:!1,unitProps:f.conf,unitValueIsNeeded:!1};return React.createElement(u,n({},r,e))};var o=t(0),f=t(1),u=o.high.Refer},2:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(o,n({},f,e))};var o=t(0).high.Refer,f=r.conf={multiLang:{domainName:"uap",currentLocale:"zh-CN",moduleId:"uapRefer"},queryTreeUrl:"/nccloud/riart/ref/groupRefTreeAction.do",refType:"tree",placeholder:"1880000025-000061",refName:"1880000025-000061",rootNode:{refname:"1880000025-000061",refpk:"root"}}}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high } from 'nc-lightapp-front';
+import { conf as unitProps }  from '../../../../uapbd/refer/org/BusinessUnitTreeRef/index';
+const { Refer } = high;
+
+export default function (props = {}) {
+	var conf = {
+				multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: '10140MMREFER',
+		},
+
+		refType: 'grid',
+		refName: 'twrefer-000000',
+		placeholder: 'twrefer-000000',/*投料点 */
+		refCode: 'uapbd.wktw.WktwGridRef',
+		queryGridUrl: '/nccloud/mmbd/wktw/twref.do',
+		isMultiSelectedEnabled: false,
+		columnConfig: [{name: [ 'twrefer-000001', 'twrefer-000002','twrefer-000003' ],code: [ 'refcode', 'refname','vcraftnote' ]}],/*投料点编码，投料点名称,备注 */
+		isShowUnit:false,
+		unitProps:unitProps,
+		unitValueIsNeeded:false,
+	};
+	return <Refer {...conf} {...props} />
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

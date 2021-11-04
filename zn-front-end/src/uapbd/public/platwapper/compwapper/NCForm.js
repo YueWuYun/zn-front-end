@@ -1,3 +1,4 @@
+//TKtNKAB8jNb9wFwaaFkhEO9EForCQc2e0B0K788PN1A9MU+aXHmzPDOH2xggcYbq
 import {base} from 'nc-lightapp-front';
 import React, { Component } from 'react';
 
@@ -25,3 +26,4 @@ NCFormItem.prototype.render = function(){
     return <span>{itemrender.call(this)}</span>;
 }
 export default NCForm;
+//TKtNKAB8jNb9wFwaaFkhEO9EForCQc2e0B0K788PN1A9MU+aXHmzPDOH2xggcYbq

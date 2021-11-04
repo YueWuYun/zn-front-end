@@ -1,3 +1,4 @@
+//++7w43DCCjLUO++hI+mJmJhpEvcm2696rADttjETlpLVYa4lxxKDogqHB+7UyKOE
 import {base} from 'nc-lightapp-front';
 import React, { Component } from 'react';
 
@@ -17,3 +18,4 @@ class NCIcon  extends Component {
     }
 }
 export default NCIcon;
+//++7w43DCCjLUO++hI+mJmJhpEvcm2696rADttjETlpLVYa4lxxKDogqHB+7UyKOE

@@ -1,3 +1,4 @@
+//cPb1BQxEZ8c0dGZlqiLjACdcX18RTSjTDvGEelrAZ1nBTDjJ/sFtoAPDQkAIIvou
 //   pagecode:props.config.pageCode?props.config.pageCode:pagecode
 //  getMultiLang({moduleId: "10140ADRB",domainName: 'uapbd',callback})
 
@@ -36,3 +37,4 @@ export default function(props){
          });
     };
 };
+//cPb1BQxEZ8c0dGZlqiLjACdcX18RTSjTDvGEelrAZ1nBTDjJ/sFtoAPDQkAIIvou

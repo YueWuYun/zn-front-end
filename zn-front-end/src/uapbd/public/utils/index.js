@@ -1,3 +1,4 @@
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
 /**
  * 工具类集合
  * @author  yinshb
@@ -113,3 +114,5 @@ export default Utils;
 export {BaseUtils};
 export {DateUtils}
 
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

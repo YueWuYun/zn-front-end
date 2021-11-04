@@ -1,3 +1,4 @@
+//RwP2UPFFp097dBHEtidh8Fp0jYzYc0g2pVPi46JG421F6tymf2jEEYDi+zToxS2l
 import React, { Component } from 'react';
 import ReactDOM, { findDOMNode } from 'react-dom';
 import BTable from 'bee-table';
@@ -7,11 +8,9 @@ import {base} from 'nc-lightapp-front';
 let { NCCheckbox ,NCDiv,NCTooltip, NCIcon} = base;
 // import {component} from '../platwapper/index';
 import sort from "bee-table/build/lib/sort.js";
-import dragColumn from 'bee-table/build/lib/dragColumn';
 
 import  Record  from './Record.js';
-let DragColumnTable = dragColumn(BTable);
-let NCTable = sort(DragColumnTable, NCIcon);
+let NCTable = sort(BTable, NCIcon);
 var EMPTY_FN = function(){};
 // const {NCTable} = component;
 //行选择模型
@@ -481,7 +480,6 @@ class Table extends Component {
        return (
             <NCDiv ref={component => this.myComponent = findDOMNode(component)} fieldid={this.tableConfig.fieldid || "common"} areaCode={NCDiv.config.TableCom}>
                <NCTable
-                    dragborder={true}
                    columns={this.state.initColumns()}
                    data={this.state.mode === 'browse' ? this.state.records : this.state.dirtyRecords.filter(e => e.getStatus() !== 'del') }
                     {...this.tableConfig}
@@ -495,3 +493,4 @@ class Table extends Component {
     }
 }
 export default Table;
+//RwP2UPFFp097dBHEtidh8Fp0jYzYc0g2pVPi46JG421F6tymf2jEEYDi+zToxS2l

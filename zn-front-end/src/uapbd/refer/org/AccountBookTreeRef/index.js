@@ -1,3 +1,715 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react"],t):"object"==typeof exports?exports["uapbd/refer/org/AccountBookTreeRef/index"]=t(require("nc-lightapp-front"),require("react")):e["uapbd/refer/org/AccountBookTreeRef/index"]=t(e["nc-lightapp-front"],e.React)}(window,(function(e,t){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../../../../",n(n.s=548)}({0:function(t,n){t.exports=e},16:function(e,t){e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var n=function(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var o=(i=r,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),a=r.sources.map((function(e){return"/*# sourceURL="+r.sourceRoot+e+" */"}));return[n].concat(a).concat([o]).join("\n")}var i;return[n].join("\n")}(t,e);return t[2]?"@media "+t[2]+"{"+n+"}":n})).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},o=0;o<this.length;o++){var a=this[o][0];"number"==typeof a&&(r[a]=!0)}for(o=0;o<e.length;o++){var i=e[o];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),t.push(i))}},t}},17:function(e,t,n){var r,o,a={},i=(r=function(){return window&&document&&document.all&&!window.atob},function(){return void 0===o&&(o=r.apply(this,arguments)),o}),l=function(e){var t={};return function(n){return void 0===t[n]&&(t[n]=e.call(this,n)),t[n]}}((function(e){return document.querySelector(e)})),s=null,u=0,c=[],f=n(19);function d(e,t){for(var n=0;n<e.length;n++){var r=e[n],o=a[r.id];if(o){o.refs++;for(var i=0;i<o.parts.length;i++)o.parts[i](r.parts[i]);for(;i<r.parts.length;i++)o.parts.push(m(r.parts[i],t))}else{var l=[];for(i=0;i<r.parts.length;i++)l.push(m(r.parts[i],t));a[r.id]={id:r.id,refs:1,parts:l}}}}function p(e,t){for(var n=[],r={},o=0;o<e.length;o++){var a=e[o],i=t.base?a[0]+t.base:a[0],l={css:a[1],media:a[2],sourceMap:a[3]};r[i]?r[i].parts.push(l):n.push(r[i]={id:i,parts:[l]})}return n}function h(e,t){var n=l(e.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=c[c.length-1];if("top"===e.insertAt)r?r.nextSibling?n.insertBefore(t,r.nextSibling):n.appendChild(t):n.insertBefore(t,n.firstChild),c.push(t);else{if("bottom"!==e.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");n.appendChild(t)}}function y(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e);var t=c.indexOf(e);t>=0&&c.splice(t,1)}function b(e){var t=document.createElement("style");return e.attrs.type="text/css",v(t,e.attrs),h(e,t),t}function v(e,t){Object.keys(t).forEach((function(n){e.setAttribute(n,t[n])}))}function m(e,t){var n,r,o,a;if(t.transform&&e.css){if(!(a=t.transform(e.css)))return function(){};e.css=a}if(t.singleton){var i=u++;n=s||(s=b(t)),r=O.bind(null,n,i,!1),o=O.bind(null,n,i,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(e){var t=document.createElement("link");return e.attrs.type="text/css",e.attrs.rel="stylesheet",v(t,e.attrs),h(e,t),t}(t),r=_.bind(null,n,t),o=function(){y(n),n.href&&URL.revokeObjectURL(n.href)}):(n=b(t),r=x.bind(null,n),o=function(){y(n)});return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else o()}}e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(t=t||{}).attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||(t.singleton=i()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var n=p(e,t);return d(n,t),function(e){for(var r=[],o=0;o<n.length;o++){var i=n[o];(l=a[i.id]).refs--,r.push(l)}e&&d(p(e,t),t);for(o=0;o<r.length;o++){var l;if(0===(l=r[o]).refs){for(var s=0;s<l.parts.length;s++)l.parts[s]();delete a[l.id]}}}};var g,w=(g=[],function(e,t){return g[e]=t,g.filter(Boolean).join("\n")});function O(e,t,n,r){var o=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=w(t,o);else{var a=document.createTextNode(o),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(a,i[t]):e.appendChild(a)}}function x(e,t){var n=t.css,r=t.media;if(r&&e.setAttribute("media",r),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}function _(e,t,n){var r=n.css,o=n.sourceMap,a=void 0===t.convertToAbsoluteUrls&&o;(t.convertToAbsoluteUrls||a)&&(r=f(r)),o&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(o))))+" */");var i=new Blob([r],{type:"text/css"}),l=e.href;e.href=URL.createObjectURL(i),l&&URL.revokeObjectURL(l)}},19:function(e,t){e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var n=t.protocol+"//"+t.host,r=n+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,(function(e,t){var o,a=t.trim().replace(/^"(.*)"$/,(function(e,t){return t})).replace(/^'(.*)'$/,(function(e,t){return t}));return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(a)?e:(o=0===a.indexOf("//")?a:0===a.indexOf("/")?n+a:r+a.replace(/^\.\//,""),"url("+JSON.stringify(o)+")")}))}},2:function(e,n){e.exports=t},548:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o,a="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},l=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refName:"refer-003078",placeholder:"refer-003078",rootNode:{refname:"refer-003078",refpk:"root"},refCode:"uapbd.ref.AccountBookTreeRef",queryTreeUrl:"/nccloud/uapbd/ref/AccountBookTreeRef.do",isMultiSelectedEnabled:!1,refType:"tree",isTreelazyLoad:!1,treeConfig:{name:["refer-003068","refer-003069"],code:["refcode","refname"]},showGroup:!1,isCacheable:!1,showInCludeChildren:!0,disabledDataShow:!1};return t.rootNode=i({},t.rootNode,{treeid:"root"}),c.default.createElement(N,i({},t,e))};var s,u=n(2),c=(s=u)&&s.__esModule?s:{default:s},f=n(0),d=n(549);function p(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function h(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}function y(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function b(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function v(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}n(558);var m=d.component.Refer,g=f.high.Refer,w=g.PopRefer,O=g.MultiLangWrapper,x=f.base.NCRadio,_=f.base.NCTree,C=f.base.NCMenu,T=(f.base.NCDropdown,f.base.NCButton,f.base.NCFormControl),k=f.base.NCCheckbox,E=f.base.NCPopover,j=x.NCRadioGroup,S=(_.NCTreeNode,o=r=function(e){function t(e){y(this,t);var n=b(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.showed=!1,n.state={datas:[],searchValue:void 0},n}return v(t,e),l(t,[{key:"componentWillMount",value:function(){this.state.datas=this.props.data,this.setState(this.state)}},{key:"componentWillReceiveProps",value:function(e){this.state.datas=e.data,this.state.searchValue=e.searchValue,this.setState(this.state)}},{key:"onExpand",value:function(){console.log("onExpand")}},{key:"render",value:function(){var e=this,t=this.props,n=(t.data,function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(t,["data"])),r=this.state.searchValue,o=function(t,n){var o=!t.children||0==t.children,a=e.props.expandedKeys.includes(t.refpk),i=function(e,t){var n=t?o?"refer-tree-point":a?"refer-tree-switch iconfont icon-wenjianjiadakai":"refer-tree-switch iconfont icon-wenjianjia":"";if(r&&r.length>0&&e&&e.length>0&&-1!=e.indexOf(r)){var i=e.indexOf(r),l=i+r.length;return[c.default.createElement("span",{className:n}),c.default.createElement("span",{className:"refer-tree-title",style:{margin:0,padding:0,border:"none"}},c.default.createElement("span",null,e.substring(0,i)),c.default.createElement("span",{style:{color:"#f50",transition:"all .3s?ease","font-weight":"bold"},className:"uapbd-cashflow-treefilter-highlight"},r),c.default.createElement("span",null,e.substring(l,e.length)))]}return[c.default.createElement("span",{className:n}),c.default.createElement("span",{className:"refer-tree-title",style:{margin:0,padding:0,border:"none"}},e)]},l="root"==t.refpk?" ":t.nodeData.nodetitle;return[i("root"==t.refpk?"":t.nodeData.nodecode,!0),c.default.createElement("span",{className:"refer-tree-title",style:{margin:0,padding:0,border:"none"}},"  "),i(l,!1)]};return c.default.createElement("div",{className:"refer-tree-wrapper refer-tree-wrapper-use-style"},c.default.createElement("div",{className:"refer-tree-container"},c.default.createElement(_,i({focusable:!0,tabIndexValue:4},n),function e(t,n){return t.filter((function(e){return null==e.needShow&&null==e.needExpand||e.needShow||e.needExpand||"root"==e.key})).map((function(t){var n=t.children||[];return c.default.createElement(_.NCTreeNode,{liAttr:{fieldid:"root"==t.refpk?"root_node":t.nodeData.nodecode+"_node"},title:o(t),key:t.refpk,isLeaf:0==n.length,treeNodeData:t.nodeData||{},nodeData:t.nodeData||{}},0==n.length?"":e(n))}))}(this.state.datas))))}}]),t}(u.Component),r.defaultProps={defaultExpandAll:!1},o),N=O(function(e){function t(e){var n=this;y(this,t);var r,o,l=b(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return l.onTreeTypeChange=function(e){l.state.treetype=e,l.setState(l.state,(function(){l.loadTreeData(l.getParam()).then((function(t){var n={refname:"type"===e?"账簿类型":"主账簿",refpk:"root"};l.setTreeData("treeData",n,t)}))}))},l.show=function(){var e=l.props,t=e.disabled;e.isTreelazyLoad,e.idKey;if(t)return!1;!l.hasOwnProperty("prevOverFlow")&&(l.prevOverFlow=document.body.style.overflow),l.setState({isShow:!0,isFirstShow:!1,dropDownShow:!1,isSelectedShow:!1,searchVal:"",treeSearchVal:"",selectedShow:!1},(function(){l.setState(l.state,(function(){var e=l.props,t=e.disabled,n=e.isTreelazyLoad,r=e.idKey,o=l.state,a=(o.selectedValues,o.isFirstShow,o.treeData,o.selectedKeys),i=(o.activeKey,o.expandedKeys);if(console.log("优先获取",a,"--",i),t)return!1;document.body.style.overflow="hidden";var s=l.props,u=s.refType,c=(s.isCacheable,s.queryGridUrl,s.queryTreeUrl,s.rootNode),f=s.pageSize,d=l.state,p=d.tableData,h=(d.isSearch,d.searchVal,d.isTreeSearch,d.treeSearchVal,void 0);"grid"===u?(h=l.__getParam({pageInfo:p[0].page}),l.loadAndSetTableData(h)):(h=l.__getParam({pid:n?c[r]:"",pageInfo:{pageSize:f,pageIndex:-1}}),l.loadAndSetTreeDataRewrite(h,c,(function(){console.log("最终优先获取",l.state.selectedKeys,"--",l.state.expandedKeys),l.setState({tableData:p,expandedKeys:i})}))),setTimeout((function(){l.popWindow&&l.popWindow.focus()}),0)}))}))},l.loadAndSetTreeDataRewrite=function(e,t,n){var r=l.__getParam(e);l.loadTreeData(r).then((function(e){l.setTreeData("treeData",t,e,n)}))},l.getParam=function(){arguments.length>0&&void 0!==arguments[0]&&arguments[0];var e=(e=l.props.queryCondition)?"function"==typeof e?e():"object"===(void 0===e?"undefined":a(e))?e:{}:{},t={};return l.props.showGroup&&(t={refpkGroup:l.state.refGroup.value&&l.state.refGroup.value.refpk?l.state.refGroup.value.refpk:"-1",showGroup:!0}),{queryCondition:i({},e,{treetype:l.state.treetype,textValue:l.state.textValue},t,{isshow:l.state.isShow,disabledDataShow:l.props.disabledDataShow&&l.state.mshowoff.checked||!1}),pageInfo:{pageSize:10,pageIndex:1}}},l.loadTreeData=(r=regeneratorRuntime.mark((function e(t){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,new Promise((function(e){l.setState({loading:!0},(function(){var n=l.state,r=(n.currentLevel,n.referVal,l.props),o=r.queryTreeUrl;r.queryCondition,r.isCacheable,(0,f.ajax)({url:o,data:t,loading:!1,success:function(n){l.setState({loading:!1},(function(){if(!n.success)throw new Error(n.error.message);var r={rows:n.data.datarows},a=[];!function e(){var t=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[];t.forEach((function(t){t.nodeData.refpk=t.nodeData.nodeid,t.nodeData.refname=t.nodeData.nodetitle,t.nodeData.refcode=t.nodeData.nodecode,t.refcode=t.nodeData.nodecode,a.push(t),t.children&&e(t.children||[])}))}(n.data.datarows||[]),(0==t.queryCondition.isshow&&t.queryCondition.searchFlag&&1==t.queryCondition.searchFlag||t.searchPks&&t.searchPks.length>0)&&(r.rows=a),l.setCacheData(o,t,{rows:a}),e(r||{})}))},error:function(e){(0,f.toast)({color:"danger",content:e.message}),l.setState({loading:!1})}})}))}));case 2:return e.abrupt("return",e.sent);case 3:case"end":return e.stop()}}),e,n)})),o=function(){var e=r.apply(this,arguments);return new Promise((function(t,n){return function r(o,a){try{var i=e[o](a),l=i.value}catch(e){return void n(e)}if(!i.done)return Promise.resolve(l).then((function(e){r("next",e)}),(function(e){r("throw",e)}));t(l)}("next")}))},function(e){return o.apply(this,arguments)}),l.onTreeNodeCheck=function(e,t){var n=t.checked,r=(t.checkedNodes,t.node),o=(t.event,l.props),a=(o.rootNode,o.onlyLeafCanSelect,o.idKey,l.state),i=a.selectedValues;a.treeData;i=l.getSelectTreeValuesThroughIncludeChildrenforme(r,n),l.setState({selectedValues:i})},l.getSelectTreeValuesThroughIncludeChildrenforme=function(e,t){var n=l.state,r=n.selectedValues,o=n.includeChildren,a=n.treetype,i=e.props.eventKey,s=l.props.idKey,u="type"==l.state.treetype&&"nodeclass"==e.props.treeNodeData.nodedata;if(o=o||u){var c=t?r.set:r.delete;!function e(t){var n=t.props.treeNodeData,o=t.props.children;"type"==a&&"nodeclass"==t.props.treeNodeData.nodedata||c.call(r,n._path||n[s],n),Array.isArray(o)&&o.forEach((function(t){e(t)}))}(e)}else{var f=e.props.treeNodeData;t?r.set(i,f):r.delete(i,f)}return u&&(l.selectRootKeys=t?[].concat(h(l.selectRootKeys),[e.props.nodeData.refpk]):l.selectRootKeys.filter((function(t){return t!=e.props.nodeData.refpk}))),r},l.setTreeData=function(e,t,n,r){var o,a=l.state;a.expandedKeys,a.textValue;(n.rows||[]).forEach((function(e){e._display=e.title,e.pid=e.pid||"root"})),l.setState((p(o={},e,n.rows||[]),p(o,"uapbdselftreedata",n.rows||[]),o),(function(){"function"==typeof r&&r()}))},l.onTreeNodeExpandWapper=function(e){l.state.uapbdselfexpandedKeys=e,l.setState(l.state)},l.renderPopoverHeaderExtend=function(){return c.default.createElement("div",{className:"cancel-drag",style:{width:200,paddingLeft:10}},l.props.showGroup?c.default.createElement(m,i({},l.state.refGroup,{container:l.props.container,refName:l.props.multiLang["refer-000232"]||"集团(所有)",placeholder:l.props.multiLang["refer-000232"]||"集团(所有)",treeConfig:{name:[l.props.multiLang["refer-003068"]||"编码",l.props.multiLang["refer-003069"]||"名称"],code:["refcode","refname"]},rootNode:{refname:l.props.multiLang["refer-000232"]||"集团(所有)",refpk:"root"}})):"")},l.renderPopoverLeft=function(){var e=l.state,t=(e.isSearch,e.selectedKeys),n=(e.expandedKeys,e.selectedValues),r=(e.treeData,l.state),o=r.uapbdselfexpandedKeys,a=r.uapbdselftreedata,s=l.props,u=s.refType,f=s.isMultiSelectedEnabled,d=s.isTreelazyLoad,p=s.rootNode,y=s.onlyLeafCanSelect,b=s.disabledDataShow,v=function e(t,n){t.forEach((function(t){n&&n(t,t.children||[]),e(t.children||[],n)}))},m=[];!function(e){var t,n=1;for(v(e,(function(e,t){var r=parseInt(e.nodeData?e.nodeData.laynumber:0);n=r<=n?n:r})),t=0;t<=n;t++){var r="expandLevel"+t;m.push(c.default.createElement(C.Item,{fieldid:r,key:t,expandLay:!0},l.props.multiLang["refer-003076"]||"展开",t+1,l.props.multiLang["refer-003077"]||"级"))}}(a||[]);var g=function(e,t,n){if(l.moreButton&&l.moreButton.focus(),l.state.isMoreButtonShow=!1,"expandAll"==e.key){n=[];v(a,(function(e,t){n.push(e.key)})),l.state.uapbdselfexpandedKeys=n,l.setState(l.state)}if("unexpandAll"==e.key&&(l.state.uapbdselfexpandedKeys=[],l.setState(l.state)),e.item.props.expandLay){n=[];var r=e.key;v(a,(function(e,t){parseInt(e.nodeData?e.nodeData.laynumber:0)<=r&&n.push(e.key)})),l.state.uapbdselfexpandedKeys=n,l.setState(l.state)}},w=function(e){var t=l.state.search.value||"",n=[];(function e(){var r=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],o=!1;return(r||[]).forEach((function(r){var a=e(r.children||[]);r.needExpand=a,r.needShow=!!a||("root"==r.refpk||!t||0==t.length||"nodeclass"==r.nodeData.nodedata||-1!=r.nodeData.nodecode.indexOf(t)||-1!=r.title.indexOf(t)),o=o||r.needShow,a&&n.push(r.key)})),o})(l.state.uapbdselftreedata||[]);n.push("root");n=t&&0!=t.length?n:[];return{data:e,expandedKeys:[].concat(n,h(l.state.uapbdselfexpandedKeys||[]))}}(l.state.uapbdselftreedata),O=i({},l.state.search,{value:l.state.search.valueTemp});return c.default.createElement("div",{style:{paddingLeft:10}},c.default.createElement("div",{style:{paddingLeft:10}},c.default.createElement("div",{className:"accountBookGrid_wrap_neibu",style:{display:"flex",marginTop:10,justifyContent:"flex-start",marginBottom:10}},c.default.createElement("div",{style:{position:"relative"},className:"icon-qingkong-hover-container"},c.default.createElement(T,i({fieldid:"search"},O,{placeholder:l.props.multiLang["refer-003070"]||"账簿编码/账簿名称"})),c.default.createElement("i",{class:"icon iconfont icon-sousuo syncTreeSearchIcon",style:{position:"absolute",top:7,right:5,color:"#878b94"}}),l.state.search.valueTemp&&c.default.createElement("i",{style:{position:"absolute",top:7,right:20,color:"#878b94"},className:"refer-del-i iconfont icon-qingkong icon-qingkong-hover",onClick:function(){l.state.search.valueTemp="",l.state.search.value="",l.setState({search:l.state.search},(function(){l.state.search.onSearch()}))}})),c.default.createElement("div",{style:{marginLeft:10,paddingTop:2}},f&&l.props.showInCludeChildren?c.default.createElement(k,i({className:"AccountBookTreeref-Search-checkbox"},l.state.subOrg),l.props.multiLang["refer-001008"]||"包含下级"):"",b?c.default.createElement(k,i({className:"AccountBookTreeref-Search-checkbox"},l.state.mshowoff),l.props.multiLang["refer-001030"]||"显示停用"):""),c.default.createElement(E,{className:"popover-in-refer more",trigger:"click",placement:"bottom",content:c.default.createElement(C,{className:"account-book-menu-use-style",onSelect:g,keyboard:!0,ref:function(e){l.moreButtonMenu=ReactDOM.findDOMNode(e)}},c.default.createElement(C.Item,{fieldid:"expandAll",key:"expandAll"},l.props.multiLang["refer-003073"]||"展开全部"),c.default.createElement(C.Item,{fieldid:"unexpandAll",key:"unexpandAll"},l.props.multiLang["refer-003074"]||"收起全部"),c.default.createElement(C.NCSubMenu,{fieldid:"expandlay_btn_menu",key:"expandLay",title:l.props.multiLang["refer-003075"]||"展开级次"},m)),show:l.state.isMoreButtonShow},c.default.createElement("span",{className:"more-button",style:{marginTop:-3},tabIndex:l.getTabIndex(l.hotKeyElement.moreButton),onClick:function(){l.setState({isMoreButtonShow:!0})},ref:function(e){l.moreButton=e},onKeyDown:l.resetHotKeyLoop.bind(l,l.hotKeyElement.moreButton)},l.props.multiLang["refer-001035"]||"更多"))),c.default.createElement("div",null,c.default.createElement(j,{name:"booktype",selectedValue:l.state.treetype,onChange:l.onTreeTypeChange.bind(l)},c.default.createElement(x,{value:"type"},l.props.multiLang["refer-003071"]||"账簿类型"),c.default.createElement(x,{value:"main"},l.props.multiLang["refer-003072"]||"主账簿")))),c.default.createElement("div",{style:{height:350,overflow:"auto",paddingLeft:10}},c.default.createElement(S,i({checkStrictly:!0,checkable:"tree"===u&&f,data:a,showLine:!0,onSelect:l.onTreeNodeSelectWapper.bind(l),onExpand:l.onTreeNodeExpandWapper.bind(l),onCheck:l.onTreeNodeCheckWapper.bind(l),checkedKeys:[].concat(h(n.keys()),h(l.selectRootKeys)),selectedKeys:t,expandedKeys:o,autoExpandParent:!1,isTreelazyLoad:d,root:p,onlyLeafCanSelect:y,searchValue:l.state.search.value,onDoubleClick:l.onTreeNodeDoubleClickWapper.bind(l),tabIndexValue:l.getTabIndex(l.hotKeyElement.referTree)},w))))},l.interval=0,l.state=i({},l.state,{uapbdselftreedata:[],uapbdselfexpandedKeys:[],treetype:"type",textValue:void 0,subOrg:{defaultChecked:!1,checked:!1,tabIndex:l.getTabIndex(l.hotKeyElement.includeChildren),onKeyDown:l.resetHotKeyLoop.bind(l,l.hotKeyElement.includeChildren),onChange:function(e){l.state.subOrg.checked=e,l.state.includeChildren=e,l.setState(l.state,(function(){}))}},mshowoff:{defaultChecked:!1,checked:!1,tabIndex:l.getTabIndex(l.hotKeyElement.showDisabledData),onKeyDown:l.resetHotKeyLoop.bind(l,l.hotKeyElement.showDisabledData),onChange:function(e){l.state.mshowoff.checked=e,l.setState(l.state,(function(){l.onTreeTypeChange(l.state.treetype)}))}},refGroup:{value:void 0,refType:"tree",refName:"集团(所有)",placeholder:"集团(所有)",refCode:"uapbd.org.GroupDefaultTreeRef",queryTreeUrl:"/nccloud/uapbd/ref/GroupDefaultTreeRef.do",treeConfig:{name:["编码","名称"],code:["refcode","refname"]},rootNode:{refname:"集团(所有)",refpk:"root"},isMultiSelectedEnabled:!1,onChange:function(e){l.state.refGroup.value=e,l.setState(l.state,(function(){l.onTreeTypeChange(l.state.treetype)}))}},search:{className:"AccountBookTreeref-Search",valueTemp:void 0,value:void 0,placeholder:"账簿编码/账簿名称",tabIndex:l.getTabIndex(l.hotKeyElement.treeSearchInput),onKeyDown:l.resetHotKeyLoop.bind(l,l.hotKeyElement.treeSearchInput),onChange:function(e){l.interval=(new Date).getTime();var t=setTimeout((function(){(new Date).getTime()-l.interval>=500&&(l.state.search.value=l.state.search.valueTemp,l.setState(l.state,(function(){}))),clearTimeout(t)}),500);l.state.search.valueTemp=e,l.setState(l.state)},onSearch:function(){var e=l.state.search.value||"",t=[];(function n(){var r=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],o=!1;return(r||[]).forEach((function(r){var a=n(r.children||[]);r.needExpand=a,r.needShow=!!a||(!e||0==e.length||"nodeclass"==r.nodeData.nodedata||-1!=r.nodeData.nodecode.indexOf(e)||-1!=r.title.indexOf(e)),o=o||r.needShow,a&&t.push(r.key)})),o})(l.state.treeData||[]);t.push("root"),l.state.expandedKeys=e&&0!=e.length?t:[],l.setState(l.state)}}}),l.selectRootKeys=[],l.showGroup=e.showGroup,l.showInCludeChildren=e.showInCludeChildren,l.disabledDataShow=e.disabledDataShow||!1,l}return v(t,e),l(t,[{key:"onTreeNodeSelectWapper",value:function(e,t){var n=t.selected,r=t.selectedNodes,o=t.node,a=t.event;if(o.props.treeNodeData,"type"==this.state.treetype&&"nodeclass"==o.props.treeNodeData.nodedata){var i=this.state.expandedKeys,l=o.props.eventKey;return i=-1==i.indexOf(l)?[].concat(h(i),[l]):i.filter((function(e){return e!=l})),this.state.expandedKeys=i,void this.setState(this.state)}for(var s=arguments.length,u=Array(s>2?s-2:0),c=2;c<s;c++)u[c-2]=arguments[c];this.onTreeNodeSelect.apply(this,[e,{selected:n,selectedNodes:r,node:o,event:a}].concat(u))}},{key:"onTreeNodeDoubleClickWapper",value:function(e,t){var n=t.selected,r=t.selectedNodes,o=t.node,a=t.event;if("type"!=this.state.treetype||"nodeclass"!=o.props.treeNodeData.nodedata){console.log("enter");for(var i=arguments.length,l=Array(i>2?i-2:0),s=2;s<i;s++)l[s-2]=arguments[s];this.onTreeNodeDoubleClick.apply(this,[e,{selected:n,selectedNodes:r,node:o,event:a}].concat(l))}}},{key:"onTreeNodeCheckWapper",value:function(e,t){var n=t.checked,r=t.checkedNodes,o=t.node,a=t.event;this.onTreeNodeCheck(e,{checked:n,checkedNodes:r,node:o,event:a})}}]),t}(w))},549:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.component=void 0;var r=f(n(550)),o=f(n(551)),a=f(n(552)),i=f(n(553)),l=f(n(554)),s=f(n(555)),u=f(n(556)),c=f(n(557));function f(e){return e&&e.__esModule?e:{default:e}}var d={NCTable:r.default,NCTree:o.default,NCButton:a.default,Refer:i.default,NCSelect:l.default,NCIcon:s.default,NCFormControl:u.default,ReferWapper:c.default};t.component=d},550:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCTable,c=i.base.NCDiv,f=i.base.NCTooltip,d=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.initColumns=function(){var e=this,t=this.state.newcols,n=this.props,r=n.columns,a=(n.title,[].concat(function(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}(r)));if(!(t&&t.length>0)){var i=a[0].dataIndex||a[0].attrcode;["index","numberindex","id"].includes(i)&&Object.assign(a[0],{fixed:"left"});var l=a.map((function(t){var n=t.render;return t.render=function(e,r,a){return s.default.createElement(f,o({},this.tooltipcfg,{overlay:e}),s.default.createElement("span",{fieldid:t.dataIndex,title:""},n?n(e,r,a):e))}.bind(e),t.title=t.title&&"span"===t.title.type?t.title:s.default.createElement("span",{fieldid:t.dataIndex},t.label||t.title),t}));return this.setState({newcols:l}),l}},n.tooltipcfg={className:"tooltip-word-color",placement:"top",delay:1},n.state={newcols:[]},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"componentWillReceiveProps",value:function(e){this.setState({newcols:[]})}},{key:"render",value:function(){var e=this.props.columns,t=e&&e.length>0&&this.initColumns(),n=this.state.newcols,r=t||n,a=o({},this.props,{columns:r});return s.default.createElement(c,{fieldid:this.props.fieldid||this.props.tableId||"basetable_comp",areaCode:c.config.TableCom},r&&r.length>0&&s.default.createElement(u,a))}}]),t}(l.Component);t.default=d},551:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCTree,c=i.base.NCDiv,f=u.NCTreeNode,d=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.getParentDomFieldId=function(e){var t=ReactDOM.findDOMNode(e);if(!t)return null;return function e(t){for(;t.parentElement;)return t.parentElement.hasAttribute("fieldid")?t.parentElement.getAttribute("fieldid"):e(t.parentElement)}(t)},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.getParentDomFieldId(this),t=e&&e.substr(0,e.indexOf("_")),n=this.props.fieldid||t||this.props.treeId||"basetree_comp",r=o({},this.props,{fieldid:n,openIcon:s.default.createElement("i",{fieldid:"opentree-switcher",class:"icon iconfont icon-shu_zk tree-swich"}),closeIcon:s.default.createElement("i",{fieldid:"closetree-switcher",class:"icon iconfont icon-shushouqi tree-swich"})});return s.default.createElement(c,{fieldid:n,areaCode:c.config.TreeCom},s.default.createElement(u,r))}}]),t}(l.Component);d.NCTreeNode=f,t.default=d},552:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCButton,c=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=o({},this.props,{fieldid:this.props.fieldid||this.props.id||this.props.key||"selfopr"});return s.default.createElement(u,e)}}]),t}(l.Component);t.default=c},553:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(2),l=(r=i)&&r.__esModule?r:{default:r};var s=n(0).high.Refer,u=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.attrcode,n=e.fieldid,r=e.refCode,a=e.refName,i=e.refType,u=e.queryTreeUrl,c=e.queryGridUrl,f=("tree"==i||"gridTree"==i?u:c).split("/"),d=null;f[f.length-1]&&f[f.length-1].split(".").length>1&&(d=f[f.length-1].split(".")[0].toLowerCase());var p=null;if(r&&r.indexOf(".")>-1){var h=r.split(".");p=h[h.length-1].toLowerCase()}var y=o({},this.props,{fieldid:t||(n||d||p||a)});return l.default.createElement(s,y)}}]),t}(i.Component);t.default=u},554:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCSelect,c=u.NCOption,f=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props.fieldid||this.props.defaultValue||"common",t=o({},this.props,{fieldid:e});return s.default.createElement(u,t)}}]),t}(l.Component);f.NCOption=c,t.default=f},555:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCIcon,c=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=o({},this.props,{fieldid:this.props.fieldid||this.props.type});return s.default.createElement(u,e)}}]),t}(l.Component);t.default=c},556:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(0),l=n(2),s=(r=l)&&r.__esModule?r:{default:r};var u=i.base.NCFormControl,c=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.fieldid,n=e.type,r=e.key,a=e.placeholder,i=o({},this.props,{fieldid:t||n||r||a||"ncformcontrol"});return s.default.createElement(u,i)}}]),t}(l.Component);t.default=c},557:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},a=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(2),l=(r=i)&&r.__esModule?r:{default:r};var s=function(e){function t(e){return function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t),function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e))}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"render",value:function(){var e=this.props,t=e.ReferComp,n=function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(e,["ReferComp"]),r=t&&t();if(!r)return null;var a=r.props,i=a.attrcode,s=a.fieldid,u=a.refCode,c=a.refName,f=a.refType,d=a.queryTreeUrl,p=a.queryGridUrl,h=("tree"==f||"gridTree"==f?d:p).split("/"),y=h[h.length-1].split(".")[0].toLowerCase(),b=null;if(u&&u.indexOf(".")>-1){var v=u.split(".");b=v[v.length-1].toLowerCase()}var m=o({},n,{fieldid:i||(s||y||b||c)});return l.default.createElement(t,m)}}]),t}(i.Component);t.default=s},558:function(e,t,n){var r=n(559);"string"==typeof r&&(r=[[e.i,r,""]]);var o={transform:void 0};n(17)(r,o);r.locals&&(e.exports=r.locals)},559:function(e,t,n){(e.exports=n(16)(!1)).push([e.i,".AccountBookTreeref-Search {\n  width: 200px;\n}\n.accountBookGrid_wrap_neibu .u-form-control-wrapper {\n  width: 200px;\n}\n.AccountBookTreeref-Search-checkbox {\n  margin-top: 5px!important;\n  margin-left: 10px;\n}\n.AccountBookTreeref-Search-checkbox label {\n  width: 75px;\n}\n.u-dropdown-menu-submenu-title:after {\n  font-family: 'iconfont';\n  right: 9px!important;\n}\n.u-dropdown-menu-submenu-title {\n  margin: 0;\n  position: relative;\n  display: block;\n  white-space: nowrap;\n  padding: 0 10px 0 15px;\n  line-height: 42px;\n  height: 42px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n.u-dropdown-menu-item {\n  padding: 0 28px 0 16px!important;\n}\n.u-dropdown-menu-item {\n  padding: 0 10px 0 15px;\n}\n.uapbd-cashflow-treefilter-highlight {\n  color: #f50;\n  -webkit-transition: all .3s ease;\n  transition: all .3s ease;\n  font-weight: bold;\n}\n.icon-qingkong-hover-container .icon-qingkong-hover {\n  visibility: hidden;\n}\n.icon-qingkong-hover-container:hover .icon-qingkong-hover {\n  visibility: visible;\n}\n.account-book-menu-use-style .u-menu-submenu-arrow {\n  right: 3px!important;\n}\n.refer-pop-window .u-tree li a:focus {\n  border: 1px dotted #b1b1b1;\n}\n.refer-tree-wrapper-use-style .refer-tree-container {\n  overflow-x: hidden!important;\n}\n",""])}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import React, { Component } from 'react';
+import { base, high,ajax ,toast} from 'nc-lightapp-front';
+import {component} from '../../../public/platwapper/index.js'; const {Refer} = component;
+const { PopRefer,MultiLangWrapper } = high.Refer, // 引入PopRefer类
+      { NCRadio: Radio ,NCTree, NCMenu, NCDropdown,NCButton, NCFormControl,NCCheckbox,NCPopover} = base,
+      { NCRadioGroup: RadioGroup } = Radio;
+const TreeNode = NCTree.NCTreeNode;
+import './index.less';
+class ReferTree extends Component {
+
+	static defaultProps = {
+		defaultExpandAll: false
+    };
+    
+	constructor(props) {
+		super(props);
+		this.showed = false;
+		this.state = {
+			datas: [],
+			searchValue: undefined
+		};
+	}
+	componentWillMount() {
+		this.state.datas = this.props.data;
+		this.setState(this.state);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.state.datas = nextProps.data;
+		this.state.searchValue = nextProps.searchValue;
+		this.setState(this.state);
+	}
+	onExpand(){
+		console.log('onExpand');
+	}
+	render() {
+		// var renderTitle = (item) => {
+		// 	return item.refpk == 'root' ? item.refname :  item.nodeData.nodecode + ' ' + item.nodeData.nodetitle;
+		// }
+		// const { data, ...otherProps } = this.props;
+		// const loop = (datas) => datas.map((item) => {
+		// 	var children = item.children || [];
+        //     return (<NCTree.NCTreeNode title={renderTitle(item)} key={item.refpk} isLeaf={children.length == 0}  treeNodeData={item.nodeData|| {}} nodeData={item.nodeData|| {}} >{children.length == 0? '' :loop(children)}</NCTree.NCTreeNode>)
+        // });
+		// return (
+		// 	<NCTree{...otherProps}>{loop(this.state.datas)}</NCTree>
+		// );
+		//---------------------------------------------------------------
+		 const { data, ...otherProps } = this.props;
+		var textValue = this.state.searchValue;
+        var renderTreeTitle = (item, icon) => {
+			
+			var isLeaf = !item.children  || item.children  == 0,
+				isExpand = this.props.expandedKeys.includes(item.refpk);
+				
+				
+            // if(item && item.hasOwnProperty('children')&& item.children.length !=null){
+            //     className = this.props.expandedKeys.includes(item.refpk)?"refer-tree-switch iconfont icon-wenjianjiadakai":"refer-tree-switch iconfont icon-wenjianjia";
+            // }else{
+            //     className = "refer-tree-point";
+            // }
+            var drawTitleString = (title,icon) =>{
+				let className = icon?(isLeaf?"refer-tree-point":isExpand?"refer-tree-switch iconfont icon-wenjianjiadakai":"refer-tree-switch iconfont icon-wenjianjia"):'';
+                if(textValue && textValue.length > 0 && title && title.length > 0 && title.indexOf(textValue) != -1 ){
+                    var start = title.indexOf(textValue) , end = start + textValue.length;
+                    return (
+						[<span className={className} />,
+							<span className='refer-tree-title' style={{margin:0,padding:0,border:'none'}}>
+								<span>
+									{title.substring(0, start)}
+								</span>
+								<span style={{ 'color':'#f50','transition':'all .3s?ease','font-weight': 'bold'}} className="uapbd-cashflow-treefilter-highlight" >
+								{textValue}
+								</span>
+								<span>{title.substring(end, title.length)}</span>
+							</span>
+						]
+					)
+                }else{
+                    return [
+                        <span className={className}/>,<span className='refer-tree-title'  style={{margin:0,padding:0,border:'none'}}>{title}</span>
+                    ];
+                }
+            };
+            var title = item.refpk == 'root' ? ' ': item.nodeData.nodetitle;
+            var code = item.refpk == 'root' ? '' : item.nodeData.nodecode;
+
+            return [drawTitleString(code, true),<span className='refer-tree-title'  style={{margin:0,padding:0,border:'none'}} >&nbsp;&nbsp;</span>,drawTitleString(title, false)];
+        };
+		const loop = (datas, pdata) => {
+            return  datas.filter( item => {
+                return (item.needShow == undefined && item.needExpand == undefined) || item.needShow || item.needExpand || item.key == 'root';
+            }).map((item) => {
+                var children = item.children || [];
+                return (<NCTree.NCTreeNode liAttr={{"fieldid":item.refpk == 'root'? "root_node":item.nodeData.nodecode+"_node"}} title={renderTreeTitle(item)} key={item.refpk} isLeaf={children.length == 0}  treeNodeData={item.nodeData|| {}} nodeData={item.nodeData|| {}} >{children.length == 0 ? '': loop(children)}</NCTree.NCTreeNode>);    
+            });
+		};
+		return (
+			<div className='refer-tree-wrapper refer-tree-wrapper-use-style'><div className='refer-tree-container'><NCTree {...{focusable:true,tabIndexValue:4}} {...otherProps}>{loop(this.state.datas)}</NCTree></div></div>
+		);
+	}
+}
+
+class Ref extends PopRefer { // 继承PopRefer类
+    constructor(props) {
+		super(props);
+		this.interval = 0;
+        this.state = {
+			...this.state, // 继承state
+			uapbdselftreedata: [],
+			uapbdselfexpandedKeys:[],
+			treetype: 'type',
+			textValue: undefined,
+			subOrg:{
+				defaultChecked :false,
+				checked : false,
+				tabIndex: this.getTabIndex(this.hotKeyElement.includeChildren),
+				onKeyDown: this.resetHotKeyLoop.bind(this, this.hotKeyElement.includeChildren),
+                onChange: (val) => {
+					this.state.subOrg.checked = val;
+					this.state.includeChildren = val;
+                    this.setState(this.state, () =>{});
+                }
+			},
+			mshowoff:{
+				defaultChecked :false,
+				checked : false,
+				tabIndex: this.getTabIndex(this.hotKeyElement.showDisabledData),
+				onKeyDown: this.resetHotKeyLoop.bind(this, this.hotKeyElement.showDisabledData),
+                onChange: (val) => {
+					this.state.mshowoff.checked = val;
+                    this.setState(this.state, () =>{
+						this.onTreeTypeChange(this.state.treetype);
+					});
+                }
+			},
+			refGroup: {
+				value: undefined,
+				refType: 'tree',
+				refName: '集团(所有)',
+				placeholder: '集团(所有)',
+				refCode: 'uapbd.org.GroupDefaultTreeRef',
+				queryTreeUrl: '/nccloud/uapbd/ref/GroupDefaultTreeRef.do',
+				treeConfig: { name: ['编码', '名称'], code: ['refcode', 'refname'] },
+				rootNode: { refname: '集团(所有)', refpk: 'root' },
+				isMultiSelectedEnabled: false,
+				onChange:(val) =>{
+					this.state.refGroup.value = val;
+					this.setState(this.state, () => {
+						this.onTreeTypeChange(this.state.treetype);
+					});
+				}
+			},
+			search:{
+				className :'AccountBookTreeref-Search',
+				valueTemp: undefined,
+				value: undefined,
+				placeholder: '账簿编码/账簿名称',
+				tabIndex: this.getTabIndex(this.hotKeyElement.treeSearchInput),
+				onKeyDown: this.resetHotKeyLoop.bind(this, this.hotKeyElement.treeSearchInput),
+				onChange: (value) => {
+					this.interval = new Date().getTime();
+					let s = setTimeout(() => {//停止输入0.5s后执行
+							if (new Date().getTime() - this.interval >= 500) {
+								this.state.search.value = this.state.search.valueTemp;
+								this.setState(this.state,() =>{
+									//this.state.search.onSearch();
+								});
+							}
+							clearTimeout(s);
+					}, 500);
+					this.state.search.valueTemp = value;
+					this.setState(this.state);
+				},
+				onSearch:() =>{
+					var textValue = this.state.search.value || '',
+						expandKeys =[];
+					const loopsearch = (nodes = []) => {
+						var parendExpand = false;
+						(nodes || [] ).forEach(child => {
+							var expand = loopsearch( child.children || [] );
+							child.needExpand = expand;
+							child.needShow = expand ? true: ( !textValue || textValue.length == 0 ||  child.nodeData.nodedata == 'nodeclass'|| child.nodeData.nodecode.indexOf(textValue) != -1 || child.title.indexOf(textValue)  != -1? true: false);
+							parendExpand = parendExpand ? parendExpand :child.needShow;
+							if(expand){
+								expandKeys.push(child.key);
+							}
+						});
+						return parendExpand;
+					}
+
+					var rootExpand = loopsearch(this.state.treeData|| []);
+					expandKeys.push('root');
+					this.state.expandedKeys = textValue && textValue.length != 0 ? expandKeys :[];
+					this.setState(this.state);
+				}
+			}
+		};
+
+		this.selectRootKeys =[];
+		this.showGroup = props.showGroup;
+		this.showInCludeChildren = props.showInCludeChildren;
+		this.disabledDataShow = props.disabledDataShow || false;
+    }
+
+    onTreeTypeChange = (value) =>{
+		this.state.treetype = value;
+		this.setState(this.state, () => {
+			this.loadTreeData(this.getParam()).then((data) => {
+				var rootTitle = value === 'type' ? '账簿类型': '主账簿'
+				var root = {
+					refname: rootTitle,
+					refpk: 'root'
+				};
+                this.setTreeData('treeData', root, data);
+            });
+
+		});
+	};
+	
+	show = () => {
+		let { disabled, isTreelazyLoad, idKey } = this.props;
+		if (disabled) {
+			return false;
+		}
+		!this.hasOwnProperty('prevOverFlow') && (this.prevOverFlow = document.body.style.overflow);
+		//清空查询
+		this.setState({
+			isShow: true,
+			isFirstShow: false,
+			dropDownShow: false,
+			isSelectedShow: false,
+			searchVal: '',
+			treeSearchVal: '',
+			selectedShow: false
+		},() =>{
+
+			// this.state.search.valueTemp = undefined;
+			// this.state.search.value = undefined;
+			this.setState(this.state, () => {
+				let { disabled, isTreelazyLoad, idKey } = this.props,
+				{ selectedValues, isFirstShow, treeData, selectedKeys, activeKey, expandedKeys } = this.state;
+				console.log('优先获取',selectedKeys, '--', expandedKeys);
+				if (disabled) {
+					return false;
+				}
+				document.body.style.overflow = 'hidden';
+				//缓存旧数据，做取消用
+				let { refType, isCacheable, queryGridUrl, queryTreeUrl, rootNode, pageSize } = this.props,
+					{ tableData, isSearch, searchVal, isTreeSearch, treeSearchVal } = this.state,
+					param;
+				// if (isFirstShow) {
+				if (refType === 'grid') {
+					param = this.__getParam({
+						pageInfo: tableData[0].page
+					});
+					// isSearch && (param.keyword = searchVal);
+					this.loadAndSetTableData(param);
+				} else {
+					param = this.__getParam({
+						pid: isTreelazyLoad ? rootNode[idKey] : '',
+						pageInfo: {
+							pageSize,
+							pageIndex: -1
+						}
+					});
+					// isTreeSearch && (param.keyword = treeSearchVal);
+					this.loadAndSetTreeDataRewrite(param, rootNode, ()=>{
+						console.log('最终优先获取',this.state.selectedKeys, '--', this.state.expandedKeys);
+						this.setState({
+							tableData,
+							expandedKeys:expandedKeys
+						});
+					});
+					
+					
+				}
+				setTimeout(() => {
+					this.popWindow && this.popWindow.focus();
+				}, 0);
+			});
+		});
+	};
+
+	loadAndSetTreeDataRewrite = (_param, rootNode,callback) => {
+		let param = this.__getParam(_param);
+		this.loadTreeData(param).then(data => {
+			this.setTreeData('treeData', rootNode, data, callback);
+		});
+
+		// this.state.search.valueTemp = undefined;
+		// this.state.search.value = undefined;
+		
+		// var handlerAfter = () => {
+			
+		// };
+		// this.setState(this.state, () => {
+		// 	handlerAfter();
+		// });
+	};
+
+    getParam = (param = {}) => {
+		var { queryCondition } = this.props,
+		queryCondition = queryCondition ? typeof queryCondition === 'function' ? queryCondition(): typeof queryCondition === 'object' ? queryCondition : {}: {};
+		var groupParam= {};
+		if(this.props.showGroup){
+			groupParam = { refpkGroup: this.state.refGroup.value && this.state.refGroup.value.refpk ? this.state.refGroup.value.refpk : '-1', showGroup: true };
+		}
+		return {
+			queryCondition: {
+				...queryCondition, 
+				treetype: this.state.treetype, 
+				textValue: this.state.textValue,
+				...groupParam,
+				isshow: this.state.isShow,
+				disabledDataShow: this.props.disabledDataShow ? (this.state.mshowoff.checked || false) : false
+			},
+			pageInfo:{pageSize: 10, pageIndex: 1}, //放置报错
+			
+		};
+    };
+
+	loadTreeData = async (param) => {
+		return await new Promise((resolve) => {
+			this.setState({loading: true},() => {
+				let { currentLevel, referVal } = this.state;
+				let { queryTreeUrl, queryCondition, isCacheable } = this.props;
+				//判断是否启用了集团，
+				ajax({
+					url: queryTreeUrl,
+					data: param,
+					loading: false,
+					success: (res) => {
+						this.setState({loading: false}, () =>{
+							if (!res.success) {
+								throw new Error(res.error.message);
+								return;
+							}
+							// res.data.datarows.forEach((e) => {
+							// 	e.nodeData.refpk = e.nodeData.nodeid;
+							// 	e.nodeData.refname = e.nodeData.nodetitle;
+							// 	e.nodeData.refcode = e.nodeData.nodecode;
+							// 	e.refcode = e.nodeData.nodecode;
+							// })  bug fix for NCCLOUD-161316
+							var newData = { //满足平台的格式
+								rows: res.data.datarows 
+							};
+
+							var listData = [];
+							var listLoop = (nodes = [] ) => {
+								nodes.forEach(n => {
+									n.nodeData.refpk = n.nodeData.nodeid;
+								n.nodeData.refname = n.nodeData.nodetitle;
+								n.nodeData.refcode = n.nodeData.nodecode;
+								n.refcode =n.nodeData.nodecode;
+									listData.push(n);
+									if(n.children){
+										listLoop(n.children || []);
+									}
+								});	
+							};
+							listLoop(res.data.datarows || []);
+                            if((param.queryCondition.isshow ==false&&param.queryCondition.searchFlag &&param.queryCondition.searchFlag ==true)||param.searchPks&&param.searchPks.length>0){
+                                newData.rows = listData;
+                            }
+
+							this.setCacheData(queryTreeUrl, param, {rows:listData});
+							resolve(newData || {}); // modify by qiaojie
+						});
+					},
+					error: (e) => {
+						toast({ color: 'danger', content: e.message });
+						this.setState({
+							loading: false
+						});
+						//throw new Error(e); jira问题
+					}
+				});
+			});
+		});
+	};
+
+    onTreeNodeSelectWapper(selectedKeys, { selected, selectedNodes, node, event }, ...rest){
+		if(!node.props.treeNodeData){
+			debugger;
+		}
+        if(this.state.treetype == 'type' && node.props.treeNodeData.nodedata == 'nodeclass'){
+			var expandedKeys = this.state.expandedKeys,
+				nodeKey = node.props.eventKey;
+			expandedKeys = expandedKeys.indexOf(nodeKey) == -1 ? [...expandedKeys, nodeKey] :  expandedKeys.filter(e => e != nodeKey);
+			this.state.expandedKeys = expandedKeys;
+			this.setState(this.state);
+			return;
+		}
+        this.onTreeNodeSelect(selectedKeys, { selected, selectedNodes, node, event },  ...rest);
+	};
+	onTreeNodeDoubleClickWapper(selectedKeys, { selected, selectedNodes, node, event }, ...rest){
+        if(this.state.treetype == 'type' && node.props.treeNodeData.nodedata == 'nodeclass'){
+			return;
+		}
+		console.log('enter');
+        this.onTreeNodeDoubleClick(selectedKeys, { selected, selectedNodes, node, event },  ...rest);   
+	};
+
+    onTreeNodeCheckWapper (checkedKeys, { checked, checkedNodes, node, event }){
+		// if(this.state.treetype == 'type' && node.props.treeNodeData.nodedata == 'nodeclass')
+		// 	return;
+        this.onTreeNodeCheck(checkedKeys, { checked, checkedNodes, node, event });
+	};
+
+	onTreeNodeCheck = (checkedKeys, { checked, checkedNodes, node, event }) => {
+		// console.log(checkedKeys, { checked, checkedNodes, node, event });
+		const { rootNode, onlyLeafCanSelect, idKey } = this.props;
+		let { selectedValues, treeData } = this.state;
+		selectedValues = this.getSelectTreeValuesThroughIncludeChildrenforme(node,checked);
+		this.setState({
+			selectedValues
+		});
+	};
+
+	getSelectTreeValuesThroughIncludeChildrenforme = (node, checked) => {
+		let { selectedValues, includeChildren,treetype} = this.state,
+			treeNodeId = node.props.eventKey;
+		const { idKey } = this.props;
+		const isClassNode = this.state.treetype == 'type' && node.props.treeNodeData.nodedata == 'nodeclass';
+		includeChildren  = includeChildren ||  isClassNode;//点击的是分类节点按照包含下级处理
+
+		
+		if (includeChildren ) {
+			// 包含下级
+			//let mapFunc = selectedValues.get(treeNodeId) ? selectedValues.delete : selectedValues.set;
+			let mapFunc = !checked ? selectedValues.delete : selectedValues.set;
+			// 选中所有下级节点
+			(function func(node) {
+				let data = node.props.treeNodeData,
+					children = node.props.children;
+				if(treetype == 'type' && node.props.treeNodeData.nodedata == 'nodeclass'){
+				}else{
+					mapFunc.call(selectedValues, data._path || data[idKey], data);
+				}
+				if (Array.isArray(children)) {
+					children.forEach((e) => void func(e));
+				}
+			})(node);
+		} else {
+			// 选中单个节点
+			let data = node.props.treeNodeData;
+			!checked ? selectedValues.delete(treeNodeId, data) : selectedValues.set(treeNodeId, data);
+		}
+		if(isClassNode){
+			this.selectRootKeys = checked ? [...this.selectRootKeys, node.props.nodeData.refpk] : this.selectRootKeys.filter( k => {return k != node.props.nodeData.refpk;});
+			
+		}
+
+	
+		return selectedValues;
+	};
+
+    setTreeData = (target, parentNode, data, cb) => {
+		let { expandedKeys ,textValue} = this.state;
+		(data.rows || [] ).forEach((e) => {
+			e._display = e.title;
+			e.pid = e.pid || 'root';
+		});
+		
+		this.setState({
+			[target]: data.rows || [] ,
+			uapbdselftreedata : data.rows || [] 
+			// search:{
+			// 	...this.state.search,
+			// 	value: undefined
+			// }
+		},() => {
+				typeof cb === 'function' && cb();
+		});
+	};
+	// 节点展开方法
+	onTreeNodeExpandWapper = (expandedKeys)=>{
+		this.state.uapbdselfexpandedKeys = expandedKeys;
+		this.setState(this.state);
+	}
+
+	// 复写原型方法：渲染顶部 集团参照
+	renderPopoverHeaderExtend = () => {
+		return <div className="cancel-drag" style={{width: 200, paddingLeft: 10}}>{this.props.showGroup ? <Refer {...this.state.refGroup} {...{
+			container:this.props.container,
+			refName: this.props.multiLang['refer-000232']||'集团(所有)',          
+			placeholder: this.props.multiLang['refer-000232']||'集团(所有)',  
+			treeConfig: { name: [this.props.multiLang['refer-003068']||'编码', this.props.multiLang['refer-003069']||'名称'], code: ['refcode', 'refname'] },   
+			rootNode: { refname: this.props.multiLang['refer-000232']||'集团(所有)', refpk: 'root' },
+		}}/>:''}</div>
+	}
+    // 复写原型方法：渲染弹出层左侧
+	renderPopoverLeft = () => {
+		let { isSearch, selectedKeys, expandedKeys, selectedValues, treeData } = this.state;
+		let {  uapbdselfexpandedKeys, uapbdselftreedata} = this.state;
+		const { refType, isMultiSelectedEnabled, isTreelazyLoad, rootNode, onlyLeafCanSelect, disabledDataShow} = this.props;
+		
+		 //树表state
+		 var loopNode = (nodes, handler) => {
+            nodes.forEach( node => {
+                handler && handler(node, node.children || []);
+                loopNode(node.children || [], handler);
+            });
+		};
+		
+		var laybtns = [],
+			createNumberBtns = (nodes) => { //获取树节点层级号数组
+			var maxlaynumber = 1, i, btns = [],
+				hander = (node, children) =>{ 
+					var nodenumber = parseInt(node.nodeData ? node.nodeData.laynumber : 0);
+					maxlaynumber = nodenumber <= maxlaynumber ? maxlaynumber: nodenumber;
+				};
+				loopNode(nodes, hander);
+				for(i =0 ; i <= maxlaynumber; i++ ){
+					let fieldid = "expandLevel" + i;
+					laybtns.push(<NCMenu.Item fieldid={fieldid} key={i} expandLay={true}>{this.props.multiLang['refer-003076'] || '展开'}{i+1}{this.props.multiLang['refer-003077'] || '级'}</NCMenu.Item> );
+				}
+		};
+		createNumberBtns(uapbdselftreedata || []);
+
+		var onMenuSelect = (domEvent, item, key) => {
+			this.moreButton && this.moreButton.focus();
+			this.state.isMoreButtonShow = false;
+			if(domEvent.key == 'expandAll'){
+				var key = [],
+					keyHander = (node, children) =>{ 
+						key.push(node.key);
+					};
+				loopNode(uapbdselftreedata, keyHander);
+				this.state.uapbdselfexpandedKeys = key;
+				this.setState(this.state);
+			}
+			if(domEvent.key == 'unexpandAll'){
+				this.state.uapbdselfexpandedKeys = [];
+				this.setState(this.state);
+			}
+			if(domEvent.item.props.expandLay){
+				var key = [],  layno = domEvent.key,
+					keyHander = (node, children) =>{ 
+						var nodenumber = parseInt(node.nodeData ? node.nodeData.laynumber : 0);
+						if(nodenumber <= layno){
+							key.push(node.key);
+						}
+				};
+				loopNode(uapbdselftreedata, keyHander);
+				this.state.uapbdselfexpandedKeys = key;
+				this.setState(this.state);
+			}
+		};
+
+		var createMore = () => {
+			return (<NCMenu 
+					className="account-book-menu-use-style" 
+					onSelect={onMenuSelect} 
+					keyboard 
+					ref={dom => {
+						this.moreButtonMenu = ReactDOM.findDOMNode(dom);
+					}}>
+				<NCMenu.Item fieldid="expandAll" key="expandAll">{this.props.multiLang['refer-003073'] || '展开全部'}</NCMenu.Item>
+				<NCMenu.Item fieldid="unexpandAll" key="unexpandAll">{this.props.multiLang['refer-003074'] || '收起全部'}</NCMenu.Item>
+				<NCMenu.NCSubMenu fieldid="expandlay_btn_menu" key="expandLay" title={this.props.multiLang['refer-003075'] || '展开级次'}>
+					{laybtns}
+				</NCMenu.NCSubMenu>
+			</NCMenu>);
+		};
+
+
+		var initsearchAndExpandedkeys = (tds) => {
+			var textValue = this.state.search.value || '',
+				calexpandKeys =[];
+			const loopsearch = (nodes = []) => {
+				var parendExpand = false;
+				(nodes || [] ).forEach(child => {
+					var expand = loopsearch( child.children || [] );
+					child.needExpand = expand;
+					child.needShow = expand ? true: ( child.refpk == 'root'|| !textValue || textValue.length == 0 ||  child.nodeData.nodedata == 'nodeclass'|| child.nodeData.nodecode.indexOf(textValue) != -1 || child.title.indexOf(textValue)  != -1? true: false);
+					parendExpand = parendExpand ? parendExpand :child.needShow;
+					if(expand){
+						calexpandKeys.push(child.key);
+					}
+				});
+				return parendExpand;
+			}
+
+			var rootExpand = loopsearch(this.state.uapbdselftreedata|| []);
+			calexpandKeys.push('root');
+			var calexpandKeys = textValue && textValue.length != 0 ? calexpandKeys :[];
+			return{
+				data:tds,
+				expandedKeys:[...calexpandKeys,...(this.state.uapbdselfexpandedKeys || [] ) ]
+						
+			}
+		};
+		var extreecfg = initsearchAndExpandedkeys(this.state.uapbdselftreedata);
+		var renderSearch = {
+			...this.state.search,
+			value: this.state.search.valueTemp
+		};
+		
+	
+		return (
+            <div style={{paddingLeft: 10}}>
+				<div style={{paddingLeft: 10}}>
+					<div className='accountBookGrid_wrap_neibu' style={{display:'flex',marginTop:10,justifyContent: 'flex-start',marginBottom:10}}>
+						<div style={{position: 'relative'}} className="icon-qingkong-hover-container">
+							<NCFormControl fieldid="search" {...renderSearch} {...{
+									placeholder:  this.props.multiLang['refer-003070']|| '账簿编码/账簿名称'
+							}}/>
+							<i class="icon iconfont icon-sousuo syncTreeSearchIcon" style={{position: 'absolute',top: 7,right: 5,color: '#878b94'}}></i>
+							{this.state.search.valueTemp && (<i  style={{position: 'absolute',top: 7,right: 20,color: '#878b94'}} className="refer-del-i iconfont icon-qingkong icon-qingkong-hover"
+								onClick={() => {
+									this.state.search.valueTemp = '';
+									this.state.search.value = '';
+									this.setState({
+										search: this.state.search
+									},() =>{
+										this.state.search.onSearch();
+									});
+								}}/>
+							)}
+						</div>
+						<div style={{marginLeft: 10,paddingTop: 2}}>
+							{isMultiSelectedEnabled && this.props.showInCludeChildren ? <NCCheckbox className="AccountBookTreeref-Search-checkbox" {...this.state.subOrg}>{this.props.multiLang['refer-001008'] || '包含下级'}</NCCheckbox> : ''}
+							{disabledDataShow ? <NCCheckbox  className="AccountBookTreeref-Search-checkbox" {...this.state.mshowoff}>{this.props.multiLang['refer-001030'] || '显示停用'}</NCCheckbox> : ''}
+						
+						</div>
+						<NCPopover
+							className="popover-in-refer more"
+							trigger={'click'}
+							placement={'bottom'}
+							content={createMore()}
+							show={this.state.isMoreButtonShow}
+						>
+						<span 
+								className='more-button' 
+								style={{marginTop: -3}} 
+								tabIndex={this.getTabIndex(this.hotKeyElement.moreButton)}
+								onClick={() => {
+									this.setState({
+										isMoreButtonShow: true
+									});
+								}}
+								ref={dom => {
+									this.moreButton = dom;
+								}}
+								onKeyDown={this.resetHotKeyLoop.bind(this, this.hotKeyElement.moreButton)}>{this.props.multiLang['refer-001035'] || '更多'}</span>
+						
+						 </NCPopover>
+					</div>
+					<div>
+						<RadioGroup name="booktype" selectedValue={this.state.treetype} onChange={this.onTreeTypeChange.bind(this)}>
+							<Radio value="type">{this.props.multiLang['refer-003071'] || '账簿类型'}</Radio>
+							<Radio value="main">{this.props.multiLang['refer-003072'] || '主账簿'}</Radio>
+						</RadioGroup>
+					</div>
+				</div>
+				<div style={{height: 350,overflow: 'auto',paddingLeft: 10}}>
+					<ReferTree
+						checkStrictly={true}
+						checkable={refType === 'tree' && isMultiSelectedEnabled}
+						data={uapbdselftreedata}
+						showLine={true}
+						onSelect={this.onTreeNodeSelectWapper.bind(this)}
+						onExpand={this.onTreeNodeExpandWapper.bind(this)}
+						onCheck={this.onTreeNodeCheckWapper.bind(this)}
+						checkedKeys={[ ...selectedValues.keys(), ...this.selectRootKeys ]}
+						selectedKeys={selectedKeys}
+						expandedKeys={uapbdselfexpandedKeys}
+						autoExpandParent={false}
+						isTreelazyLoad={isTreelazyLoad}
+						root={rootNode}
+						onlyLeafCanSelect={onlyLeafCanSelect}
+						searchValue={this.state.search.value}
+						onDoubleClick={this.onTreeNodeDoubleClickWapper.bind(this)}
+						tabIndexValue={this.getTabIndex(this.hotKeyElement.referTree)}
+						{...extreecfg}
+					/>
+				</div>
+        </div>
+		
+		);
+	};
+}
+
+
+export default function (props = {}) {
+    var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+        refName:'refer-003078',  
+        placeholder: 'refer-003078', 
+        rootNode:{refname:'refer-003078',refpk:'root'},
+        refCode: 'uapbd.ref.AccountBookTreeRef',
+        queryTreeUrl:'/nccloud/uapbd/ref/AccountBookTreeRef.do',
+		isMultiSelectedEnabled:false,
+        refType:'tree',
+        isTreelazyLoad: false,
+		treeConfig:{name:['refer-003068', 'refer-003069'],code: ['refcode', 'refname']},
+		showGroup: false,
+		isCacheable:false,
+		showInCludeChildren:true,
+		disabledDataShow: false
+    };
+    conf.rootNode = {...conf.rootNode, treeid: 'root'};
+    return <AccountBookWrapper {...conf} {...props} />
+}
+
+const AccountBookWrapper = MultiLangWrapper(Ref)
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

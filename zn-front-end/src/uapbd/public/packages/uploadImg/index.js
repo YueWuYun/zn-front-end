@@ -1,3 +1,4 @@
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { createPage, base, ajax, toast } from 'nc-lightapp-front';
@@ -125,3 +126,5 @@ UploadImg = createPage({
 })(UploadImg);
 
 export default UploadImg;
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

@@ -1,0 +1,80 @@
+
+
+.version-head {
+  margin-bottom: 13px;
+}
+
+.tree-table{
+  top: 60px;
+}
+
+
+.ncc-hr-contain{
+  width:100%;
+  height:100%;
+  border:1px solid #e9e9e9;
+  
+}
+.ncc-hr-left-tree{
+  width:75%;
+  float:left;
+  height:450px;
+  overflow: auto;
+  background-color:#fff;
+  
+  //border:1px solid red;
+}
+.ncc-hr-right-operate{
+  width:24%;
+  height:99%;
+  float:right;
+  
+  background-color:#fff;
+  border-left:1px solid #e9e9e9;
+}
+.ncc-hr-sperator{
+  width:1px;
+  height:100%;
+  float:left;
+  background-color:#e9e9e9;
+  border:2px solid #e9e9e9;
+}
+.ncc-hr-padding{
+  padding:20px 20px 20px 20px;
+}
+.structure{
+  .u-modal-dialog{
+    height: 567px;
+    .u-modal-body{
+      padding: 0;
+    }
+    .ncc-hr-contain{
+      display: flex;
+      .ncc-hr-left-tree{
+        flex: 3;
+        float: none;
+      }
+      .ncc-hr-right-operate{
+        flex: 1;
+        float: none;
+        height: auto;
+        .u-button{
+          margin-bottom: 20px;
+          min-width: 72px;
+        }
+      }
+    }
+  }
+  .ncc-hr-left-tree{
+    -webkit-box-flex: 5!important;
+    -ms-flex: 5!important;
+    flex: 5!important;
+  }
+}
+.treeTableCol{
+  .table-bordered{
+    tr{
+      border-top: none;
+    }
+  }
+}

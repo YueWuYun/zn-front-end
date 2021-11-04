@@ -1,0 +1,62 @@
+// 集中控制功能按钮组
+.nc-bill-tableTab-area{
+    position: relative;
+}
+.concent-btn-control{
+    position: absolute;
+    z-index: 1;
+    right: 18px;
+    top: 0;
+    // margin-top: 6px
+    .icon {
+        top: 4px;
+        display: inline-block;
+        font-size: 18px;
+        color: #555;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        margin: 0px 0 0 6px;
+        border-radius: 3px;
+        line-height: 30px;
+        padding: 0px 0 0 6px !important;
+        background: #fff;
+        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        border: 1px solid #d0d0d0;
+        position: relative;
+    }
+}
+
+.adminrole1{
+    .nc-bill-bottom-area{
+        height: calc(~"100% - 124px");
+    }
+    .nc-tabs, .nc-bill-table-area, .u-tabs, .u-tabs-tabpane, .u-tabs-tabpane>div, .u-tabs-tabpane>div>div, .u-tabs-tabpane>div>div>div, .lightapp-component-simpleTable{
+        height: 100%;
+    }
+    .u-tabs-content{
+        height: calc(~"100% - 40px");
+    }
+    .simpleTable-component-wrapper {
+        height: calc(~"100% - 54px");
+    }
+    .nc-bill-table-area{
+        height: 100%;
+        .tabs-area{
+            height: 100%;
+            .u-tabs .u-tabs-top .lightapp-component-tabs .u-tabs-simple{
+                height: 100%;
+                .u-tabs-content .u-tabs-content-no-animated{
+                    height: calc(~"100% - 40px");
+                    .u-tabs-tabpane .u-tabs-tabpane-active{
+                        height: 100%;
+                        .lightapp-component-simpleTable{
+                            height: 100%;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

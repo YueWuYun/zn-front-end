@@ -1,3 +1,39 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],r):"object"==typeof exports?exports["uapbd/refer/pub/BankaccSubUseTreeGridRef/index"]=r(require("nc-lightapp-front")):e["uapbd/refer/pub/BankaccSubUseTreeGridRef/index"]=r(e["nc-lightapp-front"])}(window,(function(e){return function(e){var r={};function n(t){if(r[t])return r[t].exports;var o=r[t]={i:t,l:!1,exports:{}};return e[t].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=r,n.d=function(e,r,t){n.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:t})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,r){if(1&r&&(e=n(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var t=Object.create(null);if(n.r(t),Object.defineProperty(t,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)n.d(t,o,function(r){return e[r]}.bind(null,o));return t},n.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(r,"a",r),r},n.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},n.p="../../../../",n(n.s=756)}({0:function(r,n){r.exports=e},3:function(e,r,n){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var t=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var n=arguments[r];for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(o,t({},a,e))};var o=n(0).high.Refer,a=r.conf={multiLang:{domainName:"uap",currentLocale:"zh-CN",moduleId:"uapRefer"},queryTreeUrl:"/nccloud/riart/ref/groupRefTreeAction.do",refType:"tree",placeholder:"1880000025-000061",refName:"1880000025-000061",rootNode:{refname:"1880000025-000061",refpk:"root"}}},7:function(e,r,n){"use strict";Object.defineProperty(r,"__esModule",{value:!0}),r.conf=void 0;var t=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var n=arguments[r];for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(c,t({},f,e))};var o=n(0),a=n(3),c=o.high.Refer;a.conf.fieldid="group";var f=r.conf={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000201",refCode:"uapbd.refer.org.BusinessUnitTreeRef",rootNode:{refname:"refer-000201",refpk:"root"},placeholder:"refer-000201",queryTreeUrl:"/nccloud/uapbd/org/BusinessUnitTreeRef.do",treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},isMultiSelectedEnabled:!1,unitProps:a.conf,isShowUnit:!1}},756:function(e,r,n){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var t=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var n=arguments[r];for(var t in n)Object.prototype.hasOwnProperty.call(n,t)&&(e[t]=n[t])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"gridTree",refName:"refer-000386",placeholder:"refer-000386",rootNode:{refname:"refer-000015",refpk:"root"},refCode:"uapbd.pub.BankaccSubUseTreeGridRef",queryTreeUrl:"/nccloud/uapbd/ref/BankaccSubUseTreeRef.do",queryGridUrl:"/nccloud/uapbd/ref/BankaccSubUseGridRef.do",columnConfig:[{name:["refer-000377","refer-000378","refer-000379","refer-000387","refer-000388","refer-000017","refer-000382","refer-000383","refer-000389","refer-000385","refer-000014"],code:["bd_bankaccsub.accnum","bd_bankaccsub.accname","bd_bankaccbas.code","bd_bankaccbas.name","bd_bankdoc.name","bd_banktype.name","bd_bankaccsub.code","bd_bankaccsub.name","bd_currtype.name","bd_bankaccsub.acctype as acctype","bd_bankaccbas.mnecode"],checked:{"bd_bankaccbas.mnecode":!1},search:{"bd_bankaccbas.mnecode":!0}}],treeConfig:{name:["refer-000002","refer-000003"],code:["refcode","refname"]},isMultiSelectedEnabled:!1,unitProps:a.conf,isShowUnit:!1};return React.createElement(c,t({},r,e))};var o=n(0),a=n(7),c=o.high.Refer}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high } from 'nc-lightapp-front';
+import { conf as unitConf } from '../../org/BusinessUnitTreeRef/index';
+const { Refer } = high;
+
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+
+		refType: 'gridTree',
+		refName: 'refer-000386',/* 国际化处理： 使用权参照*/
+		placeholder: 'refer-000386',/* 国际化处理： 使用权参照*/
+		rootNode: { refname: 'refer-000015', refpk: 'root' },/* 国际化处理： 银行类别*/
+		refCode: 'uapbd.pub.BankaccSubUseTreeGridRef',
+		queryTreeUrl: '/nccloud/uapbd/ref/BankaccSubUseTreeRef.do',
+		queryGridUrl: '/nccloud/uapbd/ref/BankaccSubUseGridRef.do',
+		columnConfig: [
+			{
+				name: ['refer-000377', 'refer-000378', 'refer-000379', 'refer-000387', 'refer-000388', 'refer-000017', 'refer-000382', 'refer-000383', 'refer-000389', 'refer-000385', 'refer-000014'],/* 国际化处理： 银行账号,银行户名,账户编码,账户名称,开户银行名称,银行类别名称,子户编码,子户名称,币种名称,账户类型,助记码*/
+				code: ["bd_bankaccsub.accnum", "bd_bankaccsub.accname", "bd_bankaccbas.code", 'bd_bankaccbas.name', 'bd_bankdoc.name', 'bd_banktype.name', 'bd_bankaccsub.code', 'bd_bankaccsub.name', 'bd_currtype.name'
+					, 'bd_bankaccsub.acctype as acctype', 'bd_bankaccbas.mnecode'],
+				checked: { 'bd_bankaccbas.mnecode': false },
+				search: { 'bd_bankaccbas.mnecode': true }
+			}
+		],
+		treeConfig: { name: ['refer-000002', 'refer-000003'], code: ['refcode', 'refname'] },/* 国际化处理： 编码,名称*/
+		isMultiSelectedEnabled: false,
+		unitProps: unitConf,
+		isShowUnit: false
+	};
+
+	return <Refer {...conf} {...props} />
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

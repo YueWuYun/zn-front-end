@@ -1,3 +1,4 @@
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
 /*
  * @Description: 页面标题栏组件
  * @Author: llixxm
@@ -72,3 +73,4 @@ class HeaderArea extends Component {
 }
 HeaderArea = createPage({})(HeaderArea)
 export default HeaderArea
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

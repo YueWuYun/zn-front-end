@@ -1,3 +1,4 @@
+//PFSo7vFSif6TPS9ylElSOKZK+OkK81BeWkTHb5n/kXvIpw4Ic8HyoTHirXhA6vxk
 /******************************************************
  * 树操作工具类
  *
@@ -69,3 +70,4 @@ const dealTreeData = (data)=>{
 
 
 export {checkHasChildren,dealTreeData}
+//PFSo7vFSif6TPS9ylElSOKZK+OkK81BeWkTHb5n/kXvIpw4Ic8HyoTHirXhA6vxk

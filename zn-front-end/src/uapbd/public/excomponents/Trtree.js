@@ -1,3 +1,4 @@
+//Xi9inj+rdH+uFXWJfeNJ1cMScwaI1BOt7PbzsI/n12t0vvd5wZelBgQ2dTVoCr1s
 /**
  * 封装树
  * @author yinshb
@@ -263,3 +264,4 @@ const Trtree = {
 	getTreeDataById : getTreeDataById	//根据treeId获取树的节点数据数组
 };
 export default Trtree;
+//Xi9inj+rdH+uFXWJfeNJ1cMScwaI1BOt7PbzsI/n12t0vvd5wZelBgQ2dTVoCr1s

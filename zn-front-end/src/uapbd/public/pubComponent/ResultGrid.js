@@ -1,3 +1,4 @@
+//QCLNW5kO2W4qKMHdM5+3LTr3OFJwWaOfX+rHERc4usL+6alsMSXznYwbxwekqEZb
 import React, { Component } from 'react';
 import {base,ajax } from 'nc-lightapp-front';
 import {component} from "../platwapper/index.js";
@@ -131,3 +132,5 @@ class ResultGrid extends Component {
     }
 }
 export default ResultGrid;
+
+//QCLNW5kO2W4qKMHdM5+3LTr3OFJwWaOfX+rHERc4usL+6alsMSXznYwbxwekqEZb

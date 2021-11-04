@@ -1,3 +1,4 @@
+//pzPQOCNyrLX4Rl6sWYkkb5b3fvyIi+OBsbDpZZPLSRN3O2sNslsuX4C2f/hIH7Y6
 import React,{Component} from 'react';
 import {base} from 'nc-lightapp-front';
 
@@ -187,3 +188,4 @@ export default class Dialog extends Component{
         )
     }
 }
+//pzPQOCNyrLX4Rl6sWYkkb5b3fvyIi+OBsbDpZZPLSRN3O2sNslsuX4C2f/hIH7Y6

@@ -1,0 +1,221 @@
+// 模态框样式
+.param-panel-modal.nc-modal.u-modal {
+	.u-modal-dialog {
+		max-height: none;
+		.u-modal-header {
+			height: 40px;
+			padding: 0 20px;
+			line-height: 40px;
+			background: #f3f3f3;
+			border-radius: 3px 3px 0px 0px;
+			.title {
+				font-size: 14px;
+				display: inline-block;
+			}
+			.iconfont {
+				float: right;
+				font-size: 14px;
+				color: #111;
+				cursor: pointer;
+			}
+		}
+		.u-modal-body {
+			padding: 0;
+			margin: 0 auto;
+			width: 100%;
+		}
+		.u-modal-footer {
+			height: 45px;
+			padding: 7px 20px;
+			border-top: 1px solid #d0d0d0;
+			.u-button {
+				height: 30px;
+				min-width: 60px;
+				width: auto;
+			}
+		}
+	}
+}
+
+.transfer-wrap.param-panel-transfer {
+	width: 100%;
+	padding: 20px;
+	.u-transfer {
+		border-left: none;
+		border-bottom: none;
+		width: calc(~"100% - 50px");
+	}
+	.u-transfer-list {
+		width: calc(~"50% - 40px");
+	}
+	.move-btns {
+		border-right: none;
+		border-bottom: none;
+	}
+}
+
+// ic scm07 so28
+// 模态框下的表单样式
+.u-modal-body {
+	.param-panel-form-check {
+		padding: 20px 20px 20px 80px;
+		> div {
+			height: 30px;
+		}
+		.u-checkbox {
+			display: inline-block;
+			height: 30px;
+			width: 160px;
+			margin: 0;
+		}
+	}
+}
+
+// price 下的表格样式
+.param-panel-modal {
+	.u-table-tbody {
+		.u-table-row {
+			td {
+				&:nth-child(4) {
+					max-width: 140px;
+					min-width: 140px;
+				}
+				.u-form-control-wrapper {
+					max-width: 180px;
+					min-width: 180px;
+				}
+			}
+			&:last-child {
+				td {
+					border-bottom: none;
+				}
+			}
+		}
+	}
+}
+
+// scm03 sr001
+.param-panel-form {
+	padding: 0 20px 25px 0;
+	margin-left: 60px;
+	.title {
+		height: 30px;
+		margin: 29px 0 5px -20px;
+		&::before {
+			content: '';
+			width: 4px;
+			height: 12px;
+			background: #e14c46;
+			border-radius: 1px;
+			display: inline-block;
+			margin-right: 6px;
+		}
+	}
+	.u-checkbox {
+		height: 30px;
+		display: inline-block;
+		width: 30%;
+		white-space: nowrap;
+		margin: 0;
+		.u-checkbox-label {
+			color: #474d54;
+		}
+	}
+	.u-radio-group {
+		width: 100%;
+		margin-bottom: 10px;
+		.u-radio {
+			width: 30%;
+			display: inline-block;
+			margin-bottom: 5px;
+			.u-radio-label {
+				color: #474d54;
+			}
+		}
+	}
+	// sr001
+	.select-item {
+		margin-bottom: 5px;
+		.select-label {
+			width: 180px;
+			text-align: right;
+			margin-right: 6px;
+			display: inline-block;
+			color: #474d54;
+		}
+		.u-form-control-wrapper {
+			width: 200px;
+		}
+	}
+}
+
+// scm07
+// 页签样式
+.param-panel-modal {
+	.u-tabs.lightapp-component-tabs {
+		.u-tabs-nav-container {
+			padding: 0 20px;
+		}
+		.u-tabs-tab {
+			margin-right: 20px;
+		}
+		.u-tabs-tabpane {
+			height: 300px;
+		}
+		// 页签下的穿梭高度控制
+		.transfer-wrap {
+			height: 298px;
+		}
+	}
+}
+
+.extend-info {
+	display: inline-flex;
+	align-items: center;
+	float: left;
+	height: 30px;
+	// so28
+	.u-form-control-wrapper {
+		width: 120px;
+		margin-left: 6px;
+	}
+}
+
+// po86
+.u-tabs-tabpane.my-tab {
+	border-top: 1px solid #d0d0d0;
+	.group {
+		padding: 0 20px;
+		margin-left: 20px;
+		&:first-child {
+			margin-top: 20px;
+		}
+		.title {
+			margin: 10px 0 10px -20px;
+			&::before {
+				content: '';
+				width: 4px;
+				height: 12px;
+				background: #e14c46;
+				border-radius: 1px;
+				display: inline-block;
+				margin-right: 6px;
+			}
+		}
+		.u-checkbox {
+			display: inline-block;
+			width: 30%;
+			.u-checkbox-label {
+				color: #474d54;
+				white-space: nowrap;
+			}
+			margin-bottom: 8px;
+		}
+		.order-list {
+			li {
+				color: #474d54;
+				height: 28px;
+			}
+		}
+	}
+}

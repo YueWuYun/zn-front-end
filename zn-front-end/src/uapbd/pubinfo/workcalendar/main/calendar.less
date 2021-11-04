@@ -1,0 +1,94 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.calendar{
+  width: 450px;
+  height: 240px;
+  background: #fff;
+  width: 100%;
+  border: .5px solid #eee;
+}
+.calendar-header {
+  font-size: 14px;
+  font-family: 'MicrosoftYaHei-Bold';
+  font-weight: bold;
+  color:rgba(17,17,17,1);
+  line-height: 19px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+}
+.calendar-head{
+  background-color: #e3e3e3;
+  color: #555;
+  font-size: 13px;
+  border-radius: 3px;
+}
+
+.calendar-body ul{
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-wrap: wrap;
+  font-weight: bold;
+  li {
+    display: block;
+    width: calc(14.28% - 1px);
+    float: left;
+    height: 25px;
+    line-height: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    margin-right: 1px;
+  }
+  li.calendar-head{
+    margin-bottom: 15px;
+  }
+  li.calendar-date-base{
+    margin-bottom: 2px;
+  }
+}
+
+.calendar-date-base{
+  color:#646161;
+}
+.lightgrey{ /*浅灰色显示过去的日期*/
+  color:#a8a8a8;
+}
+.darkgrey{ /*深灰色显示将来的日期*/
+  color:#565656;
+}
+/* 休息日和工作日 弹窗 隐藏 */
+.restDayTime {
+  display: none;
+}
+.workDayTime {
+  display: none;
+}
+.CalenderDay {
+  position: relative;
+}
+.dayTime {
+  position: absolute;
+  left: -5px;
+  top: 13px;
+  font-size: 12px;
+}
+/* 休息日和工作日 弹窗 弹出 */
+.CalenderRestDay:hover {
+  .restDayTime {
+    display: inline-block;
+  }
+}
+.CalenderWorkDay:hover {
+  .workDayTime {
+    display: inline-block;
+    width: 150px;
+    z-index: 1000;
+  }
+}

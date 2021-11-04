@@ -1,3 +1,4 @@
+//2FDEqxLrT7Rs8b7oMs8LbHtIDeozRvi60/BzAv9YjBuUBWhABjX2Fwx7yiGspoK8
 import { ajax } from "nc-lightapp-front";
 
 /**
@@ -44,3 +45,4 @@ export default function defaultPeriod(props, searchId,that) {
 
     
 }
+//2FDEqxLrT7Rs8b7oMs8LbHtIDeozRvi60/BzAv9YjBuUBWhABjX2Fwx7yiGspoK8

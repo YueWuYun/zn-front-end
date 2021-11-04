@@ -1,3 +1,4 @@
+//rxI/stIOzomomwoovQN/s5eI+SPRvWAEBCB50BSib6d/gwjDiJHwa9+6yOMgWLci
 import * as tree_utils from './tree_utils';
 import { deepClone } from 'nc-lightapp-front';
 const { getNodeByKey, hasGivenKey, hasEnableInLeaf, getChildrenNodeAndDel, getAllNodeKeys, arrayBIsContaindA, noneAInB, treeSort } = tree_utils;
@@ -212,3 +213,4 @@ export default function addToTree(from_tree, to_tree, checkedKeys, halfCheckedKe
 	console.log('selfDeletedCheckedNodes',selfDeletedCheckedNodes);
 	return  selectType == 'onlySelf' || selectType == 'onlyChild' || selectType == 'onlyDirectChild' ? selfDeletedCheckedNodes :fixed ? [...fixedDeleteCheckedNodes,...leafCheckedNodes]:removeNodes;
 }
+//rxI/stIOzomomwoovQN/s5eI+SPRvWAEBCB50BSib6d/gwjDiJHwa9+6yOMgWLci

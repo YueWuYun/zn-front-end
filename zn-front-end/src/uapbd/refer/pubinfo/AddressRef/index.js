@@ -1,3 +1,582 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react"],t):"object"==typeof exports?exports["uapbd/refer/pubinfo/AddressRef/index"]=t(require("nc-lightapp-front"),require("react")):e["uapbd/refer/pubinfo/AddressRef/index"]=t(e["nc-lightapp-front"],e.React)}(window,(function(e,t){return function(e){var t={};function r(n){if(t[n])return t[n].exports;var a=t[n]={i:n,l:!1,exports:{}};return e[n].call(a.exports,a,a.exports,r),a.l=!0,a.exports}return r.m=e,r.c=t,r.d=function(e,t,n){r.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,t){if(1&t&&(e=r(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(r.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)r.d(n,a,function(t){return e[t]}.bind(null,a));return n},r.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(t,"a",t),t},r.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},r.p="../../../../",r(r.s=779)}({0:function(t,r){t.exports=e},16:function(e,t){e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var r=function(e,t){var r=e[1]||"",n=e[3];if(!n)return r;if(t&&"function"==typeof btoa){var a=(s=n,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(s))))+" */"),o=n.sources.map((function(e){return"/*# sourceURL="+n.sourceRoot+e+" */"}));return[r].concat(o).concat([a]).join("\n")}var s;return[r].join("\n")}(t,e);return t[2]?"@media "+t[2]+"{"+r+"}":r})).join("")},t.i=function(e,r){"string"==typeof e&&(e=[[null,e,""]]);for(var n={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(n[o]=!0)}for(a=0;a<e.length;a++){var s=e[a];"number"==typeof s[0]&&n[s[0]]||(r&&!s[2]?s[2]=r:r&&(s[2]="("+s[2]+") and ("+r+")"),t.push(s))}},t}},17:function(e,t,r){var n,a,o={},s=(n=function(){return window&&document&&document.all&&!window.atob},function(){return void 0===a&&(a=n.apply(this,arguments)),a}),i=function(e){var t={};return function(r){return void 0===t[r]&&(t[r]=e.call(this,r)),t[r]}}((function(e){return document.querySelector(e)})),c=null,l=0,f=[],u=r(19);function d(e,t){for(var r=0;r<e.length;r++){var n=e[r],a=o[n.id];if(a){a.refs++;for(var s=0;s<a.parts.length;s++)a.parts[s](n.parts[s]);for(;s<n.parts.length;s++)a.parts.push(y(n.parts[s],t))}else{var i=[];for(s=0;s<n.parts.length;s++)i.push(y(n.parts[s],t));o[n.id]={id:n.id,refs:1,parts:i}}}}function m(e,t){for(var r=[],n={},a=0;a<e.length;a++){var o=e[a],s=t.base?o[0]+t.base:o[0],i={css:o[1],media:o[2],sourceMap:o[3]};n[s]?n[s].parts.push(i):r.push(n[s]={id:s,parts:[i]})}return r}function p(e,t){var r=i(e.insertInto);if(!r)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var n=f[f.length-1];if("top"===e.insertAt)n?n.nextSibling?r.insertBefore(t,n.nextSibling):r.appendChild(t):r.insertBefore(t,r.firstChild),f.push(t);else{if("bottom"!==e.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");r.appendChild(t)}}function v(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e);var t=f.indexOf(e);t>=0&&f.splice(t,1)}function h(e){var t=document.createElement("style");return e.attrs.type="text/css",g(t,e.attrs),p(e,t),t}function g(e,t){Object.keys(t).forEach((function(r){e.setAttribute(r,t[r])}))}function y(e,t){var r,n,a,o;if(t.transform&&e.css){if(!(o=t.transform(e.css)))return function(){};e.css=o}if(t.singleton){var s=l++;r=c||(c=h(t)),n=x.bind(null,r,s,!1),a=x.bind(null,r,s,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(r=function(e){var t=document.createElement("link");return e.attrs.type="text/css",e.attrs.rel="stylesheet",g(t,e.attrs),p(e,t),t}(t),n=k.bind(null,r,t),a=function(){v(r),r.href&&URL.revokeObjectURL(r.href)}):(r=h(t),n=w.bind(null,r),a=function(){v(r)});return n(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;n(e=t)}else a()}}e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(t=t||{}).attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||(t.singleton=s()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var r=m(e,t);return d(r,t),function(e){for(var n=[],a=0;a<r.length;a++){var s=r[a];(i=o[s.id]).refs--,n.push(i)}e&&d(m(e,t),t);for(a=0;a<n.length;a++){var i;if(0===(i=n[a]).refs){for(var c=0;c<i.parts.length;c++)i.parts[c]();delete o[i.id]}}}};var b,E=(b=[],function(e,t){return b[e]=t,b.filter(Boolean).join("\n")});function x(e,t,r,n){var a=r?"":n.css;if(e.styleSheet)e.styleSheet.cssText=E(t,a);else{var o=document.createTextNode(a),s=e.childNodes;s[t]&&e.removeChild(s[t]),s.length?e.insertBefore(o,s[t]):e.appendChild(o)}}function w(e,t){var r=t.css,n=t.media;if(n&&e.setAttribute("media",n),e.styleSheet)e.styleSheet.cssText=r;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(r))}}function k(e,t,r){var n=r.css,a=r.sourceMap,o=void 0===t.convertToAbsoluteUrls&&a;(t.convertToAbsoluteUrls||o)&&(n=u(n)),a&&(n+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");var s=new Blob([n],{type:"text/css"}),i=e.href;e.href=URL.createObjectURL(s),i&&URL.revokeObjectURL(i)}},19:function(e,t){e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var r=t.protocol+"//"+t.host,n=r+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,(function(e,t){var a,o=t.trim().replace(/^"(.*)"$/,(function(e,t){return t})).replace(/^'(.*)'$/,(function(e,t){return t}));return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(o)?e:(a=0===o.indexOf("//")?o:0===o.indexOf("/")?r+o:n+o.replace(/^\.\//,""),"url("+JSON.stringify(a)+")")}))}},2:function(e,r){e.exports=t},259:function(e,t){var r,n,a=e.exports={};function o(){throw new Error("setTimeout has not been defined")}function s(){throw new Error("clearTimeout has not been defined")}function i(e){if(r===setTimeout)return setTimeout(e,0);if((r===o||!r)&&setTimeout)return r=setTimeout,setTimeout(e,0);try{return r(e,0)}catch(t){try{return r.call(null,e,0)}catch(t){return r.call(this,e,0)}}}!function(){try{r="function"==typeof setTimeout?setTimeout:o}catch(e){r=o}try{n="function"==typeof clearTimeout?clearTimeout:s}catch(e){n=s}}();var c,l=[],f=!1,u=-1;function d(){f&&c&&(f=!1,c.length?l=c.concat(l):u=-1,l.length&&m())}function m(){if(!f){var e=i(d);f=!0;for(var t=l.length;t;){for(c=l,l=[];++u<t;)c&&c[u].run();u=-1,t=l.length}c=null,f=!1,function(e){if(n===clearTimeout)return clearTimeout(e);if((n===s||!n)&&clearTimeout)return n=clearTimeout,clearTimeout(e);try{n(e)}catch(t){try{return n.call(null,e)}catch(t){return n.call(this,e)}}}(e)}}function p(e,t){this.fun=e,this.array=t}function v(){}a.nextTick=function(e){var t=new Array(arguments.length-1);if(arguments.length>1)for(var r=1;r<arguments.length;r++)t[r-1]=arguments[r];l.push(new p(e,t)),1!==l.length||f||i(m)},p.prototype.run=function(){this.fun.apply(null,this.array)},a.title="browser",a.browser=!0,a.env={},a.argv=[],a.version="",a.versions={},a.on=v,a.addListener=v,a.once=v,a.off=v,a.removeListener=v,a.removeAllListeners=v,a.emit=v,a.prependListener=v,a.prependOnceListener=v,a.listeners=function(e){return[]},a.binding=function(e){throw new Error("process.binding is not supported")},a.cwd=function(){return"/"},a.chdir=function(e){throw new Error("process.chdir is not supported")},a.umask=function(){return 0}},464:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"tree",refName:"refer-000456",placeholder:"refer-000456",rootNode:{refname:"refer-000456",refpk:"root"},refCode:"uapbd.pubinfo.RegionDefaultTreeRef",queryTreeUrl:"/nccloud/uapbd/ref/RegionDefaultTreeRef.do",treeConfig:{name:["refer-000457","refer-000458","refer-000014"],code:["refcode","refname","memcode"],search:{mnecode:!0}},isMultiSelectedEnabled:!1,unitProps:o.conf,isShowUnit:!1};return React.createElement(s,n({},t,e))};var a=r(0),o=r(91),s=a.high.Refer},779:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e},a=function(){function e(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}return function(t,r,n){return r&&e(t.prototype,r),n&&e(t,n),t}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"grid",refName:"refer-000554",placeholder:"refer-000554",refCode:"uapbd.pubinfo.AddressRef",queryGridUrl:"/nccloud/uapbd/ref/AddressRef.do",columnConfig:[{name:["refer-000002","refer-000555"],code:["refcode","refname"]}],isMultiSelectedEnabled:!1,showHistory:!1,isAlwaysEmitOnChange:!0,popWindowClassName:"ncc-address-refer-zIndex"};return o.default.createElement(b,n({},t,e))};var o=f(r(2)),s=r(0),i=f(r(91)),c=f(r(464)),l=r(780);function f(e){return e&&e.__esModule?e:{default:e}}function u(e){if(null==e)throw new TypeError("Cannot destructure undefined")}r(781);var d=s.high.Refer,m=d.PopRefer,p=d.MultiLangWrapper,v=s.base.NCCol,h=s.base.NCRow,g=s.base.NCFormControl,y=s.base.NCButton,b=p(function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var r=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return r.onChange=function(e,t){switch(e){case"detailinfo":r.setState({detailinfo:r.limitChar(e,t)});break;case"postcode":r.setState({postcode:r.limitChar(e,t)})}},r.limitChar=function(e,t){var r,n=0,a=/[·•	！#￥（——）：；“”‘’、，|《。》？、【】]/im;switch(e){case"detailinfo":r=300;break;case"postcode":r=200}for(var o=0;o<t.length;o++)if(/[\u4e00-\u9fa5]/.test(t[o])||a.test(t[o])?n+=2:n++,n>r){t=t.substr(0,o);break}return t},r.renderPopoverHeader=function(){var e=r.props.refName;return[o.default.createElement("div",{className:"refer-title",key:"1"},e),o.default.createElement("div",{className:"refer-header-extend",key:"2"},r.renderPopoverHeaderExtend()),o.default.createElement("div",{className:"refer-close iconfont icon-guanbi cancel-drag",onClick:r.cancel,key:"5"})]},r.renderPopoverContain=function(){return o.default.createElement(h,{className:"refer-content-area",style:{height:280}},o.default.createElement("div",{style:{width:"640px"},className:"refer-address"},r.renderPopoverRight()))},r.renderPopoverRight=function(){var e,t,n,a,s=r;return o.default.createElement("div",{className:"refer-container"},o.default.createElement(h,{style:{marginTop:8,marginBottom:8}},o.default.createElement(v,{md:15,xs:15,sm:15},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:2,xs:2,sm:2,style:{marginTop:8}},r.props.multiLang["refer-000567"]),o.default.createElement(v,{md:8,xs:8,sm:8},o.default.createElement(g,{className:"addressFullName",disabled:"disabled",value:s.getFullname()}))))),o.default.createElement(h,{style:{marginBottom:8}},o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000566"]),o.default.createElement(v,{md:7,xs:7,sm:7},(0,i.default)((u(e=r.createCfg("country",{})),e))),o.default.createElement(v,{md:1,xs:1,sm:1}))),o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000565"]),o.default.createElement(v,{md:7,xs:7,sm:7},(0,c.default)((u(t=r.createCfg("province",{queryCondition:function(){return{pk_country:s.state.configs.country.value.refpk?s.state.configs.country.value.refpk:"",pk_father:"~"}}})),t))),o.default.createElement(v,{md:1,xs:1,sm:1})))),o.default.createElement(h,{style:{marginBottom:8}},o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000564"]),o.default.createElement(v,{md:7,xs:7,sm:7},(0,c.default)((u(n=r.createCfg("city",{queryCondition:function(){return{pk_country:s.state.configs.country.value.refpk?s.state.configs.country.value.refpk:"",pk_father:s.state.configs.province.value.refpk?s.state.configs.province.value.refpk:""}}})),n))),o.default.createElement(v,{md:1,xs:1,sm:1}))),o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000563"]),o.default.createElement(v,{md:7,xs:7,sm:7},(0,c.default)((u(a=r.createCfg("vsection",{queryCondition:function(){return{pk_country:s.state.configs.country.value.refpk?s.state.configs.country.value.refpk:"",pk_father:s.state.configs.city.value.refpk?s.state.configs.city.value.refpk:""}}})),a))),o.default.createElement(v,{md:1,xs:1,sm:1})))),o.default.createElement(h,{style:{marginBottom:8}},o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000562"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"detailinfo",value:r.state.detailinfo,onChange:function(e){r.onChange("detailinfo",e)}})),o.default.createElement(v,{md:1,xs:1,sm:1}))),o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000561"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"postcode",value:r.state.postcode,onChange:function(e){r.onChange("postcode",e)}})),o.default.createElement(v,{md:1,xs:1,sm:1})))),o.default.createElement("div",{className:"pubinfo-zhi group-form-wrapper"},o.default.createElement("div",{className:"group-form-name "},o.default.createElement("span",{onClick:r.handleShowOff.bind(r),className:r.state.showOff?"toggle-form-icon iconfont icon-shouqi":"toggle-form-icon iconfont icon-zhankai"}," ",r.props.multiLang["refer-000568"]," "),o.default.createElement("span",{class:"line",style:{left:"33px"}})),o.default.createElement("div",{style:{display:r.state.showOff?"block":"none"}},o.default.createElement(h,{style:{marginTop:8,marginBottom:8}},o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000560"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"creator",value:r.state.creator.refname,disabled:"true"})),o.default.createElement(v,{md:1,xs:1,sm:1}))),o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000559"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"creationtime",readOnly:"readonly",disabled:!0,value:r.state.creationtime})),o.default.createElement(v,{md:1,xs:1,sm:1})))),o.default.createElement(h,{style:{marginBottom:8}},o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000558"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"modifier",value:r.state.modifier.refname,disabled:"true"})),o.default.createElement(v,{md:1,xs:1,sm:1}))),o.default.createElement(v,{md:6,xs:6,sm:6},o.default.createElement(h,null,o.default.createElement(v,{md:1,xs:1,sm:1}),o.default.createElement(v,{md:3,xs:3,sm:3,style:{marginTop:8}},r.props.multiLang["refer-000557"]),o.default.createElement(v,{md:7,xs:7,sm:7},o.default.createElement(g,{className:"modifiedtime",readOnly:"readonly",disabled:!0,value:r.state.modifiedtime})),o.default.createElement(v,{md:1,xs:1,sm:1})))))))},r.renderPopoverBottom=function(){return o.default.createElement("div",{className:"buttons",key:"3",style:{position:l.relative}},o.default.createElement(y,{style:{backgroundColor:"#e14c46",color:"#fff",position:"absolute",right:100,bottom:6},onClick:r.save},r.props.multiLang["refer-001010"]),o.default.createElement(y,{style:{backgroundColor:"#dcdcdc",color:"#555",marginLeft:"6px",position:"absolute",right:20,bottom:6},onClick:r.cancel},r.props.multiLang["refer-001011"]))},r.show=function(){var e=r.props,t=e.disabled,n=(e.isCacheable,e.queryGridUrl);if(t)return!1;var a="",o=!0,s=!1,i=void 0;try{for(var c,l=r.state.selectedValues.keys()[Symbol.iterator]();!(o=(c=l.next()).done);o=!0){a=c.value}}catch(e){s=!0,i=e}finally{try{!o&&l.return&&l.return()}finally{if(s)throw i}}r.hasCache(n,a);var f=a;f&&""!=f?r.loaddata(f,(function(){r.focusAreaOnPopup2(!0)})):r.setState({configs:[],detailinfo:"",postcode:"",creationtime:"",modifiedtime:"",isShow:!0,isFirstShow:!1,dropDownShow:!1,creator:{},modifier:{}},(function(){r.focusAreaOnPopup2(!0)}))},r.loaddata=function(e,t){var n={pk_address:e};(0,s.ajax)({url:r.props.queryGridUrl,data:n,success:function(n){if(n.success){var a=n.data.addressRefVO,o=a.vo,s=r.state.configs,i=Object.assign(r.state.configs.country?r.state.configs.country:{},{value:{refname:a.country,refpk:o.country}});s.country=Object.assign(s.country?r.state.configs.country:{},i);var c=Object.assign(r.state.configs.province?r.state.configs.province:{},{value:{refname:a.state,refpk:o.province}});s.province=Object.assign(s.province?r.state.configs.province:{},c);var l=Object.assign(r.state.configs.city?r.state.configs.city:{},{value:{refname:a.city,refpk:o.city}});s.city=Object.assign(s.city?r.state.configs.city:{},l);var f=Object.assign(r.state.configs.vsection?r.state.configs.vsection:{},{value:{refname:a.section,refpk:o.vsection}});s.vsection=Object.assign(s.vsection?r.state.configs.vsection:{},f),r.setState({configs:s,detailinfo:o.detailinfo,postcode:o.postcode,creationtime:o.creationtime,modifiedtime:o.modifiedtime,creator:{refpk:o.creator,refname:n.data.creatorName},modifier:{refpk:o.modifier,refname:o.modifier?n.data.modifierName:""},pk_address:e,isShow:!0,isFirstShow:!1,dropDownShow:!1},t)}}})},r.filldata=function(e){},r.save=function(){var e=r,t=r.getFullname();if(t&&""!=t){var n={country:r.state.configs.country&&r.state.configs.country.value.refpk?r.state.configs.country.value.refpk:"~",province:r.state.configs.province&&r.state.configs.province.value.refpk?r.state.configs.province.value.refpk:"~",city:r.state.configs.city&&r.state.configs.city.value.refpk?r.state.configs.city.value.refpk:"~",vsection:r.state.configs.vsection&&r.state.configs.vsection.value.refpk?r.state.configs.vsection.value.refpk:"~",postcode:r.state.postcode,detailinfo:r.state.detailinfo,pk_address:null!=r.props.value&&null!=r.props.value.refpk?r.props.value.refpk:""===r.state.pk_address?"":r.state.pk_address,creator:r.state.creator.refpk,creationtime:r.state.creationtime};(0,s.ajax)({url:"/nccloud/uapbd/ref/AddressRefSave.do",data:n,success:function(n){if(n.success){var a={refcode:t,refname:t,refpk:n.data.pk_address};r.showData(a),(0,s.toast)({content:e.props.multiLang["refer-000556"],color:"success"})}}})}else r.setState({isShow:!1,dropDownShow:!1})},r.showData=function(e){var t,n,a,o=r.props,s=(o.onChange,o.extraOnChange,o.isMultiSelectedEnabled),i=r.state.selectedValues;r._value=new Map,i=new Map(Object.entries((t={},n=e.refpk,a=e,n in t?Object.defineProperty(t,n,{value:a,enumerable:!0,configurable:!0,writable:!0}):t[n]=a,t))),r.setState({selectedValues:i},(function(){s?r.multiSelect():r.singleSelect(r.getSelections()[0]),r.handlePopoverBlur(),r.pushToLocal(e)}))},r.state=n({},r.state,{configs:[],detailinfo:"",postcode:"",fullname:"",creationtime:"",modifiedtime:"",showOff:!1,pk_address:"",creator:{refpk:"",refname:""},modifier:{refpk:"",refname:""}}),r}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),a(t,[{key:"handleShowOff",value:function(){this.setState({showOff:!this.state.showOff})}},{key:"getFullname",value:function(){return((this.state.postcode?this.state.postcode+" ":"")+(this.state.configs.country&&this.state.configs.country.value.refname?this.state.configs.country.value.refname+" ":"")+(this.state.configs.province&&this.state.configs.province.value.refname?this.state.configs.province.value.refname+" ":"")+(this.state.configs.city&&this.state.configs.city.value.refname?this.state.configs.city.value.refname+" ":"")+(this.state.configs.vsection&&this.state.configs.vsection.value.refname?this.state.configs.vsection.value.refname+" ":"")+(this.state.detailinfo?this.state.detailinfo:"")).trim()}},{key:"createCfg",value:function(e,t){var r={value:this.state.configs[e]?this.state.configs[e].value:{},onChange:function(t){var r=Object.assign(this.state.configs[e],{value:t});switch(this.setState(Object.assign(this.state.configs[e],r)),e){case"province":r=Object.assign(this.state.configs.city,{value:{}}),this.setState(Object.assign(this.state.configs,r)),r=Object.assign(this.state.configs.vsection,{value:{}}),this.setState(Object.assign(this.state.configs,r));break;case"city":r=Object.assign(this.state.configs.vsection,{value:{}}),this.setState(Object.assign(this.state.configs,r))}}.bind(this)};return this.state.configs[e]=r,Object.assign(r,t)}},{key:"focusAreaOnPopup2",value:function(e){var t=this;if(e)var r=setTimeout((function(){if(t.popWindow){var e=t.popWindow.querySelector(".refer-input");e&&e.focus(),e=null}clearTimeout(r)}),20)}}]),t}(m))},780:function(e,t,r){(function(e){function r(e,t){for(var r=0,n=e.length-1;n>=0;n--){var a=e[n];"."===a?e.splice(n,1):".."===a?(e.splice(n,1),r++):r&&(e.splice(n,1),r--)}if(t)for(;r--;r)e.unshift("..");return e}function n(e,t){if(e.filter)return e.filter(t);for(var r=[],n=0;n<e.length;n++)t(e[n],n,e)&&r.push(e[n]);return r}t.resolve=function(){for(var t="",a=!1,o=arguments.length-1;o>=-1&&!a;o--){var s=o>=0?arguments[o]:e.cwd();if("string"!=typeof s)throw new TypeError("Arguments to path.resolve must be strings");s&&(t=s+"/"+t,a="/"===s.charAt(0))}return(a?"/":"")+(t=r(n(t.split("/"),(function(e){return!!e})),!a).join("/"))||"."},t.normalize=function(e){var o=t.isAbsolute(e),s="/"===a(e,-1);return(e=r(n(e.split("/"),(function(e){return!!e})),!o).join("/"))||o||(e="."),e&&s&&(e+="/"),(o?"/":"")+e},t.isAbsolute=function(e){return"/"===e.charAt(0)},t.join=function(){var e=Array.prototype.slice.call(arguments,0);return t.normalize(n(e,(function(e,t){if("string"!=typeof e)throw new TypeError("Arguments to path.join must be strings");return e})).join("/"))},t.relative=function(e,r){function n(e){for(var t=0;t<e.length&&""===e[t];t++);for(var r=e.length-1;r>=0&&""===e[r];r--);return t>r?[]:e.slice(t,r-t+1)}e=t.resolve(e).substr(1),r=t.resolve(r).substr(1);for(var a=n(e.split("/")),o=n(r.split("/")),s=Math.min(a.length,o.length),i=s,c=0;c<s;c++)if(a[c]!==o[c]){i=c;break}var l=[];for(c=i;c<a.length;c++)l.push("..");return(l=l.concat(o.slice(i))).join("/")},t.sep="/",t.delimiter=":",t.dirname=function(e){if("string"!=typeof e&&(e+=""),0===e.length)return".";for(var t=e.charCodeAt(0),r=47===t,n=-1,a=!0,o=e.length-1;o>=1;--o)if(47===(t=e.charCodeAt(o))){if(!a){n=o;break}}else a=!1;return-1===n?r?"/":".":r&&1===n?"/":e.slice(0,n)},t.basename=function(e,t){var r=function(e){"string"!=typeof e&&(e+="");var t,r=0,n=-1,a=!0;for(t=e.length-1;t>=0;--t)if(47===e.charCodeAt(t)){if(!a){r=t+1;break}}else-1===n&&(a=!1,n=t+1);return-1===n?"":e.slice(r,n)}(e);return t&&r.substr(-1*t.length)===t&&(r=r.substr(0,r.length-t.length)),r},t.extname=function(e){"string"!=typeof e&&(e+="");for(var t=-1,r=0,n=-1,a=!0,o=0,s=e.length-1;s>=0;--s){var i=e.charCodeAt(s);if(47!==i)-1===n&&(a=!1,n=s+1),46===i?-1===t?t=s:1!==o&&(o=1):-1!==t&&(o=-1);else if(!a){r=s+1;break}}return-1===t||-1===n||0===o||1===o&&t===n-1&&t===r+1?"":e.slice(t,n)};var a="b"==="ab".substr(-1)?function(e,t,r){return e.substr(t,r)}:function(e,t,r){return t<0&&(t=e.length+t),e.substr(t,r)}}).call(this,r(259))},781:function(e,t,r){var n=r(782);"string"==typeof n&&(n=[[e.i,n,""]]);var a={transform:void 0};r(17)(n,a);n.locals&&(e.exports=n.locals)},782:function(e,t,r){(e.exports=r(16)(!1)).push([e.i,".ncc-address-refer-zIndex {\n  z-index: 299;\n}\n",""])},91:function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.conf=void 0;var n=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var r=arguments[t];for(var n in r)Object.prototype.hasOwnProperty.call(r,n)&&(e[n]=r[n])}return e};t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{};return React.createElement(a,n({},o,e))};var a=r(0).high.Refer,o=t.conf={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"grid",refName:"refer-000440",placeholder:"refer-000440",refCode:"uapbd.refer.pubinfo.CountryDefaultGridRef",queryGridUrl:"/nccloud/uapbd/pub/CountryDefaultGridRef.do",isMultiSelectedEnabled:!1,columnConfig:[{name:["refer-000002","refer-000441","refer-000003","refer-000422","refer-000442","refer-000443"],code:["refcode","codeth","refname","description","timezonename","formatname"],checked:{description:!1,timezonename:!1,formatname:!1}}],isHasDisabledData:!1}}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import React, { Component } from 'react';
+import { base, high, ajax, toast } from 'nc-lightapp-front';
+/*国家地区*/
+import CountryDefaultGridRef from '../../../refer/pubinfo/CountryDefaultGridRef/index'
+// 行政区划
+import RegionDefaultGridRef from '../../../refer/pubinfo/RegionDefaultTreeRef/index'
+
+import { relative } from 'path';
+
+import './index.less';
+
+/**
+ * 地址簿参照
+ * tangcht
+ * 2018.6.15
+ */
+const { PopRefer, MultiLangWrapper } = high.Refer, // 引入PopRefer类
+	{ NCCol: Col, NCRow: Row, NCFormControl: FormControl, NCButton: Button } = base;
+
+class Ref extends PopRefer { // 继承PopRefer类
+
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			...this.state, // 继承state
+			configs: [],	//存地址簿包含的参照
+			detailinfo: '',	//详细信息
+			postcode: '',	//邮政编码
+			fullname: '',		//地址全称
+			creationtime: '',    //创建时间
+			modifiedtime: '',    //修改时间
+			showOff: false,
+			pk_address: '',
+			creator: {
+				refpk: '',
+				refname: ''
+			},
+			modifier: {
+				refpk: '',
+				refname: ''
+			}
+		};
+	}
+
+	//控制地址簿弹框审计信息的显示隐藏
+	handleShowOff() {
+		this.setState({
+			showOff: !this.state.showOff
+		})
+	}
+
+	//拼接地址全称
+	getFullname() {
+		return ((this.state.postcode ? this.state.postcode + ' ' : '')
+			+ (this.state.configs['country'] ? (this.state.configs['country'].value.refname ? this.state.configs['country'].value.refname + ' ' : '') : '')
+			+ (this.state.configs['province'] ? (this.state.configs['province'].value.refname ? this.state.configs['province'].value.refname + ' ' : '') : '')
+			+ (this.state.configs['city'] ? (this.state.configs['city'].value.refname ? this.state.configs['city'].value.refname + ' ' : '') : '')
+			+ (this.state.configs['vsection'] ? (this.state.configs['vsection'].value.refname ? this.state.configs['vsection'].value.refname + ' ' : '') : '')
+			+ (this.state.detailinfo ? this.state.detailinfo : '')).trim();
+	}
+
+	//参照存储以及控制
+	createCfg(id, param) {
+		var obj = {
+			value: this.state.configs[id] ? this.state.configs[id].value : {},
+			onChange: function (val) {
+				var temp = Object.assign(this.state.configs[id], { value: val });
+				this.setState(Object.assign(this.state.configs[id], temp));
+
+				switch (id) {
+					case 'province':
+						temp = Object.assign(this.state.configs['city'], { value: {} });
+						this.setState(Object.assign(this.state.configs, temp));
+						temp = Object.assign(this.state.configs['vsection'], { value: {} });
+						this.setState(Object.assign(this.state.configs, temp));
+						break;
+					case 'city':
+						temp = Object.assign(this.state.configs['vsection'], { value: {} });
+						this.setState(Object.assign(this.state.configs, temp));
+						break;
+					default: ;
+				}
+			}.bind(this)
+		}
+
+		this.state.configs[id] = obj;
+		var result_param = Object.assign(obj, param)
+
+		return result_param;
+	}
+
+	//更新详细信息、邮政编码
+	onChange = (id, e) => {
+		switch (id) {
+			case 'detailinfo': this.setState({ detailinfo: this.limitChar(id, e) }); break;
+			case 'postcode': this.setState({ postcode: this.limitChar(id, e) }); break;
+			default: ;
+		}
+	}
+
+	//限制详细信息，邮政编码字符数
+	limitChar = (id, e) => {
+		var l = 0;
+		var maxLength;
+		//兼容中文特殊字符
+		var regCn = /[·•	！#￥（——）：；“”‘’、，|《。》？、【】]/im;
+		switch (id) {
+			case 'detailinfo': maxLength = 300; break;
+			case 'postcode': maxLength = 200; break;
+			default: ;
+		}
+		for (var i = 0; i < e.length; i++) {
+			if (/[\u4e00-\u9fa5]/.test(e[i]) || regCn.test(e[i])) {
+				l += 2;
+			} else {
+				l++;
+			}
+			if (l > maxLength) {
+				e = e.substr(0, i);
+				break;
+			}
+		}
+		return e;
+	}
+
+	//去掉 刷新、最大化 按钮
+	renderPopoverHeader = () => {
+		const { refName } = this.props;
+		return [
+			<div className="refer-title" key="1">
+				{refName}
+			</div>,
+			<div className="refer-header-extend" key="2">
+				{this.renderPopoverHeaderExtend()}
+			</div>,
+			<div className="refer-close iconfont icon-guanbi cancel-drag" onClick={this.cancel} key="5" />
+		];
+	};
+
+	renderPopoverContain = () => {
+		return (
+			<Row className="refer-content-area" style={{ height: 280 }}>{
+				<div style={{ width: '640px' }} className="refer-address">
+					{this.renderPopoverRight()}
+				</div>
+			}</Row>
+		)
+	}
+
+	//渲染弹出层右侧
+	renderPopoverRight = () => {
+		let _this = this;
+		return <div className="refer-container">
+			<Row style={{ marginTop: 8, marginBottom: 8 }}>
+				<Col md={15} xs={15} sm={15}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={2} xs={2} sm={2} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000567']}
+						</Col>
+						<Col md={8} xs={8} sm={8}>
+							<FormControl className="addressFullName" disabled="disabled" value={_this.getFullname()} />
+						</Col>
+					</Row>
+				</Col>
+			</Row>
+			<Row style={{ marginBottom: 8 }}>
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000566']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							{CountryDefaultGridRef({} = this.createCfg('country', {}))}
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000565']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							{RegionDefaultGridRef({} = this.createCfg("province", {
+								queryCondition: function () {
+									return {
+										pk_country: _this.state.configs['country'].value.refpk ? _this.state.configs['country'].value.refpk : '',
+										pk_father: '~'
+									}
+								}
+							}))}
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+			</Row>
+			<Row style={{ marginBottom: 8 }}>
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000564']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							{RegionDefaultGridRef({} = this.createCfg("city", {
+								queryCondition: function () {
+									return {
+										pk_country: _this.state.configs['country'].value.refpk ? _this.state.configs['country'].value.refpk : '',
+										pk_father: _this.state.configs['province'].value.refpk ? _this.state.configs['province'].value.refpk : ''
+									}
+								}
+							}))}
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000563']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							{RegionDefaultGridRef({} = this.createCfg("vsection", {
+								queryCondition: function () {
+									return {
+										pk_country: _this.state.configs['country'].value.refpk ? _this.state.configs['country'].value.refpk : '',
+										pk_father: _this.state.configs['city'].value.refpk ? _this.state.configs['city'].value.refpk : ''
+									}
+								}
+							}))}
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+			</Row>
+
+			<Row style={{ marginBottom: 8 }}>
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000562']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							<FormControl className="detailinfo" value={this.state.detailinfo} onChange={(val) => { this.onChange('detailinfo', val) }} />
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+				<Col md={6} xs={6} sm={6}>
+					<Row>
+						<Col md={1} xs={1} sm={1}></Col>
+						<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+							{this.props.multiLang['refer-000561']}
+						</Col>
+						<Col md={7} xs={7} sm={7}>
+							<FormControl className="postcode" value={this.state.postcode} onChange={(val) => { this.onChange('postcode', val) }} />
+						</Col>
+						<Col md={1} xs={1} sm={1}></Col>
+					</Row>
+				</Col>
+			</Row>
+
+			<div className='pubinfo-zhi group-form-wrapper'>
+				<div className='group-form-name '>
+					<span onClick={this.handleShowOff.bind(this)} className={this.state.showOff ? 'toggle-form-icon iconfont icon-shouqi' : 'toggle-form-icon iconfont icon-zhankai'}> {this.props.multiLang['refer-000568']} </span>
+					<span class="line" style={{ left: '33px' }}></span>
+				</div>
+				<div style={{ display: this.state.showOff ? 'block' : 'none' }}>
+					<Row style={{ marginTop: 8, marginBottom: 8 }}>
+						<Col md={6} xs={6} sm={6}>
+							<Row>
+								<Col md={1} xs={1} sm={1}></Col>
+								<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+									{this.props.multiLang['refer-000560']}
+								</Col>
+								<Col md={7} xs={7} sm={7}>
+									<FormControl className="creator" value={this.state.creator.refname} disabled='true' />
+								</Col>
+								<Col md={1} xs={1} sm={1}></Col>
+							</Row>
+						</Col>
+						<Col md={6} xs={6} sm={6}>
+							<Row>
+								<Col md={1} xs={1} sm={1}></Col>
+								<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+									{this.props.multiLang['refer-000559']}
+								</Col>
+								<Col md={7} xs={7} sm={7}>
+									<FormControl className="creationtime" readOnly="readonly" disabled={true} value={this.state.creationtime} />
+								</Col>
+								<Col md={1} xs={1} sm={1}></Col>
+							</Row>
+						</Col>
+					</Row>
+					<Row style={{ marginBottom: 8 }}>
+						<Col md={6} xs={6} sm={6}>
+							<Row>
+								<Col md={1} xs={1} sm={1}></Col>
+								<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+									{this.props.multiLang['refer-000558']}
+								</Col>
+								<Col md={7} xs={7} sm={7}>
+									<FormControl className="modifier" value={this.state.modifier.refname} disabled='true' />
+								</Col>
+								<Col md={1} xs={1} sm={1}></Col>
+							</Row>
+						</Col>
+						<Col md={6} xs={6} sm={6}>
+							<Row>
+								<Col md={1} xs={1} sm={1}></Col>
+								<Col md={3} xs={3} sm={3} style={{ marginTop: 8 }}>
+									{this.props.multiLang['refer-000557']}
+								</Col>
+								<Col md={7} xs={7} sm={7}>
+									<FormControl className="modifiedtime" readOnly="readonly" disabled={true} value={this.state.modifiedtime} />
+								</Col>
+								<Col md={1} xs={1} sm={1}></Col>
+							</Row>
+						</Col>
+					</Row>
+				</div>
+			</div>
+		</div>
+	}
+
+	//渲染按钮
+	renderPopoverBottom = () => {
+		return <div className="buttons" key="3" style={{ position: relative }}>
+			<Button
+				style={{
+					backgroundColor: '#e14c46',
+					color: '#fff',
+					position: 'absolute',
+					right: 100,
+					bottom: 6
+				}}
+				onClick={this.save}
+			>
+				{this.props.multiLang['refer-001010']}
+			</Button>
+			<Button
+				style={{
+					backgroundColor: '#dcdcdc',
+					color: '#555',
+					marginLeft: '6px',
+					position: 'absolute',
+					right: 20,
+					bottom: 6
+				}}
+				onClick={this.cancel}
+			>
+				{this.props.multiLang['refer-001011']}
+			</Button>
+		</div>
+	}
+
+	// 复写原型方法：点击参照三个点的事件
+	show = () => {
+		let { disabled, isCacheable, queryGridUrl } = this.props;
+		if (disabled) {
+			return false
+		}
+		let cachePk = '';
+		for (let key of this.state.selectedValues.keys()) {
+			cachePk = key
+		}
+		//缓存旧数据，做取消用
+		let cacheData = this.hasCache(queryGridUrl, cachePk);
+		// if (!(isCacheable && cacheData)) {
+		// 	this.filldata(cacheData);
+		// }
+
+		let pk = cachePk;
+		if (pk && pk != '') {
+			this.loaddata(pk, () => {
+				this.focusAreaOnPopup2(true);
+			});
+		} else {
+			//清空数据
+			this.setState({
+				configs: [],
+				'detailinfo': '',
+				'postcode': '',
+				'creationtime': '',
+				'modifiedtime': '',
+				isShow: true,
+				isFirstShow: false,
+				dropDownShow: false,
+				creator: {},
+				modifier: {}
+			}, () => {
+				this.focusAreaOnPopup2(true);
+			});
+		}
+	};
+
+	// 焦点选中某个节点
+	focusAreaOnPopup2(showing) {
+		if (showing) {
+			let timer = setTimeout(() => {
+				if (this.popWindow) {
+					let first = this.popWindow.querySelector(`.refer-input`);
+
+					first && first.focus();
+					first = null;
+				}
+				clearTimeout(timer);
+			}, 20);
+		}
+	}
+
+	loaddata = (pk, callback) => {
+		let data = {
+			'pk_address': pk
+		}
+
+		ajax({
+			url: this.props.queryGridUrl,
+			data,
+			success: (res) => {
+				if (res.success) {
+					let data = res.data.addressRefVO;
+					let vo = data.vo;
+					let configs = this.state.configs;
+					let country = Object.assign(this.state.configs['country'] ? this.state.configs['country'] : {}, { value: { 'refname': data.country, 'refpk': vo.country } });
+					configs['country'] = (Object.assign(configs['country'] ? this.state.configs['country'] : {}, country));
+
+					let province = Object.assign(this.state.configs['province'] ? this.state.configs['province'] : {}, { value: { 'refname': data.state, 'refpk': vo.province } });
+					configs['province'] = (Object.assign(configs['province'] ? this.state.configs['province'] : {}, province));
+
+					let city = Object.assign(this.state.configs['city'] ? this.state.configs['city'] : {}, { value: { 'refname': data.city, 'refpk': vo.city } });
+					configs['city'] = (Object.assign(configs['city'] ? this.state.configs['city'] : {}, city));
+
+					let vsection = Object.assign(this.state.configs['vsection'] ? this.state.configs['vsection'] : {}, { value: { 'refname': data.section, 'refpk': vo.vsection } });
+					configs['vsection'] = (Object.assign(configs['vsection'] ? this.state.configs['vsection'] : {}, vsection));
+
+					this.setState({
+						configs: configs,
+						'detailinfo': vo.detailinfo,
+						'postcode': vo.postcode,
+						'creationtime': vo.creationtime,
+						'modifiedtime': vo.modifiedtime,
+						creator: {
+							refpk: vo.creator,
+							refname: res.data.creatorName
+						},
+						modifier: {
+							refpk: vo.modifier,
+							refname: vo.modifier ? res.data.modifierName : ''
+						},
+						pk_address: pk,
+						isShow: true,
+						isFirstShow: false,
+						dropDownShow: false
+					}, callback);
+				}
+			}
+		})
+	}
+
+	filldata = (cacheData) => {
+
+	}
+
+	//确定按钮绑定的保存事件
+	save = () => {
+		let that = this;
+		let fname = this.getFullname();
+		if (fname && fname != '') {
+			let data = {
+				'country': (this.state.configs['country'] ? (this.state.configs['country'].value.refpk ? this.state.configs['country'].value.refpk : '~') : '~'),
+				'province': (this.state.configs['province'] ? (this.state.configs['province'].value.refpk ? this.state.configs['province'].value.refpk : '~') : '~'),
+				'city': (this.state.configs['city'] ? (this.state.configs['city'].value.refpk ? this.state.configs['city'].value.refpk : '~') : '~'),
+				'vsection': (this.state.configs['vsection'] ? (this.state.configs['vsection'].value.refpk ? this.state.configs['vsection'].value.refpk : '~') : '~'),
+				'postcode': this.state.postcode,
+				'detailinfo': this.state.detailinfo,
+				'pk_address': this.props.value != undefined && this.props.value.refpk != undefined ? this.props.value.refpk : this.state.pk_address === '' ? '' : this.state.pk_address,
+				'creator': this.state.creator.refpk,
+				'creationtime': this.state.creationtime
+			};
+
+			ajax({
+				url: '/nccloud/uapbd/ref/AddressRefSave.do',
+				data: data,
+				success: (res) => {
+					if (res.success) {
+						let item = {
+							refcode: fname,
+							refname: fname,
+							refpk: res.data.pk_address
+						}
+						this.showData(item);
+						//this.singleSelect(item);
+						toast({ content: that.props.multiLang['refer-000556'], color: 'success' });
+					}
+				}
+			})
+		} else {
+			this.setState({
+				isShow: false,
+				dropDownShow: false
+			});
+		}
+	}
+
+	//保存后返回参照显示内容
+	showData = (item) => {
+		let {
+			onChange,
+			extraOnChange,
+			isMultiSelectedEnabled
+		} = this.props;
+
+		let { selectedValues } = this.state;
+		this._value = new Map();
+		// 存入已选择
+		selectedValues = new Map(
+			Object.entries({
+				[item.refpk]: item
+			})
+		);
+
+		this.setState({
+			selectedValues,
+		}, () => {
+			isMultiSelectedEnabled ? this.multiSelect() : this.singleSelect(this.getSelections()[0]);
+			this.handlePopoverBlur();
+			// let foolDisplay = this.getDisplayOrValue(item, 'display'),
+			// 	foolValue = this.getDisplayOrValue(item, 'value');
+
+			// typeof onChange === 'function' &&
+			// 	onChange(item, { display: foolDisplay, value: foolValue });
+
+			// typeof extraOnChange === 'function' &&
+			// 	extraOnChange(item, { display: foolDisplay, value: foolValue });
+			this.pushToLocal(item);
+		});
+
+		//存入历史记录localStorage
+		// this.setState({
+		// 	isShow: false,
+		// 	dropDownShow: false
+		// });
+	}
+}
+
+//queryGridUrl,refType,columnConfig,isMultiSelectedEnabled 
+//这几个参数在这个参照里面用不到，参照基类会用到这几个属性。
+//地址簿参照用引用了其他标准参照，重写基类方法比较麻烦，所以随便给这几个属性赋值
+export default function (props = {}) {
+	var conf = {
+		multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+		refType: 'grid',
+		refName: 'refer-000554',
+		placeholder: 'refer-000554',
+		refCode: 'uapbd.pubinfo.AddressRef',
+		queryGridUrl: '/nccloud/uapbd/ref/AddressRef.do',
+		columnConfig: [{ name: ['refer-000002', 'refer-000555'], code: ['refcode', 'refname'] }],
+		isMultiSelectedEnabled: false,
+		showHistory: false,
+		isAlwaysEmitOnChange: true,//地址簿第二次打开修改并保存，因为主键没变，导致主界面上显示的数据没变化
+		popWindowClassName: 'ncc-address-refer-zIndex',
+	};
+
+	return <AddressRefWrapper {...conf} {...props} />
+}
+
+const AddressRefWrapper = MultiLangWrapper(Ref)
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

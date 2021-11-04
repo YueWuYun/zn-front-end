@@ -1,3 +1,4 @@
+//5wzWlVrGrPQLjuty+OAw9jxCquQiMpZNfQE9WbkmsD52SrVHdIXy4i8Zh6mcqXPd
 import React, { Component } from 'react';
 import {base,ajax } from 'nc-lightapp-front';
 
@@ -30,3 +31,4 @@ class AssignFilter extends Component {
     }
 }
 export default AssignFilter;
+//5wzWlVrGrPQLjuty+OAw9jxCquQiMpZNfQE9WbkmsD52SrVHdIXy4i8Zh6mcqXPd

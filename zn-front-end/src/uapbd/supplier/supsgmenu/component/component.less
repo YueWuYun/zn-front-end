@@ -1,0 +1,51 @@
+.table-selected-row{
+  background: #ebedf2
+}
+.card-area {
+  //margin-left: auto;
+  //margin-right: 0;
+  padding: 20px;
+  max-width: 100%;
+  height: 100%;
+  background: #fff;
+  overflow: hidden;
+  &:hover {
+    overflow: auto;
+  }
+}
+/*设置变量*/
+@w-color: #ffffff; // 白色
+/*分页样式*/
+.simpleTable-component-paginationDiv {
+  height: 50px;
+  //border: 1px solid @border-color;
+  //background-color: @w-color;
+  border-radius: 0 0 3px 3px;
+  padding: 0px 20px;
+  z-index: 10;
+
+  .NC_PaginationStyle {
+    float: right;
+  }
+  .fl {
+    line-height: 30px;
+  }
+  .NC_total {
+    margin-left: 20px;
+  }
+  .u-select-selection {
+    width: max-content;
+  }
+  .u-select-selection-rendered {
+    margin: 0;
+  }
+  /*分页样式*/
+  .page-size {
+    .u-form-control-wrapper {
+      max-width: 100px;
+    }
+  }
+  .mark-required {
+    color: #e14c46;
+  }
+}

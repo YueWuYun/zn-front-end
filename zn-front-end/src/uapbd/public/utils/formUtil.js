@@ -1,3 +1,4 @@
+//FsXXZs5eFfcJZd/b1VLP/n3BWHTRruiBg8/MyOMjif2e0yfEUczuukM32tqugGKj
 /*****************************************************
  * 表单工具类
  *****************************************************/
@@ -76,3 +77,4 @@ const convertEnableState = (enablestate,type)=>{
 }
 
 export {checkHasProps,convertEnableState}
+//FsXXZs5eFfcJZd/b1VLP/n3BWHTRruiBg8/MyOMjif2e0yfEUczuukM32tqugGKj

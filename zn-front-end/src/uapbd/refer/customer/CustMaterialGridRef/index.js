@@ -1,3 +1,27 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,r){"object"==typeof exports&&"object"==typeof module?module.exports=r(require("nc-lightapp-front")):"function"==typeof define&&define.amd?define(["nc-lightapp-front"],r):"object"==typeof exports?exports["uapbd/refer/customer/CustMaterialGridRef/index"]=r(require("nc-lightapp-front")):e["uapbd/refer/customer/CustMaterialGridRef/index"]=r(e["nc-lightapp-front"])}(window,(function(e){return function(e){var r={};function t(n){if(r[n])return r[n].exports;var o=r[n]={i:n,l:!1,exports:{}};return e[n].call(o.exports,o,o.exports,t),o.l=!0,o.exports}return t.m=e,t.c=r,t.d=function(e,r,n){t.o(e,r)||Object.defineProperty(e,r,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,r){if(1&r&&(e=t(e)),8&r)return e;if(4&r&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&r&&"string"!=typeof e)for(var o in e)t.d(n,o,function(r){return e[r]}.bind(null,o));return n},t.n=function(e){var r=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(r,"a",r),r},t.o=function(e,r){return Object.prototype.hasOwnProperty.call(e,r)},t.p="../../../../",t(t.s=482)}({0:function(r,t){r.exports=e},482:function(e,r,t){"use strict";Object.defineProperty(r,"__esModule",{value:!0});var n=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var t=arguments[r];for(var n in t)Object.prototype.hasOwnProperty.call(t,n)&&(e[n]=t[n])}return e};r.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},r={multiLang:{domainName:"uapbd",currentLocale:"zh-CN",moduleId:"refer_uapbd"},refType:"grid",refName:"refer-000041",placeholder:"refer-000041",refCode:"uapbd.customer.CustMaterialGridRef",queryGridUrl:"/nccloud/uapbd/ref/CustMaterialGridRef.do",columnConfig:[{name:["refer-000041","refer-000042","refer-000043","refer-000044","refer-000045"],code:["bd_custmaterial.code","bd_custmaterial.name","bd_material.code as material_code","bd_material.name as material_name","bd_material.version"]}],isMultiSelectedEnabled:!1,isHasDisabledData:!1};return React.createElement(o,n({},r,e))};var o=t(0).high.Refer}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import { high } from 'nc-lightapp-front';
+
+const { Refer } = high;
+
+export default function (props = {}) {
+	var conf = {
+				multiLang: {
+			domainName: 'uapbd',
+			currentLocale: 'zh-CN',
+			moduleId: 'refer_uapbd',
+		},
+
+		refType: 'grid',
+		refName: 'refer-000041',/* 国际化处理： 客户物料码*/
+		placeholder: 'refer-000041',/* 国际化处理： 客户物料码*/
+		refCode: 'uapbd.customer.CustMaterialGridRef',
+		queryGridUrl: '/nccloud/uapbd/ref/CustMaterialGridRef.do',
+		columnConfig: [{ name: ['refer-000041', 'refer-000042','refer-000043','refer-000044','refer-000045'], code: ["bd_custmaterial.code","bd_custmaterial.name","bd_material.code as material_code","bd_material.name as material_name","bd_material.version"] }],/* 国际化处理： 客户物料码,客户物料名称,物料编码,物料名称,物料版本*/
+		isMultiSelectedEnabled: false,
+		isHasDisabledData: false
+	};
+
+	return <Refer {...conf} {...props} />
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

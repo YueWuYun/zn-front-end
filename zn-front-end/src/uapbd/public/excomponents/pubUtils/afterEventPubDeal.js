@@ -1,3 +1,4 @@
+//DbLBG0MQJ3dZ2XThB6nA/c6ZzI4H8ZvDgECvO6+TmTfoYK+G+hdF36xfJNKS0SqC
 import { toast } from 'nc-lightapp-front';
 /**
  * 编辑后事件的处理逻辑
@@ -23,3 +24,4 @@ let errorDeal = function(that, res,key,changedrows) {
 
 
 export {errorDeal};
+//DbLBG0MQJ3dZ2XThB6nA/c6ZzI4H8ZvDgECvO6+TmTfoYK+G+hdF36xfJNKS0SqC

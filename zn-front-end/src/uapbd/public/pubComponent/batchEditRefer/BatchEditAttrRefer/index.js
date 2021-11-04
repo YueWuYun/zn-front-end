@@ -1,3 +1,4 @@
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
 import { high } from 'nc-lightapp-front';
 
 const { Refer } = high;
@@ -19,3 +20,5 @@ export default function (props = {}) {
             columnConfig: [{name: [  props.json['batchedit-000001']],code: ['refname']}],/* 国际化处理： 名称*/
             isMultiSelectedEnabled: true }, props)} />
 }
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

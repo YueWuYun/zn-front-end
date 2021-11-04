@@ -1,3 +1,4 @@
+//RfDvi9G6CODGotU2PElNTnupNRzGf4jbo0HN3NJpfzlTznb+2wqOo2XxNfS628x/
 import React, {Component} from 'react';
 import {base, ajax, toast,cardCache} from 'nc-lightapp-front';
 import {component} from "../../platwapper/index";
@@ -482,3 +483,5 @@ class ImportTempletDlg extends Component {
     }
 }
 export default ImportTempletDlg;
+
+//RfDvi9G6CODGotU2PElNTnupNRzGf4jbo0HN3NJpfzlTznb+2wqOo2XxNfS628x/

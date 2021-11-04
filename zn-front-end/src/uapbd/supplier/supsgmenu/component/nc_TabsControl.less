@@ -1,0 +1,37 @@
+@tab_hover_color: rgba(225, 76, 70, 1);
+@tab_active_color: rgba(225, 76, 70, 1);
+@tab_normal_color: rgba(110, 110, 119, 1);
+
+.lightapp-component-TabLi-add {
+	//background: white;
+	padding-left: 20px;
+	display: flex;
+	.tab_title {
+		margin-right: 30px;
+		padding-top: 15px;
+		cursor: pointer;
+		font-size: 13px;
+		//font-family:PingFangHK-Regular;
+		color: @tab_normal_color;
+		text-align: center;
+		height: 40px;
+		&:hover {
+			color: @tab_hover_color;
+		}
+		p:first-child {
+			padding:0!important;
+			line-height: 13px;
+		}
+	}
+	.tab_title.active {
+		color: #e14c46;
+		p:nth-of-type(2) {
+			height: 2px;
+			width: 100%;
+			margin: 0;
+			margin-top: 8px;
+			display: inline-block;
+			background-color: @tab_active_color;
+		}
+	}
+}

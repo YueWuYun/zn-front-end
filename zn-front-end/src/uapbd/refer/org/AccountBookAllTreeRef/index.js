@@ -1,3 +1,276 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 15:04:29"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react"],t):"object"==typeof exports?exports["uapbd/refer/org/AccountBookAllTreeRef/index"]=t(require("nc-lightapp-front"),require("react")):e["uapbd/refer/org/AccountBookAllTreeRef/index"]=t(e["nc-lightapp-front"],e.React)}(window,(function(e,t){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../../../../",n(n.s=545)}({0:function(t,n){t.exports=e},2:function(e,n){e.exports=t},545:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r,o,a=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var n=arguments[t];for(var r in n)Object.prototype.hasOwnProperty.call(n,r)&&(e[r]=n[r])}return e},u="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},i=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}();t.default=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:{},t={refName:"财务核算账簿(所有)",placeholder:"财务核算账簿(所有)",rootNode:{refname:"财务核算账簿",refpk:"root"},refCode:"uapbd.ref.AccountBookTreeRef",queryTreeUrl:"/nccloud/uapbd/ref/AccountBookTreeRef.do",isMultiSelectedEnabled:!1,refType:"tree",isTreelazyLoad:!1,treeConfig:{name:["编码","名称"],code:["refcode","refname"]}};return t.rootNode=a({},t.rootNode,{treeid:"root"}),d.default.createElement(N,a({},t,e))};var c,l=n(2),d=(c=l)&&c.__esModule?c:{default:c},f=n(0);function s(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}function p(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function y(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}function h(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}function b(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}var m=f.high.Refer.PopRefer,v=f.base.NCRadio,g=f.base.NCTree,x=f.base.NCMenu,k=f.base.NCDropdown,S=f.base.NCButton,T=f.base.NCFormControl,w=v.NCRadioGroup,E=(g.NCTreeNode,o=r=function(e){function t(e){y(this,t);var n=h(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return n.state={datas:[]},n}return b(t,e),i(t,[{key:"componentWillMount",value:function(){this.state.datas=this.props.data,this.setState(this.state)}},{key:"componentWillReceiveProps",value:function(e){this.state.datas=e.data,this.setState(this.state)}},{key:"render",value:function(){var e=function(e){return"root"==e.refpk?e.refname:e.nodeData.nodecode+" "+e.nodeData.nodetitle},t=this.props,n=(t.data,function(e,t){var n={};for(var r in e)t.indexOf(r)>=0||Object.prototype.hasOwnProperty.call(e,r)&&(n[r]=e[r]);return n}(t,["data"]));return d.default.createElement(g,n,function t(n){return n.map((function(n){var r=n.children||[];return d.default.createElement(g.NCTreeNode,{title:e(n),key:n.refpk,isLeaf:0==r.length,treeNodeData:n.nodeData||{},nodeData:n.nodeData||{}},t(r))}))}(this.state.datas))}}]),t}(l.Component),r.defaultProps={defaultExpandAll:!1},o),N=function(e){function t(e){var n=this;y(this,t);var r,o,i=h(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));return i.onTreeTypeChange=function(e){i.state.treetype=e,i.setState(i.state,(function(){i.loadTreeData(i.getParam()).then((function(t){var n={refname:"type"===e?"账簿类型":"主账簿",refpk:"root"};i.setTreeData("treeData",n,t)}))}))},i.getParam=function(){arguments.length>0&&void 0!==arguments[0]&&arguments[0];var e=(e=i.props.queryCondition)?"function"==typeof e?e():"object"===(void 0===e?"undefined":u(e))?e:{}:{};return{disabledDataShow:!1,queryCondition:a({},e,{treetype:i.state.treetype,textValue:i.state.textValue,disabledDataShow:!1}),pageInfo:{pageSize:10,pageIndex:1}}},i.loadTreeData=(r=regeneratorRuntime.mark((function e(t){return regeneratorRuntime.wrap((function(e){for(;;)switch(e.prev=e.next){case 0:return e.next=2,new Promise((function(e){i.setState({loading:!0},(function(){var n=i.state,r=(n.currentLevel,n.referVal,i.props),o=r.queryTreeUrl;r.queryCondition,r.isCacheable,(0,f.ajax)({url:o,data:t,loading:!1,success:function(t){i.setState({loading:!1},(function(){if(!t.success)throw new Error(t.error.message);t.data.datarows.forEach((function(e){e.nodeData.refpk=e.nodeData.nodeid,e.nodeData.refname=e.nodeData.nodetitle}));var n={rows:t.data.datarows};e(n)}))},error:function(e){throw(0,f.toast)({color:"danger",content:e.message}),i.setState({loading:!1}),new Error(e)}})}))}));case 2:return e.abrupt("return",e.sent);case 3:case"end":return e.stop()}}),e,n)})),o=function(){var e=r.apply(this,arguments);return new Promise((function(t,n){return function r(o,a){try{var u=e[o](a),i=u.value}catch(e){return void n(e)}if(!u.done)return Promise.resolve(i).then((function(e){r("next",e)}),(function(e){r("throw",e)}));t(i)}("next")}))},function(e){return o.apply(this,arguments)}),i.setTreeData=function(e,t,n,r){var o;i.state.expandedKeys;n.rows.forEach((function(e){e._display=e.title,e.pid=e.pid||rootNode.refpk})),i.setState((p(o={},e,n.rows||[]),p(o,"expandedKeys",[]),o),(function(){"function"==typeof r&&r()}))},i.renderPopoverLeft=function(){var e=i.state,t=(e.isSearch,e.selectedKeys),n=e.expandedKeys,r=e.selectedValues,o=e.treeData,a=i.props,u=a.refType,c=a.isMultiSelectedEnabled,l=a.isTreelazyLoad,f=a.rootNode,p=a.onlyLeafCanSelect,y=function e(t,n){t.forEach((function(t){n&&n(t,t.children||[]),e(t.children||[],n)}))},h=[];!function(e){var t,n=1;for(y(e,(function(e,t){var r=parseInt(e.nodeData?e.nodeData.laynumber:0);n=r<=n?n:r})),t=0;t<=n;t++)h.push(d.default.createElement(x.Item,{key:t,expandLay:!0},t,"层"))}(o||[]);var b=function(e,t,n){if("expandAll"==e.key){n=[];y(o,(function(e,t){n.push(e.key)})),i.state.expandedKeys=n,i.setState(i.state)}if("unexpandAll"==e.key&&(i.state.expandedKeys=[],i.setState(i.state)),e.item.props.expandLay){n=[];var r=e.key;y(o,(function(e,t){parseInt(e.nodeData?e.nodeData.laynumber:0)<=r&&n.push(e.key)})),i.state.expandedKeys=n,i.setState(i.state)}};return d.default.createElement("div",null,d.default.createElement("div",null,d.default.createElement(T,{type:"search",value:i.state.textValue,onChange:function(e){i.state.textValue=e,i.setState(i.state)},onSearch:function(){i.onTreeTypeChange(i.state.treetype)}}),d.default.createElement(k,{trigger:["click"],overlay:d.default.createElement(x,{onSelect:b},d.default.createElement(x.Item,{key:"expandAll"},"展开所有"),d.default.createElement(x.Item,{key:"unexpandAll"},"闭合所有"),d.default.createElement(x.NCSubMenu,{key:"expandLay",title:"展开层级"},h)),animation:"slide-up"},d.default.createElement(S,{colors:"primary",style:{width:50}},"更多"))),d.default.createElement("div",null,d.default.createElement(w,{name:"booktype",selectedValue:i.state.treetype,onChange:i.onTreeTypeChange.bind(i)},d.default.createElement(v,{value:"type"},"账簿类型"),d.default.createElement(v,{value:"main"},"主账簿"))),d.default.createElement(E,{checkStrictly:!0,checkable:"tree"===u&&c,data:o,onSelect:i.onTreeNodeSelectWapper.bind(i),onExpand:i.onTreeNodeExpand,onCheck:i.onTreeNodeCheckWapper.bind(i),checkedKeys:[].concat(s(r.keys())),selectedKeys:t,expandedKeys:n,autoExpandParent:!1,isTreelazyLoad:l,root:f,onlyLeafCanSelect:p,onDoubleClick:function(){}}))},i.state=a({},i.state,{treetype:"type"}),i}return b(t,e),i(t,[{key:"onTreeNodeSelectWapper",value:function(e,t){var n=t.selected,r=t.selectedNodes,o=t.node,a=t.event;if("table"!=this.state.treetype||"root"!=o.props.treeNodeData.pid){for(var u=arguments.length,i=Array(u>2?u-2:0),c=2;c<u;c++)i[c-2]=arguments[c];this.onTreeNodeSelect.apply(this,[e,{selected:n,selectedNodes:r,node:o,event:a}].concat(i))}}},{key:"onTreeNodeCheckWapper",value:function(e,t){var n=t.checked,r=t.checkedNodes,o=t.node,a=t.event;"table"==this.state.treetype&&"root"==o.props.treeNodeData.pid||this.onTreeNodeCheckWapper(e,{checked:n,checkedNodes:r,node:o,event:a})}}]),t}(m)}})}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+import React, { Component } from 'react';
+import { base, high,ajax ,toast} from 'nc-lightapp-front';
+
+const { PopRefer } = high.Refer, // 引入PopRefer类
+      { NCRadio: Radio ,NCTree, NCMenu, NCDropdown,NCButton, NCFormControl} = base,
+      { NCRadioGroup: RadioGroup } = Radio;
+const TreeNode = NCTree.NCTreeNode;
+
+class ReferTree extends Component {
+
+	static defaultProps = {
+		defaultExpandAll: false
+    };
+    
+	constructor(props) {
+		super(props);
+		this.state = {
+			datas: []
+		};
+	}
+	componentWillMount() {
+		this.state.datas = this.props.data;
+		this.setState(this.state);
+	}
+
+	componentWillReceiveProps(nextProps) {
+		this.state.datas = nextProps.data;
+		this.setState(this.state);
+	}
+	render() {
+		var renderTitle = (item) => {
+			return item.refpk == 'root' ? item.refname :  item.nodeData.nodecode + ' ' + item.nodeData.nodetitle;
+		}
+		const { data, ...otherProps } = this.props;
+		const loop = (datas) => datas.map((item) => {
+			var children = item.children || [];
+			debugger;
+            return (<NCTree.NCTreeNode title={renderTitle(item)} key={item.refpk} isLeaf={children.length == 0}  treeNodeData={item.nodeData|| {}} nodeData={item.nodeData|| {}} >{loop(children)}</NCTree.NCTreeNode>)
+        });
+		return (
+			<NCTree{...otherProps}>{loop(this.state.datas)}</NCTree>
+		);
+	}
+}
+
+class Ref extends PopRefer { // 继承PopRefer类
+    constructor(props) {
+        super(props);
+        this.state = {
+            ...this.state, // 继承state
+            treetype: 'type'
+        };
+    }
+
+    onTreeTypeChange = (value) =>{
+		this.state.treetype = value;
+		this.setState(this.state, () => {
+			this.loadTreeData(this.getParam()).then((data) => {
+				var rootTitle = value === 'type' ? '账簿类型': '主账簿'
+				var root = {
+					refname: rootTitle,
+					refpk: 'root'
+				};
+                this.setTreeData('treeData', root, data);
+            });
+
+		});
+    };
+    getParam = (param = {}) => {
+		var { queryCondition } = this.props,
+		queryCondition = queryCondition ? typeof queryCondition === 'function' ? queryCondition(): typeof queryCondition === 'object' ? queryCondition : {}: {};
+		return {
+            disabledDataShow: false,
+			queryCondition: {...queryCondition, treetype: this.state.treetype, textValue: this.state.textValue, disabledDataShow:false},
+			pageInfo:{pageSize: 10, pageIndex: 1} //放置报错
+		};
+    };
+
+	loadTreeData = async (param) => {
+		return await new Promise((resolve) => {
+			this.setState({loading: true},() => {
+				let { currentLevel, referVal } = this.state;
+				let { queryTreeUrl, queryCondition, isCacheable } = this.props;
+				ajax({
+					url: queryTreeUrl,
+					data: param,
+					loading: false,
+					success: (res) => {
+						this.setState({loading: false}, () =>{
+							if (!res.success) {
+								throw new Error(res.error.message);
+								return;
+							}
+							res.data.datarows.forEach((e) => {
+								e.nodeData.refpk = e.nodeData.nodeid;
+								e.nodeData.refname = e.nodeData.nodetitle
+							})
+							var newData = { //满足平台的格式
+								rows: res.data.datarows 
+							};
+							resolve(newData);
+						});
+					},
+					error: (e) => {
+						toast({ color: 'danger', content: e.message });
+						this.setState({
+							loading: false
+						});
+						throw new Error(e);
+					}
+				});
+			});
+		});
+	};
+
+    onTreeNodeSelectWapper(selectedKeys, { selected, selectedNodes, node, event }, ...rest){
+        if(this.state.treetype == 'table' && node.props.treeNodeData.pid == 'root')
+            return;
+        this.onTreeNodeSelect(selectedKeys, { selected, selectedNodes, node, event },  ...rest);
+       
+    };z
+
+    onTreeNodeCheckWapper (checkedKeys, { checked, checkedNodes, node, event }){
+        if(this.state.treetype == 'table' && node.props.treeNodeData.pid == 'root')
+        return;
+        this.onTreeNodeCheckWapper(checkedKeys, { checked, checkedNodes, node, event });
+    };
+    setTreeData = (target, parentNode, data, cb) => {
+		let { expandedKeys } = this.state;
+		data.rows.forEach((e) => {
+			e._display = e.title;
+			e.pid = e.pid || rootNode.refpk;
+		});
+		this.setState({
+			//[target]: this.state[target],
+			[target]: data.rows || [],
+			expandedKeys: []
+		},() => {
+				typeof cb === 'function' && cb();
+		});
+	};
+
+	
+    // 复写原型方法：渲染弹出层左侧
+	renderPopoverLeft = () => {
+		let { isSearch, selectedKeys, expandedKeys, selectedValues, treeData } = this.state;
+		const { refType, isMultiSelectedEnabled, isTreelazyLoad, rootNode, onlyLeafCanSelect } = this.props;
+		
+		 //树表state
+		 var loopNode = (nodes, handler) => {
+            nodes.forEach( node => {
+                handler && handler(node, node.children || []);
+                loopNode(node.children || [], handler);
+            });
+		};
+		
+		var laybtns = [],
+			createNumberBtns = (nodes) => { //获取树节点层级号数组
+			var maxlaynumber = 1, i, btns = [],
+				hander = (node, children) =>{ 
+					var nodenumber = parseInt(node.nodeData ? node.nodeData.laynumber : 0);
+					maxlaynumber = nodenumber <= maxlaynumber ? maxlaynumber: nodenumber;
+				};
+				loopNode(nodes, hander);
+				for(i = 0 ; i <= maxlaynumber; i++ ){
+					laybtns.push(<NCMenu.Item key={i} expandLay={true}>{i}层</NCMenu.Item> );
+				}
+		};
+		createNumberBtns(treeData || []);
+
+		var onMenuSelect = (domEvent, item, key) => {
+			if(domEvent.key == 'expandAll'){
+				var key = [],
+					keyHander = (node, children) =>{ 
+						key.push(node.key);
+					};
+				loopNode(treeData, keyHander);
+				this.state.expandedKeys = key;
+				this.setState(this.state);
+			}
+			if(domEvent.key == 'unexpandAll'){
+				this.state.expandedKeys = [];
+				this.setState(this.state);
+			}
+			if(domEvent.item.props.expandLay){
+				var key = [],  layno = domEvent.key,
+					keyHander = (node, children) =>{ 
+						var nodenumber = parseInt(node.nodeData ? node.nodeData.laynumber : 0);
+						if(nodenumber <= layno){
+							key.push(node.key);
+						}
+				};
+				loopNode(treeData, keyHander);
+				this.state.expandedKeys = key;
+				this.setState(this.state);
+			}
+		};
+
+		var createMore = () => {
+			return (<NCMenu onSelect={onMenuSelect}>
+				<NCMenu.Item key="expandAll">展开所有</NCMenu.Item>
+				<NCMenu.Item key="unexpandAll">闭合所有</NCMenu.Item>
+				<NCMenu.NCSubMenu key="expandLay" title="展开层级">
+					{laybtns}
+				</NCMenu.NCSubMenu>
+			</NCMenu>);
+		};
+
+		
+
+		return (
+
+            <div>
+				<div><NCFormControl type='search'
+					value={this.state.textValue} 
+					onChange={
+						(value) => {
+							this.state.textValue = value;
+							this.setState(this.state);
+						}
+					} 
+					onSearch={
+						() =>{
+							this.onTreeTypeChange(this.state.treetype);
+						}
+					}
+					/><NCDropdown trigger={['click']} overlay={createMore()} animation="slide-up"><NCButton colors='primary' style={{ width: 50 }}>更多</NCButton></NCDropdown></div>
+				<div>
+					<RadioGroup name="booktype" selectedValue={this.state.treetype} onChange={this.onTreeTypeChange.bind(this)}>
+                		<Radio value="type">账簿类型</Radio>
+                		<Radio value="main">主账簿</Radio>
+            		</RadioGroup>
+				</div>
+            <ReferTree
+				checkStrictly={true}
+				checkable={refType === 'tree' && isMultiSelectedEnabled}
+				data={treeData}
+				onSelect={this.onTreeNodeSelectWapper.bind(this)}
+				onExpand={this.onTreeNodeExpand}
+				onCheck={this.onTreeNodeCheckWapper.bind(this)}
+				checkedKeys={[ ...selectedValues.keys() ]}
+				selectedKeys={selectedKeys}
+				expandedKeys={expandedKeys}
+				autoExpandParent={false}
+				isTreelazyLoad={isTreelazyLoad}
+				root={rootNode}
+				onlyLeafCanSelect={onlyLeafCanSelect}
+				onDoubleClick={() => {
+				}}
+			/>
+        </div>
+		
+		);
+	};
+}
+
+
+export default function (props = {}) {
+    var conf = {
+        refName:'财务核算账簿(所有)',  
+        placeholder: '财务核算账簿(所有)', 
+        rootNode:{refname:'财务核算账簿',refpk:'root'},
+        refCode: 'uapbd.ref.AccountBookTreeRef',
+        queryTreeUrl:'/nccloud/uapbd/ref/AccountBookTreeRef.do',
+        isMultiSelectedEnabled:false,
+        refType:'tree',
+        isTreelazyLoad: false,
+        treeConfig:{name:['编码', '名称'],code: ['refcode', 'refname']}
+    };
+    conf.rootNode = {...conf.rootNode, treeid: 'root'};
+    return <Ref {...conf} {...props} />
+}
+    
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

@@ -1,3 +1,4 @@
+//nzvGleO7WiIqZ4ZwCx0ZOSLuBZO56K4ezIMTO2YC2YenheVfMuRg/0wBmdkKb2Rs
 import {ajax} from 'nc-lightapp-front';
 
 var emptyfn = function(){};
@@ -40,3 +41,5 @@ BDSelected.SCOPE_GROUP_ORG = 6; //集团+组织
 BDSelected.SCOPE_ORG = 7;//组织
 
 export default BDSelected
+
+//nzvGleO7WiIqZ4ZwCx0ZOSLuBZO56K4ezIMTO2YC2YenheVfMuRg/0wBmdkKb2Rs

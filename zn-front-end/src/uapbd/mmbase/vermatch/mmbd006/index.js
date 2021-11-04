@@ -1,3 +1,141 @@
-/*! @ncctag {"project":"","branch":"","provider":"","date":"2020-5-11 14:50:39"} */
-!function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t(require("nc-lightapp-front"),require("react")):"function"==typeof define&&define.amd?define(["nc-lightapp-front","react"],t):"object"==typeof exports?exports["uapbd/mmbase/vermatch/mmbd006/index"]=t(require("nc-lightapp-front"),require("react")):e["uapbd/mmbase/vermatch/mmbd006/index"]=t(e["nc-lightapp-front"],e.React)}(window,(function(e,t){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var a=t[r]={i:r,l:!1,exports:{}};return e[r].call(a.exports,a,a.exports,n),a.l=!0,a.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var a in e)n.d(r,a,function(t){return e[t]}.bind(null,a));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="../../../../",n(n.s=15)}([function(t,n){t.exports=e},,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.getLangByResId=t.initLang=void 0;var r=n(0);t.initLang=function(e,t,n,a){e.lang=null,e.inlt=null,(0,r.getMultiLang)({moduleId:t,domainName:n,callback:function(t,n,r){n&&(e.lang=t,e.inlt=r),a&&a()},needInlt:!0})},t.getLangByResId=function(e,t,n){return function(e,t){if(!e)throw(0,r.toast)({color:"danger",content:"请检查代码中this是否能够取到！当前为undifined,位置："+t}),new Error("请检查代码中this是否能够取到！当前为undifined,位置："+t)}(e,t),n?e.inlt?e.inlt.get(t,n)||t:"":e.lang?e.lang[t]||t:""}},,,,,,,,,,,,function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var r,a,o=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}(),i=n(16),l=d(i),s=n(0),u=n(3);n(17);var c=d(n(22));function d(e){return e&&e.__esModule?e:{default:e}}var f=s.base.NCModal,p=s.base.NCButton,g=(s.base.NCCheckbox,s.high.Transfer),h=f.Header,m=f.Body,y=f.Footer,v=(r=function(e){function t(e){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,t);var n=function(e,t){if(!e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return!t||"object"!=typeof t&&"function"!=typeof t?e:t}(this,(t.__proto__||Object.getPrototypeOf(t)).call(this,e));a.call(n),n.data=e.data||{};var r,o=[],i="N",l=c.default.call(n),s=e.initcode;if(console.log(n.data,"data"),(0,u.initLang)(n,["10140BOMM"],"uapbd",(function(){l=c.default.call(n),n.setState({dataSource:l[s]&&l[s].dataSource||[],targetKeys:o,checkVal:i})})),!e.batch)if(n.data.sysinitvo.value){var d=n.data.sysinitvo.value.replace(/,$/,"");if(d){var f=d.split(",");if("MMBD006"===s){var p=(r=f,Array.isArray(r)?r:Array.from(r));i=p[0],o=p.slice(1)}else o=f}}else l[s]&&(o=l[s].defaultSelected);return n.state={dataSource:l[s]&&l[s].dataSource||[],targetKeys:o,checkVal:i},n}return function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function, not "+typeof t);e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,enumerable:!1,writable:!0,configurable:!0}}),t&&(Object.setPrototypeOf?Object.setPrototypeOf(e,t):e.__proto__=t)}(t,e),o(t,[{key:"render",value:function(){var e=this,t=this.state,n=t.dataSource,r=t.targetKeys;console.log(n,"dataSource");var a={dataSource:n,targetKeys:r,onTargetKeysChange:this.onTargetKeysChange,className:"param-panel-transfer",showMoveBtn:!0,titles:[(0,u.getLangByResId)(this,"110140BOMM0171"),(0,u.getLangByResId)(this,"110140BOMM0172")],lazy:{container:"modal"}};return l.default.createElement("div",null,l.default.createElement(f,{show:!0,className:"param-panel-modal"},l.default.createElement(h,null,l.default.createElement("span",{className:"title"},(0,u.getLangByResId)(this,"110140BOMM0173")),l.default.createElement("i",{className:"dnd-cancel iconfont icon-guanbi",onClick:function(){return e.closeModal(!1)}})),l.default.createElement(m,null,l.default.createElement(g,a)),l.default.createElement(y,null,l.default.createElement(p,{className:"button-primary",onClick:function(){return e.closeModal("edit"==e.props.editMode)}},(0,u.getLangByResId)(this,"110140BOMM3008")),l.default.createElement(p,{onClick:function(){return e.closeModal(!1)}},(0,u.getLangByResId)(this,"110140BOMM3017")))))}}]),t}(i.Component),a=function(){var e=this;this.closeModal=function(t){var n=void 0,r=void 0;if(t){if(0===e.state.targetKeys.length)return void(0,s.toast)({content:(0,u.getLangByResId)(e,"110140BOMM0170"),color:"warning"});n="MMBD006"===e.props.initcode?e.state.checkVal+","+e.state.targetKeys.join(","):e.state.targetKeys.join(","),e.props.batch?r=e.props.pkorgs.map((function(e){return{pk_org:e,value:n}})):(e.data.sysinitvo.value=n,r=e.data)}e.props.valueChange(r)},this.onTargetKeysChange=function(t){e.setState({targetKeys:t})}},r);t.default=v},function(e,n){e.exports=t},function(e,t,n){var r=n(18);"string"==typeof r&&(r=[[e.i,r,""]]);var a={transform:void 0};n(20)(r,a);r.locals&&(e.exports=r.locals)},function(e,t,n){(e.exports=n(19)(!1)).push([e.i,".param-panel-modal.nc-modal.u-modal .u-modal-dialog {\n  max-height: none;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-header {\n  height: 40px;\n  padding: 0 20px;\n  line-height: 40px;\n  background: #f3f3f3;\n  border-radius: 3px 3px 0px 0px;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-header .title {\n  font-size: 14px;\n  display: inline-block;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-header .iconfont {\n  float: right;\n  font-size: 14px;\n  color: #111;\n  cursor: pointer;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-body {\n  padding: 0;\n  margin: 0 auto;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-footer {\n  height: 45px;\n  padding: 7px 20px;\n  border-top: 1px solid #d0d0d0;\n}\n.param-panel-modal.nc-modal.u-modal .u-modal-dialog .u-modal-footer .u-button {\n  height: 30px;\n  min-width: 60px;\n  width: auto;\n}\n.transfer-wrap.param-panel-transfer .u-transfer {\n  border-left: none;\n  border-bottom: none;\n}\n.transfer-wrap.param-panel-transfer .u-transfer-list {\n  width: 209px;\n}\n.transfer-wrap.param-panel-transfer .move-btns {\n  border-right: none;\n  border-bottom: none;\n}\n",""])},function(e,t){e.exports=function(e){var t=[];return t.toString=function(){return this.map((function(t){var n=function(e,t){var n=e[1]||"",r=e[3];if(!r)return n;if(t&&"function"==typeof btoa){var a=(i=r,"/*# sourceMappingURL=data:application/json;charset=utf-8;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(i))))+" */"),o=r.sources.map((function(e){return"/*# sourceURL="+r.sourceRoot+e+" */"}));return[n].concat(o).concat([a]).join("\n")}var i;return[n].join("\n")}(t,e);return t[2]?"@media "+t[2]+"{"+n+"}":n})).join("")},t.i=function(e,n){"string"==typeof e&&(e=[[null,e,""]]);for(var r={},a=0;a<this.length;a++){var o=this[a][0];"number"==typeof o&&(r[o]=!0)}for(a=0;a<e.length;a++){var i=e[a];"number"==typeof i[0]&&r[i[0]]||(n&&!i[2]?i[2]=n:n&&(i[2]="("+i[2]+") and ("+n+")"),t.push(i))}},t}},function(e,t,n){var r,a,o={},i=(r=function(){return window&&document&&document.all&&!window.atob},function(){return void 0===a&&(a=r.apply(this,arguments)),a}),l=function(e){var t={};return function(n){return void 0===t[n]&&(t[n]=e.call(this,n)),t[n]}}((function(e){return document.querySelector(e)})),s=null,u=0,c=[],d=n(21);function f(e,t){for(var n=0;n<e.length;n++){var r=e[n],a=o[r.id];if(a){a.refs++;for(var i=0;i<a.parts.length;i++)a.parts[i](r.parts[i]);for(;i<r.parts.length;i++)a.parts.push(v(r.parts[i],t))}else{var l=[];for(i=0;i<r.parts.length;i++)l.push(v(r.parts[i],t));o[r.id]={id:r.id,refs:1,parts:l}}}}function p(e,t){for(var n=[],r={},a=0;a<e.length;a++){var o=e[a],i=t.base?o[0]+t.base:o[0],l={css:o[1],media:o[2],sourceMap:o[3]};r[i]?r[i].parts.push(l):n.push(r[i]={id:i,parts:[l]})}return n}function g(e,t){var n=l(e.insertInto);if(!n)throw new Error("Couldn't find a style target. This probably means that the value for the 'insertInto' parameter is invalid.");var r=c[c.length-1];if("top"===e.insertAt)r?r.nextSibling?n.insertBefore(t,r.nextSibling):n.appendChild(t):n.insertBefore(t,n.firstChild),c.push(t);else{if("bottom"!==e.insertAt)throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");n.appendChild(t)}}function h(e){if(null===e.parentNode)return!1;e.parentNode.removeChild(e);var t=c.indexOf(e);t>=0&&c.splice(t,1)}function m(e){var t=document.createElement("style");return e.attrs.type="text/css",y(t,e.attrs),g(e,t),t}function y(e,t){Object.keys(t).forEach((function(n){e.setAttribute(n,t[n])}))}function v(e,t){var n,r,a,o;if(t.transform&&e.css){if(!(o=t.transform(e.css)))return function(){};e.css=o}if(t.singleton){var i=u++;n=s||(s=m(t)),r=B.bind(null,n,i,!1),a=B.bind(null,n,i,!0)}else e.sourceMap&&"function"==typeof URL&&"function"==typeof URL.createObjectURL&&"function"==typeof URL.revokeObjectURL&&"function"==typeof Blob&&"function"==typeof btoa?(n=function(e){var t=document.createElement("link");return e.attrs.type="text/css",e.attrs.rel="stylesheet",y(t,e.attrs),g(e,t),t}(t),r=x.bind(null,n,t),a=function(){h(n),n.href&&URL.revokeObjectURL(n.href)}):(n=m(t),r=O.bind(null,n),a=function(){h(n)});return r(e),function(t){if(t){if(t.css===e.css&&t.media===e.media&&t.sourceMap===e.sourceMap)return;r(e=t)}else a()}}e.exports=function(e,t){if("undefined"!=typeof DEBUG&&DEBUG&&"object"!=typeof document)throw new Error("The style-loader cannot be used in a non-browser environment");(t=t||{}).attrs="object"==typeof t.attrs?t.attrs:{},t.singleton||(t.singleton=i()),t.insertInto||(t.insertInto="head"),t.insertAt||(t.insertAt="bottom");var n=p(e,t);return f(n,t),function(e){for(var r=[],a=0;a<n.length;a++){var i=n[a];(l=o[i.id]).refs--,r.push(l)}e&&f(p(e,t),t);for(a=0;a<r.length;a++){var l;if(0===(l=r[a]).refs){for(var s=0;s<l.parts.length;s++)l.parts[s]();delete o[l.id]}}}};var b,M=(b=[],function(e,t){return b[e]=t,b.filter(Boolean).join("\n")});function B(e,t,n,r){var a=n?"":r.css;if(e.styleSheet)e.styleSheet.cssText=M(t,a);else{var o=document.createTextNode(a),i=e.childNodes;i[t]&&e.removeChild(i[t]),i.length?e.insertBefore(o,i[t]):e.appendChild(o)}}function O(e,t){var n=t.css,r=t.media;if(r&&e.setAttribute("media",r),e.styleSheet)e.styleSheet.cssText=n;else{for(;e.firstChild;)e.removeChild(e.firstChild);e.appendChild(document.createTextNode(n))}}function x(e,t,n){var r=n.css,a=n.sourceMap,o=void 0===t.convertToAbsoluteUrls&&a;(t.convertToAbsoluteUrls||o)&&(r=d(r)),a&&(r+="\n/*# sourceMappingURL=data:application/json;base64,"+btoa(unescape(encodeURIComponent(JSON.stringify(a))))+" */");var i=new Blob([r],{type:"text/css"}),l=e.href;e.href=URL.createObjectURL(i),l&&URL.revokeObjectURL(l)}},function(e,t){e.exports=function(e){var t="undefined"!=typeof window&&window.location;if(!t)throw new Error("fixUrls requires window.location");if(!e||"string"!=typeof e)return e;var n=t.protocol+"//"+t.host,r=n+t.pathname.replace(/\/[^\/]*$/,"/");return e.replace(/url\s*\(((?:[^)(]|\((?:[^)(]+|\([^)(]*\))*\))*)\)/gi,(function(e,t){var a,o=t.trim().replace(/^"(.*)"$/,(function(e,t){return t})).replace(/^'(.*)'$/,(function(e,t){return t}));return/^(#|data:|http:\/\/|https:\/\/|file:\/\/\/)/i.test(o)?e:(a=0===o.indexOf("//")?o:0===o.indexOf("/")?n+o:r+o.replace(/^\.\//,""),"url("+JSON.stringify(a)+")")}))}},function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=function(){return{MMBD006:{dataSource:[{key:"cmaterialvid",title:(0,r.getLangByResId)(this,"110140BOMM0071")},{key:"ccustomerid",title:(0,r.getLangByResId)(this,"110140BOMM0164")},{key:"ccustmaterialid",title:(0,r.getLangByResId)(this,"110140BOMM0165")},{key:"cvendorid",title:(0,r.getLangByResId)(this,"110140BOMM0166")},{key:"cproductorid",title:(0,r.getLangByResId)(this,"110140BOMM0167")},{key:"cprojectid",title:(0,r.getLangByResId)(this,"110140BOMM0168")},{key:"workcenter",title:(0,r.getLangByResId)(this,"110140BOMM0169")},{key:"vfree1",title:(0,r.getLangByResId)(this,"110140BOMM0029")},{key:"vfree2",title:(0,r.getLangByResId)(this,"110140BOMM0040")},{key:"vfree3",title:(0,r.getLangByResId)(this,"110140BOMM0041")},{key:"vfree4",title:(0,r.getLangByResId)(this,"110140BOMM0042")},{key:"vfree5",title:(0,r.getLangByResId)(this,"110140BOMM0030")},{key:"vfree6",title:(0,r.getLangByResId)(this,"110140BOMM0045")},{key:"vfree7",title:(0,r.getLangByResId)(this,"110140BOMM0046")},{key:"vfree8",title:(0,r.getLangByResId)(this,"110140BOMM0047")},{key:"vfree9",title:(0,r.getLangByResId)(this,"110140BOMM0048")},{key:"vfree10",title:(0,r.getLangByResId)(this,"110140BOMM0049")}],defaultSelected:[]}}};var r=n(3)}])}));
-//# sourceMappingURL=index.js.map
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65
+/*
+ * @Author: hufei 
+ * @PageInfo: PO 参数面板 穿梭类型 适用于 PO06,PO16,PO27,PO83
+ * @Date: 2018-07-24 16:07:45 
+ * @Last Modified by: hufei
+ * @Last Modified time: 2019-01-15 15:14:36
+ */
+import React, { Component } from 'react';
+import { base, high, toast } from 'nc-lightapp-front';
+import { initLang, getLangByResId } from '../../public/tools/multiLangUtil';
+let { NCModal: Modal, NCButton: Button, NCCheckbox: Checkbox } = base;
+let { Transfer } = high;
+let { Header, Body, Footer } = Modal;
+import './index.less';
+import getParamData from './data.js';
+
+export default class ParamPanel extends Component {
+	constructor(props) {
+		super(props);
+		this.data = props.data || {};
+		let targetKeys = [];
+		let checkVal = 'N';
+		let DATA = getParamData.call(this);
+		let CODE = props.initcode;
+		console.log(this.data, 'data');
+		initLang(this, [ '10140BOMM' ], 'uapbd', () => {
+			// initLang 放在底部会出现初次点开有多语，再次点开没有多语的问题，并且这里的回调的setState也不能把加载多语后的DataSource渲染到页面，原因暂未知
+			DATA = getParamData.call(this);
+			this.setState({
+				dataSource: (DATA[CODE] && DATA[CODE].dataSource) || [],
+				targetKeys,
+				checkVal
+			});
+		});
+		if (!props.batch) {
+			// 穿梭已选的项是传过来的props.data.sysinitvo.value(逗号分隔的字符串)所代表的值,如果没有值，则放默认值到右边
+			// sysinitvo.value结尾有时候是个逗号，分割后会生成一个空字符串的已选项，会影响已选项不能为空校验，需要去掉结尾的逗号
+			if (this.data.sysinitvo.value) {
+				let valStr = this.data.sysinitvo.value.replace(/,$/, '');
+				if (valStr) {
+					let valAry = valStr.split(',');
+					if (CODE === 'MMBD006') {
+						[ checkVal, ...targetKeys ] = valAry;
+					} else {
+						targetKeys = valAry;
+					}
+				}
+			} else if (DATA[CODE]) {
+				targetKeys = DATA[CODE].defaultSelected;
+			}
+		}
+		this.state = {
+			dataSource: (DATA[CODE] && DATA[CODE].dataSource) || [],
+			targetKeys,
+			checkVal
+		};
+	}
+
+	// 调用props.valueChange方法关闭模态框，并传递数据，编辑态点确定（checkflag为true）传新的已选的值，其它情况都不传值
+	closeModal = (checkflag) => {
+		let valueStr, param;
+		if (checkflag) {
+			// 编辑态点击确定，需要校验已选项，并且传递新的已选值到父组件，批量修改传字符串，单个修改传完整vo对象
+			// 点击取消或关闭的X按钮或浏览态点击确定，不需要校验，不需要传值
+			if (this.state.targetKeys.length === 0) {
+				toast({
+					content: getLangByResId(this, '110140BOMM0170'),
+					color: 'warning'
+				}); /**国际化处理：右侧已选项不能为空！ */
+				return;
+			} else {
+				// MMBD006 参数要拼接上复选框的值,Y/N
+				valueStr =
+					this.props.initcode === 'MMBD006'
+						? this.state.checkVal + ',' + this.state.targetKeys.join(',')
+						: this.state.targetKeys.join(',');
+				if (this.props.batch) {
+					// 批量修改
+					param = this.props.pkorgs.map((org) => {
+						return { pk_org: org, value: valueStr };
+					});
+				} else {
+					// 单独修改
+					this.data.sysinitvo.value = valueStr;
+					param = this.data;
+				}
+			}
+		}
+		this.props.valueChange(param);
+	};
+
+	// 穿梭内容改变时的回调
+	onTargetKeysChange = (targetKeys) => {
+		this.setState({ targetKeys });
+	};
+
+	render() {
+		const { dataSource, targetKeys } = this.state;
+		console.log(dataSource, 'dataSource');
+		const transferProps = {
+			dataSource,
+			targetKeys,
+			onTargetKeysChange: this.onTargetKeysChange,
+			className: 'param-panel-transfer',
+			showMoveBtn: true,
+			titles: [
+				getLangByResId(this, '110140BOMM0171'),
+				getLangByResId(this, '110140BOMM0172')
+			] /* 国际化处理： 待选,已选*/,
+			lazy: { container: 'modal' }
+		};
+		return (
+			<div>
+				<Modal show={true} className="param-panel-modal">
+					<Header>
+						<span className="title">{getLangByResId(this, '110140BOMM0173')}</span>
+						{/* 国际化处理： 动态参数设置*/}
+						<i className="dnd-cancel iconfont icon-guanbi" onClick={() => this.closeModal(false)} />
+					</Header>
+					<Body>
+						<Transfer {...transferProps} />
+					</Body>
+					<Footer>
+						<Button
+							className="button-primary"
+							onClick={() => this.closeModal(this.props.editMode == 'edit')}
+						>
+							{getLangByResId(this, '110140BOMM3008')}
+							{/* 国际化处理： 确定*/}
+						</Button>
+						<Button onClick={() => this.closeModal(false)}>{getLangByResId(this, '110140BOMM3017')}</Button>
+						{/* 国际化处理： 取消*/}
+					</Footer>
+				</Modal>
+			</div>
+		);
+	}
+}
+
+//bLkXFuKw3KUaZeb8Dj31ZbW4TYbp/FpJTggm9pjHvEEfh1GZfWjTZgkhzpdZeH65

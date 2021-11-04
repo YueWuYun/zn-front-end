@@ -1,3 +1,4 @@
+//KpybfwJCaIPe13pb4CGSUxSRprQZ/Hfn8NUK17f2MUZXDyXXyxP6NhwkBIHhXPb7
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { createPage, base, ajax ,toast} from 'nc-lightapp-front';
@@ -48,3 +49,5 @@ export default class Linkman extends Component{
 
 
 
+
+//KpybfwJCaIPe13pb4CGSUxSRprQZ/Hfn8NUK17f2MUZXDyXXyxP6NhwkBIHhXPb7
